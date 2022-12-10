@@ -3,7 +3,8 @@ import { css } from 'styled-components';
 
 export const MediaQueries = {
     desktop: `(min-width: ${desktopWidthInt}px)`,
-    tablet: `(max-width: ${desktopWidthInt - 1}px) and (min-width: ${
+    tablet: `(max-width: ${desktopWidthInt - 1}px)`,
+    tabletOnly: `(max-width: ${desktopWidthInt - 1}px) and (min-width: ${
         mobileWidthInt + 1
     }px)`,
     mobile: `(max-width: ${mobileWidthInt}px`,

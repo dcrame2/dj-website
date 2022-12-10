@@ -11,7 +11,6 @@ export const Variables = {
 
     // colors
     // When swapping leave note of what the color looks like
-
     // used in button link styling
     color1: '#E5B8F4', // light purple
     color2: '#C147E9', // dark purple

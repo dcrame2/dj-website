@@ -113,12 +113,15 @@ const Nav = styled.nav`
                         }
                     }
                 }
-            }
-        }
-        .mobile-dropdown {
-            display: none;
-
-            ul {
+                &.menu-toggle {
+                    @media ${MediaQueries.desktop} {
+                        display: none;
+                    }
+                    button {
+                        background-color: unset;
+                        border: unset;
+                    }
+                }
             }
         }
     }
@@ -176,6 +179,25 @@ export default function Navigation() {
                                 <LinkButton text='Contact Us'></LinkButton>
                             </li>
                         </ul>
+                    </li>
+                    <li className='menu-toggle'>
+                        <button>
+                            <svg
+                                width='40'
+                                height='40'
+                                fill='none'
+                                viewBox='0 0 15 15'
+                            >
+                                <path
+                                    width='100%'
+                                    height='100%'
+                                    fill={`${Variables.white}`}
+                                    fill-rule='evenodd'
+                                    d='M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1h-12ZM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5Zm0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5Z'
+                                    clip-rule='evenodd'
+                                />
+                            </svg>
+                        </button>
                     </li>
                 </ul>
             </div>
