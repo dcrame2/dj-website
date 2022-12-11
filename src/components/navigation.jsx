@@ -186,19 +186,8 @@ const data = {
     ],
 };
 
-export default function Navigation() {
-    const [navBackdrop, setNavBackdrop] = useState(false);
+export default function Navigation({ backdrop }) {
     const [hamburgerPressed, setHamburgerPressed] = useState(false);
-
-    useEffect(() => {
-        window.onscroll = function (e) {
-            if (this.scrollY > 83) {
-                setNavBackdrop(true);
-            } else {
-                setNavBackdrop(false);
-            }
-        };
-    }, []);
 
     const HamburgerToggle = () => {
         if (hamburgerPressed) {
@@ -212,7 +201,7 @@ export default function Navigation() {
         <Nav>
             <div
                 className={`wrapper 
-                    ${navBackdrop ? 'active' : ''}
+                    ${backdrop ? 'active' : ''}
                     ${hamburgerPressed ? 'panel-active' : ''}`}
             >
                 <ul>
@@ -223,7 +212,7 @@ export default function Navigation() {
                     </li>
                     <li
                         className={`primary-links 
-                        ${navBackdrop ? 'backdrop-active' : ''}
+                        ${backdrop ? 'backdrop-active' : ''}
                         ${hamburgerPressed ? 'active' : ''}
                         `}
                     >

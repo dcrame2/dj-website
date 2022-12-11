@@ -47,6 +47,9 @@ const OpaqueFilter = styled.div`
 const SlideIn = keyframes`
     to { left: 10%; }
 `;
+const SlideOut = keyframes`
+    to {left: -100%}
+`;
 
 const ContentContainer = styled.div`
     display: flex;
