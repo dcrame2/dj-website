@@ -31,4 +31,8 @@ export const Variables = {
 
     // Company name
     companyName: 'Digital Jam',
+
+    // Logos
+    logo1Url: 'digitaljam-logo.png',
+    logo2Url: 'digitaljam-logo-removebg-preview.png',
 };
