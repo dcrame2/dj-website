@@ -8,9 +8,5 @@ const ICMContainer = styled.div`
 `;
 
 export default function ImageContentModule() {
-    return (
-        <ICMContainer>
-            <Button text='hello' />
-        </ICMContainer>
-    );
+    return <ICMContainer></ICMContainer>;
 }
