@@ -94,7 +94,14 @@ const Hero = () => {
 
   return (
     <Section>
-      <HeroBg src="space.mp4" muted loop autoPlay playsinline></HeroBg>
+      <HeroBg
+        src="space.mp4"
+        type="video/mp4"
+        muted
+        loop
+        autoPlay
+        playsinline
+      ></HeroBg>
       <OpaqueFilter />
       <InnerSection>
         <ContentContainer className={`${loaded ? "loaded" : "null"}`}>
