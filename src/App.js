@@ -5,10 +5,13 @@ import ModuleBlender from './sub_components/ModuleBlender';
 import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
 import './global.css';
-import { useState } from 'react';
+import { useState, useEFfect, useEffect } from 'react';
 
 function App() {
     const [navBackdrop, setNavBackdrop] = useState(false);
+    const [animateElements, setAnimateElements] = useState();
+
+    useEffect(() => {}, []);
 
     const scrollListener = () => {
         window.onscroll = function (e) {
