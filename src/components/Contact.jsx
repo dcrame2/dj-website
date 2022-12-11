@@ -31,11 +31,13 @@ const Section = styled.section`
   .form-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 250px;
     justify-content: center;
     align-items: center;
+
     @media (max-width: 499px) {
       flex-direction: column;
+      gap: 100px;
     }
 
     form {
@@ -44,13 +46,19 @@ const Section = styled.section`
       justify-content: center;
       align-items: center;
       gap: 20px;
-      width: 100%;
+      background-color: ${Variables.color4};
+      border-radius: 15px;
+      padding: 50px;
+      box-shadow: 1px 1px 4px 1px ${Variables.white};
+      -webkit-box-shadow: 1px 1px 4px 1px ${Variables.white};
+      -moz-box-shadow: 1px 1px 4px 1px ${Variables.white};
+      /* width: 100%; */
 
       div {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width: 100%;
+        /* width: 100%; */
 
         label {
           width: 150px;
@@ -63,13 +71,13 @@ const Section = styled.section`
           text-indent: 10px;
           outline: none;
           font-size: 1.5rem;
-          background-color: transparent;
+          background-color: ${Variables.color5};
           border-radius: 8px;
-
-          border: 2px solid ${Variables.color2};
-          box-shadow: 1px 1px 6px 1px ${Variables.color2};
-          -webkit-box-shadow: 1px 1px 6px 1px ${Variables.color2};
-          -moz-box-shadow: 1px 1px 6px 1px ${Variables.color2};
+          width: 500px;
+          border: 2px solid ${Variables.color1};
+          box-shadow: 1px 1px 4px 1px ${Variables.color5};
+          -webkit-box-shadow: 1px 1px 4px 1px ${Variables.color5};
+          -moz-box-shadow: 1px 1px 4px 1px ${Variables.color5};
         }
         input {
           height: 40px;
@@ -82,7 +90,7 @@ const Section = styled.section`
     }
 
     img {
-      filter: hue-rotate(95deg);
+      /* filter: hue-rotate(95deg); */
       width: auto;
       height: 400px;
       border-radius: 15px;
@@ -104,6 +112,7 @@ const Contact = () => {
         </p>
       </div>
       <div className="form-wrapper">
+        <img src="businessman-working-on-laptop.png" />
         <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New DJ Submission!" />
           {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
