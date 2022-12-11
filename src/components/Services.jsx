@@ -17,19 +17,71 @@ const ServiceContainer = styled.div`
     display: flex;
     gap: 80px;
     justify-content: center;
-    @media (max-width: 1099px) {
-        gap: 40px;
-    }
+    align-items: center;
+    text-align: center;
+
+    gap: 20px;
+    // width: 20%;
+    padding: 20px;
+    border-radius: 6px;
+
     @media (max-width: 767px) {
-        flex-direction: column;
-        gap: 40px;
+      width: unset;
+      margin: 0 5%;
+      padding: 15px;
     }
 
-    div {
-        display: flex;
-        flex-wrap: wrap;
-        height: auto;
-        background-color: ${Variables.color2};
+    img {
+      position: relative;
+      //   top: -80px;
+      width: auto;
+      height: 250px;
+      //   border-radius: 50%;
+      padding: 5px;
+      //   border: 5px solid ${Variables.color1};
+
+      @media (max-width: 767px) {
+        height: 175px;
+      }
+    }
+    &:nth-child(1) {
+      //   img {
+      //     border: 5px solid ${Variables.color4};
+      //   }
+
+      h3 {
+        color: ${Variables.white};
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 3rem;
+        color: ${Variables.color4};
+      }
+    }
+
+    &:nth-child(2) {
+      //   img {
+      //     border: 5px solid ${Variables.color3};
+      //   }
+
+      h3 {
+        color: ${Variables.white};
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 3rem;
+        color: ${Variables.color3};
+      }
+    }
+
+    &:nth-child(3) {
+      //   img {
+      //     border: 5px solid ${Variables.color1};
+      //   }
+
+      h3 {
         color: ${Variables.white};
         flex-direction: column;
         justify-content: center;
@@ -124,26 +176,26 @@ const ServiceContainer = styled.div`
 `;
 
 const data = {
-    services: [
-        {
-            num: '01',
-            img: 'businessman-working-on-laptop.png',
-            name: 'Development',
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?',
-        },
-        {
-            num: '02',
-            img: 'dev.jpg',
-            name: 'Design',
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?',
-        },
-        {
-            num: '03',
-            img: 'dev.jpg',
-            name: 'Maintenance',
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?',
-        },
-    ],
+  services: [
+    {
+      num: "01",
+      img: "icon1.png",
+      name: "Development",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
+    },
+    {
+      num: "02",
+      img: "icon2.png",
+      name: "Design",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
+    },
+    {
+      num: "03",
+      img: "icon3.png",
+      name: "Maintenance",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
+    },
+  ],
 };
 
 const Services = () => {
