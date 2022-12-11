@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation.jsx';
 import Contact from './components/Contact';
 import Services from './components/Services';
+import ModuleBlender from './sub_components/ModuleBlender';
 import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
 import './global.css';
@@ -27,6 +28,7 @@ function App() {
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
             <Hero src='hero1.mp4' />
             <Services />
+            <ModuleBlender />
             <ImageContentModule
                 imgSrc='dev.jpg'
                 altTxt=''
@@ -40,6 +42,7 @@ function App() {
                 heading='Super Dope Heading'
                 content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
             />
+            <ModuleBlender />
             <Contact />
         </>
     );
