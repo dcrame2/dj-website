@@ -34,6 +34,9 @@ const Section = styled.section`
     gap: 100px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 499px) {
+      flex-direction: column;
+    }
 
     form {
       display: flex;
