@@ -27,7 +27,12 @@ function App() {
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
             <Hero src='hero1.mp4' />
             <Services />
-            <ImageContentModule />
+            <ImageContentModule
+                imgSrc='#'
+                altTxt=''
+                heading='Super Dope Heading'
+                content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
+            />
             <Contact />
         </>
     );

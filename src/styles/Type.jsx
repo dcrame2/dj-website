@@ -19,6 +19,16 @@ export const H1Styles = css`
     }
 `;
 
+export const H2Styles = css`
+    font-family: ${Variables.joseph};
+    font-size: 6rem;
+`;
+
+export const H3Styles = css`
+    font-family: ${Variables.joseph};
+    font-size: 3rem;
+`;
+
 export const PBaseStyles = css`
     font-family: ${Variables.joseph};
     font-size: 3rem;
@@ -34,4 +44,10 @@ export const PBaseStyles = css`
         font-size: 1.8rem;
         line-height: 2rem;
     }
+`;
+
+export const PSecondary = css`
+    font-family: ${Variables.joseph};
+    font-size: 1.75rem;
+    line-height: 25px;
 `;
