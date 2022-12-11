@@ -8,7 +8,22 @@ import Button from "../sub_components/Button";
 const Section = styled.section`
   height: auto;
   padding: 8% 5%;
-  background-color: ${Variables.black};
+  background-color: ${Variables.color5};
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.75rem;
+      color: ${Variables.white};
+    }
+  }
 
   form {
     display: flex;
@@ -52,6 +67,16 @@ const Section = styled.section`
 const Contact = () => {
   return (
     <Section id="contact">
+      <div>
+        <h2>Contact</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+          deserunt facere accusamus consectetur ipsam voluptates adipisci libero
+          aliquid id nihil. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Quasi deserunt facere accusamus consectetur ipsam voluptates
+          adipisci libero aliquid id nihil.
+        </p>
+      </div>
       <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New DJ Submission!" />
         {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
@@ -60,23 +85,23 @@ const Contact = () => {
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:3000/#contact"
+          value="http://localhost:3000/thanks.html"
         ></input>
 
         <div>
-          <label htmlFor="fname">First Name:*</label>
+          <label htmlFor="fname">First Name*</label>
           <input type="text" name="fname" required />
         </div>
         <div>
-          <label htmlFor="lname">Label Name:*</label>
+          <label htmlFor="lname">Last Name*</label>
           <input type="text" name="lname" required />
         </div>
         <div>
-          <label htmlFor="email">Email Address:*</label>
+          <label htmlFor="email">Email Address*</label>
           <input type="email" name="email" required />
         </div>
         <div>
-          <label htmlFor="message">Message:*</label>
+          <label htmlFor="message">Message*</label>
           <textarea type="text" name="message" required />
         </div>
         {/* <LinkButton type="submit" text="Submit"></LinkButton> */}
