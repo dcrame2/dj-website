@@ -44,11 +44,13 @@ const Section = styled.section`
       justify-content: center;
       align-items: center;
       gap: 20px;
+      width: 100%;
 
       div {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        width: 100%;
 
         label {
           width: 150px;
@@ -63,7 +65,7 @@ const Section = styled.section`
           font-size: 1.5rem;
           background-color: transparent;
           border-radius: 8px;
-          width: 500px;
+
           border: 2px solid ${Variables.color2};
           box-shadow: 1px 1px 6px 1px ${Variables.color2};
           -webkit-box-shadow: 1px 1px 6px 1px ${Variables.color2};
