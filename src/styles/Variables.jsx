@@ -20,6 +20,7 @@ export const Variables = {
   color6: "#E9D5DA", // light pale pink
   color7: "#FFFBE7", // white with hint of pink
   color8: "#DDDDDD", // slate white
+  color9: "#FF6D28", // orange
   //
   black: "black",
   white: "#ffff",
@@ -29,7 +30,4 @@ export const Variables = {
 
   // Company name
   companyName: "Digital Jam",
-
-  // Logos
-  logo1Url: "digitaljam-logo.png",
 };

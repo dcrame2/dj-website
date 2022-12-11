@@ -229,7 +229,7 @@ export default function Navigation({ backdrop }) {
                 </ul>
               </li>
               <li className="cta">
-                <LinkButton text="Contact Us"></LinkButton>
+                <LinkButton text="Contact Us" href="#contact"></LinkButton>
               </li>
             </ul>
           </li>
