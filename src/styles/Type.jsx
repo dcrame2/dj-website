@@ -30,7 +30,7 @@ export const PBaseStyles = css`
         line-height: 2.8rem;
     }
 
-    @media ${Variables.mobile} {
+    @media ${MediaQueries.mobile} {
         font-size: 1.8rem;
         line-height: 2rem;
     }

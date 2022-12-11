@@ -1,6 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-// import HeroImg from "../assets/img/hero1.mp4";
+import { useState, useEffect } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
@@ -45,16 +44,27 @@ const OpaqueFilter = styled.div`
     z-index: 1;
 `;
 
+const SlideIn = keyframes`
+    to { left: 10%; }
+`;
+
 const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     z-index: 1;
     position: absolute;
     top: 35%;
-    gap: 20px;
+    left: -100%;
+    gap: 25px;
     max-width: 700px;
     width: 100%;
-    left: 10%;
+    max-width: 600px;
+    transition: left ease 3s;
+
+    &.loaded {
+        animation: ${SlideIn} 0.8s ease;
+        animation-fill-mode: forwards;
+    }
 
     @media ${MediaQueries.tablet} {
         max-width: 400px;
@@ -73,12 +83,18 @@ const ContentContainer = styled.div`
 `;
 
 const Hero = () => {
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        setLoaded(true);
+    }, []);
+
     return (
         <Section>
             <HeroBg src='space.mp4' muted loop autoPlay></HeroBg>
             <OpaqueFilter />
             <InnerSection>
-                <ContentContainer>
+                <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
                     <h1>Welcome to Digital Joy</h1>
                     <h2>We make badass shit for the web</h2>
                 </ContentContainer>
