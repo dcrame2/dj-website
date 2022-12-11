@@ -54,16 +54,16 @@ const ServiceContainer = styled.div`
       height: 150px;
       //   border-radius: 50%;
       padding: 5px;
-      border: 5px solid ${Variables.color1};
+      //   border: 5px solid ${Variables.color1};
 
       @media (max-width: 767px) {
         height: 175px;
       }
     }
     &:nth-child(1) {
-      img {
-        border: 5px solid ${Variables.color4};
-      }
+      //   img {
+      //     border: 5px solid ${Variables.color4};
+      //   }
 
       h3 {
         color: ${Variables.white};
@@ -127,7 +127,7 @@ const data = {
   services: [
     {
       num: "01",
-      img: "dev.jpg",
+      img: "businessman-working-on-laptop.png",
       name: "Development",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
     },
