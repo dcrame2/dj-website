@@ -76,10 +76,10 @@ const CustomButton = styled.button`
     }
 `;
 
-export default function Button({ text, onClicked }) {
+export default function Button({ text, type, onClicked }) {
     return (
         <CustomButtonWrapper>
-            <CustomButton onClick={onClicked}>
+            <CustomButton onClick={onClicked} type={type}>
                 <span>{text}</span>
             </CustomButton>
         </CustomButtonWrapper>
