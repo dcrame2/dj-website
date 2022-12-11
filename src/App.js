@@ -4,6 +4,7 @@ import Services from './components/Services';
 import ModuleBlender from './sub_components/ModuleBlender';
 import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
+import Footer from './components/Footer.jsx';
 import './global.css';
 import { useState, useEFfect, useEffect } from 'react';
 
@@ -47,6 +48,7 @@ function App() {
             />
             <ModuleBlender />
             <Contact />
+            <Footer />
         </>
     );
 }
