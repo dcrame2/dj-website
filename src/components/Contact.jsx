@@ -60,23 +60,23 @@ const Contact = () => {
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:3000/#contact"
+          value="http://localhost:3000/thanks.html"
         ></input>
 
         <div>
-          <label htmlFor="fname">First Name:*</label>
+          <label htmlFor="fname">First Name*</label>
           <input type="text" name="fname" required />
         </div>
         <div>
-          <label htmlFor="lname">Label Name:*</label>
+          <label htmlFor="lname">Last Name*</label>
           <input type="text" name="lname" required />
         </div>
         <div>
-          <label htmlFor="email">Email Address:*</label>
+          <label htmlFor="email">Email Address*</label>
           <input type="email" name="email" required />
         </div>
         <div>
-          <label htmlFor="message">Message:*</label>
+          <label htmlFor="message">Message*</label>
           <textarea type="text" name="message" required />
         </div>
         {/* <LinkButton type="submit" text="Submit"></LinkButton> */}
