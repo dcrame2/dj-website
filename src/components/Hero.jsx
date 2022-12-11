@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 // import HeroImg from "../assets/img/hero1.mp4";
+import { MediaQueries } from "../styles/Utilities";
 
+import { Variables } from "../styles/Variables";
 const HeroBg = styled.video`
   object-fit: cover;
   position: absolute;
