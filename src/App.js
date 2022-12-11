@@ -28,7 +28,14 @@ function App() {
             <Hero src='hero1.mp4' />
             <Services />
             <ImageContentModule
-                imgSrc='#'
+                imgSrc='dev.jpg'
+                altTxt=''
+                heading='Super Dope Heading'
+                content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
+            />
+            <ImageContentModule
+                imgRight='right'
+                imgSrc='dev.jpg'
                 altTxt=''
                 heading='Super Dope Heading'
                 content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'

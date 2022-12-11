@@ -3,7 +3,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
-import { H3Styles, H2Styles } from '../styles/Type';
+import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
 
 const Section = styled.section`
     height: auto;
@@ -74,8 +74,7 @@ const ServiceContainer = styled.div`
         }
         p {
             color: ${Variables.color1};
-            font-size: 1.75rem;
-            line-height: 25px;
+            ${PSecondary}
         }
         span {
             ${H2Styles}

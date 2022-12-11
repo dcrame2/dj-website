@@ -13,7 +13,7 @@ export const MediaQueries = {
 export const Container = css`
     margin: 0 auto;
     max-width: ${Variables.maxWidth};
-    padding: 0 75px;
+    padding: 0 55px;
 
     @media (min-width: ${Variables.desktopW}) {
         padding: 0 25px;
