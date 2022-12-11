@@ -1,6 +1,7 @@
 import Navigation from './components/Navigation.jsx';
-// import LinkButton from "./sub_components/LinkButton";
+import Contact from './components/Contact';
 import Services from './components/Services';
+import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
 import './global.css';
 import { useState } from 'react';
@@ -26,6 +27,8 @@ function App() {
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
             <Hero src='hero1.mp4' />
             <Services />
+            <ImageContentModule />
+            <Contact />
         </>
     );
 }
