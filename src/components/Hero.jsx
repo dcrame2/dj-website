@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
+import { H1Styles, PBaseStyles } from '../styles/Type';
 
 const Section = styled.section`
     width: 100vw;
@@ -13,6 +14,7 @@ const Section = styled.section`
 
 const InnerSection = styled.div`
     ${Container}
+    height: 100%;
 `;
 
 const HeroBg = styled.video`
@@ -20,6 +22,8 @@ const HeroBg = styled.video`
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
 
@@ -49,26 +53,22 @@ const ContentContainer = styled.div`
     top: 35%;
     gap: 20px;
     max-width: 700px;
+    width: 100%;
     left: 10%;
-`;
 
-const Title = styled.h1`
-    font-size: 5rem;
-    color: #fff;
-    //   position: absolute;
-    //   z-index: 1;
-
-    @media screen and (max-width: 767px) {
-        font-size: 3rem;
+    @media ${MediaQueries.tablet} {
+        max-width: 400px;
     }
-`;
 
-const Para = styled.h2`
-    font-size: 2rem;
-    color: #ccc;
+    @media ${MediaQueries.mobile} {
+        max-width: 300px;
+    }
 
-    @media screen and (max-width: 767px) {
-        font-size: 1.5rem;
+    h1 {
+        ${H1Styles}
+    }
+    h2 {
+        ${PBaseStyles}
     }
 `;
 
@@ -79,8 +79,8 @@ const Hero = () => {
             <OpaqueFilter />
             <InnerSection>
                 <ContentContainer>
-                    <Title>Welcome to Digital Joy</Title>
-                    <Para>We make badass shit for the web</Para>
+                    <h1>Welcome to Digital Joy</h1>
+                    <h2>We make badass shit for the web</h2>
                 </ContentContainer>
             </InnerSection>
             {/* <HeroBg />; */}

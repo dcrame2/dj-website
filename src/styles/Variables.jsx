@@ -19,4 +19,7 @@ export const Variables = {
     //
     black: 'black',
     white: '#ffff',
+
+    // Type
+    joseph: 'Josefin Sans, sans-serif',
 };

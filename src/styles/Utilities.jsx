@@ -7,7 +7,7 @@ export const MediaQueries = {
     tabletOnly: `(max-width: ${desktopWidthInt - 1}px) and (min-width: ${
         mobileWidthInt + 1
     }px)`,
-    mobile: `(max-width: ${mobileWidthInt}px`,
+    mobile: `(max-width: ${mobileWidthInt}px)`,
 };
 
 export const Container = css`
