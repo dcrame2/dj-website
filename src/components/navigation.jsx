@@ -189,7 +189,6 @@ const data = {
 export default function Navigation() {
     const [navBackdrop, setNavBackdrop] = useState(false);
     const [hamburgerPressed, setHamburgerPressed] = useState(false);
-    const [mobileList, setMobileList] = useState(false);
 
     useEffect(() => {
         window.onscroll = function (e) {
