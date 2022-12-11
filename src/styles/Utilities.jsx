@@ -14,6 +14,10 @@ export const Container = css`
     margin: 0 auto;
     max-width: ${Variables.maxWidth};
     padding: 0 75px;
+
+    @media (min-width: ${Variables.desktopW}) {
+        padding: 0 25px;
+    }
 `;
 
 export const FontStyles1 = css`
