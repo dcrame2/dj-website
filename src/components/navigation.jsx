@@ -54,10 +54,10 @@ const Nav = styled.nav`
                 &.logo {
                     max-width: 315px;
                     width: 100%;
-                    height: 100px;
+
                     img {
                         width: 100%;
-                        height: 100%;
+                        height: auto;
                     }
                 }
 
@@ -77,7 +77,7 @@ const Nav = styled.nav`
                         }
 
                         &.backdrop-active {
-                            bottom: 156px;
+                            bottom: 125px;
                         }
                     }
 
