@@ -43,7 +43,9 @@ const ICMContainer = styled.div`
             -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8};
         }
         .content {
-            margin-right: auto;
+            ${MediaQueries.desktop} {
+                margin-right: auto;
+            }
 
             h2 {
                 ${H3Styles}
@@ -63,8 +65,10 @@ const ICMContainer = styled.div`
                 flex-direction: row-reverse;
 
                 .content {
-                    margin-left: auto;
-                    margin-right: unset;
+                    @media ${MediaQueries.desktop} {
+                        margin-left: auto;
+                        margin-right: unset;
+                    }
                 }
             `}
     }
