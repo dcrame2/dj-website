@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import LinkButton from '../sub_components/LinkButton';
 import { Variables } from '../styles/Variables';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontStyles1, GlassEffect } from '../styles/Utilities';
 import { MediaQueries } from '../styles/Utilities';
 import Hamburger from '../sub_components/svg/Hamburger';
