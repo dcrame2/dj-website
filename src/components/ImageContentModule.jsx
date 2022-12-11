@@ -11,8 +11,9 @@ const ICMContainer = styled.div`
 `;
 
 export default function ImageContentModule() {
-    return;
-    <ICMContainer>
-        <div className='ICMInnerContainer'></div>
-    </ICMContainer>;
+    return (
+        <ICMContainer>
+            <div className='ICMInnerContainer'></div>
+        </ICMContainer>
+    );
 }
