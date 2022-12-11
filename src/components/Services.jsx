@@ -33,7 +33,10 @@ const ServiceContainer = styled.div`
     text-align: center;
     gap: 20px;
     padding: 20px;
-    border-radius: 6px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px 2px ${Variables.color2};
+    -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+    -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
     @media (max-width: 767px) {
       width: unset;
       margin: 0 5%;
