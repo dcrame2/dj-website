@@ -132,7 +132,6 @@ const Contact = () => {
           {/* <LinkButton type="submit" text="Submit"></LinkButton> */}
           <Button text="Submit" type="submit"></Button>
         </form>
-        <img src="map.png" />
       </div>
     </Section>
   );
