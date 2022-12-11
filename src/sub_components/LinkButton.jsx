@@ -12,7 +12,7 @@ const CustomLink = styled.a`
     position: relative;
     padding: 12px 24px;
     //opacity: 0.7;
-    background-color: ${Variables.color1};
+    background-color: ${Variables.color9};
     border-radius: 20px;
     color: ${Variables.white};
     //border: 3px solid ${Variables.white};
