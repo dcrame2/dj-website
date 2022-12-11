@@ -15,6 +15,7 @@ const ServiceContainer = styled.div`
   display: flex;
   gap: 80px;
   justify-content: center;
+
   @media (max-width: 1099px) {
     gap: 40px;
   }
@@ -35,6 +36,7 @@ const ServiceContainer = styled.div`
     gap: 20px;
     padding: 20px;
     border-radius: 15px;
+
     box-shadow: 1px 1px 10px 2px ${Variables.color2};
     -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
     -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};

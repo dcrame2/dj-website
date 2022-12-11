@@ -4,6 +4,7 @@ import { Variables } from "../styles/Variables";
 import { MediaQueries } from "../styles/Utilities";
 // import LinkButton from "../sub_components/LinkButton";
 import Button from "../sub_components/Button";
+import { H3Styles, PSecondary } from "../styles/Type";
 import { Container } from "../styles/Utilities";
 
 const Section = styled.section`
@@ -33,7 +34,7 @@ const Section = styled.section`
       }
 
       p {
-        font-size: 1.75rem;
+        ${PSecondary}
         color: ${Variables.white};
         line-height: 25px;
         margin-right: 5%;
@@ -60,14 +61,17 @@ const Section = styled.section`
         justify-content: center;
         align-items: center;
         gap: 20px;
-        background-color: ${Variables.color4};
+
+        color: ${Variables.white};
+        background-color: ${Variables.color2};
         border-radius: 15px;
         padding: 50px;
-        box-shadow: 1px 1px 4px 1px ${Variables.white};
-        -webkit-box-shadow: 1px 1px 4px 1px ${Variables.white};
-        -moz-box-shadow: 1px 1px 4px 1px ${Variables.white};
+        box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         @media ${MediaQueries.tablet} {
           width: 100%;
+          padding: 20px;
         }
 
         /* width: 100%; */
@@ -83,7 +87,7 @@ const Section = styled.section`
 
           label {
             width: 150px;
-            font-size: 2rem;
+            ${PSecondary}
             text-align: left;
           }
 
@@ -92,13 +96,13 @@ const Section = styled.section`
             text-indent: 10px;
             outline: none;
             font-size: 1.5rem;
-            background-color: ${Variables.color5};
+            background-color: transparent;
             border-radius: 8px;
             width: 500px;
             border: 2px solid ${Variables.color1};
-            box-shadow: 1px 1px 4px 1px ${Variables.color5};
+            /* box-shadow: 1px 1px 4px 1px ${Variables.color5};
             -webkit-box-shadow: 1px 1px 4px 1px ${Variables.color5};
-            -moz-box-shadow: 1px 1px 4px 1px ${Variables.color5};
+            -moz-box-shadow: 1px 1px 4px 1px ${Variables.color5}; */
             @media ${MediaQueries.tablet} {
               width: 100%;
             }
