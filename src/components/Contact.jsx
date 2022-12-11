@@ -34,6 +34,9 @@ const Section = styled.section`
     gap: 100px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 499px) {
+      flex-direction: column;
+    }
 
     form {
       display: flex;
@@ -129,7 +132,6 @@ const Contact = () => {
           {/* <LinkButton type="submit" text="Submit"></LinkButton> */}
           <Button text="Submit" type="submit"></Button>
         </form>
-        <img src="map.png" />
       </div>
     </Section>
   );
