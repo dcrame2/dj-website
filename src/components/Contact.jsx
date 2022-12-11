@@ -62,9 +62,9 @@ const Section = styled.section`
           border-radius: 8px;
           width: 500px;
           border: 2px solid ${Variables.color2};
-          box-shadow: 1px 1px 8px 1px ${Variables.color2};
-          -webkit-box-shadow: 1px 1px 8px 1px ${Variables.color2};
-          -moz-box-shadow: 1px 1px 8px 1px ${Variables.color2};
+          box-shadow: 1px 1px 6px 1px ${Variables.color2};
+          -webkit-box-shadow: 1px 1px 6px 1px ${Variables.color2};
+          -moz-box-shadow: 1px 1px 6px 1px ${Variables.color2};
         }
         input {
           height: 40px;
