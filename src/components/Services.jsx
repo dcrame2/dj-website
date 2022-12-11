@@ -42,7 +42,7 @@ const ServiceContainer = styled.div`
     -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
     @media (max-width: 767px) {
       width: unset;
-      margin: 0 5%;
+      /* margin: 0 5%; */
       padding: 15px;
     }
     img {

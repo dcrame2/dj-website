@@ -19,6 +19,10 @@ const Section = styled.section`
 
   .ContactInnerContainer {
     ${Container}
+    @media ${MediaQueries.mobile} {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
 
     .form-info {
       display: flex;
