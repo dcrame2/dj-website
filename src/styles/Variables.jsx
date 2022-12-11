@@ -26,4 +26,7 @@ export const Variables = {
 
     // Type
     joseph: 'Josefin Sans, sans-serif',
+
+    // Company name
+    companyName: 'Digital Jam',
 };

@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
-import { MediaQueries } from '../styles/Utilities';
+import { MediaQueries, Container } from '../styles/Utilities';
+
+const Footer = styled.footer``;
+
+const FooterInner = styled.div`
+    ${Container}
+`;
 
 export default function Footer() {
-    return <div>Footer</div>;
+    return (
+        <Footer>
+            <FooterInner></FooterInner>
+        </Footer>
+    );
 }
