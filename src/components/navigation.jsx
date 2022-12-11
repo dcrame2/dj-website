@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import LinkButton from '../sub_components/LinkButton';
 import { Variables } from '../styles/Variables';
 import { useState, useEffect } from 'react';
-import { FontStyles1 } from '../styles/Utilities';
+import { FontStyles1, GlassEffect } from '../styles/Utilities';
 import { MediaQueries } from '../styles/Utilities';
+import Hamburger from '../sub_components/svg/Hamburger';
 
 const Nav = styled.nav`
     position: fixed;
@@ -28,17 +29,15 @@ const Nav = styled.nav`
             top: 0;
             transition: height ease-in 0.2s;
             height: 0%;
-
-            backdrop-filter: grayscale(0.2) blur(10px);
-            box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08);
-            border-top: 2px solid rgba(225, 225, 225, 0.3);
-            border-left: 2px solid rgba(225, 225, 225, 0.1);
-            border-right: 1px solid rgba(225, 225, 225, 0.2);
+            ${GlassEffect}
         }
 
         &.active::after {
             height: 100%;
             transition: height ease-out 0.2s;
+        }
+        &.panel-active::after {
+            height: 100vh;
         }
 
         ul {
@@ -63,23 +62,62 @@ const Nav = styled.nav`
 
                 &.primary-links {
                     width: 100%;
+                    @media ${MediaQueries.tablet} {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        height: 0;
+                        transition: height ease 0.3s;
+                        overflow: hidden;
+                        transition: height ease 0.3s;
+                        &.active {
+                            height: 100vh;
+                        }
+
+                        &.backdrop-active {
+                            top: 123px;
+                        }
+                    }
 
                     ul.primary-links-list {
                         display: flex;
                         justify-content: center;
 
                         @media ${MediaQueries.tablet} {
-                            display: none;
+                            flex-direction: column;
+                            align-items: center;
+                            height: 100%;
+
+                            li.primary-links-list-item {
+                                ul {
+                                    height: 68vh;
+                                }
+                            }
                         }
 
                         li {
                             margin-left: auto;
 
+                            @media ${MediaQueries.tablet} {
+                                margin-left: unset;
+                            }
+
                             ul {
+                                @media ${MediaQueries.tablet} {
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    height: 100%;
+                                    gap: 10%;
+                                }
                                 li.underline {
                                     margin: 0 25px;
                                     display: flex;
                                     align-items: center;
+
+                                    @media ${MediaQueries.tablet} {
+                                        justify-content: center;
+                                    }
 
                                     a {
                                         text-decoration: unset;
@@ -110,6 +148,11 @@ const Nav = styled.nav`
                         li.cta {
                             flex-shrink: 0;
                             margin-left: auto;
+
+                            @media ${MediaQueries.tablet} {
+                                margin-left: unset;
+                                //margin-bottom: calc(20vh);
+                            }
                         }
                     }
                 }
@@ -117,9 +160,17 @@ const Nav = styled.nav`
                     @media ${MediaQueries.desktop} {
                         display: none;
                     }
+                    transition: transform ease 0.3s;
+
+                    &.active {
+                        transform: rotate(90deg);
+                        transition: transform ease 0.3s;
+                    }
+
                     button {
                         background-color: unset;
                         border: unset;
+                        cursor: pointer;
                     }
                 }
             }
@@ -137,6 +188,8 @@ const data = {
 
 export default function Navigation() {
     const [navBackdrop, setNavBackdrop] = useState(false);
+    const [hamburgerPressed, setHamburgerPressed] = useState(false);
+    const [mobileList, setMobileList] = useState(false);
 
     useEffect(() => {
         window.onscroll = function (e) {
@@ -148,18 +201,35 @@ export default function Navigation() {
         };
     }, []);
 
+    const HamburgerToggle = () => {
+        if (hamburgerPressed) {
+            setHamburgerPressed(false);
+        } else {
+            setHamburgerPressed(true);
+        }
+    };
+
     return (
         <Nav>
-            <div className={`wrapper ${navBackdrop ? 'active' : ''}`}>
+            <div
+                className={`wrapper 
+                    ${navBackdrop ? 'active' : ''}
+                    ${hamburgerPressed ? 'panel-active' : ''}`}
+            >
                 <ul>
                     <li className='logo'>
                         <a href='#'>
                             <img src='' alt='Logo'></img>
                         </a>
                     </li>
-                    <li className='primary-links'>
+                    <li
+                        className={`primary-links 
+                        ${navBackdrop ? 'backdrop-active' : ''}
+                        ${hamburgerPressed ? 'active' : ''}
+                        `}
+                    >
                         <ul className='primary-links-list'>
-                            <li>
+                            <li className='primary-links-list-item'>
                                 <ul>
                                     {data.links.map((link, index) => {
                                         return (
@@ -180,23 +250,13 @@ export default function Navigation() {
                             </li>
                         </ul>
                     </li>
-                    <li className='menu-toggle'>
-                        <button>
-                            <svg
-                                width='40'
-                                height='40'
-                                fill='none'
-                                viewBox='0 0 15 15'
-                            >
-                                <path
-                                    width='100%'
-                                    height='100%'
-                                    fill={`${Variables.white}`}
-                                    fill-rule='evenodd'
-                                    d='M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1h-12ZM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5Zm0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5Z'
-                                    clip-rule='evenodd'
-                                />
-                            </svg>
+                    <li
+                        className={`menu-toggle ${
+                            hamburgerPressed ? 'active' : ''
+                        }`}
+                    >
+                        <button onClick={HamburgerToggle}>
+                            <Hamburger></Hamburger>
                         </button>
                     </li>
                 </ul>
