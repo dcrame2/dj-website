@@ -53,7 +53,7 @@ const Contact = () => {
     <Section>
       <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New DJ Submission!" />
-        <input type="hidden" name="_cc" value="jtully@gmail.com" />
+        {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
         <input type="hidden" name="_captcha" value="false" />
         {/* <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"></input> */}
 
@@ -73,9 +73,8 @@ const Contact = () => {
           <label htmlFor="message">Message:*</label>
           <textarea type="text" name="message" required />
         </div>
-        <LinkButton text="Submit">
-          <button type="submit"></button>
-        </LinkButton>
+        {/* <LinkButton type="submit" text="Submit"></LinkButton> */}
+        <button type="submit">Send</button>
       </form>
     </Section>
   );
