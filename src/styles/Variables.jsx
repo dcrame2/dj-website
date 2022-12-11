@@ -16,6 +16,7 @@ export const Variables = {
     color2: '#C147E9', // dark purple
     color3: '#FCF9BE', // light yellow-white
     color4: '#46C2CB', // teal aqua
+    color5: '#4D4C7D', // pale purple
     //
     black: 'black',
     white: '#ffff',

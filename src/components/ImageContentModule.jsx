@@ -5,8 +5,14 @@ import Button from '../sub_components/Button';
 const ICMContainer = styled.div`
     position: relative;
     width: 100%;
+
+    .ICMInnerContainer {
+    }
 `;
 
 export default function ImageContentModule() {
-    return <ICMContainer></ICMContainer>;
+    return;
+    <ICMContainer>
+        <div className='ICMInnerContainer'></div>
+    </ICMContainer>;
 }
