@@ -53,9 +53,14 @@ const Contact = () => {
     <Section>
       <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New DJ Submission!" />
-        {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
+        <input type="hidden" name="_cc" value="jtully97@gmail.com" />
         <input type="hidden" name="_captcha" value="false" />
-        {/* <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"></input> */}
+        <input type="hidden" name="_template" value="table"></input>
+        <input
+          type="hidden"
+          name="_next"
+          value="http://localhost:3000/thanks.html"
+        ></input>
 
         <div>
           <label htmlFor="fname">First Name:*</label>
