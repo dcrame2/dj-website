@@ -51,7 +51,7 @@ const ServiceContainer = styled.div`
       position: relative;
       //   top: -80px;
       width: auto;
-      height: 150px;
+      height: 250px;
       //   border-radius: 50%;
       padding: 5px;
       //   border: 5px solid ${Variables.color1};
@@ -77,9 +77,9 @@ const ServiceContainer = styled.div`
     }
 
     &:nth-child(2) {
-      img {
-        border: 5px solid ${Variables.color3};
-      }
+      //   img {
+      //     border: 5px solid ${Variables.color3};
+      //   }
 
       h3 {
         color: ${Variables.white};
@@ -93,9 +93,9 @@ const ServiceContainer = styled.div`
     }
 
     &:nth-child(3) {
-      img {
-        border: 5px solid ${Variables.color1};
-      }
+      //   img {
+      //     border: 5px solid ${Variables.color1};
+      //   }
 
       h3 {
         color: ${Variables.white};
@@ -127,19 +127,19 @@ const data = {
   services: [
     {
       num: "01",
-      img: "businessman-working-on-laptop.png",
+      img: "icon1.png",
       name: "Development",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
     },
     {
       num: "02",
-      img: "dev.jpg",
+      img: "icon2.png",
       name: "Design",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
     },
     {
       num: "03",
-      img: "dev.jpg",
+      img: "icon3.png",
       name: "Maintenance",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?",
     },
