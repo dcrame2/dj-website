@@ -52,11 +52,12 @@ const Nav = styled.nav`
         align-items: center;
 
         &.logo {
-          max-width: 285px;
+          max-width: 315px;
           width: 100%;
+          height: 100px;
           img {
             width: 100%;
-            height: auto;
+            height: 100%;
           }
         }
 
@@ -207,7 +208,7 @@ export default function Navigation({ backdrop }) {
         <ul>
           <li className="logo">
             <a href="#">
-              <img src="" alt="Logo"></img>
+              <img src={`${Variables.logo2Url}`} alt="Logo"></img>
             </a>
           </li>
           <li
