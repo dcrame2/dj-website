@@ -23,11 +23,20 @@ const TestimonialsSection = styled.section`
     }
 
     .carousel-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
       &.active {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
+      }
+
+      &.carousel-fade {
+        transform: unset;
       }
 
       img {
@@ -56,7 +65,7 @@ const TestimonialsSection = styled.section`
 const Testimonials = () => {
   return (
     <TestimonialsSection>
-      <Carousel>
+      <Carousel fade>
         <Carousel.Item interval={6000}>
           <img className="d-block" src="avatar1.png" alt="First slide" />
           <Carousel.Caption>
@@ -65,14 +74,9 @@ const Testimonials = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={6000}>
-          <img
-            className="d-block"
-            src="avatar2.png"
-            // src="holder.js/800x400?text=Second slide&bg=282c34"
-            alt="Second slide"
-          />
+          <img className="d-block" src="avatar2.png" alt="Second slide" />
           <Carousel.Caption>
-            <h3>Super Sick Testimonial </h3>
+            <h3>Super T'd Testimonial </h3>
             <p>
               Josh eats ass, specifically black booty. The darker the better as
               he says.{" "}
@@ -82,7 +86,7 @@ const Testimonials = () => {
         <Carousel.Item interval={6000}>
           <img className="d-block" src="avatar3.png" alt="Third slide" />
           <Carousel.Caption>
-            <h3>Super Sick Testimonial </h3>
+            <h3>Lit ass Testimonial </h3>
             <p>
               I need more caffiene. Guess Ill crack a mfk celsuis bc why not.
             </p>
