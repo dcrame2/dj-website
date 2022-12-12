@@ -31,6 +31,7 @@ const Nav = styled.nav`
             top: 0;
             transition: height ease-in 0.2s;
             height: 0%;
+            height: 125px;
             ${BlurEffect}
         }
 
