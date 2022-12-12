@@ -29,7 +29,7 @@ const Nav = styled.nav`
             left: 0;
             right: 0;
             top: -100%;
-            transition: top ease-in 0.2s;
+            transition: all ease-in 0.2s;
             max-height: 125px;
             height: 100%;
             ${BlurEffect}
@@ -38,12 +38,13 @@ const Nav = styled.nav`
         &.active::before {
             background: inherit;
             top: 0;
-            transition: top ease-out 0.2s;
+            transition: all ease-out 0.2s;
         }
         &.panel-active::before {
             max-height: unset;
             background: inherit;
             height: 100vh;
+            top: 0;
         }
 
         ul {
