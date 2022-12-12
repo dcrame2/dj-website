@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
 import { MediaQueries, Container } from '../styles/Utilities';
 import { useEffect, useState } from 'react';
-import { PSmallStyles } from '../styles/Type';
+import { PSmallStyles, H3Styles } from '../styles/Type';
 
 const FooterElm = styled.footer`
     position: relative;
@@ -32,11 +32,40 @@ const FooterElm = styled.footer`
 const FooterInner = styled.div`
     ${Container}
     display: grid;
-    grid-template-columns: 2fr;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    gap: 50px;
+
+    @media ${MediaQueries.mobile} {
+        grid-template-columns: 1fr;
+    }
 
     img {
+        max-width: 300px;
+        width: 100%;
     }
-    div {
+    ul {
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        padding-top: 20vh;
+
+        @media ${MediaQueries.mobile} {
+            padding-top: unset;
+        }
+
+        li {
+            margin-bottom: 4px;
+
+            h2 {
+                ${H3Styles}
+            }
+            a {
+                ${PSmallStyles}
+            }
+        }
     }
 `;
 
@@ -49,15 +78,30 @@ export default function Footer() {
         getYear();
     }, []);
 
+    const data = {
+        links: [
+            { href: '#', text: 'Services' },
+            { href: '#', text: 'Testimonials' },
+            { href: '#', text: 'About' },
+        ],
+    };
+
     return (
         <FooterElm>
             <FooterInner>
-                <img src='' alt=''></img>
-                {/* <ul>
+                <img src={Variables.logo2Url} alt=''></img>
+                <ul>
                     <li>
-                        <a href=''></a>
+                        <h2>Hot Links</h2>
                     </li>
-                </ul> */}
+                    {data.links.map((link, index) => {
+                        return (
+                            <li key={`footerLink${index}`}>
+                                <a href={`${link.href}`}>{link.text}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
             </FooterInner>
             <div className='bottom-color-strip'>
                 <div>
