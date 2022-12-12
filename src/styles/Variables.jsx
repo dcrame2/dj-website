@@ -32,7 +32,7 @@ export const Variables = {
   joseph: "Josefin Sans, sans-serif",
 
   // Company name
-  companyName: "Digital Jammies",
+  companyName: "Digital Jamms",
 
   // Logos
   logo1Url: "digitaljam-logo.png",
