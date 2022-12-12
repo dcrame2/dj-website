@@ -101,7 +101,7 @@ const Hero = () => {
         muted
         loop
         autoPlay
-        playsinline
+        playsInline
       ></HeroBg>
       <OpaqueFilter />
       <InnerSection>
