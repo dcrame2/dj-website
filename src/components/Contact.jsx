@@ -29,8 +29,10 @@ const Section = styled.section`
       flex-direction: column;
       gap: 10px;
       margin-bottom: 50px;
-      @media ${MediaQueries.mobile} {
+      width: 40%;
+      @media ${MediaQueries.tablet} {
         margin-bottom: 20px;
+        width: 100%;
       }
 
       h2 {
@@ -48,12 +50,19 @@ const Section = styled.section`
     .form-wrapper {
       display: flex;
       flex-direction: row;
-      gap: 250px;
+      gap: 170px;
       justify-content: center;
       align-items: center;
+
       @media ${MediaQueries.tablet} {
         flex-direction: column;
         gap: 20px;
+        /* max-width: 540px; */
+        background-color: ${Variables.color2};
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
       }
       /* @media (max-width: 499px) {
      
@@ -76,6 +85,9 @@ const Section = styled.section`
         @media ${MediaQueries.tablet} {
           width: 100%;
           padding: 20px;
+          box-shadow: unset;
+          -webkit-box-shadow: unset;
+          -moz-box-shadow: unset;
         }
 
         /* width: 100%; */
@@ -135,6 +147,10 @@ const Section = styled.section`
 `;
 
 const Contact = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("refresh prevented");
+  };
   return (
     <Section id="contact">
       <div className="ContactInnerContainer">
@@ -143,14 +159,16 @@ const Contact = () => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
             deserunt facere accusamus consectetur ipsam voluptates adipisci
-            libero aliquid id nihil. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quasi deserunt facere accusamus consectetur ipsam
-            voluptates adipisci libero aliquid id nihil.
+            libero aliquid id nihil.
           </p>
         </div>
         <div className="form-wrapper">
           <img src="businessman-working-on-laptop.png" />
-          <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
+          <form
+            onSubmit={onSubmit}
+            action="https://formsubmit.co/dcrame2@gmail.com"
+            method="POST"
+          >
             <input type="hidden" name="_subject" value="New DJ Submission!" />
             {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
             <input type="hidden" name="_captcha" value="false" />
@@ -158,7 +176,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3000/thanks.html"
+              value="http://localhost:3000/"
             ></input>
 
             <div>
