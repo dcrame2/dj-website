@@ -51,7 +51,8 @@ const Section = styled.section`
             -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
             -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
 
-            &:hover {
+            &:hover,
+            &:focus {
                 background-color: ${Variables.color5};
                 transition: background-color ease 0.45s;
                 img {
