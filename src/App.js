@@ -12,7 +12,27 @@ function App() {
     const [navBackdrop, setNavBackdrop] = useState(false);
     const [animateElements, setAnimateElements] = useState();
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        let body = document.body,
+            html = document.documentElement;
+
+        let height = Math.max(
+            body.scrollHeight,
+            body.offsetHeight,
+            html.clientHeight,
+            html.scrollHeight,
+            html.offsetHeight
+        );
+        console.log('height: ' + height);
+    }, []);
+
+    const windowResizeListener = () => {
+        window.onresize = function (e) {
+            console.log(window.innerWidth);
+        };
+    };
+
+    windowResizeListener();
 
     const scrollListener = () => {
         window.onscroll = function (e) {

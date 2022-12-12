@@ -27,9 +27,8 @@ export const FontStyles1 = css`
 `;
 
 export const GlassEffect = css`
-    backdrop-filter: blur(90px);
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0.08);
-    -webkit-backdrop-filter: grayscale(0.2) blur(90px);
+     background-color: rgba(255, 255, 255, 0.15);
+     backdrop-filter: blur(100px);
 `;
 
 export const BlurEffect = css`

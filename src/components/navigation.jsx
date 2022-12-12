@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import LinkButton from '../sub_components/LinkButton';
 import { Variables } from '../styles/Variables';
 import { useState } from 'react';
-import { FontStyles1, GlassEffect } from '../styles/Utilities';
+import { FontStyles1, GlassEffect, BlurEffect } from '../styles/Utilities';
 import { MediaQueries } from '../styles/Utilities';
 import Hamburger from '../sub_components/svg/Hamburger';
 
@@ -18,8 +18,10 @@ const Nav = styled.nav`
         display: flex;
         padding: 28px 26px;
         justify-content: center;
+        background: inherit;
 
-        &::after {
+        &::before {
+            background: inherit;
             content: '';
             position: absolute;
             z-index: -1;
@@ -29,14 +31,16 @@ const Nav = styled.nav`
             top: 0;
             transition: height ease-in 0.2s;
             height: 0%;
-            ${GlassEffect}
+            ${BlurEffect}
         }
 
-        &.active::after {
+        &.active::before {
+            background: inherit;
             height: 100%;
             transition: height ease-out 0.2s;
         }
-        &.panel-active::after {
+        &.panel-active::before {
+            background: inherit;
             height: 100vh;
         }
 
