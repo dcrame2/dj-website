@@ -50,7 +50,7 @@ const Section = styled.section`
     .form-wrapper {
       display: flex;
       flex-direction: row;
-      gap: 250px;
+      gap: 170px;
       justify-content: center;
       align-items: center;
 
