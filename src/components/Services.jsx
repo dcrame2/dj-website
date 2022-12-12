@@ -12,16 +12,18 @@ const Section = styled.section`
 `;
 
 const ServiceContainer = styled.div`
+  ${Container}
   display: flex;
   gap: 80px;
   justify-content: center;
 
-  @media (max-width: 1099px) {
+  @media ${MediaQueries.tablet} {
     gap: 40px;
-  }
-  @media (max-width: 767px) {
     flex-direction: column;
-    gap: 40px;
+  }
+  @media ${MediaQueries.mobile} {
+    padding-right: unset;
+    padding-left: unset;
   }
   div {
     display: flex;
@@ -36,6 +38,7 @@ const ServiceContainer = styled.div`
     gap: 20px;
     padding: 20px;
     border-radius: 15px;
+    /* max-width: 350px; */
 
     box-shadow: 1px 1px 10px 2px ${Variables.color2};
     -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
