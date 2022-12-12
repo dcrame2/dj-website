@@ -29,6 +29,7 @@ function App() {
         <>
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
             <Hero src='hero1.mp4' />
+            <ModuleBlender size='large' />
             <Services />
             <ModuleBlender />
             <ImageContentModule
@@ -46,6 +47,7 @@ function App() {
             />
             <ModuleBlender />
             <Contact />
+            <ModuleBlender size='large' />
             <Footer />
         </>
     );

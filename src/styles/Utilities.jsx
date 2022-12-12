@@ -33,6 +33,6 @@ export const GlassEffect = css`
 `;
 
 export const BlurEffect = css`
-    backdrop-filter: grayscale(0.2) blur(10px);
+    backdrop-filter: grayscale(0) blur(10px);
     box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0.08);
 `;
