@@ -135,6 +135,10 @@ const Section = styled.section`
 `;
 
 const Contact = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("refresh prevented");
+  };
   return (
     <Section id="contact">
       <div className="ContactInnerContainer">
@@ -150,7 +154,11 @@ const Contact = () => {
         </div>
         <div className="form-wrapper">
           <img src="businessman-working-on-laptop.png" />
-          <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
+          <form
+            onSubmit={onSubmit}
+            action="https://formsubmit.co/dcrame2@gmail.com"
+            method="POST"
+          >
             <input type="hidden" name="_subject" value="New DJ Submission!" />
             {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
             <input type="hidden" name="_captcha" value="false" />
@@ -158,7 +166,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3000/thanks.html"
+              value="http://localhost:3000/"
             ></input>
 
             <div>
