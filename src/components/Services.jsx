@@ -20,7 +20,7 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 85px;
+    gap: 42px;
     justify-content: center;
 
     @media ${MediaQueries.tablet} {
@@ -57,10 +57,12 @@ const Section = styled.section`
       img {
         position: relative;
         width: auto;
-        /* max-width: 250px; */
+        max-width: 250px;
         height: 250px;
-        /* padding: 5px; */
-        @media (max-width: 767px) {
+        @media ${MediaQueries.tablet} {
+          max-width: 250px;
+        }
+        @media ${MediaQueries.mobile} {
           height: 175px;
         }
       }
