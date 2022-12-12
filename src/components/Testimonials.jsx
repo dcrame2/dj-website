@@ -27,7 +27,8 @@ const TestimonialsSection = styled.section`
       flex-direction: column;
       align-items: center;
       gap: 20px;
-
+      transform: unset;
+      transition: unset;
       &.active {
         display: flex;
         flex-direction: column;
