@@ -20,7 +20,7 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 85px;
+    gap: 42px;
     justify-content: center;
 
     @media ${MediaQueries.tablet} {
@@ -49,6 +49,15 @@ const Section = styled.section`
       box-shadow: 1px 1px 10px 2px ${Variables.color2};
       -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
       -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+
+      &:hover {
+        background-color: ${Variables.color5};
+        img {
+          transform: rotateY(360deg);
+          /* top: -75px; */
+          transition: 3s;
+        }
+      }
       @media (max-width: 767px) {
         width: unset;
         margin: 0 5%;
@@ -57,10 +66,13 @@ const Section = styled.section`
       img {
         position: relative;
         width: auto;
-        /* max-width: 250px; */
+        max-width: 250px;
         height: 250px;
-        /* padding: 5px; */
-        @media (max-width: 767px) {
+
+        @media ${MediaQueries.tablet} {
+          max-width: 250px;
+        }
+        @media ${MediaQueries.mobile} {
           height: 175px;
         }
       }
