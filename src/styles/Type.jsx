@@ -51,3 +51,9 @@ export const PSecondary = css`
     font-size: 1.75rem;
     line-height: 25px;
 `;
+
+export const PSmallStyles = css`
+    font-family: ${Variables.joseph};
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+`;
