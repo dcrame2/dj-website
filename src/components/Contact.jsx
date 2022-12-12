@@ -54,6 +54,11 @@ const Section = styled.section`
       @media ${MediaQueries.tablet} {
         flex-direction: column;
         gap: 20px;
+        background-color: ${Variables.color2};
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
       }
       /* @media (max-width: 499px) {
      
@@ -76,6 +81,9 @@ const Section = styled.section`
         @media ${MediaQueries.tablet} {
           width: 100%;
           padding: 20px;
+          box-shadow: unset;
+          -webkit-box-shadow: unset;
+          -moz-box-shadow: unset;
         }
 
         /* width: 100%; */
