@@ -35,5 +35,6 @@ export const Variables = {
   // Logos
   logo1Url: "digitaljam-logo.png",
   logo2Url: "digitaljam-logo-removebg-preview.png",
-  logo3Url: "white-long.png",
+  logo3Url: "white-logo.png",
+  logo4Url: "white-logo-left.png",
 };
