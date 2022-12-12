@@ -54,7 +54,7 @@ const Section = styled.section`
         background-color: ${Variables.color5};
         img {
           transform: rotateY(360deg);
-          top: -75px;
+          /* top: -75px; */
           transition: 3s;
         }
       }
