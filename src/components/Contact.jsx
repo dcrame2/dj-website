@@ -29,8 +29,10 @@ const Section = styled.section`
       flex-direction: column;
       gap: 10px;
       margin-bottom: 50px;
-      @media ${MediaQueries.mobile} {
+      width: 40%;
+      @media ${MediaQueries.tablet} {
         margin-bottom: 20px;
+        width: 100%;
       }
 
       h2 {
@@ -51,9 +53,11 @@ const Section = styled.section`
       gap: 250px;
       justify-content: center;
       align-items: center;
+
       @media ${MediaQueries.tablet} {
         flex-direction: column;
         gap: 20px;
+        /* max-width: 540px; */
         background-color: ${Variables.color2};
         border-radius: 15px;
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
@@ -155,9 +159,7 @@ const Contact = () => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
             deserunt facere accusamus consectetur ipsam voluptates adipisci
-            libero aliquid id nihil. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quasi deserunt facere accusamus consectetur ipsam
-            voluptates adipisci libero aliquid id nihil.
+            libero aliquid id nihil.
           </p>
         </div>
         <div className="form-wrapper">

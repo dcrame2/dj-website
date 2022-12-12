@@ -25,8 +25,9 @@ const HeroBg = styled.video`
   bottom: 0;
   width: 100%;
   height: 100%;
-
-  //   background: red;
+  @media ${MediaQueries.mobile} {
+    background: black;
+  }
 `;
 
 const OpaqueFilter = styled.div`
