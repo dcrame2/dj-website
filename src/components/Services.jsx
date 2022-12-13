@@ -194,7 +194,7 @@ const data = {
 
 const Services = () => {
     return (
-        <Section>
+        <Section id='services'>
             <div className='ServiceContainer'>
                 {data.services.map((service, i) => {
                     return (

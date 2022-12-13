@@ -18,7 +18,7 @@ const Blender = styled.div`
         ${(props) =>
             props.size === 'large' &&
             css`
-                height: 80px;
+                height: 150px;
             `}
     }
 `;

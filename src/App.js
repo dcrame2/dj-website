@@ -5,15 +5,18 @@ import ModuleBlender from './sub_components/ModuleBlender';
 import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
 import Footer from './components/Footer.jsx';
+import SlideOutLink from './components/SlideOutLink';
 import './global.css';
 import { useState, useEFfect, useEffect } from 'react';
 
 function App() {
     const [navBackdrop, setNavBackdrop] = useState(false);
     const [animateElements, setAnimateElements] = useState();
+    const [scrollY, setScrollY] = useState();
 
     const scrollListener = () => {
         window.onscroll = function (e) {
+            setScrollY(this.scrollY);
             // Nav functionality
             if (this.scrollY > 83) {
                 setNavBackdrop(true);
@@ -28,6 +31,7 @@ function App() {
     return (
         <>
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
+            <SlideOutLink scrollY={scrollY} href='#services' />
             <Hero src='hero1.mp4' />
             <ModuleBlender size='large' />
             <Services />
