@@ -24,7 +24,7 @@ export const Variables = {
     color10: '#472183', // dark purple
     color11: '#434242', // medium gray
     color12: '#222222', // dark gray
-    color13: '#FF1E1E', // emergency red
+    color13: '#EB1D36', // emergency red
 
     black: 'black',
     white: '#ffff',
