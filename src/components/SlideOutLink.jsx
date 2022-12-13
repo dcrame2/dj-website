@@ -37,7 +37,7 @@ const Link = styled.a`
     transition: right ease 0.4s, transform ease 0.5s;
     border: 4px solid ${Variables.white};
 
-    &::before {
+    /* &::before {
         content: '';
         position: absolute;
         top: 0;
@@ -49,7 +49,7 @@ const Link = styled.a`
         z-index: -10;
         border-radius: 50%;
         background-color: gray;
-    }
+    } */
 
     &.active {
         right: 20px;
