@@ -32,7 +32,12 @@ function App() {
     return (
         <>
             <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
-            <SlideOutLink scrollY={scrollY} href='#services' />
+            <SlideOutLink
+                animateStartId='services'
+                scrollY={scrollY}
+                href='#services'
+                text='services'
+            />
             <Hero src='hero1.mp4' />
             <ModuleBlender size='large' />
             <Services />
@@ -52,6 +57,7 @@ function App() {
             />
             <ModuleBlender />
             <Testimonials />
+            <ModuleBlender />
             <Contact />
             <ModuleBlender size='large' />
             <Footer />

@@ -22,7 +22,7 @@ const Link = styled.a`
     bottom: 20px;
     z-index: 10;
     right: -100%;
-    background-color: ${Variables.color9};
+    background-color: ${Variables.color13};
     color: ${Variables.white};
     text-decoration: unset;
     overflow: hidden;
@@ -30,10 +30,31 @@ const Link = styled.a`
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: right ease 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-180deg);
+    transition: right ease 0.4s, transform ease 0.5s;
+    border: 4px solid ${Variables.white};
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        border-radius: 50%;
+        background-color: gray;
+    }
 
     &.active {
         right: 20px;
-        transition: right ease 0.3s;
+        transition: right ease 0.4s, transform ease 0.5s;
+        transform: rotate(0);
     }
 
     span {
@@ -41,6 +62,7 @@ const Link = styled.a`
         z-index: 1;
         text-transform: uppercase;
         font-weight: bold;
+        transform: rotate(-15deg);
     }
 
     &:after {
@@ -65,6 +87,7 @@ const Link = styled.a`
             transition: height ease-out 0.1s;
         }
     }
+    // WORK IN PROGRESS
     @keyframes focusAnimation {
         0% {
             height: 70%;
@@ -96,12 +119,26 @@ const Link = styled.a`
     }
 `;
 
+// Pure Elegance
 export default function SlideOutLink({ ...props }) {
-    //console.log(props.scrollY);
     const [active, setActive] = useState(false);
+    const [triggerDistance, setTriggerDistance] = useState();
 
+    // Grab element by id through prop animateStartId : string
+    // setTriggerDistance state
     useEffect(() => {
-        if (props.scrollY > 600) {
+        let selectedElement = document.getElementById(
+            `${props.animateStartId}`
+        );
+        setTriggerDistance(
+            window.pageYOffset + selectedElement.getBoundingClientRect().top
+        );
+    }, []);
+
+    // Access scrollY prop for current distance, if scrollY distance
+    // is larger than trigger distance state value set by above useEffect
+    useEffect(() => {
+        if (props.scrollY > triggerDistance) {
             setActive(true);
         } else {
             setActive(false);

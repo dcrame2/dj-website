@@ -41,8 +41,8 @@ const Section = styled.section`
             justify-content: center;
             align-items: center;
             text-align: center;
-            gap: 20px;
-            padding: 20px;
+            gap: 10px;
+            padding: 45px;
             border-radius: 15px;
             max-width: 540px;
             transition: background-color ease 0.7s;
