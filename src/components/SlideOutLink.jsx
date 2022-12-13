@@ -97,7 +97,7 @@ const Link = styled.a`
 `;
 
 export default function SlideOutLink({ ...props }) {
-    console.log(props.scrollY);
+    //console.log(props.scrollY);
     const [active, setActive] = useState(false);
 
     useEffect(() => {

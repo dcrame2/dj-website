@@ -5,6 +5,7 @@ import ModuleBlender from './sub_components/ModuleBlender';
 import ImageContentModule from './components/ImageContentModule.jsx';
 import Hero from './components/Hero';
 import Footer from './components/Footer.jsx';
+import Testimonials from './components/Testimonials';
 import SlideOutLink from './components/SlideOutLink';
 import './global.css';
 import { useState, useEFfect, useEffect } from 'react';
@@ -50,6 +51,7 @@ function App() {
                 content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
             />
             <ModuleBlender />
+            <Testimonials />
             <Contact />
             <ModuleBlender size='large' />
             <Footer />
