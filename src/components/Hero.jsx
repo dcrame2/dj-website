@@ -4,6 +4,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import { H1Styles, PBaseStyles } from '../styles/Type';
+import { GlassEffect } from '../styles/Utilities';
 
 const Section = styled.section`
     width: 100vw;
@@ -46,6 +47,8 @@ const OpaqueFilter = styled.div`
 
     @media ${MediaQueries.tablet} {
         width: 100%;
+
+        ${GlassEffect}
     }
 `;
 
