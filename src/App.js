@@ -59,7 +59,7 @@ function App() {
             <Testimonials />
             <ModuleBlender />
             <Contact />
-            <ModuleBlender size='large' />
+            <ModuleBlender />
             <Footer />
         </>
     );
