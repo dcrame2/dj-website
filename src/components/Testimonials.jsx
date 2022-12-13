@@ -28,8 +28,11 @@ const TestimonialsSection = styled.section`
       align-items: center;
       gap: 20px;
       transform: unset;
-      transition: unset;
+      opacity: 0;
+      transition: opacity 0.7s ease;
       &.active {
+        transition: opacity 0.7s ease;
+        opacity: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
