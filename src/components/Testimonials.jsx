@@ -68,7 +68,7 @@ const TestimonialsSection = styled.section`
 
 const Testimonials = () => {
   return (
-    <TestimonialsSection>
+    <TestimonialsSection id="testimonials">
       <Carousel fade>
         <Carousel.Item interval={6000}>
           <img className="d-block" src="avatar1.png" alt="First slide" />

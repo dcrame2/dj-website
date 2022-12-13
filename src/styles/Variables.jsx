@@ -30,7 +30,7 @@ export const Variables = {
 
   // Type
   joseph: "Josefin Sans, sans-serif",
-
+  openSans: "Open Sans, sans-serif",
   // Company name
   companyName: "Digital Jam",
 

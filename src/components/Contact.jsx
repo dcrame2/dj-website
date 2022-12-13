@@ -90,6 +90,10 @@ const Section = styled.section`
           -moz-box-shadow: unset;
         }
 
+        h3 {
+          ${H3Styles}
+        }
+
         /* width: 100%; */
 
         div {
@@ -157,9 +161,8 @@ const Contact = () => {
         <div className="form-info">
           <h2>Contact</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-            deserunt facere accusamus consectetur ipsam voluptates adipisci
-            libero aliquid id nihil.
+            Need a website? Talk with a team member for a FREE consultation on
+            the goals of your wesbite.
           </p>
         </div>
         <div className="form-wrapper">
@@ -178,7 +181,7 @@ const Contact = () => {
               name="_next"
               value="http://localhost:3000/"
             ></input>
-
+            <h3>Talk with our team!</h3>
             <div>
               <label htmlFor="fname">First Name*</label>
               <input type="text" name="fname" required />
