@@ -5,7 +5,7 @@ import { Variables } from '../styles/Variables';
 const Wrapper = styled.div`
     display: flex;
     position: relative;
-    z-index: 2;
+    z-index: 100;
 
     &.active {
         right: 20px;
@@ -22,7 +22,7 @@ const Link = styled.a`
     bottom: 20px;
     z-index: 10;
     right: -100%;
-    background-color: ${Variables.color13};
+    background-color: ${Variables.color9};
     color: ${Variables.white};
     text-decoration: unset;
     overflow: hidden;
