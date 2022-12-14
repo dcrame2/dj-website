@@ -110,13 +110,13 @@ const Section = styled.section`
                 height: 0px;
                 opacity: 0;
                 overflow: hidden;
-                transition: height 0.45s ease-in, opacity ease-in 0.45s;
+                transition: height 0.26s ease, opacity ease 0.25s;
             }
             &.active {
                 p {
                     height: 145px; // TODO: find solution to using auto height :)
                     opacity: 1;
-                    transition: height 0.45s ease-in, opacity ease-in 0.45s;
+                    transition: height 0.25s ease, opacity ease 0.26s;
                 }
             }
         }
