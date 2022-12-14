@@ -47,7 +47,7 @@ function App() {
                 imgSrc='dev.jpg'
                 altTxt=''
                 heading='Design'
-                content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals. By teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
+                content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals.\n\nBy teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
             />
             <ImageContentModule
                 imgRight='right'
