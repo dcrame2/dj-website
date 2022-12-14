@@ -27,6 +27,7 @@ const CustomLink = styled.a`
         z-index: 1;
         text-transform: uppercase;
         font-weight: bold;
+        color: ${Variables.white};
     }
 
     &:after {
