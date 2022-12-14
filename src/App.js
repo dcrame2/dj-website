@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import SlideOutLink from './components/SlideOutLink';
 import './global.css';
 import { useState, useEFfect, useEffect } from 'react';
+import { Variables } from './styles/Variables.jsx';
 
 function App() {
     const [navBackdrop, setNavBackdrop] = useState(false);
@@ -45,8 +46,8 @@ function App() {
             <ImageContentModule
                 imgSrc='dev.jpg'
                 altTxt=''
-                heading='Super Dope Heading'
-                content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
+                heading='Design'
+                content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals. By teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
             />
             <ImageContentModule
                 imgRight='right'
