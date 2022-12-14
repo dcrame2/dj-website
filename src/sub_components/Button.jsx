@@ -14,7 +14,7 @@ const CustomButton = styled.button`
     background-color: ${Variables.color9};
     border-radius: 20px;
     color: ${Variables.white};
-    border: unset;
+    border: 2px solid ${Variables.white};
     text-decoration: unset;
     overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
