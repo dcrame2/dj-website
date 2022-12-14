@@ -113,6 +113,8 @@ const Section = styled.section`
                 transition: height 0.26s ease, opacity ease 0.25s;
             }
             &.active {
+                transition: background-color ease 0.45s;
+                background-color: ${Variables.color14};
                 p {
                     height: 145px; // TODO: find solution to using auto height :)
                     opacity: 1;
