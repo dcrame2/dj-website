@@ -164,7 +164,7 @@ const Services = () => {
     const activeToggle = (index) => {
         console.log(index, active);
         if (index === active) {
-            setTimeout(() => setActive(null), 500);
+            setActive(null);
         } else {
             setActive(index);
         }
@@ -188,11 +188,11 @@ const Services = () => {
                             <span className='num'>{service.num}</span>
                             <h2>{service.name}</h2>
                             <span className='dropdown'>
-                                <p>{service.desc}</p>
+                                {/* <p>{service.desc}</p>
                                 <LinkButton
                                     href={`#${service.name.toLowerCase()}Section`}
                                     text='Learn More'
-                                />
+                                /> */}
                             </span>
                         </button>
                     );
