@@ -108,18 +108,18 @@ const Section = styled.section`
                 color: ${Variables.color1};
                 font-size: 1.75rem;
                 line-height: 25px;
-                max-height: 0;
+                height: 0px;
                 opacity: 0;
                 overflow: hidden;
-                transition: max-height 0.26s ease, opacity ease 0.25s;
+                transition: height 0.26s ease, opacity ease 0.25s;
             }
             &.active {
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
                 p {
-                    max-height: 165px; // TODO: find solution to using auto height :)
+                    height: 145px; // TODO: find solution to using auto height :)
                     opacity: 1;
-                    transition: max-height 0.25s ease, opacity ease 0.26s;
+                    transition: height 0.25s ease, opacity ease 0.26s;
                 }
             }
         }
