@@ -54,6 +54,10 @@ const Nav = styled.nav`
             width: 100%;
             max-width: ${Variables.maxWidth};
 
+            @media ${MediaQueries.tablet} {
+                gap: 15%;
+            }
+
             li {
                 display: flex;
                 align-items: center;
@@ -97,7 +101,7 @@ const Nav = styled.nav`
                             align-items: center;
                             height: 100%;
 
-                            li.primary-links-list-item {
+                            li.p-list-item {
                                 ul {
                                     height: 68vh;
                                 }
@@ -178,6 +182,13 @@ const Nav = styled.nav`
                         background-color: unset;
                         border: unset;
                         cursor: pointer;
+                        width: 70px;
+                        height: 70px;
+
+                        @media ${MediaQueries.mobile} {
+                            width: 57px;
+                            height: 57px;
+                        }
                     }
                 }
             }
@@ -224,7 +235,7 @@ export default function Navigation({ backdrop }) {
                         `}
                     >
                         <ul className='primary-links-list'>
-                            <li className='primary-links-list-item'>
+                            <li className='p-list-item'>
                                 <ul>
                                     {data.links.map((link, index) => {
                                         return (

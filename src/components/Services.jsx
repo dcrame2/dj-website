@@ -26,6 +26,7 @@ const Section = styled.section`
         @media ${MediaQueries.tablet} {
             gap: 42px;
             flex-direction: column;
+            align-items: center;
         }
         @media ${MediaQueries.mobile} {
             padding-right: unset;

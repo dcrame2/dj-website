@@ -14,8 +14,8 @@ export default function Hamburger() {
         <Svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 32 32'
-            width='64'
-            height='64'
+            width='100%'
+            height='100%'
         >
             <path
                 stroke={`${Variables.white}`}
