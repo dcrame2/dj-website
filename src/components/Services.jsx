@@ -104,22 +104,28 @@ const Section = styled.section`
                 ${H3Styles}
                 color: ${Variables.white};
             }
-            p {
-                color: ${Variables.color1};
-                font-size: 1.75rem;
-                line-height: 25px;
-                height: 0px;
-                opacity: 0;
-                overflow: hidden;
-                transition: height 0.26s ease, opacity ease 0.25s;
+
+            .dropdown {
+                p {
+                    color: ${Variables.color1};
+                    font-size: 1.75rem;
+                    line-height: 25px;
+                    height: 0px;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: height 0.26s ease, opacity ease 0.25s;
+                }
             }
             &.active {
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
-                p {
-                    height: 145px; // TODO: find solution to using auto height :)
-                    opacity: 1;
-                    transition: height 0.25s ease, opacity ease 0.26s;
+
+                .dropdown {
+                    p {
+                        height: 145px; // TODO: find solution to using auto height :)
+                        opacity: 1;
+                        transition: height 0.25s ease, opacity ease 0.26s;
+                    }
                 }
             }
         }
@@ -178,8 +184,10 @@ const Services = () => {
                         >
                             <img src={`${service.img}`} />
                             <span>{service.num}</span>
-                            <h2>{service.name}</h2>
-                            <p>{service.desc}</p>
+                            <span className='dropdown'>
+                                <h2>{service.name}</h2>
+                                <p>{service.desc}</p>
+                            </span>
                         </button>
                     );
                 })}
