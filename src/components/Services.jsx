@@ -5,6 +5,7 @@ import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
 import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
 import { useState, useEffect } from 'react';
+import LinkButton from '../sub_components/LinkButton';
 
 const Section = styled.section`
     /* height: auto; */
@@ -184,9 +185,13 @@ const Services = () => {
                         >
                             <img src={`${service.img}`} />
                             <span>{service.num}</span>
+                            <h2>{service.name}</h2>
                             <span className='dropdown'>
-                                <h2>{service.name}</h2>
                                 <p>{service.desc}</p>
+                                <LinkButton
+                                    text='Learn More'
+                                    href={`#${service.name.toLowerCase()}Section`}
+                                ></LinkButton>
                             </span>
                         </button>
                     );
