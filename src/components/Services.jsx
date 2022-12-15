@@ -164,7 +164,7 @@ const Services = () => {
     const activeToggle = (index) => {
         console.log(index, active);
         if (index === active) {
-            setActive(null);
+            setTimeout(() => setActive(null), 500);
         } else {
             setActive(index);
         }
