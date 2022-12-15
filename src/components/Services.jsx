@@ -70,7 +70,7 @@ const Section = styled.section`
             @media (max-width: 767px) {
                 width: unset;
                 margin: 0 5%;
-                padding: 15px;
+                padding: 34px;
             }
             img {
                 position: relative;
