@@ -109,10 +109,10 @@ const Section = styled.section`
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
-                height: 0;
+                max-height: 0px;
                 opacity: 0;
                 overflow: hidden;
-                transition: height 0.26s ease, opacity ease 0.25s;
+                transition: max-height 0.26s ease, opacity ease 0.25s;
 
                 p {
                     color: ${Variables.color1};
@@ -124,10 +124,10 @@ const Section = styled.section`
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
                 div {
-                    height: 245px; // TODO: find solution to using auto height :)
-                    //height: 100%;
+                    max-height: 265px; // TODO: find solution to using auto height :)
+                    height: 100%;
                     opacity: 1;
-                    transition: height 0.25s ease, opacity ease 0.26s;
+                    transition: max-height 0.25s ease, opacity ease 0.26s;
                 }
             }
         }
@@ -189,10 +189,10 @@ const Services = () => {
                             <h2>{service.name}</h2>
                             <div className='dropdown'>
                                 <p>{service.desc}</p>
-                                <LinkButton
+                                {/* <LinkButton
                                     href={`#${service.name.toLowerCase()}Section`}
                                     text='Learn More'
-                                />
+                                /> */}
                             </div>
                         </button>
                     );
