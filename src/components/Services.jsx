@@ -110,10 +110,10 @@ const Section = styled.section`
                     color: ${Variables.color1};
                     font-size: 1.75rem;
                     line-height: 25px;
-                    height: 0px;
+                    max-height: 0;
                     opacity: 0;
                     overflow: hidden;
-                    transition: height 0.26s ease, opacity ease 0.25s;
+                    transition: max-height 0.26s ease, opacity ease 0.25s;
                 }
             }
             &.active {
@@ -122,9 +122,9 @@ const Section = styled.section`
 
                 .dropdown {
                     p {
-                        height: 145px; // TODO: find solution to using auto height :)
+                        max-height: 145px; // TODO: find solution to using auto height :)
                         opacity: 1;
-                        transition: height 0.25s ease, opacity ease 0.26s;
+                        transition: max-height 0.25s ease, opacity ease 0.26s;
                     }
                 }
             }
