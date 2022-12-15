@@ -105,7 +105,7 @@ const Section = styled.section`
                 ${H3Styles}
                 color: ${Variables.white};
             }
-            div {
+            span.dropdown {
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
@@ -123,7 +123,7 @@ const Section = styled.section`
             &.active {
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
-                div {
+                span.dropdown {
                     max-height: 265px; // TODO: find solution to using auto height :)
                     height: 100%;
                     opacity: 1;
@@ -187,13 +187,13 @@ const Services = () => {
                             <img src={`${service.img}`} />
                             <span className='num'>{service.num}</span>
                             <h2>{service.name}</h2>
-                            <div className='dropdown'>
+                            <span className='dropdown'>
                                 <p>{service.desc}</p>
                                 <LinkButton
                                     href={`#${service.name.toLowerCase()}Section`}
                                     text='Learn More'
                                 />
-                            </div>
+                            </span>
                         </button>
                     );
                 })}
