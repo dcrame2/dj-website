@@ -5,7 +5,6 @@ import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
 import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
 import { useState, useEffect } from 'react';
-import LinkButton from '../sub_components/LinkButton';
 
 const Section = styled.section`
     /* height: auto; */
@@ -84,19 +83,19 @@ const Section = styled.section`
                 }
             }
             &:nth-child(1) {
-                span.num {
+                span {
                     ${H2Styles}
                     color: ${Variables.color4};
                 }
             }
             &:nth-child(2) {
-                span.num {
+                span {
                     ${H2Styles}
                     color: ${Variables.color3};
                 }
             }
             &:nth-child(3) {
-                span.num {
+                span {
                     ${H2Styles}
                     color: ${Variables.color1};
                 }
@@ -105,27 +104,20 @@ const Section = styled.section`
                 ${H3Styles}
                 color: ${Variables.white};
             }
-            span.dropdown {
-                display: flex;
-                flex-direction: column;
-                gap: 25px;
-                max-height: 0px;
+            p {
+                color: ${Variables.color1};
+                font-size: 1.75rem;
+                line-height: 25px;
+                max-height: 0;
                 opacity: 0;
                 overflow: hidden;
                 transition: max-height 0.26s ease, opacity ease 0.25s;
-
-                p {
-                    color: ${Variables.color1};
-                    font-size: 1.75rem;
-                    line-height: 25px;
-                }
             }
             &.active {
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
-                span.dropdown {
-                    max-height: 265px; // TODO: find solution to using auto height :)
-                    height: 100%;
+                p {
+                    max-height: 165px; // TODO: find solution to using auto height :)
                     opacity: 1;
                     transition: max-height 0.25s ease, opacity ease 0.26s;
                 }
@@ -185,20 +177,9 @@ const Services = () => {
                             key={`button-${i}`}
                         >
                             <img src={`${service.img}`} />
-                            <span className='num'>{service.num}</span>
+                            <span>{service.num}</span>
                             <h2>{service.name}</h2>
-                            <span className='dropdown'>
-                                {/* <p>{service.desc}</p>
-                                <LinkButton
-                                    href={`#${service.name.toLowerCase()}Section`}
-                                    text='Learn More'
-                                /> */}
-                                lorem lrm klsfdljksdf gi;sdf usg jssd
-                                hjkfdskjhsdf fhds dl hdsgsdjflgdsf g sdfg
-                                jsfdghj sfdghj gsdhjgfhlgsfjgsfj s adv d jh
-                                mbvnzv xb dfjgsjgdsfgb gsdfb bdfbj vzb vz bvbb
-                                vbncvbnvcb bb bcxb vjk dcbj cdbj cs
-                            </span>
+                            <p>{service.desc}</p>
                         </button>
                     );
                 })}
