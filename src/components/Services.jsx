@@ -84,19 +84,19 @@ const Section = styled.section`
                 }
             }
             &:nth-child(1) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color4};
                 }
             }
             &:nth-child(2) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color3};
                 }
             }
             &:nth-child(3) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color1};
                 }
@@ -107,14 +107,17 @@ const Section = styled.section`
             }
 
             .dropdown {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                max-height: 0;
+                opacity: 0;
+                transition: max-height 0.26s ease, opacity ease 0.25s;
                 p {
                     color: ${Variables.color1};
                     font-size: 1.75rem;
                     line-height: 25px;
-                    max-height: 0;
-                    opacity: 0;
                     overflow: hidden;
-                    transition: max-height 0.26s ease, opacity ease 0.25s;
                 }
             }
             &.active {
@@ -122,11 +125,9 @@ const Section = styled.section`
                 background-color: ${Variables.color14};
 
                 .dropdown {
-                    p {
-                        max-height: 145px; // TODO: find solution to using auto height :)
-                        opacity: 1;
-                        transition: max-height 0.25s ease, opacity ease 0.26s;
-                    }
+                    max-height: 245px; // TODO: find solution to using auto height :)
+                    transition: max-height 0.25s ease, opacity ease 0.26s;
+                    opacity: 1;
                 }
             }
         }
@@ -184,7 +185,7 @@ const Services = () => {
                             key={`button-${i}`}
                         >
                             <img src={`${service.img}`} />
-                            <span>{service.num}</span>
+                            <span className='num'>{service.num}</span>
                             <h2>{service.name}</h2>
                             <span className='dropdown'>
                                 <p>{service.desc}</p>
