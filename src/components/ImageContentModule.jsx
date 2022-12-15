@@ -4,7 +4,7 @@ import { Container } from '../styles/Utilities';
 import { H3Styles, PSecondary } from '../styles/Type';
 import { MediaQueries } from '../styles/Utilities';
 
-const ICMContainer = styled.div`
+const ICMContainer = styled.section`
     position: relative;
     width: 100%;
     background-color: ${Variables.color7};
@@ -77,7 +77,7 @@ const ICMContainer = styled.div`
 
 export default function ImageContentModule({ ...props }) {
     return (
-        <ICMContainer imgRight={props.imgRight}>
+        <ICMContainer id={props.id} imgRight={props.imgRight}>
             <div className='ICMInnerContainer'>
                 <img src={props.imgSrc} alt={props.altTxt} />
                 <div className='content'>

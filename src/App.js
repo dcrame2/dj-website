@@ -44,17 +44,27 @@ function App() {
             <Services />
             <ModuleBlender />
             <ImageContentModule
+                id='designSection'
                 imgSrc='dev.jpg'
                 altTxt=''
                 heading='Design'
                 content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals.\n\nBy teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
             />
             <ImageContentModule
+                id='developSection'
                 imgRight='right'
                 imgSrc='dev.jpg'
                 altTxt=''
-                heading='Super Dope Heading'
-                content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ut, ullam ea cumque ducimus laboriosam sequi tempora laudantium architecto aperiam autem nam quas incidunt excepturi op?'
+                heading='Develop'
+                content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals.\n\nBy teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
+            />
+            <ImageContentModule
+                id='supportSection'
+                imgRight='left'
+                imgSrc='dev.jpg'
+                altTxt=''
+                heading='Support'
+                content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals.\n\nBy teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
             />
             <ModuleBlender />
             <Testimonials />

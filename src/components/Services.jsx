@@ -5,6 +5,7 @@ import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
 import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
 import { useState, useEffect } from 'react';
+import LinkButton from '../sub_components/LinkButton';
 
 const Section = styled.section`
     /* height: auto; */
@@ -83,19 +84,19 @@ const Section = styled.section`
                 }
             }
             &:nth-child(1) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color4};
                 }
             }
             &:nth-child(2) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color3};
                 }
             }
             &:nth-child(3) {
-                span {
+                span.num {
                     ${H2Styles}
                     color: ${Variables.color1};
                 }
@@ -104,22 +105,29 @@ const Section = styled.section`
                 ${H3Styles}
                 color: ${Variables.white};
             }
-            p {
-                color: ${Variables.color1};
-                font-size: 1.75rem;
-                line-height: 25px;
-                height: 0px;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                max-height: 0;
                 opacity: 0;
                 overflow: hidden;
-                transition: height 0.26s ease, opacity ease 0.25s;
+                transition: max-height 0.26s ease, opacity ease 0.25s;
+
+                p {
+                    color: ${Variables.color1};
+                    font-size: 1.75rem;
+                    line-height: 25px;
+                }
             }
             &.active {
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
-                p {
-                    height: 145px; // TODO: find solution to using auto height :)
+                div {
+                    max-height: 265px; // TODO: find solution to using auto height :)
+                    height: 100%;
                     opacity: 1;
-                    transition: height 0.25s ease, opacity ease 0.26s;
+                    transition: max-height 0.25s ease, opacity ease 0.26s;
                 }
             }
         }
@@ -177,9 +185,15 @@ const Services = () => {
                             key={`button-${i}`}
                         >
                             <img src={`${service.img}`} />
-                            <span>{service.num}</span>
+                            <span className='num'>{service.num}</span>
                             <h2>{service.name}</h2>
-                            <p>{service.desc}</p>
+                            <div className='dropdown'>
+                                <p>{service.desc}</p>
+                                <LinkButton
+                                    href={`#${service.name.toLowerCase()}Section`}
+                                    text='Learn More'
+                                />
+                            </div>
                         </button>
                     );
                 })}
