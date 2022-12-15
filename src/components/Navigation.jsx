@@ -54,10 +54,6 @@ const Nav = styled.nav`
             width: 100%;
             max-width: ${Variables.maxWidth};
 
-            @media ${MediaQueries.tablet} {
-                gap: 15%;
-            }
-
             li {
                 display: flex;
                 align-items: center;
@@ -185,7 +181,7 @@ const Nav = styled.nav`
                         width: 70px;
                         height: 70px;
 
-                        @media ${MediaQueries.mobile} {
+                        ${MediaQueries.tablet} {
                             width: 57px;
                             height: 57px;
                         }
