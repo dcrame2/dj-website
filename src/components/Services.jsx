@@ -56,8 +56,10 @@ const Section = styled.section`
 
             &:hover
             /*&:focus*/ {
-                background-color: ${Variables.color5};
-                transition: background-color ease 0.45s;
+                @media ${MediaQueries.desktop} {
+                    background-color: ${Variables.color5};
+                    transition: background-color ease 0.45s;
+                }
 
                 img {
                     transform: rotateY(360deg);
