@@ -3,6 +3,8 @@ import { Variables } from '../styles/Variables';
 
 const CustomLinkStylingWrapper = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 2;
 `;
