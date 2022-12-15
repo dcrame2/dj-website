@@ -109,10 +109,10 @@ const Section = styled.section`
                 display: flex;
                 flex-direction: column;
                 gap: 25px;
-                max-height: 0;
+                height: 0;
                 opacity: 0;
                 overflow: hidden;
-                transition: max-height 0.26s ease, opacity ease 0.25s;
+                transition: height 0.26s ease, opacity ease 0.25s;
 
                 p {
                     color: ${Variables.color1};
@@ -124,10 +124,10 @@ const Section = styled.section`
                 transition: background-color ease 0.45s;
                 background-color: ${Variables.color14};
                 div {
-                    max-height: 265px; // TODO: find solution to using auto height :)
-                    height: 100%;
+                    height: 245px; // TODO: find solution to using auto height :)
+                    //height: 100%;
                     opacity: 1;
-                    transition: max-height 0.25s ease, opacity ease 0.26s;
+                    transition: height 0.25s ease, opacity ease 0.26s;
                 }
             }
         }
