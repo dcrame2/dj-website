@@ -189,10 +189,10 @@ const Services = () => {
                             <h2>{service.name}</h2>
                             <div className='dropdown'>
                                 <p>{service.desc}</p>
-                                {/* <LinkButton
+                                <LinkButton
                                     href={`#${service.name.toLowerCase()}Section`}
                                     text='Learn More'
-                                /> */}
+                                />
                             </div>
                         </button>
                     );
