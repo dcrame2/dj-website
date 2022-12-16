@@ -152,6 +152,10 @@ const Section = styled.section`
             /* box-shadow: 1px 1px 4px 1px ${Variables.color5};
             -webkit-box-shadow: 1px 1px 4px 1px ${Variables.color5};
             -moz-box-shadow: 1px 1px 4px 1px ${Variables.color5}; */
+            &:hover,
+            &:focus {
+              box-shadow: 1px 1px 4px 1px ${Variables.color5};
+            }
             @media ${MediaQueries.tablet} {
               width: 100%;
             }
