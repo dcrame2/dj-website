@@ -56,7 +56,7 @@ function App() {
         imgSrc="developer2.jpg"
         altTxt=""
         heading="Develop"
-        content={`${Variables.companyName} knows Web Development better than anything. With a team full of Web Developers we provide quality and modern wesbites that attract customers to your business.\n\n ${Variables.companyName} will ensure your website functions to the highest standard. In addition, the User Interface and User Experience throughout your entire website will be flawlessly developed.`}
+        content={`${Variables.companyName} knows Web Development better than anything. With a team full of Web Developers we provide quality and modern wesbites that attract customers to your business.\n\n${Variables.companyName} will ensure your website functions to the highest standard. In addition, the User Interface and User Experience throughout your entire website will be flawlessly developed.`}
       />
       <ImageContentModule
         id="supportSection"
