@@ -56,7 +56,7 @@ function App() {
         imgSrc="dev.jpg"
         altTxt=""
         heading="Develop"
-        content={`The average Web users attention span lasts on average 8 seconds. With that it is vital to provide your websites visitors with the most eye catching content available. While also delivering your business goals.\n\nBy teaming up with ${Variables.companyName} we can ensure that your users experience a smooth seamless experience, while still informing on all that your business has to offer.`}
+        content={`${Variables.companyName} knows Web Development better than anything. With a team full of Web Developers we provide quality and modern wesbites that attract customers to your business.  \n\n ${Variables.companyName} will ensure your website functions to the highest standard. In addition, the User Interface and User Experience throughout your entire website will be flawlessly developed.`}
       />
       <ImageContentModule
         id="supportSection"
