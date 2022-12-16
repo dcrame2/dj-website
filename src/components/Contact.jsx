@@ -24,29 +24,6 @@ const Section = styled.section`
       padding-left: 25px;
     }
 
-    .form-info {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 50px;
-      width: 40%;
-      @media ${MediaQueries.tablet} {
-        margin-bottom: 20px;
-        width: 100%;
-      }
-
-      h2 {
-        font-size: 3rem;
-      }
-
-      p {
-        ${PSecondary}
-        color: ${Variables.white};
-        line-height: 25px;
-        margin-right: 5%;
-      }
-    }
-
     .form-wrapper {
       display: flex;
       flex-direction: row;
@@ -55,18 +32,66 @@ const Section = styled.section`
       align-items: center;
 
       @media ${MediaQueries.tablet} {
-        flex-direction: column;
-        gap: 20px;
         /* max-width: 540px; */
+        padding: 20px;
         background-color: ${Variables.color2};
         border-radius: 15px;
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
       }
-      /* @media (max-width: 499px) {
-     
-    } */
+
+      @media ${MediaQueries.tablet2} {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .form-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 50px;
+        width: 40%;
+        @media ${MediaQueries.tablet} {
+          margin-bottom: 20px;
+          width: 100%;
+        }
+
+        img {
+          /* filter: hue-rotate(95deg); */
+          width: 500px;
+          height: 500px;
+          border-radius: 15px;
+          margin: auto;
+          @media ${MediaQueries.tablet2} {
+            height: 300px;
+            width: 300px;
+          }
+
+          @media ${MediaQueries.mobile} {
+            height: 200px;
+            width: 200px;
+          }
+        }
+
+        h2 {
+          font-size: 3rem;
+          @media ${MediaQueries.tablet} {
+            text-align: center;
+          }
+        }
+
+        p {
+          ${PSecondary}
+          color: ${Variables.white};
+          line-height: 25px;
+          margin-right: 5%;
+          @media ${MediaQueries.tablet} {
+            text-align: center;
+            margin-right: unset;
+          }
+        }
+      }
 
       form {
         display: flex;
@@ -84,7 +109,8 @@ const Section = styled.section`
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         @media ${MediaQueries.tablet} {
           width: 100%;
-          padding: 20px;
+          /* padding: 20px; */
+          padding: unset;
           box-shadow: unset;
           -webkit-box-shadow: unset;
           -moz-box-shadow: unset;
@@ -92,6 +118,9 @@ const Section = styled.section`
 
         h3 {
           ${H3Styles}
+          @media ${MediaQueries.tablet} {
+            display: none;
+          }
         }
 
         /* width: 100%; */
@@ -136,16 +165,6 @@ const Section = styled.section`
           }
         }
       }
-
-      img {
-        /* filter: hue-rotate(95deg); */
-        width: auto;
-        height: 400px;
-        border-radius: 15px;
-        @media ${MediaQueries.mobile} {
-          height: 200px;
-        }
-      }
     }
   }
 `;
@@ -158,15 +177,16 @@ const Contact = () => {
   return (
     <Section id="contact">
       <div className="ContactInnerContainer">
-        <div className="form-info">
-          <h2>Contact</h2>
-          <p>
-            Need a website? Talk with a team member for a FREE consultation on
-            the goals of your wesbite.
-          </p>
-        </div>
         <div className="form-wrapper">
-          <img src="businessman-working-on-laptop.png" />
+          <div className="form-info">
+            <h2>Contact</h2>
+            <p>
+              Need a website? Talk with a team member for a FREE consultation on
+              the goals of your wesbite.
+            </p>
+            <img src="businessman-working-on-laptop.png" />
+          </div>
+
           <form
             // onSubmit={onSubmit}
             action="https://formsubmit.co/dcrame2@gmail.com"
