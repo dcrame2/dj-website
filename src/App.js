@@ -61,7 +61,7 @@ function App() {
       <ImageContentModule
         id="supportSection"
         imgRight="left"
-        imgSrc="dev.jpg"
+        imgSrc="support.jpg"
         altTxt=""
         heading="Support"
         content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content (text, images and links) changes to your website through an easy to use user interface.\n\nFurthermore, not all changes can be made by the client where a developer may be needed but ${Variables.companyName} offers support and maintenance to any website whether built by us or to an existing website.`}
