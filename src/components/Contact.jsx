@@ -35,6 +35,12 @@ const Section = styled.section`
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+      @media ${MediaQueries.mobile} {
+        border-radius: 30px;
       }
 
       .form-info {
@@ -87,11 +93,17 @@ const Section = styled.section`
         gap: 20px;
         color: ${Variables.white};
         background-color: ${Variables.color2};
-        border-radius: 15px;
+        border-radius: 40px;
         padding: 50px;
+        /* box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2}; */
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         @media ${MediaQueries.tablet} {
           width: 100%;
           padding: unset;
@@ -99,6 +111,7 @@ const Section = styled.section`
           -webkit-box-shadow: unset;
           -moz-box-shadow: unset;
         }
+
         h3 {
           ${H3Styles}
           @media ${MediaQueries.tablet} {
