@@ -3,7 +3,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
-import { H3Styles, H2Styles } from '../styles/Type';
+import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
 import { useState, useEffect } from 'react';
 import LinkButton from '../sub_components/LinkButton';
 
@@ -26,13 +26,18 @@ const Section = styled.section`
 
         .heading-container {
             margin: 44px 0 62px;
+            max-width: 540px;
+
+            @media ${Variables.tablet} {
+                margin: 24px 0 40px;
+            }
             h2 {
                 ${H2Styles}
                 text-transform: uppercase;
                 margin-bottom: 14px;
             }
             h3 {
-                ${H3Styles}
+                ${PSecondary}
                 max-width: 650px;
             }
         }
@@ -102,7 +107,6 @@ const Section = styled.section`
                 }
                 @media (max-width: 767px) {
                     width: unset;
-                    margin: 0 5%;
                     padding: 34px;
                 }
                 img {
@@ -192,7 +196,7 @@ const data = {
         },
     ],
     heading: 'Services We Offer',
-    subheading: `Take a load off, leave it to ${Variables.companyName} we offer, many services. here are some of our premiere services `,
+    subheading: `Managing a business demands a lot. Take a load off, leave it to ${Variables.companyName}. We offer a wide range of services, spanning all things web related. Check em' out! Some of our focal services can be viewed below!`,
 };
 
 const Services = () => {
