@@ -16,7 +16,7 @@ const TestimonialsSection = styled.section`
   .carousel {
     height: 100%;
     .carousel-indicators {
-      bottom: -20px;
+      bottom: -25px;
       [data-bs-target] {
         background-color: ${Variables.color9};
       }
