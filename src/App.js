@@ -46,7 +46,7 @@ function App() {
             <ModuleBlender />
             <Spacer
                 color={Variables.color7}
-                desktop={88}
+                desktop={158}
                 tablet={92}
                 mobile={80}
             />
@@ -59,7 +59,7 @@ function App() {
             />
             <Spacer
                 color={Variables.color7}
-                desktop={88}
+                desktop={144}
                 tablet={92}
                 mobile={40}
             />
@@ -73,7 +73,7 @@ function App() {
             />
             <Spacer
                 color={Variables.color7}
-                desktop={88}
+                desktop={144}
                 tablet={92}
                 mobile={40}
             />
@@ -87,7 +87,7 @@ function App() {
             />
             <Spacer
                 color={Variables.color7}
-                desktop={88}
+                desktop={158}
                 tablet={92}
                 mobile={80}
             />

@@ -8,137 +8,151 @@ import { useState, useEffect } from 'react';
 import LinkButton from '../sub_components/LinkButton';
 
 const Section = styled.section`
-    /* height: auto; */
     position: relative;
     width: 100%;
-    /* padding: 8% 5%; */
     padding-top: 85px;
     padding-bottom: 85px;
     background-color: ${Variables.color1};
 
-    .ServiceContainer {
-        ${Container}
+    .inner-section {
         display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 42px;
-        justify-content: center;
+        flex-direction: column;
 
-        @media ${MediaQueries.tablet} {
-            gap: 42px;
-            flex-direction: column;
-            align-items: center;
-        }
-        @media ${MediaQueries.mobile} {
-            padding-right: unset;
-            padding-left: unset;
-        }
-        button {
-            border: unset;
-            display: flex;
-            flex-wrap: wrap;
-            height: auto;
-            background-color: ${Variables.color2};
-            color: ${Variables.white};
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex: 1 1 0px;
-            text-align: center;
-            gap: 10px;
-            padding: 45px;
-            border-radius: 40px;
-            max-width: 540px;
-            transition: background-color ease 0.7s;
-
-            box-shadow: 1px 1px 10px 2px ${Variables.color2};
-            -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
-            -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
-
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-            @media ${MediaQueries.mobile} {
-                border-radius: 30px;
-            }
-
-            &:hover
-            /*&:focus*/ {
-                @media ${MediaQueries.desktop} {
-                    background-color: ${Variables.color5};
-                    transition: background-color ease 0.45s;
-                }
-
-                img {
-                    transform: rotateY(360deg);
-                    /* top: -75px; */
-                    transition: 3s;
-                }
-            }
-            @media (max-width: 767px) {
-                width: unset;
-                margin: 0 5%;
-                padding: 34px;
-            }
-            img {
-                position: relative;
-                max-width: 250px;
-                height: 170px;
-                opacity: calc() 0.9;
-
-                @media ${MediaQueries.tablet} {
-                    max-width: 250px;
-                }
-                @media ${MediaQueries.mobile} {
-                    height: 175px;
-                }
-            }
-            &:nth-child(1) {
-                span.num {
-                    ${H2Styles}
-                    color: ${Variables.color4};
-                }
-            }
-            &:nth-child(2) {
-                span.num {
-                    ${H2Styles}
-                    color: ${Variables.color3};
-                }
-            }
-            &:nth-child(3) {
-                span.num {
-                    ${H2Styles}
-                    color: ${Variables.color1};
-                }
-            }
+        .heading-container {
             h2 {
-                ${H3Styles}
-                color: ${Variables.white};
+            }
+            h3 {
+            }
+        }
+
+        .ServiceContainer {
+            ${Container}
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 42px;
+            justify-content: center;
+
+            @media ${MediaQueries.tablet} {
+                gap: 42px;
+                flex-direction: column;
+                align-items: center;
+            }
+            @media ${MediaQueries.mobile} {
+                padding-right: unset;
+                padding-left: unset;
             }
 
-            .dropdown {
+            button {
+                border: unset;
                 display: flex;
+                flex-wrap: wrap;
+                height: auto;
+                background-color: ${Variables.color2};
+                color: ${Variables.white};
                 flex-direction: column;
-                gap: 25px;
-                max-height: 0;
-                opacity: 0;
-                transition: max-height 0.26s ease, opacity ease 0.25s;
-                p {
-                    color: ${Variables.color1};
-                    font-size: 1.75rem;
-                    line-height: 25px;
-                    overflow: hidden;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+                padding: 45px;
+                border-radius: 40px;
+                max-width: 540px;
+                transition: background-color ease 0.7s;
+
+                box-shadow: 1px 1px 10px 2px ${Variables.color2};
+                -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+                -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+                @media ${MediaQueries.desktop} {
+                    flex: 1 1 0px;
                 }
-            }
-            &.active {
-                transition: background-color ease 0.45s;
-                background-color: ${Variables.color14};
+
+                @media ${MediaQueries.mobile} {
+                    border-radius: 30px;
+                }
+
+                &:hover
+            /*&:focus*/ {
+                    @media ${MediaQueries.desktop} {
+                        background-color: ${Variables.color5};
+                        transition: background-color ease 0.45s;
+                    }
+
+                    img {
+                        transform: rotateY(360deg);
+                        /* top: -75px; */
+                        transition: 3s;
+                    }
+                }
+                @media (max-width: 767px) {
+                    width: unset;
+                    margin: 0 5%;
+                    padding: 34px;
+                }
+                img {
+                    position: relative;
+                    max-width: 250px;
+                    height: 170px;
+                    opacity: calc() 0.9;
+
+                    @media ${MediaQueries.tablet} {
+                        max-width: 250px;
+                    }
+                    @media ${MediaQueries.mobile} {
+                        height: 175px;
+                    }
+                }
+                &:nth-child(1) {
+                    span.num {
+                        ${H2Styles}
+                        color: ${Variables.color4};
+                    }
+                }
+                &:nth-child(2) {
+                    span.num {
+                        ${H2Styles}
+                        color: ${Variables.color3};
+                    }
+                }
+                &:nth-child(3) {
+                    span.num {
+                        ${H2Styles}
+                        color: ${Variables.color1};
+                    }
+                }
+                h2 {
+                    ${H3Styles}
+                    color: ${Variables.white};
+                }
 
                 .dropdown {
-                    max-height: 245px; // TODO: find solution to using auto height :)
-                    transition: max-height 0.25s ease, opacity ease 0.26s;
-                    opacity: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                    max-height: 0;
+                    opacity: 0;
+                    transition: max-height 0.26s ease, opacity ease 0.25s;
+                    p {
+                        color: ${Variables.color1};
+                        font-size: 1.75rem;
+                        line-height: 25px;
+                        overflow: hidden;
+                    }
+                }
+                &.active {
+                    transition: background-color ease 0.45s;
+                    background-color: ${Variables.color14};
+
+                    .dropdown {
+                        max-height: 245px; // TODO: find solution to using auto height :)
+                        transition: max-height 0.25s ease, opacity ease 0.26s;
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -166,6 +180,8 @@ const data = {
             desc: 'Developers to help maintain and support your website for any changes needed',
         },
     ],
+    heading: 'Services We Offer',
+    subheading: `Take a load off, leave it to ${Variables.companyName} we offer, many services. here are some of our premiere services `,
 };
 
 const Services = () => {
@@ -187,27 +203,33 @@ const Services = () => {
 
     return (
         <Section id='services' className={active ? 'active' : ''}>
-            <div className='ServiceContainer'>
-                {data.services.map((service, i) => {
-                    return (
-                        <button
-                            className={active === i ? 'active' : ''}
-                            onClick={() => activeToggle(i)}
-                            key={`button-${i}`}
-                        >
-                            <img src={`${service.img}`} />
-                            <span className='num'>{service.num}</span>
-                            <h2>{service.name}</h2>
-                            <span className='dropdown'>
-                                <p>{service.desc}</p>
-                                <LinkButton
-                                    text='Learn More'
-                                    href={`#${service.name.toLowerCase()}Section`}
-                                ></LinkButton>
-                            </span>
-                        </button>
-                    );
-                })}
+            <div className='inner-section'>
+                <div className='heading-container'>
+                    <h2>{data.heading}</h2>
+                    <h3>{data.subheading}</h3>
+                </div>
+                <div className='ServiceContainer'>
+                    {data.services.map((service, i) => {
+                        return (
+                            <button
+                                className={active === i ? 'active' : ''}
+                                onClick={() => activeToggle(i)}
+                                key={`button-${i}`}
+                            >
+                                <img src={`${service.img}`} />
+                                <span className='num'>{service.num}</span>
+                                <h2>{service.name}</h2>
+                                <span className='dropdown'>
+                                    <p>{service.desc}</p>
+                                    <LinkButton
+                                        text='Learn More'
+                                        href={`#${service.name.toLowerCase()}Section`}
+                                    ></LinkButton>
+                                </span>
+                            </button>
+                        );
+                    })}
+                </div>
             </div>
         </Section>
     );
