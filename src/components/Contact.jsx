@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { MediaQueries } from "../styles/Utilities";
 import Button from "../sub_components/Button";
-import { H3Styles, PSecondary } from "../styles/Type";
+import { H3Styles, PSecondary, H2Styles } from "../styles/Type";
 import { Container } from "../styles/Utilities";
 
 const Section = styled.section`
@@ -28,16 +28,15 @@ const Section = styled.section`
       align-items: center;
       @media ${MediaQueries.tablet} {
         padding: 20px;
+        flex-direction: column;
+        gap: 20px;
         background-color: ${Variables.color2};
         border-radius: 15px;
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
       }
-      @media ${MediaQueries.tablet2} {
-        flex-direction: column;
-        gap: 20px;
-      }
+
       .form-info {
         display: flex;
         flex-direction: column;
@@ -63,7 +62,8 @@ const Section = styled.section`
           }
         }
         h2 {
-          font-size: 3rem;
+          ${H2Styles}
+          text-transform: uppercase;
           @media ${MediaQueries.tablet} {
             text-align: center;
           }
