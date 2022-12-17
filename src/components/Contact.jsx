@@ -27,7 +27,7 @@ const Section = styled.section`
       justify-content: center;
       align-items: center;
       @media ${MediaQueries.tablet} {
-        padding: 20px;
+        padding: 50px 20px;
         flex-direction: column;
         gap: 20px;
         background-color: ${Variables.color2};
@@ -41,6 +41,7 @@ const Section = styled.section`
       }
       @media ${MediaQueries.mobile} {
         border-radius: 30px;
+        padding: 40px 20px;
       }
 
       .form-info {
