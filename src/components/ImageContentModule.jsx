@@ -11,8 +11,6 @@ const ICMContainer = styled.section`
 
     .ICMInnerContainer {
         ${Container}
-        padding-top: 85px;
-        padding-bottom: 85px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -21,15 +19,11 @@ const ICMContainer = styled.section`
 
         @media ${MediaQueries.tablet} {
             flex-direction: column;
+            gap: 48px;
         }
 
         @media ${MediaQueries.mobile} {
             gap: 42px;
-        }
-
-        @media (min-width: ${Variables.desktopW}) {
-            padding-top: 85px;
-            padding-bottom: 85px;
         }
 
         img {
