@@ -20,9 +20,9 @@ const TestimonialsSection = styled.section`
       [data-bs-target] {
         background-color: ${Variables.color9};
       }
-      @media ${MediaQueries.mobile} {
+      /* @media ${MediaQueries.mobile} {
         bottom: -10px;
-      }
+      } */
     }
 
     .carousel-item {
