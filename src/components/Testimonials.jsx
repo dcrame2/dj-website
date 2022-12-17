@@ -17,9 +17,12 @@ const TestimonialsSection = styled.section`
     height: 100%;
     .carousel-indicators {
       bottom: -20px;
-      @media ${MediaQueries.mobile} {
-        bottom: 0;
+      [data-bs-target] {
+        background-color: ${Variables.color9};
       }
+      /* @media ${MediaQueries.mobile} {
+        bottom: -10px;
+      } */
     }
 
     .carousel-item {
