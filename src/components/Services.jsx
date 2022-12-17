@@ -196,7 +196,7 @@ const data = {
         },
     ],
     heading: 'Services We Offer',
-    subheading: `Managing a business demands a lot. Take a load off, leave it to ${Variables.companyName}. We offer a wide range of services, spanning all things web related. Check em' out! Some of our focal services can be viewed below!`,
+    subheading: `Managing a business demands a lot. Take a load off, leave it to ${Variables.companyName}. We offer a wide range of services spanning all things web related. Check em' out! Some of our focal services can be viewed below!`,
 };
 
 const Services = () => {
