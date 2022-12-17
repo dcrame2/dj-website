@@ -17,6 +17,7 @@ const ICMContainer = styled.section`
         justify-content: space-between;
         align-items: center;
         gap: 85px;
+        max-width: 1100px;
 
         @media ${MediaQueries.tablet} {
             flex-direction: column;
@@ -36,7 +37,6 @@ const ICMContainer = styled.section`
             max-width: 540px;
             width: 100%;
             height: auto;
-            margin: 0 auto;
             border-radius: 15px;
             box-shadow: 1px 1px 10px 2px ${Variables.color8};
             -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color8};
@@ -44,7 +44,6 @@ const ICMContainer = styled.section`
         }
         .content {
             ${MediaQueries.desktop} {
-                margin-right: auto;
             }
 
             h2 {
