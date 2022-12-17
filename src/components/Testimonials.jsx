@@ -7,7 +7,7 @@ import { MediaQueries } from "../styles/Utilities";
 import { Variables } from "../styles/Variables";
 
 const TestimonialsSection = styled.section`
-  height: 400px;
+  height: 450px;
   padding: 50px;
   @media ${MediaQueries.mobile} {
     height: 500px;
@@ -17,7 +17,6 @@ const TestimonialsSection = styled.section`
     height: 100%;
     .carousel-indicators {
       bottom: -20px;
-
       @media ${MediaQueries.mobile} {
         bottom: 0;
       }
@@ -60,6 +59,7 @@ const TestimonialsSection = styled.section`
         }
 
         p {
+          max-width: 450px;
           ${PSecondary}
         }
       }
