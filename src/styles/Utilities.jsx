@@ -21,8 +21,12 @@ export const Container = css`
     max-width: ${Variables.maxWidth};
     padding: 0 64px;
 
-    @media (min-width: ${Variables.tablet}) {
+    @media (max-width: ${Variables.tabletWidthInt}) {
         padding: 0 44px;
+    }
+
+    @media (max-width: ${Variables.mobileWidth}) {
+        padding: 0 24px;
     }
 `;
 
