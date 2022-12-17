@@ -91,6 +91,7 @@ const Nav = styled.nav`
                     ul.primary-links-list {
                         display: flex;
                         justify-content: center;
+                        position: relative;
 
                         @media ${MediaQueries.tablet} {
                             flex-direction: column;
@@ -101,6 +102,17 @@ const Nav = styled.nav`
                                 ul {
                                     height: 68vh;
                                 }
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                background-color: gray;
+                                opacity: 0.55;
                             }
                         }
 
