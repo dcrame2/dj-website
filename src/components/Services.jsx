@@ -3,7 +3,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import styled from 'styled-components';
-import { H3Styles, H2Styles, PSecondary } from '../styles/Type';
+import { H3Styles, H2Styles } from '../styles/Type';
 import { useState, useEffect } from 'react';
 import LinkButton from '../sub_components/LinkButton';
 
@@ -15,18 +15,29 @@ const Section = styled.section`
     background-color: ${Variables.color1};
 
     .inner-section {
+        ${Container}
         display: flex;
         flex-direction: column;
+        align-items: start;
+
+        @media ${MediaQueries.tablet} {
+            align-items: center;
+        }
 
         .heading-container {
+            margin: 44px 0 62px;
             h2 {
+                ${H2Styles}
+                text-transform: uppercase;
+                margin-bottom: 14px;
             }
             h3 {
+                ${H3Styles}
+                max-width: 650px;
             }
         }
 
         .ServiceContainer {
-            ${Container}
             display: flex;
             align-items: baseline;
             justify-content: space-between;
