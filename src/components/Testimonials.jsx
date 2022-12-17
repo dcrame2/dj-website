@@ -24,6 +24,9 @@ const TestimonialsSection = styled.section`
         bottom: -10px;
       } */
     }
+    /* .carousel-control-next-icon {
+      background-image: url("Purple-in-Jumper4.png") !important;
+    } */
 
     .carousel-item {
       display: flex;
