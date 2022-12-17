@@ -19,10 +19,10 @@ export const MediaQueries = {
 export const Container = css`
     margin: 0 auto;
     max-width: ${Variables.maxWidth};
-    padding: 0 44px;
+    padding: 0 64px;
 
-    @media (min-width: ${Variables.desktopW}) {
-        padding: 0 64px;
+    @media (min-width: ${Variables.tablet}) {
+        padding: 0 44px;
     }
 `;
 

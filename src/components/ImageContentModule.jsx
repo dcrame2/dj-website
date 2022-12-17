@@ -15,7 +15,7 @@ const ICMContainer = styled.section`
         justify-content: space-between;
         align-items: center;
         gap: 85px;
-        max-width: 1100px;
+        max-width: 1300px;
 
         @media ${MediaQueries.tablet} {
             flex-direction: column;
@@ -37,8 +37,7 @@ const ICMContainer = styled.section`
             -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8};
         }
         .content {
-            ${MediaQueries.desktop} {
-            }
+            max-width: 460px;
 
             h2 {
                 ${H3Styles}
@@ -48,7 +47,6 @@ const ICMContainer = styled.section`
             p {
                 ${PSecondary}
                 color: ${Variables.black};
-                max-width: 400px;
                 white-space: pre-wrap;
             }
         }
@@ -57,13 +55,6 @@ const ICMContainer = styled.section`
             props.imgRight === 'right' &&
             css`
                 flex-direction: row-reverse;
-
-                .content {
-                    @media ${MediaQueries.desktop} {
-                        margin-left: auto;
-                        margin-right: unset;
-                    }
-                }
             `}
     }
 `;

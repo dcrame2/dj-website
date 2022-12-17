@@ -204,7 +204,6 @@ const Services = () => {
     const [loaded, setLoaded] = useState(false);
 
     const activeToggle = (index) => {
-        console.log(index, active);
         if (index === active) {
             setActive(null);
         } else {

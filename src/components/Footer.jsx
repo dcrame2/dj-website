@@ -37,6 +37,7 @@ const FooterElm = styled.footer`
 
 const FooterInner = styled.div`
     ${Container}
+    padding-bottom: 68px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 100%;
