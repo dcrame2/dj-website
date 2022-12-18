@@ -21,7 +21,7 @@ const TestimonialsSection = styled.section`
         background-color: ${Variables.color1};
       }
       @media ${MediaQueries.mobile} {
-        bottom: 0px;
+        bottom: -10px;
       }
     }
     /* .carousel-control-next-icon {
