@@ -177,14 +177,23 @@ const Contact = () => {
             <img src="businessman-working-on-laptop.png" />
           </div>
           <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New DJ Submission!" />
-            {/* <input type="hidden" name="_cc" value="jtully97@gmail.com" /> */}
+            <input
+              type="hidden"
+              name="_subject"
+              value={`New ${Variables.companyName} Submission!`}
+            />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value={`Thank you from ${Variables.companyName}`}
+            ></input>
+            <input type="hidden" name="_cc" value="jtully97@gmail.com" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table"></input>
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3000/"
+              value="http://localhost:3000/thanks.html"
             ></input>
             <h3>{data.title2}</h3>
             <div>
