@@ -9,10 +9,6 @@ import { Variables } from "../styles/Variables";
 const TestimonialsSection = styled.section`
   height: 450px;
   padding: 50px;
-  /* @media ${MediaQueries.mobile} {
-    height: 400px;
-  } */
-
   .carousel {
     height: 100%;
     .carousel-indicators {
@@ -20,14 +16,7 @@ const TestimonialsSection = styled.section`
       [data-bs-target] {
         background-color: ${Variables.color1};
       }
-      /* @media ${MediaQueries.mobile} {
-        bottom: -10px;
-      } */
     }
-    /* .carousel-control-next-icon {
-      background-image: url("Purple-in-Jumper4.png") !important;
-    } */
-
     .carousel-item {
       display: flex;
       flex-direction: column;

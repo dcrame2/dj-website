@@ -186,17 +186,17 @@ const data = {
       num: "02",
       img: "/web_dev_icons/web-development.png",
       name: "Develop",
-      desc: "Professional developers executing modern websites your user will enjoy visting",
+      desc: "Professional developers executing modern websites your user will remember visting",
     },
     {
       num: "03",
       img: "/web_dev_icons/maintenance.png",
       name: "Support",
-      desc: "Developers to help maintain and support your website for any update needs",
+      desc: "Internal developers to help maintain and support your website for any update needs",
     },
   ],
   heading: "Services We Offer",
-  subheading: `Managing a business demands a lot. Take a load off, leave it to ${Variables.companyName}. We offer a wide range of services spanning all things web related. Check em' out! Some of our focal services can be viewed below!`,
+  subheading: `Managing a business demand is a lot. Burn time and leave it to ${Variables.companyName} to help expand your business. We offer a wide range of web related services that are a must-have for any business. Below is a few of our focal services:`,
 };
 
 const Services = () => {
