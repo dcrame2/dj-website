@@ -53,8 +53,17 @@ const OpaqueFilter = styled.div`
 `;
 
 const SlideIn = keyframes`
-    to { left: 10%; }
+    to { left: 10%;}
 `;
+
+const SlideInTablet = keyframes`
+    to { left: 64px;}
+`;
+
+const SlideInMobile = keyframes`
+    to { left: 24px;}
+`;
+
 const SlideOut = keyframes`
     to {left: -100%}
 `;
@@ -74,6 +83,16 @@ const ContentContainer = styled.div`
     &.loaded {
         animation: ${SlideIn} 0.8s ease;
         animation-fill-mode: forwards;
+
+        @media ${MediaQueries.tablet} {
+            animation: ${SlideInTablet} 0.8s ease;
+            animation-fill-mode: forwards;
+        }
+
+        @media ${MediaQueries.mobile} {
+            animation: ${SlideInMobile} 0.8s ease;
+            animation-fill-mode: forwards;
+        }
     }
 
     @media ${MediaQueries.tablet} {
