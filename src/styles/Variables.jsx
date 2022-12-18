@@ -41,8 +41,8 @@ export const Variables = {
   companyName: "Digital Delight",
 
   // Logos
-  logo1Url: "digitaljam-logo.png",
-  logo2Url: "digitaljam-logo-removebg-preview.png",
+  logo1Url: "digitaldelight.png",
+  logo2Url: "digitaldelight.png",
   logo3Url: "white-logo.png",
   logo4Url: "white-logo-left.png",
 };
