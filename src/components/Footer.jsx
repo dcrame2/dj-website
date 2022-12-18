@@ -47,7 +47,8 @@ const FooterInner = styled.div`
 
     @media ${MediaQueries.mobile} {
         grid-template-columns: 1fr;
-        padding-bottom: 68px;
+        padding-bottom: 88px;
+        padding-top: 54px;
     }
 
     img {
