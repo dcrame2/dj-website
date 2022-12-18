@@ -81,7 +81,7 @@ const ContentContainer = styled.div`
     }
 
     @media ${MediaQueries.mobile} {
-        max-width: 300px;
+        width: 90%;
     }
 
     h1 {
@@ -114,7 +114,7 @@ const Hero = () => {
             <OpaqueFilter />
             <InnerSection>
                 <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
-                    <h1>{`Welcome to ${Variables.companyName}`}</h1>
+                    <h1>{`Experience ${Variables.companyName}`}</h1>
                     <h2>We make bad*ss sh*t for the web</h2>
                 </ContentContainer>
             </InnerSection>
