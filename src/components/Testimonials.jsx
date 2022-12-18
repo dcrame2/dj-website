@@ -20,9 +20,9 @@ const TestimonialsSection = styled.section`
       [data-bs-target] {
         background-color: ${Variables.color1};
       }
-      @media ${MediaQueries.mobile} {
+      /* @media ${MediaQueries.mobile} {
         bottom: -10px;
-      }
+      } */
     }
     /* .carousel-control-next-icon {
       background-image: url("Purple-in-Jumper4.png") !important;
