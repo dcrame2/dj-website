@@ -192,7 +192,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://www.digitaldelight.com"
+              value="http://www.thedigitaldelight.com"
             ></input>
             <h3>{data.title2}</h3>
             <div>
