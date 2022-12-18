@@ -16,7 +16,7 @@ const Nav = styled.nav`
     .wrapper {
         position: relative;
         display: flex;
-        padding: 28px 26px;
+        padding: 28px 24px;
         justify-content: center;
         background: inherit;
 
@@ -63,6 +63,10 @@ const Nav = styled.nav`
                 &.logo {
                     max-width: 315px;
                     width: 100%;
+
+                    @media ${MediaQueries.tablet} {
+                        margin-right: 48px;
+                    }
 
                     img {
                         width: 100%;
@@ -189,13 +193,14 @@ const Nav = styled.nav`
                     }
 
                     button {
+                        padding: unset;
                         background-color: unset;
                         border: unset;
                         cursor: pointer;
                         width: 70px;
                         height: 70px;
 
-                        ${MediaQueries.tablet} {
+                        @media ${MediaQueries.tablet} {
                             width: 57px;
                             height: 57px;
                         }
