@@ -42,7 +42,7 @@ export const Variables = {
 
   // Logos
   logo1Url: "digitaldelight.png",
-  logo2Url: "digitaldelight.png",
+  logo2Url: "logo-no-background.svg",
   logo3Url: "white-logo.png",
   logo4Url: "white-logo-left.png",
 };
