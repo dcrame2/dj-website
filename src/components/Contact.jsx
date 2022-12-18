@@ -165,7 +165,6 @@ const data = {
   desc: "Need a website? Talk with a team member for a FREE consultation on the goals of your wesbite.",
   title2: "Talk with our team!",
 };
-
 const Contact = () => {
   return (
     <Section id="contact">
