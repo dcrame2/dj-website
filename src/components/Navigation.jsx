@@ -16,9 +16,13 @@ const Nav = styled.nav`
     .wrapper {
         position: relative;
         display: flex;
-        padding: 28px 24px;
+        padding: 28px 64px;
         justify-content: center;
         background: inherit;
+
+        @media ${MediaQueries.mobile} {
+            padding: 28px 24px;
+        }
 
         &::before {
             background: inherit;

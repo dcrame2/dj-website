@@ -53,7 +53,7 @@ const OpaqueFilter = styled.div`
 `;
 
 const SlideIn = keyframes`
-    to { left: 10%;}
+    to { left: 64px;}
 `;
 
 const SlideInTablet = keyframes`
