@@ -9,9 +9,9 @@ import { Variables } from "../styles/Variables";
 const TestimonialsSection = styled.section`
   height: 450px;
   padding: 50px;
-  @media ${MediaQueries.mobile} {
-    height: 500px;
-  }
+  /* @media ${MediaQueries.mobile} {
+    height: 400px;
+  } */
 
   .carousel {
     height: 100%;
@@ -20,9 +20,9 @@ const TestimonialsSection = styled.section`
       [data-bs-target] {
         background-color: ${Variables.color1};
       }
-      /* @media ${MediaQueries.mobile} {
-        bottom: -10px;
-      } */
+      @media ${MediaQueries.mobile} {
+        bottom: 0;
+      }
     }
     /* .carousel-control-next-icon {
       background-image: url("Purple-in-Jumper4.png") !important;
@@ -52,6 +52,9 @@ const TestimonialsSection = styled.section`
       img {
         width: auto;
         height: 200px;
+        @media ${MediaQueries.mobile} {
+          height: 150px;
+        }
       }
       .carousel-caption {
         position: unset;
