@@ -18,7 +18,7 @@ const TestimonialsSection = styled.section`
     .carousel-indicators {
       bottom: -20px;
       [data-bs-target] {
-        background-color: ${Variables.color9};
+        background-color: ${Variables.color1};
       }
       /* @media ${MediaQueries.mobile} {
         bottom: -10px;
@@ -62,6 +62,7 @@ const TestimonialsSection = styled.section`
         padding-bottom: unset;
         h3 {
           ${H3Styles}
+          color: ${Variables.color1}
         }
 
         p {
