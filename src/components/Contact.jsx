@@ -192,7 +192,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3000/thanks.html"
+              value="http://localhost:3000/"
             ></input>
             <h3>{data.title2}</h3>
             <div>
