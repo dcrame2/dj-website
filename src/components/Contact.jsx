@@ -86,7 +86,8 @@ const Section = styled.section`
           }
         }
       }
-      form {
+      form,
+      .success-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -105,6 +106,52 @@ const Section = styled.section`
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
           rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        @keyframes shake {
+          0% {
+            transform: translate(1px, 1px) rotate(0deg);
+          }
+          10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+          }
+          20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+          }
+          30% {
+            transform: translate(3px, 2px) rotate(0deg);
+          }
+          40% {
+            transform: translate(1px, -1px) rotate(1deg);
+          }
+          50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+          }
+          60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+          }
+          70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+          }
+          80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+          }
+          90% {
+            transform: translate(1px, 2px) rotate(0deg);
+          }
+          100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+          }
+        }
+        img {
+          width: auto;
+          height: 100px;
+          animation-iteration-count: infinite;
+          animation: shake 1s;
+        }
+        h4 {
+          ${PSecondary}
+          text-align: center;
+        }
         @media ${MediaQueries.tablet} {
           width: 100%;
           padding: unset;
@@ -232,7 +279,10 @@ const Contact = () => {
           </div>
 
           {successValue ? (
-            <h4>{successMessage}</h4>
+            <div className="success-container">
+              <h4>{successMessage} A team member will be reaching out.</h4>
+              <img src="Purple-in-Jumper10.png" alt="" srcset="" />
+            </div>
           ) : (
             <form onSubmit={OnSubmit}>
               {/* action="https://formsubmit.co/dcrame2@gmail.com" */}
