@@ -28,7 +28,7 @@ const ICMContainer = styled.section`
 
         img {
             background-color: ${Variables.color1};
-            max-width: 540px;
+            max-width: 640px;
             width: 100%;
             height: auto;
             border-radius: 15px;
