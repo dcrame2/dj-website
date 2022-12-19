@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { MediaQueries } from "../styles/Utilities";
@@ -166,6 +166,57 @@ const data = {
   title2: "Talk with our team!",
 };
 const Contact = () => {
+  const [fnameValue, setFnameValue] = useState("");
+  const [lnameValue, setLnameValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+  const [messageValue, setMessageValue] = useState("");
+  const [successValue, setSuccessValue] = useState(false);
+
+  // const successHandler = (e) => {
+  //   e.preventDafault();
+  //   console.log(successValue);
+  //   setSuccessValue(true);
+  // };
+
+  const FNameHandler = (e) => {
+    setFnameValue(e.target.value);
+  };
+
+  const LNameHandler = (e) => {
+    setLnameValue(e.target.value);
+  };
+
+  const EmailHandler = (e) => {
+    setEmailValue(e.target.value);
+  };
+
+  const MessageHandler = (e) => {
+    setMessageValue(e.target.value);
+  };
+
+  const OnSubmit = (e) => {
+    e.preventDefault();
+    // https://github.com/github/fetch
+    fetch("https://formsubmit.co/ajax/dcrame2@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        fname: `${fnameValue}`,
+        lname: `${lnameValue}`,
+        email: `${emailValue}`,
+        message: `${messageValue}`,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setSuccessValue(true);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <Section id="contact">
       <div className="ContactInnerContainer">
@@ -175,44 +226,70 @@ const Contact = () => {
             <p>{data.desc}</p>
             <img src="businessman-working-on-laptop.png" />
           </div>
-          <form action="https://formsubmit.co/dcrame2@gmail.com" method="POST">
-            <input
-              type="hidden"
-              name="_subject"
-              value={`New ${Variables.companyName} Submission!`}
-            />
-            <input
-              type="hidden"
-              name="_autoresponse"
-              value={`Thank you from ${Variables.companyName}`}
-            ></input>
-            <input type="hidden" name="_cc" value="jtully97@gmail.com" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table"></input>
-            <input
-              type="hidden"
-              name="_next"
-              value="http://www.thedigitaldelight.com"
-            ></input>
-            <h3>{data.title2}</h3>
-            <div>
-              <label htmlFor="fname">First Name*</label>
-              <input type="text" name="fname" required />
-            </div>
-            <div>
-              <label htmlFor="lname">Last Name*</label>
-              <input type="text" name="lname" required />
-            </div>
-            <div>
-              <label htmlFor="email">Email Address*</label>
-              <input type="email" name="email" required />
-            </div>
-            <div>
-              <label htmlFor="message">Message*</label>
-              <textarea type="text" name="message" required />
-            </div>
-            <Button text="Submit" type="submit"></Button>
-          </form>
+
+          {successValue ? (
+            <h4>success</h4>
+          ) : (
+            <form onSubmit={OnSubmit}>
+              {/* action="https://formsubmit.co/dcrame2@gmail.com" */}
+              <input
+                type="hidden"
+                name="_subject"
+                value={`New ${Variables.companyName} Submission!`}
+              />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value={`Thank you from ${Variables.companyName}`}
+              ></input>
+              <input type="hidden" name="_cc" value="jtully97@gmail.com" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table"></input>
+              <input
+                type="hidden"
+                name="_next"
+                value="http://www.thedigitaldelight.com"
+              ></input>
+              <h3>{data.title2}</h3>
+              <div>
+                <label htmlFor="fname">First Name*</label>
+                <input
+                  onChange={FNameHandler}
+                  type="text"
+                  name="fname"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="lname">Last Name*</label>
+                <input
+                  onChange={LNameHandler}
+                  type="text"
+                  name="lname"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Email Address*</label>
+                <input
+                  onChange={EmailHandler}
+                  type="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message">Message*</label>
+                <textarea
+                  onChange={MessageHandler}
+                  type="text"
+                  name="message"
+                  required
+                />
+              </div>
+              <Button text="Submit"></Button>
+            </form>
+          )}
         </div>
       </div>
     </Section>
