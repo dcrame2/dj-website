@@ -105,8 +105,6 @@ const ContentContainer = styled.div`
 
   h1 {
     ${H1Styles}
-    color: ${Variables.color18};
-    -webkit-text-stroke: 1px solid black;
     text-transform: uppercase;
     font-weight: 600;
   }

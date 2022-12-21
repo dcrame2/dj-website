@@ -10,7 +10,7 @@ const Section = styled.section`
   height: auto;
   width: 100%;
   padding: 50px 0 125px;
-  background-color: ${Variables.color19};
+  background-color: ${Variables.color10};
   @media ${MediaQueries.mobile} {
     padding: 85px 0;
   }
@@ -32,9 +32,9 @@ const Section = styled.section`
         gap: 20px;
         background-color: ${Variables.color2};
         border-radius: 15px;
-        box-shadow: 1px 1px 10px 2px ${Variables.color19};
-        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color19};
-        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color19};
+        box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
           rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -94,15 +94,15 @@ const Section = styled.section`
         align-items: center;
         gap: 20px;
         color: ${Variables.white};
-        background-color: ${Variables.color18};
+        background-color: ${Variables.color2};
         border-radius: 40px;
         padding: 50px;
         /* box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2}; */
-        box-shadow: 1px 1px 10px 2px ${Variables.color19};
-        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color19};
-        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color19};
+        box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+        -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
           rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -177,7 +177,6 @@ const Section = styled.section`
             width: 150px;
             ${PSecondary}
             text-align: left;
-            color: ${Variables.color19};
           }
           input,
           textarea {
@@ -187,10 +186,10 @@ const Section = styled.section`
             background-color: transparent;
             border-radius: 8px;
             width: 500px;
-            border: 2px solid ${Variables.color19};
+            border: 2px solid ${Variables.color1};
             &:hover,
             &:focus {
-              box-shadow: 1px 1px 4px 1px ${Variables.color19};
+              box-shadow: 1px 1px 4px 1px ${Variables.color5};
             }
             @media ${MediaQueries.tablet} {
               width: 100%;
