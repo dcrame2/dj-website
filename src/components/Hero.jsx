@@ -123,7 +123,7 @@ const Hero = () => {
   return (
     <Section>
       <HeroBg
-        src="video.mp4"
+        src="space.mp4"
         type="video/mp4"
         muted
         loop
