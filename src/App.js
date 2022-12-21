@@ -17,8 +17,8 @@ import styled from "styled-components";
 
 const ParaContainer = styled.div`
   /* The image used */
-  background-image: url(${Variables.logo2Url});
-  background-size: auto 200px;
+  background-image: url(${Variables.logo5Url});
+  background-size: auto 550px;
 
   z-index: 1;
   /* Full height */
@@ -28,7 +28,7 @@ const ParaContainer = styled.div`
   background-attachment: fixed;
   background-position: center;
   /* padding: 200px; */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   /* background-size: auto 200px; */
 
   @media ${MediaQueries.tablet} {
