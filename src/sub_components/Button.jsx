@@ -13,7 +13,7 @@ const CustomButton = styled.button`
   cursor: pointer;
   position: relative;
   padding: 12px 24px;
-  background-color: ${Variables.color19};
+  background-color: ${Variables.color9};
   border-radius: 20px;
   color: ${Variables.white};
   border: 2px solid ${Variables.white};

@@ -105,8 +105,6 @@ const ContentContainer = styled.div`
 
   h1 {
     ${H1Styles}
-    color: ${Variables.color18};
-    -webkit-text-stroke: 1px solid black;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -125,7 +123,7 @@ const Hero = () => {
   return (
     <Section>
       <HeroBg
-        src="video.mp4"
+        src="space.mp4"
         type="video/mp4"
         muted
         loop

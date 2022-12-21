@@ -13,8 +13,8 @@ const Section = styled.section`
   width: 100%;
   padding-top: 85px;
   padding-bottom: 85px;
-  background-color: ${Variables.black};
-  /* background: rgb(0, 0, 0); */
+  background-color: ${Variables.color14};
+  background: rgb(0, 0, 0);
 
   .inner-section {
     ${Container}
@@ -69,7 +69,7 @@ const Section = styled.section`
         flex-wrap: wrap;
         height: auto;
         background-color: ${Variables.color12};
-        border: 1px solid ${Variables.color18};
+        border: 1px solid ${Variables.color2};
         color: ${Variables.white};
         flex-direction: column;
         justify-content: center;
@@ -100,7 +100,7 @@ const Section = styled.section`
         &:hover
             /*&:focus*/ {
           @media ${MediaQueries.desktop} {
-            background-color: ${Variables.color18};
+            background-color: ${Variables.color9};
             transition: background-color ease 0.45s;
           }
 
@@ -130,19 +130,19 @@ const Section = styled.section`
         &:nth-child(1) {
           span.num {
             ${H2Styles}
-            color: ${Variables.color18};
+            color: ${Variables.color4};
           }
         }
         &:nth-child(2) {
           span.num {
             ${H2Styles}
-            color: ${Variables.color18};
+            color: ${Variables.color3};
           }
         }
         &:nth-child(3) {
           span.num {
             ${H2Styles}
-            color: ${Variables.color18};
+            color: ${Variables.color1};
           }
         }
         h2 {
@@ -158,7 +158,7 @@ const Section = styled.section`
           opacity: 0;
           transition: max-height 0.26s ease, opacity ease 0.25s;
           p {
-            color: ${Variables.color18};
+            /* color: ${Variables.color1}; */
             font-size: 1.75rem;
             line-height: 25px;
             overflow: hidden;
@@ -166,8 +166,7 @@ const Section = styled.section`
         }
         &.active {
           transition: background-color ease 0.45s;
-          background-color: ${Variables.color12};
-
+          background-color: ${Variables.color16};
           .dropdown {
             max-height: 245px; // TODO: find solution to using auto height :)
             transition: max-height 0.25s ease, opacity ease 0.26s;
@@ -183,19 +182,19 @@ const data = {
   services: [
     {
       num: "01",
-      img: "develop.png",
+      img: "/web_dev_icons/ui-design.png",
       name: "Design",
       desc: "Quality designs made to catch users attention and show your business model",
     },
     {
       num: "02",
-      img: "des.png",
+      img: "/web_dev_icons/web-development.png",
       name: "Develop",
       desc: "Professional developers executing modern websites your user will remember visting",
     },
     {
       num: "03",
-      img: "support.png",
+      img: "/web_dev_icons/maintenance.png",
       name: "Support",
       desc: "Internal developers to help maintain and support your website for any update needs",
     },
@@ -205,7 +204,7 @@ const data = {
 };
 
 const Services = () => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const activeToggle = (index) => {

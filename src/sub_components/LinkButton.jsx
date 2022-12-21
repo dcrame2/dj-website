@@ -14,7 +14,7 @@ const CustomLink = styled.a`
   position: relative;
   padding: 12px 24px;
   //opacity: 0.7;
-  background-color: ${Variables.color18};
+  background-color: ${Variables.color9};
   border-radius: 20px;
   color: ${Variables.white};
   border: 2px solid ${Variables.white};
@@ -34,7 +34,7 @@ const CustomLink = styled.a`
 
   &:after {
     content: "";
-    background-color: ${Variables.color19};
+    background-color: ${Variables.color2};
     position: absolute;
     width: 100%;
     height: 0;
