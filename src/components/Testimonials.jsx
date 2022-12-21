@@ -14,7 +14,7 @@ const TestimonialsSection = styled.section`
     .carousel-indicators {
       bottom: -20px;
       [data-bs-target] {
-        background-color: ${Variables.color18};
+        background-color: ${Variables.color1};
       }
     }
     .carousel-item {
@@ -54,7 +54,7 @@ const TestimonialsSection = styled.section`
         padding-bottom: unset;
         h3 {
           ${H3Styles}
-          color: ${Variables.color18}
+          color: ${Variables.color1}
         }
 
         p {
@@ -73,7 +73,7 @@ const Testimonials = () => {
         <Carousel.Item interval={6000}>
           <img className="d-block" src="avatar1.png" alt="First slide" />
           <Carousel.Caption>
-            <h3>David G.</h3>
+            <h3>Johnny J.</h3>
             <p>
               {Variables.companyName} transformed my business to a new level
               which increased my site viewers over 100%.
