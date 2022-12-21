@@ -7,7 +7,7 @@ import { MediaQueries } from "../styles/Utilities";
 const ICMContainer = styled.section`
   position: relative;
   width: 100%;
-  background-color: ${Variables.color7};
+  background-color: ${Variables.color20};
 
   .ICMInnerContainer {
     ${Container}
