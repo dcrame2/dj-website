@@ -183,19 +183,19 @@ const data = {
   services: [
     {
       num: "01",
-      img: "/web_dev_icons/ui-design.png",
+      img: "develop.png",
       name: "Design",
       desc: "Quality designs made to catch users attention and show your business model",
     },
     {
       num: "02",
-      img: "/web_dev_icons/web-development.png",
+      img: "des.png",
       name: "Develop",
       desc: "Professional developers executing modern websites your user will remember visting",
     },
     {
       num: "03",
-      img: "/web_dev_icons/maintenance.png",
+      img: "support.png",
       name: "Support",
       desc: "Internal developers to help maintain and support your website for any update needs",
     },
