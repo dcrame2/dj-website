@@ -14,7 +14,7 @@ const TestimonialsSection = styled.section`
     .carousel-indicators {
       bottom: -20px;
       [data-bs-target] {
-        background-color: ${Variables.color1};
+        background-color: ${Variables.color18};
       }
     }
     .carousel-item {
@@ -54,7 +54,7 @@ const TestimonialsSection = styled.section`
         padding-bottom: unset;
         h3 {
           ${H3Styles}
-          color: ${Variables.color1}
+          color: ${Variables.color18}
         }
 
         p {
