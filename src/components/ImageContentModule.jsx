@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
-import { H3Styles, PSecondary } from '../styles/Type';
+import { H2Styles, PSecondary } from '../styles/Type';
 import { MediaQueries } from '../styles/Utilities';
 
 const ICMContainer = styled.section`
@@ -40,7 +40,7 @@ const ICMContainer = styled.section`
             max-width: 460px;
 
             h2 {
-                ${H3Styles}
+                ${H2Styles};
                 color: ${Variables.black};
                 margin-bottom: 12px;
             }
