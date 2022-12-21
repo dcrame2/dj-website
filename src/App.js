@@ -33,6 +33,7 @@ const ParaContainer = styled.div`
 
   @media ${MediaQueries.tablet} {
     background-attachment: scroll;
+    background-image: unset;
   }
 `;
 
