@@ -69,7 +69,7 @@ const Section = styled.section`
         flex-wrap: wrap;
         height: auto;
         background-color: ${Variables.color12};
-        border: 1px solid ${Variables.color4};
+        border: 1px solid ${Variables.color2};
         color: ${Variables.white};
         flex-direction: column;
         justify-content: center;
@@ -100,7 +100,7 @@ const Section = styled.section`
         &:hover
             /*&:focus*/ {
           @media ${MediaQueries.desktop} {
-            background-color: ${Variables.color18};
+            background-color: ${Variables.color9};
             transition: background-color ease 0.45s;
           }
 
@@ -166,7 +166,7 @@ const Section = styled.section`
         }
         &.active {
           transition: background-color ease 0.45s;
-          background-color: ${Variables.color14};
+          background-color: ${Variables.color12};
 
           .dropdown {
             max-height: 245px; // TODO: find solution to using auto height :)

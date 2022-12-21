@@ -10,7 +10,7 @@ const Section = styled.section`
   height: auto;
   width: 100%;
   padding: 50px 0 125px;
-  background-color: ${Variables.color10};
+  background-color: ${Variables.color14};
   @media ${MediaQueries.mobile} {
     padding: 85px 0;
   }
@@ -30,7 +30,10 @@ const Section = styled.section`
         padding: 50px 20px;
         flex-direction: column;
         gap: 20px;
-        background-color: ${Variables.color2};
+        /* background-color: ${Variables.color2}; */
+        border: solid 1px ${Variables.color2};
+        background-color: unset;
+        background: transparent;
         border-radius: 15px;
         box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
@@ -94,9 +97,11 @@ const Section = styled.section`
         align-items: center;
         gap: 20px;
         color: ${Variables.white};
-        background-color: ${Variables.color2};
+        /* background-color: ${Variables.color2}; */
+        background: transparent;
         border-radius: 40px;
         padding: 50px;
+        border: solid 1px ${Variables.color2};
         /* box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
         -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2}; */
@@ -156,6 +161,7 @@ const Section = styled.section`
           width: 100%;
           padding: unset;
           box-shadow: unset;
+          border: unset;
           -webkit-box-shadow: unset;
           -moz-box-shadow: unset;
         }
@@ -186,7 +192,7 @@ const Section = styled.section`
             background-color: transparent;
             border-radius: 8px;
             width: 500px;
-            border: 2px solid ${Variables.color1};
+            border: 2px solid ${Variables.color2};
             &:hover,
             &:focus {
               box-shadow: 1px 1px 4px 1px ${Variables.color5};
