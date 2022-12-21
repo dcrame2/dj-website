@@ -166,7 +166,7 @@ const Section = styled.section`
         }
         &.active {
           transition: background-color ease 0.45s;
-          background-color: ${Variables.color1};
+          background-color: ${Variables.color16};
           .dropdown {
             max-height: 245px; // TODO: find solution to using auto height :)
             transition: max-height 0.25s ease, opacity ease 0.26s;
