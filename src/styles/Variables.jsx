@@ -33,6 +33,7 @@ export const Variables = {
   color17: "#000000",
   color18: "#0dd9bb",
   color19: "#000F2A",
+  color20: "transparent",
 
   black: "black",
   white: "#ffff",
@@ -48,4 +49,5 @@ export const Variables = {
   logo2Url: "logo-no-background.svg",
   logo3Url: "white-logo.png",
   logo4Url: "white-logo-left.png",
+  logo5Url: "video.mp4",
 };
