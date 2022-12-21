@@ -158,7 +158,7 @@ const Section = styled.section`
           opacity: 0;
           transition: max-height 0.26s ease, opacity ease 0.25s;
           p {
-            color: ${Variables.color1};
+            /* color: ${Variables.color1}; */
             font-size: 1.75rem;
             line-height: 25px;
             overflow: hidden;
@@ -166,13 +166,12 @@ const Section = styled.section`
         }
         &.active {
           transition: background-color ease 0.45s;
-          background-color: ${Variables.color12};
-
-          .dropdown {
-            max-height: 245px; // TODO: find solution to using auto height :)
-            transition: max-height 0.25s ease, opacity ease 0.26s;
-            opacity: 1;
-          }
+          background-color: ${Variables.color1};
+        }
+        .dropdown {
+          max-height: 245px; // TODO: find solution to using auto height :)
+          transition: max-height 0.25s ease, opacity ease 0.26s;
+          opacity: 1;
         }
       }
     }
@@ -231,8 +230,8 @@ const Services = () => {
           {data.services.map((service, i) => {
             return (
               <button
-                className={active === i ? "active" : ""}
-                onClick={() => activeToggle(i)}
+                // className={active === i ? "active" : ""}
+                // onClick={() => activeToggle(i)}
                 key={`button-${i}`}
               >
                 <img src={`${service.img}`} />
