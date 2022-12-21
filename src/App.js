@@ -11,7 +11,7 @@ import Spacer from "./sub_components/Spacer.jsx";
 import FaqModule from "./components/FaqModule.jsx";
 import "./global.css";
 import { useState, useEFfect, useEffect } from "react";
-import { MediaQueries } from "./utility/utility";
+import { MediaQueries } from "./styles/Utilities";
 import { Variables } from "./styles/Variables.jsx";
 import styled from "styled-components";
 
@@ -30,6 +30,10 @@ const ParaContainer = styled.div`
   /* padding: 200px; */
   background-repeat: no-repeat;
   /* background-size: auto 200px; */
+
+  @media ${MediaQueries.tablet} {
+    background-attachment: scroll;
+  }
 `;
 
 function App() {
