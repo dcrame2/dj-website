@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 
-const FaqContainer = styled.div`
+const FaqContainer = styled.section`
     display: relative;
     background-color: ${Variables.color1};
 
@@ -51,7 +51,7 @@ const data = {
 
 export default function FaqModule() {
     return (
-        <FaqContainer>
+        <FaqContainer id='faq-section'>
             <div className='inner-container'>
                 {data.questions.map((faq, index) => {
                     console.log(faq);
