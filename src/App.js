@@ -8,6 +8,7 @@ import Footer from "./components/Footer.jsx";
 import Testimonials from "./components/Testimonials";
 import SlideOutLink from "./components/SlideOutLink";
 import Spacer from "./sub_components/Spacer.jsx";
+import FaqModule from "./components/FaqModule.jsx";
 import "./global.css";
 import { useState, useEFfect, useEffect } from "react";
 import { Variables } from "./styles/Variables.jsx";
@@ -73,6 +74,8 @@ function App() {
       <Spacer color={Variables.color7} desktop={158} tablet={92} mobile={80} />
       <ModuleBlender />
       <Testimonials />
+      <ModuleBlender />
+      <FaqModule />
       <ModuleBlender />
       <Contact />
       <ModuleBlender />
