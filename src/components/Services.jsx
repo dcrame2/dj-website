@@ -167,11 +167,11 @@ const Section = styled.section`
         &.active {
           transition: background-color ease 0.45s;
           background-color: ${Variables.color1};
-        }
-        .dropdown {
-          max-height: 245px; // TODO: find solution to using auto height :)
-          transition: max-height 0.25s ease, opacity ease 0.26s;
-          opacity: 1;
+          .dropdown {
+            max-height: 245px; // TODO: find solution to using auto height :)
+            transition: max-height 0.25s ease, opacity ease 0.26s;
+            opacity: 1;
+          }
         }
       }
     }
@@ -204,7 +204,7 @@ const data = {
 };
 
 const Services = () => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const activeToggle = (index) => {
@@ -230,8 +230,8 @@ const Services = () => {
           {data.services.map((service, i) => {
             return (
               <button
-                // className={active === i ? "active" : ""}
-                // onClick={() => activeToggle(i)}
+                className={active === i ? "active" : ""}
+                onClick={() => activeToggle(i)}
                 key={`button-${i}`}
               >
                 <img src={`${service.img}`} />
