@@ -2,6 +2,7 @@ import Dropdown from '../sub_components/Dropdown';
 import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
+import { H2Styles, PBaseStyles } from '../styles/Type';
 
 const FaqContainer = styled.section`
     display: relative;
@@ -11,10 +12,24 @@ const FaqContainer = styled.section`
         ${Container}
         padding-top: 90px;
         padding-bottom: 90px;
+
+        .heading-section {
+            margin-bottom: 25px;
+            text-align: center;
+
+            h2 {
+                ${H2Styles}
+            }
+            P {
+                ${PBaseStyles}
+            }
+        }
     }
 `;
 
 const data = {
+    heading: 'Frequently Asked Questions',
+    subheading: 'subheading',
     questions: [
         {
             question: `How much does ${Variables.companyName} cost?
@@ -53,6 +68,10 @@ export default function FaqModule() {
     return (
         <FaqContainer id='faq-section'>
             <div className='inner-container'>
+                <div className='heading-section'>
+                    <h2>{data.heading}</h2>
+                    <p>{data.subheading}</p>
+                </div>
                 {data.questions.map((faq, index) => {
                     console.log(faq);
                     return (
