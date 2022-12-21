@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { PBaseStyles } from '../styles/Type';
+import { PBaseStyles, PSecondary } from '../styles/Type';
 import { Variables } from '../styles/Variables';
 import DropIndicator from './svg/DropIndicator';
 
@@ -11,6 +11,7 @@ const Container = styled.div`
     .wrapper {
         display: flex;
         justify-content: space-between;
+        gap: 10px;
 
         .toggle {
             background-color: unset;
@@ -36,7 +37,7 @@ const Container = styled.div`
         overflow: hidden;
 
         p {
-            ${PBaseStyles}
+            ${PSecondary}
             margin-bottom: 24px;
             opacity: 0;
             transition: opacity ease 0.4s;

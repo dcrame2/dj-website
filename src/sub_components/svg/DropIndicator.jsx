@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 import { Variables } from '../../styles/Variables';
+import { MediaQueries } from '../../styles/Utilities';
 
 const IndicatorSvg = styled.svg`
     max-width: 35px;
     max-height: 35px;
+
+    @media ${MediaQueries.tablet} {
+        width: 28px;
+        height: 28px;
+    }
 
     polyline {
         stroke: ${(props) =>
@@ -22,8 +28,8 @@ export default function DropIndicator() {
             viewBox='0 0 100 100'
             preserveAspectRatio='none'
         >
-            <polyline points='20,25 50,80' />
-            <polyline points='50,80 80,25' />
+            <polyline points='20,45 50,70' />
+            <polyline points='50,70 80,45' />
         </IndicatorSvg>
     );
 }
