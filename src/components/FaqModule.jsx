@@ -1,7 +1,7 @@
 import Dropdown from '../sub_components/Dropdown';
 import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
-import { Container } from '../styles/Utilities';
+import { Container, MediaQueries } from '../styles/Utilities';
 import { H2Styles, PBaseStyles } from '../styles/Type';
 
 const FaqContainer = styled.section`
@@ -10,15 +10,34 @@ const FaqContainer = styled.section`
 
     .inner-container {
         ${Container}
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding-top: 160px;
+        padding-bottom: 180px;
+
+        @media ${MediaQueries.tablet} {
+            padding-top: 120px;
+            padding-bottom: 160px;
+        }
+
+        @media ${MediaQueries.mobile} {
+            padding-top: 80px;
+            padding-bottom: 120px;
+        }
 
         .heading-section {
-            margin-bottom: 25px;
+            margin-bottom: 78px;
             text-align: center;
+
+            @media ${MediaQueries.tablet} {
+                margin-bottom: 48px;
+            }
+
+            @media ${MediaQueries.mobile} {
+                margin-bottom: 28px;
+            }
 
             h2 {
                 ${H2Styles}
+                margin-bottom: 10px;
             }
             P {
                 ${PBaseStyles}

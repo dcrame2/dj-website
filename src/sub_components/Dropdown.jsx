@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PBaseStyles, PSecondary } from '../styles/Type';
+import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import DropIndicator from './svg/DropIndicator';
 
@@ -12,17 +13,26 @@ const Container = styled.div`
         display: flex;
         justify-content: space-between;
         gap: 10px;
+        position: relative;
 
         .toggle {
             background-color: unset;
             border: unset;
             ${PBaseStyles}
             color: ${Variables.black};
-            padding: 20px 0;
-            max-width: 90%;
+            padding: 20px 85px 20px 0;
+            width: 100%;
             text-align: left;
+            z-index: 1;
+
+            @media ${MediaQueries.tablet} {
+                padding: 16px 45px 16px 0;
+            }
         }
         .indicator {
+            position: absolute;
+            top: 25%;
+            right: 0;
             display: flex;
             align-items: center;
             svg {
@@ -41,6 +51,7 @@ const Container = styled.div`
             margin-bottom: 24px;
             opacity: 0;
             transition: opacity ease 0.4s;
+            max-width: 80%;
         }
     }
 
@@ -53,6 +64,14 @@ const Container = styled.div`
         .panel {
             max-height: 200px;
             transition: max-height ease 0.4s;
+
+            @media ${MediaQueries.tablet} {
+                max-height: 300px;
+            }
+
+            @media ${MediaQueries.mobile} {
+                max-height: 550px;
+            }
 
             p {
                 opacity: 1;
