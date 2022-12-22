@@ -59,7 +59,7 @@ const data = {
         {
             question: `How much does ${Variables.companyName} cost?
         `,
-            answer: 'Each clients goal differ and you must have a conversation with a team member to ensure we align on the scope of your project. Please fill out our contact form<a href=”/#contact”> here</a>. We’ve ranged from $1500 - $1MIL',
+            answer: 'Each clients goal differ and you must have a conversation with a team member to ensure we align on the scope of your project. Please fill out our contact form<a href=”/#contact”> here</a>. We’ve ranged from $1500 - $20,000',
         },
         {
             question: 'How long does it take for a website?',
@@ -84,7 +84,7 @@ const data = {
         },
         {
             question: 'Can you make web application or mobile applications?',
-            answer: 'Yes, the boys can make fully custom web applications and mobile applications. These products are a much higher cost to a client due to additional hours commenced.',
+            answer: 'Yes, we sure can create fully custom web applications and mobile applications. These products are a much higher cost to a client due to additional hours commenced.',
         },
     ],
 };

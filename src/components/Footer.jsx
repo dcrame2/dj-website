@@ -68,6 +68,7 @@ const FooterInner = styled.div`
 
             h2 {
                 ${H3Styles}
+                text-transform: uppercase;
             }
             a {
                 ${PSmallStyles}
