@@ -33,7 +33,7 @@ const FooterElm = styled.footer`
 const FooterInner = styled.div`
     ${Container}
     padding-bottom: 50px;
-    padding-top: 50px;
+    padding-top: 110px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     height: 100%;
@@ -44,7 +44,7 @@ const FooterInner = styled.div`
     @media ${MediaQueries.mobile} {
         grid-template-columns: 1fr;
         padding-bottom: 40px;
-        padding-top: 40px;
+        padding-top: 80px;
     }
 
     img {
