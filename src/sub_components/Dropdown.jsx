@@ -29,6 +29,10 @@ const Container = styled.div`
             @media ${MediaQueries.tablet} {
                 padding: 16px 45px 16px 0;
             }
+
+            @media ${MediaQueries.mobile} {
+                padding: 12px 45px 12px 0;
+            }
         }
         .indicator {
             position: absolute;
