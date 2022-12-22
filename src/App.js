@@ -67,7 +67,7 @@ function App() {
                 text='services'
             />
             <Hero src='hero1.mp4' />
-            <ModuleBlender size='large' />
+            {/* <ModuleBlender size='large' /> */}
             <Services />
             <ModuleBlender />
             <ParaContainer>

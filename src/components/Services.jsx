@@ -13,8 +13,8 @@ const Section = styled.section`
     width: 100%;
     padding-top: 85px;
     padding-bottom: 85px;
-    background-color: ${Variables.color14};
-    background: rgb(0, 0, 0);
+    //background-color: ${Variables.color14};
+    background-color: ${Variables.black};
 
     .inner-section {
         ${Container}
@@ -189,7 +189,7 @@ const data = {
         },
         {
             num: '02',
-            img: '/web_dev_icons/web-development.png',
+            img: '/clean_icons/coding.png',
             name: 'Develop',
             desc: 'Professional developers executing modern websites your user will remember visting',
         },
