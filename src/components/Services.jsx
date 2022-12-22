@@ -12,9 +12,17 @@ const Section = styled.section`
     position: relative;
     width: 100%;
     padding-top: 85px;
-    padding-bottom: 85px;
-    //background-color: ${Variables.color14};
-    background-color: ${Variables.black};
+    padding-bottom: 185px;
+    background-color: ${Variables.color14};
+    //background-color: ${Variables.black};
+
+    @media ${Variables.tablet} {
+        padding-bottom: 140px;
+    }
+
+    @media ${Variables.mobile} {
+        padding-bottom: 100px;
+    }
 
     .inner-section {
         ${Container}

@@ -16,13 +16,11 @@ const Section = styled.section`
         width: 100%;
         position: absolute;
         bottom: 0;
-        height: 20vh;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.5830532896752452) 43%,
-            rgba(0, 0, 0, 1) 100%
-        );
+        height: 40vh;
+        background: #ffffff00;
+        background: -webkit-linear-gradient(top, #ffffff00, #060011);
+        background: -moz-linear-gradient(top, #ffffff00, #060011);
+        background: linear-gradient(to bottom, #ffffff00, #060011);
     }
 `;
 
