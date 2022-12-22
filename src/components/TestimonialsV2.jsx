@@ -132,6 +132,7 @@ const InnerContainer = styled.div`
 
         li {
             button {
+                position: relative;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
@@ -146,12 +147,33 @@ const InnerContainer = styled.div`
                     transform: scale(1.1);
                     transition: transform ease 0.2s;
                 }
+
+                &:after {
+                    content: '';
+                    background-color: ${Variables.color9};
+                    position: absolute;
+                    z-index: 0;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    margin: auto;
+                    border-radius: 50%;
+                    width: 0%;
+                    height: 0%;
+                    transition: width ease 0.3s, height ease 0.3s;
+                }
             }
 
             &.active {
                 button {
                     transform: scale(1.3);
-                    background-color: ${Variables.color9};
+                    &:after {
+                        width: 100%;
+                        height: 100%;
+                        transition: width ease 0.3s, height ease 0.3s;
+                    }
                 }
             }
         }
