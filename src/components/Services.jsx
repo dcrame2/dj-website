@@ -129,10 +129,10 @@ const Section = styled.section`
                     opacity: calc() 0.9;
 
                     @media ${MediaQueries.tablet} {
-                        max-width: 250px;
+                        max-width: 150px;
                     }
                     @media ${MediaQueries.mobile} {
-                        height: 175px;
+                        max-width: 100px;
                     }
                 }
                 &:nth-child(1) {
