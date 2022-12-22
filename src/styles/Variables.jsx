@@ -50,4 +50,6 @@ export const Variables = {
   logo3Url: "white-logo.png",
   logo4Url: "white-logo-left.png",
   logo5Url: "need.png",
+  logo6Url: "digital.svg",
+  logo7Url: "logo-black.svg",
 };

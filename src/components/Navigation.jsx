@@ -246,7 +246,7 @@ export default function Navigation({ backdrop }) {
         <ul>
           <li className="logo">
             <a href="#">
-              <img src={`${Variables.logo2Url}`} alt="Logo"></img>
+              <img src={`${Variables.logo6Url}`} alt="Logo"></img>
             </a>
           </li>
           <li
