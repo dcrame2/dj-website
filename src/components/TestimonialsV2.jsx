@@ -181,10 +181,6 @@ export default function TestimonialsV2() {
     const [activeIndex, setActiveIndex] = useState(0);
     const max = data.testimonials.length - 1;
 
-    useEffect(() => {
-        // console.log(activeIndex + ' active index');
-    }, [activeIndex]);
-
     const nextPressed = () => {
         if (activeIndex < max) {
             setActiveIndex((activeIndex) => activeIndex + 1);
@@ -216,6 +212,7 @@ export default function TestimonialsV2() {
                         {data.testimonials.map((testimonial, index) => {
                             return (
                                 <div
+                                    key={`tile-${index}`}
                                     className={`tile ${
                                         activeIndex === index ? 'active' : ''
                                     }`}
@@ -234,7 +231,6 @@ export default function TestimonialsV2() {
                 </div>
                 <ul className='indicators'>
                     {data.testimonials.map((item, index) => {
-                        console.log(index);
                         return (
                             <li
                                 key={`button-${index}`}
