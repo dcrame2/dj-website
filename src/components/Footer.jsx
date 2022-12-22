@@ -87,10 +87,9 @@ export default function Footer() {
 
     const data = {
         links: [
-            { href: '#', text: 'Services' },
-            { href: '#', text: 'Testimonials' },
-            { href: '#', text: 'About' },
-            { href: '#', text: 'Contact' },
+            { href: '#services', text: 'Services' },
+            { href: '#testimonials', text: 'Testimonials' },
+            { href: '#faqSection', text: 'FAQ' },
         ],
     };
 

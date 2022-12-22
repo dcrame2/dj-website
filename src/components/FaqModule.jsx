@@ -89,9 +89,9 @@ const data = {
     ],
 };
 
-export default function FaqModule() {
+export default function FaqModule({ ...props }) {
     return (
-        <FaqContainer id='faq-section'>
+        <FaqContainer id={props.id}>
             <div className='inner-container'>
                 <div className='heading-section'>
                     <h2>{data.heading}</h2>

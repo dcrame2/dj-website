@@ -123,7 +123,7 @@ function App() {
       <ModuleBlender />
       <Testimonials />
       <ModuleBlender />
-      <FaqModule />
+      <FaqModule id='faqSection'/>
       <ModuleBlender />
       <Contact />
       <ModuleBlender />

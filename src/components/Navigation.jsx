@@ -219,7 +219,7 @@ const data = {
   links: [
     { href: "#services", text: "Services" },
     { href: "#testimonials", text: "Testimonials" },
-    { href: "#supportSection", text: "FAQ" },
+    { href: "#faqSection", text: "FAQ" },
   ],
 };
 
