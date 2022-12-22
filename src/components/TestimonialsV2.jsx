@@ -6,7 +6,7 @@ import { Variables } from '../styles/Variables';
 import { H2Styles, H3Styles, PSecondary } from '../styles/Type';
 import Arrow from '../sub_components/svg/Arrow';
 
-const ModuleContainer = styled.div`
+const ModuleContainer = styled.section`
     position: relative;
 `;
 
@@ -177,7 +177,7 @@ const data = {
     ],
 };
 
-export default function TestimonialsV2() {
+export default function TestimonialsV2({ ...props }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const max = data.testimonials.length - 1;
 
@@ -198,7 +198,7 @@ export default function TestimonialsV2() {
     };
 
     return (
-        <ModuleContainer>
+        <ModuleContainer id={props.id}>
             <InnerContainer>
                 <div className='heading-container'>
                     <h2>{data.heading}</h2>

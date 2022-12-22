@@ -122,7 +122,7 @@ function App() {
                 />
             </ParaContainer>
             <ModuleBlender />
-            <TestimonialsV2 />
+            <TestimonialsV2 id='testimonials' />
             <ModuleBlender />
             <FaqModule id='faqSection' />
             <ModuleBlender />
