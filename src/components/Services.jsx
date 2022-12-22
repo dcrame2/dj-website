@@ -108,7 +108,7 @@ const Section = styled.section`
                 &:hover
             /*&:focus*/ {
                     @media ${MediaQueries.desktop} {
-                        background-color: ${Variables.color9};
+                        background-color: ${Variables.color10};
                         transition: background-color ease 0.45s;
                     }
 
@@ -191,19 +191,19 @@ const data = {
     services: [
         {
             num: '01',
-            img: '/web_dev_icons/ui-design.png',
+            img: '/orange_icons/content-creator.png',
             name: 'Design',
             desc: 'Quality designs made to catch users attention and show your business model',
         },
         {
             num: '02',
-            img: '/clean_icons/coding.png',
+            img: '/orange_icons/coding.png',
             name: 'Develop',
             desc: 'Professional developers executing modern websites your user will remember visting',
         },
         {
             num: '03',
-            img: '/web_dev_icons/maintenance.png',
+            img: '/orange_icons/browser.png',
             name: 'Support',
             desc: 'Internal developers to help maintain and support your website for any update needs',
         },
