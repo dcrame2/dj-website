@@ -20,7 +20,7 @@ const Container = styled.div`
             border: unset;
             ${PBaseStyles}
             color: ${Variables.black};
-            padding: 20px 85px 20px 0;
+            padding: 16px 85px 16px 0;
             width: 100%;
             text-align: left;
             z-index: 1;

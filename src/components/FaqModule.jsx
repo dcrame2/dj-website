@@ -25,21 +25,23 @@ const FaqContainer = styled.section`
         }
 
         .heading-section {
-            margin-bottom: 78px;
+            margin: 0 auto 78px;
             text-align: center;
+            max-width: 800px;
 
             @media ${MediaQueries.tablet} {
-                margin-bottom: 48px;
+                margin: 0 auto 48px;
             }
 
             @media ${MediaQueries.mobile} {
-                margin-bottom: 28px;
+                margin: 0 auto 28px;
             }
 
             h2 {
                 ${H2Styles}
+                text-transform: uppercase;
                 color: ${Variables.black};
-                margin-bottom: 10px;
+                margin-bottom: 16px;
             }
             P {
                 ${PBaseStyles}
@@ -51,7 +53,8 @@ const FaqContainer = styled.section`
 
 const data = {
     heading: 'Frequently Asked Questions',
-    subheading: 'subheading',
+    subheading:
+        'If you have a question that you do not see here, please reach out via the contact form',
     questions: [
         {
             question: `How much does ${Variables.companyName} cost?
