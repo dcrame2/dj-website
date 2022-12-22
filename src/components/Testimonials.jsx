@@ -61,9 +61,10 @@ const TestimonialsSection = styled.section`
   .info {
     margin-bottom: 0.75rem;
     ${PSecondary}
-
+    height: 50px;
     @media ${Variables.mobile} {
       margin: unset;
+      height: 100px;
     }
   }
 
