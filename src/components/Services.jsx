@@ -124,8 +124,8 @@ const Section = styled.section`
                 }
                 img {
                     position: relative;
-                    max-width: 250px;
-                    height: 170px;
+                    max-width: 120px;
+                    height: auto;
                     opacity: calc() 0.9;
 
                     @media ${MediaQueries.tablet} {
