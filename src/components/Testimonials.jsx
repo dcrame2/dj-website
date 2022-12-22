@@ -49,22 +49,31 @@ const TestimonialsSection = styled.section`
   @media ${Variables.mobile} {
     padding: 80px 40px;
   }
-  .author {
-    margin-bottom: 0.25rem;
-    ${H2Styles}
-  }
-  .job {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color: ${Variables.white};
-  }
-  .info {
-    margin-bottom: 0.75rem;
-    ${PSecondary}
-    height: 50px;
-    @media ${Variables.mobile} {
-      margin: unset;
-      height: 100px;
+
+  .info-container {
+    /* opacity: 0;
+    transition: opacity 0.5s ease;
+    &.active {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    } */
+    .author {
+      margin-bottom: 0.25rem;
+      ${H2Styles}
+    }
+    .job {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: ${Variables.white};
+    }
+    .info {
+      margin-bottom: 0.75rem;
+      ${PSecondary}
+      height: 50px;
+      @media ${Variables.mobile} {
+        margin: unset;
+        height: 100px;
+      }
     }
   }
 
@@ -144,6 +153,7 @@ const TestimonialsSection = styled.section`
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = reviews[index];
+  const [active, setActive] = useState(false);
 
   const checkNumber = (number) => {
     if (number > reviews.length - 1) {
@@ -160,6 +170,7 @@ const Testimonials = () => {
       let newIndex = index + 1;
       return checkNumber(newIndex);
     });
+    setActive(true);
   };
 
   const prevPerson = () => {
@@ -167,6 +178,7 @@ const Testimonials = () => {
       let newIndex = index - 1;
       return checkNumber(newIndex);
     });
+    setActive(true);
   };
 
   const randomPerson = () => {
@@ -175,6 +187,7 @@ const Testimonials = () => {
       randomNumber = index + 1;
     }
     setIndex(checkNumber(randomNumber));
+    setActive(true);
   };
 
   return (
@@ -185,9 +198,11 @@ const Testimonials = () => {
           <FaQuoteRight />
         </span>
       </div>
-      <h4 className="author">{name}</h4>
-      <p className="job">{job}</p>
-      <p className="info">{text}</p>
+      <div className="info-container">
+        <h4 className="author">{name}</h4>
+        <p className="job">{job}</p>
+        <p className="info">{text}</p>
+      </div>
       <div className="button-container">
         <button className="prev-btn" onClick={prevPerson}>
           <FaChevronLeft />
