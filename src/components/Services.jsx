@@ -126,7 +126,7 @@ const Section = styled.section`
                     position: relative;
                     max-width: 120px;
                     height: auto;
-                    opacity: calc() 0.9;
+                    opacity: 0.8;
 
                     @media ${MediaQueries.tablet} {
                         max-width: 150px;
