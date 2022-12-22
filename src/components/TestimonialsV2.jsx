@@ -88,6 +88,10 @@ const InnerContainer = styled.div`
                 h4 {
                     ${H3Styles}
                     margin-bottom: 12px;
+
+                    @media ${MediaQueries.mobile} {
+                        margin-bottom: 4px;
+                    }
                 }
 
                 p.content {
