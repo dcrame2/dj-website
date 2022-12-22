@@ -134,7 +134,7 @@ const Hero = () => {
       <InnerSection>
         <ContentContainer className={`${loaded ? "loaded" : "null"}`}>
           <h1>{`Experience ${Variables.companyName}`}</h1>
-          <h2>We make websites and web applications</h2>
+          <h2>Bringing you websites and web applications</h2>
         </ContentContainer>
       </InnerSection>
     </Section>
