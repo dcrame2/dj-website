@@ -74,8 +74,8 @@ function App() {
                 <Spacer
                     color={Variables.color20}
                     desktop={158}
-                    tablet={92}
-                    mobile={80}
+                    tablet={120}
+                    mobile={100}
                 />
 
                 <ImageContentModule
@@ -88,8 +88,8 @@ function App() {
                 <Spacer
                     color={Variables.color20}
                     desktop={144}
-                    tablet={92}
-                    mobile={60}
+                    tablet={120}
+                    mobile={100}
                 />
                 <ImageContentModule
                     id='developSection'
@@ -102,8 +102,8 @@ function App() {
                 <Spacer
                     color={Variables.color20}
                     desktop={144}
-                    tablet={92}
-                    mobile={60}
+                    tablet={120}
+                    mobile={100}
                 />
                 <ImageContentModule
                     id='supportSection'
@@ -117,8 +117,8 @@ function App() {
                 <Spacer
                     color={Variables.color20}
                     desktop={158}
-                    tablet={92}
-                    mobile={80}
+                    tablet={120}
+                    mobile={100}
                 />
             </ParaContainer>
             <ModuleBlender />
