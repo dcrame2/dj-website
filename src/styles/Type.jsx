@@ -26,6 +26,10 @@ export const H2Styles = css`
     @media ${Variables.tablet} {
         font-size: 4.5rem;
     }
+
+    @media ${Variables.mobile} {
+        font-size: 3.5rem;
+    }
 `;
 
 export const H3Styles = css`
