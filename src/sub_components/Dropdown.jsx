@@ -24,6 +24,7 @@ const Container = styled.div`
             width: 100%;
             text-align: left;
             z-index: 1;
+            transition: color ease 0.3s;
 
             @media ${MediaQueries.tablet} {
                 padding: 16px 45px 16px 0;
@@ -48,6 +49,7 @@ const Container = styled.div`
 
         p {
             ${PSecondary}
+            color: ${Variables.black};
             margin-bottom: 24px;
             opacity: 0;
             transition: opacity ease 0.4s;
@@ -56,6 +58,10 @@ const Container = styled.div`
     }
 
     &.active {
+        button.toggle {
+            color: ${Variables.color10};
+            transition: color ease 0.3s;
+        }
         svg {
             transform: rotate(180deg);
             transition: transform ease 0.4s;
@@ -75,8 +81,8 @@ const Container = styled.div`
 
             p {
                 opacity: 1;
-
                 transition: opacity ease 0.4s;
+                color: ${Variables.black};
             }
         }
     }
@@ -101,7 +107,7 @@ export default function Dropdown({ ...props }) {
                     <DropIndicator />
                 </div>
             </div>
-            <div className={`panel ${active ? 'active' : ''}`}>
+            <div className='panel'>
                 <p>{props.answer}</p>
             </div>
         </Container>
