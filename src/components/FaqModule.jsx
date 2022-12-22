@@ -103,7 +103,6 @@ export default function FaqModule({ ...props }) {
           <p>{data.subheading}</p>
         </div>
         {data.questions.map((faq, index) => {
-          console.log(faq);
           return (
             <Dropdown
               key={`faq-dropdown-${index}`}
