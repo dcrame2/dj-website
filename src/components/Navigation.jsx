@@ -261,15 +261,13 @@ export default function Navigation({ backdrop }) {
                   {data.links.map((link, index) => {
                     return (
                       <li className="underline" key={`textLink${index}`}>
-                        <a onClick={HamburgerToggle} href={`${link.href}`}>
-                          {link.text}
-                        </a>
+                        <a href={`${link.href}`}>{link.text}</a>
                       </li>
                     );
                   })}
                 </ul>
               </li>
-              <li onClick={HamburgerToggle} className="cta">
+              <li className="cta">
                 <LinkButton text="Contact Us" href="#contact"></LinkButton>
               </li>
             </ul>
