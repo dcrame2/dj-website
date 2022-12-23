@@ -9,7 +9,7 @@ import React, { useRef } from "react";
 const ICMContainer = styled.section`
   position: relative;
   width: 100%;
-  background-color: ${Variables.color7};
+  background-color: ${Variables.color20};
 
   .ICMInnerContainer {
     ${Container}
@@ -29,19 +29,22 @@ const ICMContainer = styled.section`
     }
 
     img {
-      /* background-color: ${Variables.color1}; */
+      background-color: ${Variables.color1};
       max-width: 640px;
-      /* width: 100%; */
-      width: auto;
-      height: auto;
+      width: 40%;
+      /* width: 40%; */
+      height: 300px;
       border-radius: 15px;
-      /* box-shadow: 1px 1px 10px 2px ${Variables.color8};
+      box-shadow: 1px 1px 10px 2px ${Variables.color8};
       -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color8};
-      -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8}; */
-      @media ${Variables.mobile} {
-        width: 80%;
+      -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8};
+
+      @media ${MediaQueries.mobile} {
+        width: 100%;
+        height: 200px;
       }
     }
+
     .content {
       max-width: 460px;
 
