@@ -3,7 +3,6 @@ import { Variables } from "../styles/Variables";
 import { Container } from "../styles/Utilities";
 import { H2Styles, PSecondary } from "../styles/Type";
 import { MediaQueries } from "../styles/Utilities";
-import LightSpeed from "react-reveal/LightSpeed";
 
 const ICMContainer = styled.section`
   position: relative;
@@ -71,9 +70,7 @@ export default function ImageContentModule({ ...props }) {
       <div className="ICMInnerContainer">
         <img src={props.imgSrc} alt={props.altTxt} />
         <div className="content">
-          <LightSpeed>
-            <h2>{props.heading}</h2>
-          </LightSpeed>
+          <h2>{props.heading}</h2>
           <p>{props.content}</p>
         </div>
       </div>

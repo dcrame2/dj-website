@@ -6,9 +6,6 @@ import styled from "styled-components";
 import { H3Styles, H2Styles, PSecondary } from "../styles/Type";
 import { useState, useEffect } from "react";
 import LinkButton from "../sub_components/LinkButton";
-import Fade from "react-reveal/Fade";
-import Slide from "react-reveal/Slide";
-import LightSpeed from "react-reveal/LightSpeed";
 
 // Google analytics
 const Section = styled.section`
@@ -235,36 +232,31 @@ const Services = () => {
     <Section id="services" className={active ? "active" : ""}>
       <div className="inner-section">
         <div className="heading-container">
-          <LightSpeed>
-            <h2>{data.heading}</h2>
-          </LightSpeed>
+          <h2>{data.heading}</h2>
           <h3>{data.subheading}</h3>
         </div>
-
-        <Fade>
-          <div className="ServiceContainer">
-            {data.services.map((service, i) => {
-              return (
-                <button
-                  className={active === i ? "active" : ""}
-                  onClick={() => activeToggle(i)}
-                  key={`button-${i}`}
-                >
-                  <img src={`${service.img}`} />
-                  <span className="num">{service.num}</span>
-                  <h2>{service.name}</h2>
-                  <span className="dropdown">
-                    <p>{service.desc}</p>
-                    <LinkButton
-                      text="Learn More"
-                      href={`#${service.name.toLowerCase()}Section`}
-                    ></LinkButton>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </Fade>
+        <div className="ServiceContainer">
+          {data.services.map((service, i) => {
+            return (
+              <button
+                className={active === i ? "active" : ""}
+                onClick={() => activeToggle(i)}
+                key={`button-${i}`}
+              >
+                <img src={`${service.img}`} />
+                <span className="num">{service.num}</span>
+                <h2>{service.name}</h2>
+                <span className="dropdown">
+                  <p>{service.desc}</p>
+                  <LinkButton
+                    text="Learn More"
+                    href={`#${service.name.toLowerCase()}Section`}
+                  ></LinkButton>
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </Section>
   );

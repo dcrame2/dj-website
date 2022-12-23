@@ -5,7 +5,6 @@ import { MediaQueries } from "../styles/Utilities";
 import Button from "../sub_components/Button";
 import { H3Styles, PSecondary, H2Styles } from "../styles/Type";
 import { Container } from "../styles/Utilities";
-import LightSpeed from "react-reveal/LightSpeed";
 
 const Section = styled.section`
   height: auto;
@@ -280,9 +279,7 @@ const Contact = () => {
       <div className="ContactInnerContainer">
         <div className="form-wrapper">
           <div className="form-info">
-            <LightSpeed>
-              <h2>{data.title}</h2>
-            </LightSpeed>
+            <h2>{data.title}</h2>
             <p>{data.desc}</p>
             <img src="businessman-working-on-laptop.png" />
           </div>

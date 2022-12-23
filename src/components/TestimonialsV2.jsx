@@ -5,7 +5,6 @@ import { Container, MediaQueries } from "../styles/Utilities";
 import { Variables } from "../styles/Variables";
 import { H2Styles, H3Styles, PSecondary } from "../styles/Type";
 import Arrow from "../sub_components/svg/Arrow";
-import LightSpeed from "react-reveal/LightSpeed";
 
 const ModuleContainer = styled.section`
   position: relative;
@@ -228,9 +227,7 @@ export default function TestimonialsV2({ ...props }) {
     <ModuleContainer id={props.id}>
       <InnerContainer>
         <div className="heading-container">
-          <LightSpeed>
-            <h2>{data.heading}</h2>
-          </LightSpeed>
+          <h2>{data.heading}</h2>
           <h3>{data.subheading}</h3>
         </div>
         <div className="carousel-wrapper">
