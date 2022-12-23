@@ -6,6 +6,7 @@ import { MediaQueries } from "../styles/Utilities";
 import { Variables } from "../styles/Variables";
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+import LightSpeed from "react-reveal/LightSpeed";
 
 const reviews = [
   {

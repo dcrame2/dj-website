@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
 import { H2Styles, PBaseStyles } from "../styles/Type";
+import LightSpeed from "react-reveal/LightSpeed";
 
 const FaqContainer = styled.section`
   display: relative;
@@ -105,7 +106,9 @@ export default function FaqModule({ ...props }) {
     <FaqContainer id={props.id}>
       <div className="inner-container">
         <div className="heading-section">
-          <h2>{data.heading}</h2>
+          <LightSpeed>
+            <h2>{data.heading}</h2>
+          </LightSpeed>
           <p>{data.subheading}</p>
         </div>
         <div className="dropdown-container">
