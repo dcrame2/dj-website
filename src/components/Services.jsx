@@ -211,7 +211,7 @@ const data = {
     },
   ],
   heading: "Services We Offer",
-  subheading: `Managing a business demand is a lot. Burn time and leave it to ${Variables.companyName} to help expand your business. We offer a wide range of web related services that are a must-have for any business. Below is a few of our focal services:`,
+  subheading: `Managing a business demand is a lot. Burn time and leave it to ${Variables.companyName} to help expand your online presence for your business. Below is a few of our focal services.`, //We offer a wide range of web related services that are a must-have for any business.
 };
 
 const Services = () => {

@@ -2,7 +2,7 @@ import Dropdown from "../sub_components/Dropdown";
 import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
-import { H2Styles, PBaseStyles } from "../styles/Type";
+import { H2Styles, PBaseStyles, PSecondary } from "../styles/Type";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Zoom from "react-reveal/Zoom";
@@ -47,7 +47,8 @@ const FaqContainer = styled.section`
         margin-bottom: 16px;
       }
       P {
-        ${PBaseStyles}
+        /* ${PBaseStyles} */
+        ${PSecondary}
         color: ${Variables.black};
       }
     }
