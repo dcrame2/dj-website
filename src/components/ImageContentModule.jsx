@@ -31,18 +31,18 @@ const ICMContainer = styled.section`
     img {
       background-color: ${Variables.color1};
       max-width: 640px;
-      width: 40%;
       /* width: 40%; */
-      height: 300px;
+      width: 100%;
+      height: auto;
       border-radius: 15px;
       box-shadow: 1px 1px 10px 2px ${Variables.color8};
       -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color8};
       -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8};
 
-      @media ${MediaQueries.mobile} {
+      /* @media ${MediaQueries.mobile} {
         width: 100%;
         height: 200px;
-      }
+      } */
     }
 
     .content {
@@ -79,7 +79,7 @@ export default function ImageContentModule({ ...props }) {
         <div ref={ref} className="content">
           <h2
             style={{
-              transform: isInView ? "none" : "translateY(-200px)",
+              transform: isInView ? "none" : "translateX(-200px)",
               opacity: isInView ? 1 : 0,
               transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
