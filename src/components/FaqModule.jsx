@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
 import { H2Styles, PBaseStyles } from "../styles/Type";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const FaqContainer = styled.section`
   display: relative;
@@ -101,11 +103,21 @@ const data = {
 };
 
 export default function FaqModule({ ...props }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <FaqContainer id={props.id}>
       <div className="inner-container">
-        <div className="heading-section">
-          <h2>{data.heading}</h2>
+        <div ref={ref} className="heading-section">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {data.heading}
+          </h2>
           <p>{data.subheading}</p>
         </div>
         <div className="dropdown-container">

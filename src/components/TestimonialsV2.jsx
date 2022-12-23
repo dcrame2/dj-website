@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Container, MediaQueries } from "../styles/Utilities";
 import { Variables } from "../styles/Variables";
 import { H2Styles, H3Styles, PSecondary } from "../styles/Type";
 import Arrow from "../sub_components/svg/Arrow";
+import { useInView } from "framer-motion";
 
 const ModuleContainer = styled.section`
   position: relative;
@@ -206,6 +207,8 @@ const data = {
 export default function TestimonialsV2({ ...props }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const max = data.testimonials.length - 1;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const nextPressed = () => {
     if (activeIndex < max) {
@@ -226,8 +229,16 @@ export default function TestimonialsV2({ ...props }) {
   return (
     <ModuleContainer id={props.id}>
       <InnerContainer>
-        <div className="heading-container">
-          <h2>{data.heading}</h2>
+        <div ref={ref} className="heading-container">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {data.heading}
+          </h2>
           <h3>{data.subheading}</h3>
         </div>
         <div className="carousel-wrapper">

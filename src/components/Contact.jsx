@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { MediaQueries } from "../styles/Utilities";
 import Button from "../sub_components/Button";
 import { H3Styles, PSecondary, H2Styles } from "../styles/Type";
 import { Container } from "../styles/Utilities";
+import { useInView } from "framer-motion";
 
 const Section = styled.section`
   height: auto;
@@ -274,12 +275,22 @@ const Contact = () => {
     // https://github.com/github/fetch
   };
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <Section id="contact">
       <div className="ContactInnerContainer">
         <div className="form-wrapper">
-          <div className="form-info">
-            <h2>{data.title}</h2>
+          <div ref={ref} className="form-info">
+            <h2
+              style={{
+                transform: isInView ? "none" : "translateY(-200px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+            >
+              {data.title}
+            </h2>
             <p>{data.desc}</p>
             <img src="businessman-working-on-laptop.png" />
           </div>

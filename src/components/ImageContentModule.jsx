@@ -3,6 +3,8 @@ import { Variables } from "../styles/Variables";
 import { Container } from "../styles/Utilities";
 import { H2Styles, PSecondary } from "../styles/Type";
 import { MediaQueries } from "../styles/Utilities";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
 
 const ICMContainer = styled.section`
   position: relative;
@@ -65,12 +67,22 @@ const ICMContainer = styled.section`
 `;
 
 export default function ImageContentModule({ ...props }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <ICMContainer id={props.id} imgRight={props.imgRight}>
       <div className="ICMInnerContainer">
         <img src={props.imgSrc} alt={props.altTxt} />
-        <div className="content">
-          <h2>{props.heading}</h2>
+        <div ref={ref} className="content">
+          <h2
+            style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {props.heading}
+          </h2>
           <p>{props.content}</p>
         </div>
       </div>

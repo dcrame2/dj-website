@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { MediaQueries } from "../styles/Utilities";
 import { Variables } from "../styles/Variables";
 import { Container } from "../styles/Utilities";
@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { H3Styles, H2Styles, PSecondary } from "../styles/Type";
 import { useState, useEffect } from "react";
 import LinkButton from "../sub_components/LinkButton";
+import { motion, useInView } from "framer-motion";
 
 // Google analytics
 const Section = styled.section`
@@ -223,6 +224,8 @@ const Services = () => {
       setActive(index);
     }
   };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     setLoaded(true);
@@ -231,8 +234,16 @@ const Services = () => {
   return (
     <Section id="services" className={active ? "active" : ""}>
       <div className="inner-section">
-        <div className="heading-container">
-          <h2>{data.heading}</h2>
+        <div ref={ref} className="heading-container">
+          <motion.h2
+            style={{
+              transform: isInView ? "none" : "translateY(-200px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {data.heading}
+          </motion.h2>
           <h3>{data.subheading}</h3>
         </div>
         <div className="ServiceContainer">
