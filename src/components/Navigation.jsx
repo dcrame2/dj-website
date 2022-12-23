@@ -269,7 +269,7 @@ export default function Navigation({ backdrop }) {
                   })}
                 </ul>
               </li>
-              <li className="cta">
+              <li onClick={HamburgerToggle} className="cta">
                 <LinkButton text="Contact Us" href="#contact"></LinkButton>
               </li>
             </ul>
