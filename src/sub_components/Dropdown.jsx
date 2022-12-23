@@ -66,6 +66,9 @@ const Container = styled.div`
   }
 
   &.active {
+    box-shadow: 1px 1px 10px 2px ${Variables.color10};
+    -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color10};
+    -moz-box-shadow: 1px 1px 10px 2px ${Variables.color10};
     button.toggle {
       color: ${Variables.color10};
       transition: color ease 0.3s;
