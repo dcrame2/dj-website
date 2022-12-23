@@ -249,7 +249,9 @@ const Services = () => {
         <div className="ServiceContainer">
           {data.services.map((service, i) => {
             return (
-              <button
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 className={active === i ? "active" : ""}
                 onClick={() => activeToggle(i)}
                 key={`button-${i}`}
@@ -264,7 +266,7 @@ const Services = () => {
                     href={`#${service.name.toLowerCase()}Section`}
                   ></LinkButton>
                 </span>
-              </button>
+              </motion.button>
             );
           })}
         </div>
