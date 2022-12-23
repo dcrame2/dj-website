@@ -261,7 +261,9 @@ export default function Navigation({ backdrop }) {
                   {data.links.map((link, index) => {
                     return (
                       <li className="underline" key={`textLink${index}`}>
-                        <a href={`${link.href}`}>{link.text}</a>
+                        <a onClick={HamburgerToggle} href={`${link.href}`}>
+                          {link.text}
+                        </a>
                       </li>
                     );
                   })}
