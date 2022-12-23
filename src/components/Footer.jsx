@@ -72,6 +72,9 @@ const FooterInner = styled.div`
       }
       a {
         ${PSmallStyles}
+        &:hover {
+          color: ${Variables.color2};
+        }
       }
     }
   }
