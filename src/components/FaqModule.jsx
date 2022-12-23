@@ -5,6 +5,7 @@ import { Container, MediaQueries } from "../styles/Utilities";
 import { H2Styles, PBaseStyles } from "../styles/Type";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Zoom from "react-reveal/Zoom";
 
 const FaqContainer = styled.section`
   display: relative;
@@ -123,11 +124,13 @@ export default function FaqModule({ ...props }) {
         <div className="dropdown-container">
           {data.questions.map((faq, index) => {
             return (
-              <Dropdown
-                key={`faq-dropdown-${index}`}
-                question={faq.question}
-                answer={faq.answer}
-              />
+              <Zoom>
+                <Dropdown
+                  key={`faq-dropdown-${index}`}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              </Zoom>
             );
           })}
         </div>

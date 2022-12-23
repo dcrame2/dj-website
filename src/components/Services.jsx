@@ -7,6 +7,7 @@ import { H3Styles, H2Styles, PSecondary } from "../styles/Type";
 import { useState, useEffect } from "react";
 import LinkButton from "../sub_components/LinkButton";
 import { motion, useInView } from "framer-motion";
+import Zoom from "react-reveal/Zoom";
 
 // Google analytics
 const Section = styled.section`
@@ -249,24 +250,24 @@ const Services = () => {
         <div className="ServiceContainer">
           {data.services.map((service, i) => {
             return (
-              <motion.button
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className={active === i ? "active" : ""}
-                onClick={() => activeToggle(i)}
-                key={`button-${i}`}
-              >
-                <img src={`${service.img}`} />
-                <span className="num">{service.num}</span>
-                <h2>{service.name}</h2>
-                <span className="dropdown">
-                  <p>{service.desc}</p>
-                  <LinkButton
-                    text="Learn More"
-                    href={`#${service.name.toLowerCase()}Section`}
-                  ></LinkButton>
-                </span>
-              </motion.button>
+              <Zoom>
+                <button
+                  className={active === i ? "active" : ""}
+                  onClick={() => activeToggle(i)}
+                  key={`button-${i}`}
+                >
+                  <img src={`${service.img}`} />
+                  <span className="num">{service.num}</span>
+                  <h2>{service.name}</h2>
+                  <span className="dropdown">
+                    <p>{service.desc}</p>
+                    <LinkButton
+                      text="Learn More"
+                      href={`#${service.name.toLowerCase()}Section`}
+                    ></LinkButton>
+                  </span>
+                </button>
+              </Zoom>
             );
           })}
         </div>
