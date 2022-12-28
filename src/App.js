@@ -73,7 +73,7 @@ function App() {
             <ParaContainer>
                 <Spacer
                     color={Variables.color20}
-                    desktop={158}
+                    desktop={258}
                     tablet={120}
                     mobile={100}
                 />
@@ -87,7 +87,7 @@ function App() {
                 />
                 <Spacer
                     color={Variables.color20}
-                    desktop={144}
+                    desktop={244}
                     tablet={120}
                     mobile={100}
                 />
@@ -101,7 +101,7 @@ function App() {
                 />
                 <Spacer
                     color={Variables.color20}
-                    desktop={144}
+                    desktop={244}
                     tablet={120}
                     mobile={100}
                 />
@@ -116,7 +116,7 @@ function App() {
 
                 <Spacer
                     color={Variables.color20}
-                    desktop={158}
+                    desktop={258}
                     tablet={120}
                     mobile={100}
                 />
