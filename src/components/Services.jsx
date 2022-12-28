@@ -201,7 +201,7 @@ const data = {
             num: '02',
             img: '/orange_icons/coding.png',
             name: 'Develop',
-            desc: 'Professional developers executing modern websites your user will remember visting',
+            desc: 'Professional developers executing modern websites your user will remember visiting',
         },
         {
             num: '03',
