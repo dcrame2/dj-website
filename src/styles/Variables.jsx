@@ -55,4 +55,5 @@ export const Variables = {
   logo8Url: "logo.svg",
 
   background: "/Images/texture_background.jpg",
+  background1: "/Images/background.jpg",
 };

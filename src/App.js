@@ -18,7 +18,7 @@ import styled from "styled-components";
 
 const ParaContainer = styled.div`
   /* The image used */
-  background-image: url(${Variables.background});
+  background-image: url(${Variables.background1});
   width: 100%;
 
   z-index: 1;
@@ -33,7 +33,7 @@ const ParaContainer = styled.div`
 
   @media ${MediaQueries.tablet} {
     background-attachment: scroll;
-    background-image: unset;
+    /* background-image: unset; */
   }
 `;
 
