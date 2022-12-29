@@ -9,7 +9,17 @@ import Zoom from "react-reveal/Zoom";
 
 const FaqContainer = styled.section`
   display: relative;
+  /* background-color: ${Variables.color7}; */
+  background-image: url(${Variables.background1});
+  width: 100%;
+
+  z-index: 1;
+  /* Full height */
+  height: auto;
   background-color: ${Variables.color7};
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
 
   .inner-container {
     ${Container}

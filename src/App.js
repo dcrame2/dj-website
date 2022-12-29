@@ -110,7 +110,7 @@ function App() {
           imgSrc="service_about/support.jpg"
           altTxt=""
           heading="Support"
-          content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content changes to your website, for example: text, images and links.\n\nNot every change can be made by the client where a developer may be needed but ${Variables.companyName} offers support and maintenance to any website whether built by our team or to an existing website, for example: adding new pages or adjusting the design.`}
+          content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content changes to your website, for example: text, images and links.\n\nNot every content update can be made by the client where a developer may be needed. ${Variables.companyName} offers support and maintenance to any website whether built by our team or to an existing website, for example: adding new pages or adjusting the design.`}
         />
 
         <Spacer
