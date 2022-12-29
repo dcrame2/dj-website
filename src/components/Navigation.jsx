@@ -260,15 +260,15 @@ export default function Navigation({ backdrop }) {
                 <ul>
                   {data.links.map((link, index) => {
                     return (
-                      <li className="underline" key={`textLink${index}`}>
+                      <li onClick={() => setHamburgerPressed(false)} className="underline" key={`textLink${index}`}>
                         <a href={`${link.href}`}>{link.text}</a>
                       </li>
                     );
                   })}
                 </ul>
               </li>
-              <li className="cta">
-                <LinkButton text="Contact Us" href="#contact"></LinkButton>
+              <li onClick={() => setHamburgerPressed(false)} className="cta">
+                <LinkButton  text="Contact Us" href="#contact"></LinkButton>
               </li>
             </ul>
           </li>
