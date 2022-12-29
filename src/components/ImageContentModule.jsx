@@ -58,6 +58,7 @@ const ICMContainer = styled.section`
         ${PSecondary}
         color: ${Variables.black};
         white-space: pre-wrap;
+        
       }
     }
 

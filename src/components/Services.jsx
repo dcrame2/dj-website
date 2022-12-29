@@ -170,6 +170,7 @@ const Section = styled.section`
                     transition: max-height 0.26s ease, opacity ease 0.25s;
                     p {
                         /* color: ${Variables.color1}; */
+                        font-family: ${Variables.joseph};
                         font-size: 1.75rem;
                         line-height: 25px;
                         overflow: hidden;
