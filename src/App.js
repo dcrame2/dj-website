@@ -96,7 +96,7 @@ function App() {
           imgSrc="service_about/developer.jpg"
           altTxt=""
           heading="Develop"
-          content={`${Variables.companyName} knows Web Development better than anything. With a team full of Web Developers we provide quality and modern wesbites that attract customers to your business.\n\n${Variables.companyName} will ensure your website functions to the highest standard. Your user's experience and the user interface will be flawlessly developed.`}
+          content={`${Variables.companyName} knows Web Development better than anything. With a team full of Web Developers we provide quality and modern wesbites that attract customers to your business.\n\n${Variables.companyName} will develop your website to function to the highest standard. Your user's experience and the user interface will be flawlessly intergrated to show off your business.`}
         />
         <Spacer
           color={Variables.color20}
@@ -110,7 +110,7 @@ function App() {
           imgSrc="service_about/support.jpg"
           altTxt=""
           heading="Support"
-          content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content changes to your website, for example: text, images and links.\n\nNot every change can be made by the client where a developer may be needed but ${Variables.companyName} offers support and maintenance to any website whether built by us or to an existing website, for example: adding new pages or adjusting the design.`}
+          content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content changes to your website, for example: text, images and links.\n\nNot every change can be made by the client where a developer may be needed but ${Variables.companyName} offers support and maintenance to any website whether built by our team or to an existing website, for example: adding new pages or adjusting the design.`}
         />
 
         <Spacer
