@@ -94,7 +94,7 @@ const data = {
     {
       question: "Do you work with WordPress?",
       answer:
-        "Yes, we specialize in WordPress with years of experience, we have worked with some of the most complex themes as well as creating custom themes.",
+        "Yes, we specialize in WordPress with years of experience. We have worked with some of the most complex themes as well as creating custom themes.",
     },
     {
       question: "Can you make web application or mobile applications?",
