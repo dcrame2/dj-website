@@ -298,7 +298,7 @@ const Contact = () => {
           {successValue ? (
             <div className="success-container">
               <h4>{successMessage} A team member will be reaching out.</h4>
-              <img src="Purple-in-Jumper10.png" alt="" srcset="" />
+              <img src="hands/Purple-in-Jumper10.png" alt="" srcset="" />
             </div>
           ) : (
             <form onSubmit={OnSubmit}>

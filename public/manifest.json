@@ -3,17 +3,17 @@
   "name": "Digital Delight",
   "icons": [
     {
-      "src": "need.png",
+      "src": "logos/favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "need.png",
+      "src": "logos/favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "need.png",
+      "src": "logos/favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
