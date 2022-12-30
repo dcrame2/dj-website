@@ -292,7 +292,10 @@ export default function Navigation({ backdrop }) {
                             hamburgerPressed ? 'active' : ''
                         }`}
                     >
-                        <button onClick={HamburgerToggle}>
+                        <button
+                            aria-label='toggle mobile menu'
+                            onClick={HamburgerToggle}
+                        >
                             <Hamburger></Hamburger>
                         </button>
                     </li>
