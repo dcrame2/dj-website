@@ -194,18 +194,21 @@ const data = {
   services: [
     {
       num: "01",
+      alt: "Design icon",
       img: "/orange_icons/content-creator.png",
       name: "Design",
       desc: "Quality designs made to catch users attention and show your business model",
     },
     {
       num: "02",
+      alt: "Develop icon",
       img: "/orange_icons/coding.png",
       name: "Develop",
       desc: "Professional developers executing modern websites your user will remember visiting",
     },
     {
       num: "03",
+      alt: "Support icon",
       img: "/orange_icons/browser.png",
       name: "Support",
       desc: "Internal developers to help maintain and support your website for any update needs",
@@ -257,7 +260,7 @@ const Services = () => {
                   onClick={() => activeToggle(i)}
                   key={`button-${i}`}
                 >
-                  <img src={`${service.img}`} />
+                  <img src={`${service.img}`} alt={service.alt} />
                   <span className="num">{service.num}</span>
                   <h2>{service.name}</h2>
                   <span className="dropdown">
