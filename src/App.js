@@ -34,6 +34,7 @@ const ParaContainer = styled.div`
   /* background-size: auto 200px; */
 
   @media ${MediaQueries.tablet} {
+    background-color: ${Variables.color7};
     background-image: unset;
   }
 `;
