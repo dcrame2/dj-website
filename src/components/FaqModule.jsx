@@ -20,10 +20,10 @@ const FaqContainer = styled.section`
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
-  @media ${MediaQueries.tablet} {
+  background-size: cover;
+  /* @media ${MediaQueries.tablet} {
     background-attachment: scroll;
-    /* background-image: unset; */
-  }
+  } */
 
   .inner-container {
     ${Container}

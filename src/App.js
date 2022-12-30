@@ -1,81 +1,81 @@
-import Navigation from './components/Navigation.jsx';
-import Contact from './components/Contact';
-import Services from './components/Services';
-import ModuleBlender from './sub_components/ModuleBlender';
-import ImageContentModule from './components/ImageContentModule.jsx';
-import Hero from './components/Hero';
-import Footer from './components/Footer.jsx';
+import Navigation from "./components/Navigation.jsx";
+import Contact from "./components/Contact";
+import Services from "./components/Services";
+import ModuleBlender from "./sub_components/ModuleBlender";
+import ImageContentModule from "./components/ImageContentModule.jsx";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer.jsx";
 // import Testimonials from './components/Testimonials';
-import SlideOutLink from './components/SlideOutLink';
-import Spacer from './sub_components/Spacer.jsx';
-import FaqModule from './components/FaqModule.jsx';
-import TestimonialsV2 from './components/TestimonialsV2.jsx';
-import './global.css';
-import { useState } from 'react';
-import { MediaQueries } from './styles/Utilities';
-import { Variables } from './styles/Variables.jsx';
-import styled from 'styled-components';
+import SlideOutLink from "./components/SlideOutLink";
+import Spacer from "./sub_components/Spacer.jsx";
+import FaqModule from "./components/FaqModule.jsx";
+import TestimonialsV2 from "./components/TestimonialsV2.jsx";
+import "./global.css";
+import { useState } from "react";
+import { MediaQueries } from "./styles/Utilities";
+import { Variables } from "./styles/Variables.jsx";
+import styled from "styled-components";
 
 const ParaContainer = styled.div`
-    /* The image used */
-    background-image: url(${Variables.background1});
-    width: 100%;
+  /* The image used */
+  background-image: url(${Variables.background1});
+  width: 100%;
 
-    z-index: 1;
-    /* Full height */
-    height: auto;
-    background-color: ${Variables.color7};
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    /* background-size: auto 200px; */
+  z-index: 1;
+  /* Full height */
+  height: auto;
+  background-color: ${Variables.color7};
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-size: auto 200px; */
 
-    @media ${MediaQueries.tablet} {
+  /* @media ${MediaQueries.tablet} {
         background-attachment: scroll;
-        /* background-image: unset; */
-    }
+    } */
 `;
 
 function App() {
-    const [navBackdrop, setNavBackdrop] = useState(false);
-    const [animateElements, setAnimateElements] = useState();
-    const [scrollY, setScrollY] = useState();
+  const [navBackdrop, setNavBackdrop] = useState(false);
+  const [animateElements, setAnimateElements] = useState();
+  const [scrollY, setScrollY] = useState();
 
-    const scrollListener = () => {
-        window.onscroll = function (e) {
-            setScrollY(this.scrollY);
-            // Nav functionality
-            if (this.scrollY > 83) {
-                setNavBackdrop(true);
-            } else {
-                setNavBackdrop(false);
-            }
-        };
+  const scrollListener = () => {
+    window.onscroll = function (e) {
+      setScrollY(this.scrollY);
+      // Nav functionality
+      if (this.scrollY > 83) {
+        setNavBackdrop(true);
+      } else {
+        setNavBackdrop(false);
+      }
     };
+  };
 
-    scrollListener();
+  scrollListener();
 
-    return (
-        <>
-            <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
-            <SlideOutLink
-                animateStartId='services'
-                scrollY={scrollY}
-                href='#services'
-                text='services'
-            />
-            <Hero src='hero1.mp4' />
-            {/* <ModuleBlender size='large' /> */}
-            <Services />
-            <ModuleBlender />
-            <ParaContainer>
-                <Spacer
-                    color={Variables.color20}
-                    desktop={258}
-                    tablet={120}
-                    mobile={100}
-                />
+  return (
+    <>
+      <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
+      <SlideOutLink
+        animateStartId="services"
+        scrollY={scrollY}
+        href="#services"
+        text="services"
+      />
+      <Hero src="hero1.mp4" />
+      {/* <ModuleBlender size='large' /> */}
+      <Services />
+      <ModuleBlender />
+      <ParaContainer>
+        <Spacer
+          color={Variables.color20}
+          desktop={258}
+          tablet={120}
+          mobile={100}
+        />
 
         <ImageContentModule
           id="designSection"
@@ -113,23 +113,23 @@ function App() {
           content={`For new websites built by ${Variables.companyName} we provide clients with a Content Management System that allows you as the client to make easy content changes to your website, for example: text, images and links.\n\nNot every content update can be made by the client where a developer may be needed. ${Variables.companyName} offers support and maintenance to any website whether built by our team or to an existing website, for example: adding new pages or adjusting the design.`}
         />
 
-                <Spacer
-                    color={Variables.color20}
-                    desktop={258}
-                    tablet={120}
-                    mobile={100}
-                />
-            </ParaContainer>
-            <ModuleBlender />
-            <TestimonialsV2 id='testimonials' />
-            <ModuleBlender />
-            <FaqModule id='faqSection' />
-            <ModuleBlender />
-            <Contact />
-            <ModuleBlender />
-            <Footer />
-        </>
-    );
+        <Spacer
+          color={Variables.color20}
+          desktop={258}
+          tablet={120}
+          mobile={100}
+        />
+      </ParaContainer>
+      <ModuleBlender />
+      <TestimonialsV2 id="testimonials" />
+      <ModuleBlender />
+      <FaqModule id="faqSection" />
+      <ModuleBlender />
+      <Contact />
+      <ModuleBlender />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
