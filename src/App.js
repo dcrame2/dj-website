@@ -19,7 +19,7 @@ import styled from "styled-components";
 const ParaContainer = styled.div`
   /* The image used */
   background-image: url(${Variables.background1});
-  width: 100%;
+  /* width: 100%; */
 
   z-index: 1;
   /* Full height */

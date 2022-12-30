@@ -11,7 +11,7 @@ const FaqContainer = styled.section`
   display: relative;
   /* background-color: ${Variables.color7}; */
   background-image: url(${Variables.background1});
-  width: 100%;
+  /* width: 100%; */
 
   z-index: 1;
   /* Full height */
