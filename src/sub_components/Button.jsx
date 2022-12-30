@@ -15,7 +15,7 @@ const CustomButton = styled.button`
   padding: 12px 24px;
   background-color: ${Variables.color9};
   border-radius: 20px;
-  color: ${Variables.white};
+  color: ${Variables.color10};
   border: 2px solid ${Variables.white};
   text-decoration: unset;
   overflow: hidden;
@@ -28,6 +28,7 @@ const CustomButton = styled.button`
     z-index: 1;
     text-transform: uppercase;
     font-weight: bold;
+    color: ${Variables.black};
   }
 
   &:after {

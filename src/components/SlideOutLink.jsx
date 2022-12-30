@@ -63,7 +63,7 @@ const Link = styled.a`
     text-transform: uppercase;
     font-weight: bold;
     transform: rotate(-15deg);
-    color: ${Variables.white};
+    color: ${Variables.black};
   }
 
   &:after {

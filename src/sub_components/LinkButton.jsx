@@ -16,7 +16,7 @@ const CustomLink = styled.a`
   //opacity: 0.7;
   background-color: ${Variables.color9};
   border-radius: 20px;
-  color: ${Variables.white};
+  color: ${Variables.black};
   border: 2px solid ${Variables.white};
   text-decoration: unset;
   overflow: hidden;
@@ -29,7 +29,7 @@ const CustomLink = styled.a`
     z-index: 1;
     text-transform: uppercase;
     font-weight: bold;
-    color: ${Variables.white};
+    color: ${Variables.black};
   }
 
   &:after {
