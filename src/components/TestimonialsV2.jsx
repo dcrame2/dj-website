@@ -243,7 +243,11 @@ export default function TestimonialsV2({ ...props }) {
                     <h3>{data.subheading}</h3>
                 </div>
                 <div className='carousel-wrapper'>
-                    <button className='prev' onClick={prevPressed}>
+                    <button
+                        className='prev'
+                        onClick={prevPressed}
+                        aria-label='previous testimonial'
+                    >
                         <Arrow />
                     </button>
                     <div className='content-wrapper'>
@@ -263,7 +267,11 @@ export default function TestimonialsV2({ ...props }) {
                             );
                         })}
                     </div>
-                    <button className='next' onClick={nextPressed}>
+                    <button
+                        className='next'
+                        onClick={nextPressed}
+                        aria-label='next testimonial'
+                    >
                         <Arrow />
                     </button>
                 </div>
@@ -280,6 +288,7 @@ export default function TestimonialsV2({ ...props }) {
                                     onClick={(activeIndex) =>
                                         setActiveIndex(index)
                                     }
+                                    aria-label={`view testimonial ${index}`}
                                 ></button>
                             </li>
                         );
