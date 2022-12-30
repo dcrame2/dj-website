@@ -334,38 +334,50 @@ const Contact = () => {
               ></input>
               <h3>{data.title2}</h3>
               <div>
-                <label htmlFor="fname">First Name*</label>
+                <label for="firstname" htmlFor="firstname">
+                  First Name*
+                </label>
                 <input
                   onChange={FNameHandler}
                   type="text"
-                  name="fname"
+                  name="firstname"
+                  id="firstname"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="lname">Last Name*</label>
+                <label for="lastname" htmlFor="lastname">
+                  Last Name*
+                </label>
                 <input
                   onChange={LNameHandler}
                   type="text"
-                  name="lname"
+                  name="lastname"
+                  id="lastname"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email">Email Address*</label>
+                <label for="email" htmlFor="email">
+                  Email Address*
+                </label>
                 <input
                   onChange={EmailHandler}
                   type="email"
                   name="email"
+                  id="email"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message">Message*</label>
+                <label for="message" htmlFor="message">
+                  Message*
+                </label>
                 <textarea
                   onChange={MessageHandler}
                   type="text"
                   name="message"
+                  id="message"
                   required
                 />
               </div>
