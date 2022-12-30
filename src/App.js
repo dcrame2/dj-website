@@ -25,12 +25,12 @@ const ParaContainer = styled.div`
   /* Full height */
   /* height: auto; */
   height: 100%;
-  background-color: ${Variables.color7};
+  /* background-color: ${Variables.color7}; */
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   /* background-size: auto 200px; */
 
   /* @media ${MediaQueries.tablet} {

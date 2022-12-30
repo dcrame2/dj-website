@@ -17,8 +17,9 @@ const FaqContainer = styled.section`
   /* Full height */
   /* height: auto; */
   height: 100%;
-  background-color: ${Variables.color7};
+  /* background-color: ${Variables.color7}; */
   /* Create the parallax scrolling effect */
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
