@@ -162,12 +162,6 @@ export default function Footer() {
             <div className='bottom-color-strip'>
                 <div>
                     <p>{`Copyright © ${date} ${Variables.companyName}`}</p>
-                    <a
-                        href='https://www.flaticon.com/free-icons/web-development'
-                        title='web development icons'
-                    >
-                        Web development icons created by Freepik - Flaticon
-                    </a>
                 </div>
             </div>
         </FooterElm>
