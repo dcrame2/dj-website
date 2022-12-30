@@ -33,9 +33,9 @@ const ParaContainer = styled.div`
   background-repeat: no-repeat;
   /* background-size: auto 200px; */
 
-  /* @media ${MediaQueries.tablet} {
-        background-attachment: scroll;
-    } */
+  @media ${MediaQueries.tablet} {
+    background-image: unset;
+  }
 `;
 
 function App() {

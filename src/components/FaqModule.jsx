@@ -23,9 +23,9 @@ const FaqContainer = styled.section`
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  /* @media ${MediaQueries.tablet} {
-    background-attachment: scroll;
-  } */
+  @media ${MediaQueries.tablet} {
+    background-image: unset;
+  }
 
   .inner-container {
     ${Container}
