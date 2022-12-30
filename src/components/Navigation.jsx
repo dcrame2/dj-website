@@ -273,7 +273,7 @@ export default function Navigation({ backdrop }) {
               </li>
               <li onClick={() => setHamburgerPressed(false)} className="cta">
                 <LinkButton
-                  aria-label="Contact us"
+                  ariaLabel="Contact us"
                   text="Contact Us"
                   href="#contact"
                 ></LinkButton>

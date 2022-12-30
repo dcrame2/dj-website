@@ -147,7 +147,7 @@ export default function SlideOutLink({ ...props }) {
   return (
     <Wrapper>
       <Link
-        aria-label={`${props.text} toggle`}
+        ariaLabel={`${props.text} toggle`}
         className={`${active ? "active" : ""}`}
         href={props.href}
       >

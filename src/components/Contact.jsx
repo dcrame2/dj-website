@@ -381,7 +381,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <Button aria-label="Submit form" text="Submit"></Button>
+              <Button ariaLabel="Submit form" text="Submit"></Button>
             </form>
           )}
         </div>

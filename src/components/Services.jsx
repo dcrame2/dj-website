@@ -267,7 +267,7 @@ const Services = () => {
                     <p>{service.desc}</p>
                     <LinkButton
                       text="Learn More"
-                      aria-label={`Learn more about ${service.name}`}
+                      ariaLabel={`Learn more about ${service.name}`}
                       href={`#${service.name.toLowerCase()}Section`}
                     ></LinkButton>
                   </span>
