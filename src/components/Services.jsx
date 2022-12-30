@@ -255,7 +255,7 @@ const Services = () => {
                 <div className='ServiceContainer'>
                     {data.services.map((service, i) => {
                         return (
-                            <Zoom>
+                            <Zoom key={`service-zoom-${i}`}>
                                 <button
                                     className={active === i ? 'active' : ''}
                                     onClick={() => activeToggle(i)}

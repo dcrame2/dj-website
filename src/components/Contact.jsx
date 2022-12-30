@@ -352,7 +352,7 @@ const Contact = () => {
                             ></input>
                             <h3>{data.title2}</h3>
                             <div>
-                                <label for='firstname' htmlFor='firstname'>
+                                <label htmlFor='firstname'>
                                     First Name*
                                 </label>
                                 <input
@@ -364,7 +364,7 @@ const Contact = () => {
                                 />
                             </div>
                             <div>
-                                <label for='lastname' htmlFor='lastname'>
+                                <label htmlFor='lastname'>
                                     Last Name*
                                 </label>
                                 <input
@@ -376,7 +376,7 @@ const Contact = () => {
                                 />
                             </div>
                             <div>
-                                <label for='email' htmlFor='email'>
+                                <label htmlFor='email'>
                                     Email Address*
                                 </label>
                                 <input
@@ -388,7 +388,7 @@ const Contact = () => {
                                 />
                             </div>
                             <div>
-                                <label for='message' htmlFor='message'>
+                                <label htmlFor='message'>
                                     Message*
                                 </label>
                                 <textarea
