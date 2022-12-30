@@ -9,7 +9,17 @@ import Zoom from "react-reveal/Zoom";
 
 const FaqContainer = styled.section`
   display: relative;
+  /* background-color: ${Variables.color7}; */
+  background-image: url(${Variables.background1});
+  width: 100%;
+
+  z-index: 1;
+  /* Full height */
+  height: auto;
   background-color: ${Variables.color7};
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
 
   .inner-container {
     ${Container}
@@ -70,12 +80,12 @@ const data = {
       question: `How much does ${Variables.companyName} cost?
         `,
       answer:
-        "Each clients goal differ and you must have a conversation with a team member to ensure we align on the scope of your project. We’ve ranged from $1,500 - $20,000.",
+        "Each businesses goals differ. You must have a conversation with a team member to ensure we align on the scope of your project. We’ve ranged from $1,000 - $20,000.",
     },
     {
-      question: "How long does it take for a website?",
+      question: "How long does it take for a website to be built?",
       answer:
-        "This depends on the scope of your project, we’ve been able to complete websites in 2-3 weeks to 4 months.",
+        "This depends on the scope of your project, we’ve been able to complete websites in 2-3 weeks to 4 months. ",
     },
     {
       question: "How easy is it for me to make changes on a website? ",
@@ -89,12 +99,12 @@ const data = {
     {
       question: "What does the process of your website include? ",
       answer:
-        "We follow an Agile approach, we will conduct weekly or bi-weekly status updates throughout the entire project to ensure we are aligned throughout the entire process and meeting your goals.",
+        "We follow an Agile approach, we will conduct weekly or bi-weekly status updates throughout the entire project to ensure we are aligned throughout the whole process and meeting your goals.",
     },
     {
       question: "Do you work with WordPress?",
       answer:
-        "Yes, we specialize in WordPress with years of experience, we have worked with some of the most complex of themes.",
+        "Yes, we specialize in WordPress with years of experience. We have worked with some of the most complex themes as well as creating custom themes.",
     },
     {
       question: "Can you make web application or mobile applications?",
