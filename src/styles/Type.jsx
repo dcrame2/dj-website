@@ -37,6 +37,11 @@ export const H3Styles = css`
     font-size: 3rem;
 `;
 
+export const H4Styles = css`
+    font-family: ${Variables.joseph};
+    font-size: 2em;
+`;
+
 export const PBaseStyles = css`
     font-family: ${Variables.joseph};
     font-size: 3rem;

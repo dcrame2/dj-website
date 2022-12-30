@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
 import { MediaQueries, Container } from '../styles/Utilities';
 import { useEffect, useState } from 'react';
-import { PSmallStyles, H3Styles } from '../styles/Type';
+import { PSmallStyles, H4Styles } from '../styles/Type';
 
 const FooterElm = styled.footer`
     position: relative;
@@ -88,7 +88,7 @@ const FooterInner = styled.div`
             margin-bottom: 4px;
 
             h2 {
-                ${H3Styles}
+                ${H4Styles}
                 text-transform: uppercase;
             }
             a {
