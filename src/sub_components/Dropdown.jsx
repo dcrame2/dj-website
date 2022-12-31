@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { PBaseStyles, PSecondary } from '../styles/Type';
 import { MediaQueries } from '../styles/Utilities';

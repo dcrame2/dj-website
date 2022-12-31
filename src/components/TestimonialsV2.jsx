@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { H2Styles, H3Styles, PSecondary } from '../styles/Type';
