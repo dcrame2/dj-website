@@ -27,7 +27,7 @@ const CustomLink = styled.a`
         position: relative;
         z-index: 1;
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 700;
         font-family: ${Variables.openSans};
         font-size: 1.4rem;
         color: ${Variables.white};
