@@ -37,20 +37,6 @@ const Link = styled.a`
     transition: right ease 0.4s, transform ease 0.5s;
     border: 4px solid ${Variables.white};
 
-    /* &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -10;
-        border-radius: 50%;
-        background-color: gray;
-    } */
-
     &.active {
         right: 20px;
         transition: right ease 0.4s, transform ease 0.5s;
@@ -90,34 +76,10 @@ const Link = styled.a`
             transition: height ease-out 0.1s;
         }
     }
-    // WORK IN PROGRESS
-    @keyframes focusAnimation {
-        0% {
-            height: 70%;
-        }
-        10% {
-            height: 62%;
-        }
-        20% {
-            height: 75%;
-        }
-        30% {
-            height: 68%;
-        }
-        40% {
-            height: 79%;
-        }
-        50% {
-            height: 55%;
-        }
-        60% {
-            height: 78%;
-        }
-    }
+
     &:focus {
         &:after {
             transition: height ease 0.4s;
-            animation: focusAnimation 2s infinite;
         }
     }
 `;

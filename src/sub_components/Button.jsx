@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
+import { motion } from 'framer-motion';
 
 const CustomButtonWrapper = styled.div`
     display: flex;
@@ -55,29 +56,7 @@ const CustomButton = styled.button`
             transition: height ease-out 0.1s;
         }
     }
-    @keyframes focusAnimation {
-        0% {
-            height: 90%;
-        }
-        10% {
-            height: 82%;
-        }
-        20% {
-            height: 75%;
-        }
-        30% {
-            height: 98%;
-        }
-        40% {
-            height: 79%;
-        }
-        50% {
-            height: 85%;
-        }
-        60% {
-            height: 98%;
-        }
-    }
+
     &:focus {
         &:after {
             transition: height ease 0.4s;
@@ -89,14 +68,20 @@ const CustomButton = styled.button`
 
 export default function Button({ ...props }) {
     return (
-        <CustomButtonWrapper>
-            <CustomButton
-                onClick={props.onClicked}
-                type={props.type}
-                aria-label={props.ariaLabel}
-            >
-                <span>{props.text}</span>
-            </CustomButton>
-        </CustomButtonWrapper>
+        <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+        >
+            <CustomButtonWrapper>
+                <CustomButton
+                    onClick={props.onClicked}
+                    type={props.type}
+                    aria-label={props.ariaLabel}
+                >
+                    <span>{props.text}</span>
+                </CustomButton>
+            </CustomButtonWrapper>
+        </motion.div>
     );
 }
