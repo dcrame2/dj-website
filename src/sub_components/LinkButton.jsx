@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Variables } from '../styles/Variables';
+import { motion } from 'framer-motion';
 
 const CustomLinkStylingWrapper = styled.div`
     display: flex;
@@ -55,47 +56,30 @@ const CustomLink = styled.a`
             transition: height ease-out 0.1s;
         }
     }
-    @keyframes focusAnimation {
-        0% {
-            height: 70%;
-        }
-        10% {
-            height: 62%;
-        }
-        20% {
-            height: 75%;
-        }
-        30% {
-            height: 68%;
-        }
-        40% {
-            height: 79%;
-        }
-        50% {
-            height: 55%;
-        }
-        60% {
-            height: 78%;
-        }
-    }
+
     &:focus {
         &:after {
-            transition: height ease 0.4s;
-            animation: focusAnimation 2s infinite;
+            transition: height ease 1s;
         }
     }
 `;
 
 export default function LinkButton({ ...props }) {
     return (
-        <CustomLinkStylingWrapper>
-            <CustomLink
-                aria-label={props.ariaLabel}
-                href={props.href}
-                target={props.target}
-            >
-                <span>{props.text}</span>
-            </CustomLink>
-        </CustomLinkStylingWrapper>
+        <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+        >
+            <CustomLinkStylingWrapper>
+                <CustomLink
+                    aria-label={props.ariaLabel}
+                    href={props.href}
+                    target={props.target}
+                >
+                    <span>{props.text}</span>
+                </CustomLink>
+            </CustomLinkStylingWrapper>
+        </motion.div>
     );
 }
