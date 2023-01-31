@@ -5,7 +5,6 @@ import ModuleBlender from "./sub_components/ModuleBlender";
 import ImageContentModule from "./components/ImageContentModule.jsx";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer.jsx";
-// import Testimonials from './components/Testimonials';
 import SlideOutLink from "./components/SlideOutLink";
 import Spacer from "./sub_components/Spacer.jsx";
 import FaqModule from "./components/FaqModule.jsx";
@@ -17,15 +16,9 @@ import { Variables } from "./styles/Variables.jsx";
 import styled from "styled-components";
 
 const ParaContainer = styled.div`
-  /* The image used */
   background-image: url(${Variables.background1});
-  /* width: 100%; */
-
   z-index: 1;
-  /* Full height */
-  /* height: auto; */
   height: 100%;
-  /* background-color: ${Variables.color7}; */
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
