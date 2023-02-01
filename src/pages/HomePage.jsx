@@ -123,7 +123,7 @@ function HomePage() {
       <ModuleBlender />
       <Contact />
       <ModuleBlender />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
