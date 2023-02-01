@@ -160,11 +160,15 @@ export default function Services() {
     return (
         <Section id='services' className={active ? 'active' : ''}>
             <div className='inner-section'>
-                <div className='heading-container'>
-                    <motion.h2 initial={initial} animate={controls} ref={ref}>
-                        {data.heading}
-                    </motion.h2>
-                    <h3>{data.subheading}</h3>
+                <div className='heading-wrapper' ref={ref}>
+                    <motion.div
+                        className='heading-container'
+                        initial={initial}
+                        animate={controls}
+                    >
+                        <h2>{data.heading}</h2>
+                        <h3>{data.subheading}</h3>
+                    </motion.div>
                 </div>
                 <div className='ServiceContainer'>
                     {data.services.map((service, i) => {
