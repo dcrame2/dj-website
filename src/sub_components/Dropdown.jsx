@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { PBaseStyles, PSecondary } from '../styles/Type';
 import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import DropIndicator from './svg/DropIndicator';
+import { motion, useInView, useAnimationControls } from 'framer-motion';
+import { useRef } from 'react';
 
 const Container = styled.div`
     display: relative;
@@ -98,7 +100,25 @@ const Container = styled.div`
 
 export default function Dropdown({ ...props }) {
     const [active, setActive] = useState(false);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 1 });
+    const [isInViewFired, setIsInViewFired] = useState(false);
+    const [initial, setInitial] = useState({ opacity: 0, scale: 0.5 });
+    const controls = useAnimationControls();
 
+    useEffect(() => {
+        if (isInView) {
+            setIsInViewFired(true);
+            controls.start({
+                opacity: 1,
+                scale: 1,
+            });
+        }
+
+        if (isInViewFired) {
+            setInitial({ opacity: 1, scale: 1 });
+        }
+    }, [isInView, isInViewFired]);
     // useEffect(() => {}, []);
 
     const toggleDropdown = () => {
@@ -106,18 +126,29 @@ export default function Dropdown({ ...props }) {
     };
 
     return (
-        <Container className={`${props.classname} ${active ? 'active' : ''}`}>
-            <div className='wrapper'>
-                <button className='toggle' onClick={toggleDropdown}>
-                    {props.question}
-                </button>
-                <div className='indicator'>
-                    <DropIndicator />
+        <motion.div
+            ref={ref}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={controls}
+            style={{
+                transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+            }}
+        >
+            <Container
+                className={`${props.classname} ${active ? 'active' : ''}`}
+            >
+                <div className='wrapper'>
+                    <button className='toggle' onClick={toggleDropdown}>
+                        {props.question}
+                    </button>
+                    <div className='indicator'>
+                        <DropIndicator />
+                    </div>
                 </div>
-            </div>
-            <div className='panel'>
-                <p>{props.answer}</p>
-            </div>
-        </Container>
+                <div className='panel'>
+                    <p>{props.answer}</p>
+                </div>
+            </Container>
+        </motion.div>
     );
 }
