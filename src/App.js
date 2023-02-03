@@ -1,81 +1,78 @@
-import Navigation from "./components/Navigation.jsx";
-import Contact from "./components/Contact";
-import Services from "./components/Services";
-import ModuleBlender from "./sub_components/ModuleBlender";
-import ImageContentModule from "./components/ImageContentModule.jsx";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer.jsx";
-import SlideOutLink from "./components/SlideOutLink";
-import Spacer from "./sub_components/Spacer.jsx";
-import FaqModule from "./components/FaqModule.jsx";
-import TestimonialsV2 from "./components/TestimonialsV2.jsx";
-import "./global.css";
-import { useState } from "react";
-import { MediaQueries } from "./styles/Utilities";
-import { Variables } from "./styles/Variables.jsx";
-import styled from "styled-components";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  HashRouter,
-} from "react-router-dom";
-import HomePage from "./pages/HomePage.jsx";
-import AboutUsPage from "./pages/AboutUsPage.jsx";
-import PortfolioPage from "./pages/PortfolioPage.jsx";
-import ServicesPage from "./pages/ServicesPage.jsx";
+import Navigation from './components/Navigation.jsx';
+import Footer from './components/Footer.jsx';
+import './global.css';
+import { useState, useEffect } from 'react';
+import { MediaQueries } from './styles/Utilities';
+import { Variables } from './styles/Variables.jsx';
+import styled from 'styled-components';
+import { Route, Routes, HashRouter } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx';
+import AboutUsPage from './pages/AboutUsPage.jsx';
+import PortfolioPage from './pages/PortfolioPage.jsx';
+import ServicesPage from './pages/ServicesPage.jsx';
+import FloatingContact from './components/FloatingContact.jsx';
 
 const ParaContainer = styled.div`
-  background-image: url(${Variables.background1});
-  z-index: 1;
-  height: 100%;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-size: auto 200px; */
+    background-image: url(${Variables.background1});
+    z-index: 1;
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: auto 200px; */
 
-  @media ${MediaQueries.tablet} {
-    background-color: ${Variables.color7};
-    background-image: unset;
-  }
+    @media ${MediaQueries.tablet} {
+        background-color: ${Variables.color7};
+        background-image: unset;
+    }
 `;
 
 function App() {
-  const [navBackdrop, setNavBackdrop] = useState(false);
-  const [animateElements, setAnimateElements] = useState();
-  const [scrollY, setScrollY] = useState();
+    const [navBackdrop, setNavBackdrop] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
 
-  const scrollListener = () => {
-    window.onscroll = function (e) {
-      setScrollY(this.scrollY);
-      // Nav functionality
-      if (this.scrollY > 83) {
-        setNavBackdrop(true);
-      } else {
-        setNavBackdrop(false);
-      }
-    };
-  };
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.pageYOffset);
+            if (window.pageYOffset > 83) {
+                setNavBackdrop(true);
+            } else {
+                setNavBackdrop(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-  scrollListener();
-
-  return (
-    <>
-      <HashRouter>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-        </Routes>
-        <Footer />
-      </HashRouter>
-    </>
-  );
+    return (
+        <>
+            <HashRouter>
+                <Navigation
+                    backdrop={navBackdrop}
+                    setBackdrop={setNavBackdrop}
+                />
+                <Routes>
+                    <Route
+                        path='/'
+                        element={<HomePage scrollPosition={scrollPosition} />}
+                    />
+                    <Route path='/services' element={<ServicesPage />} />
+                    <Route path='/about-us' element={<AboutUsPage />} />
+                    <Route path='/portfolio' element={<PortfolioPage />} />
+                </Routes>
+                <FloatingContact
+                    ariaLabel='Jump to services overview'
+                    scrollY={scrollPosition}
+                    text='Contact Us'
+                />
+                <Footer />
+            </HashRouter>
+        </>
+    );
 }
 
 export default App;
