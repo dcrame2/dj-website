@@ -63,7 +63,10 @@ function App() {
             element={<HomePage scrollPosition={scrollPosition} />}
           />
 
-          <Route path="/services" element={<ServicesPage />} />
+          <Route
+            path="/services"
+            element={<ServicesPage scrollPosition={scrollPosition} />}
+          />
 
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { PSecondary, H2Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
-import { Container } from "../styles/Utilities";
+import { Container, MediaQueries } from "../styles/Utilities";
 import ImageContentModule from "./ImageContentModule";
 
 const FullScreenContainer = styled.div`
@@ -12,6 +12,9 @@ const FullScreenContainer = styled.div`
   background-color: ${(props) => props.bgColor};
   padding-top: 200px;
   /* scroll-snap-stop: always; */
+  @media ${MediaQueries.mobile} {
+    padding-top: 125px;
+  }
   .inner-container {
     ${Container}
     display: flex;
@@ -31,15 +34,9 @@ const FullScreenModule = ({ ...props }) => {
   //   const { id, heading, imgSrc, altText, imgPlacement, content } = props.data;
   //   console.log(id);
   return (
-    <FullScreenContainer bgColor={props.bgColor}>
-      {/* <div className="inner-container">
-        <h2>Web Development</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat sit
-          iusto dolores architecto vel error esse nisi beatae, quidem nostrum!
-        </p>
-      </div> */}
+    <FullScreenContainer id={props.id} bgColor={props.bgColor}>
       <ImageContentModule {...props.data} />
+      {/* </div> */}
     </FullScreenContainer>
   );
 };

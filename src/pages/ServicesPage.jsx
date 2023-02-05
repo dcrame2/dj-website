@@ -1,82 +1,149 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SecondaryHero from "../components/SecondaryHero";
 import Spacer from "../sub_components/Spacer";
 import { Variables } from "../styles/Variables";
 import FullScreenModule from "../components/FullScreenModule";
+import ServiceHero from "../components/ServiceHero";
+import { Container } from "../styles/Utilities";
 
 const ServicesContainer = styled.div`
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  /* ${Container} */
 `;
+
+const serviceHeroData = {
+  heading: "Services We Offer",
+  subheading:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. VerLorem ipsum dolor sit amet consectetur adipisicing elit. Ver",
+  serviceLinks: [
+    {
+      serviceName: "Web Development 1",
+      serviceHref: "#service-1",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 2",
+      serviceHref: "#service-2",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 3 ",
+      serviceHref: "#service-3",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 4",
+      serviceHref: "#service-4",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 5",
+      serviceHref: "#service-5",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 6",
+      serviceHref: "#service-6",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 7",
+      serviceHref: "#service-7",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+    {
+      serviceName: "Web Development 8",
+      serviceHref: "#service-8",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+  ],
+};
 
 const data = [
   {
     id: "1",
+
+    color: `${Variables.color10}`,
+    imgIcon: "/service_about/webdeveloper_icon.svg",
     imgSrc: "/service_about/design.jpg",
-    altText: "text",
+    altText: "Web",
     imgPlacement: "right",
-    heading: "Test header",
+    heading: "Website Development",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "2",
+    color: `${Variables.white}`,
     imgSrc: "/service_about/design.jpg",
     altText: "text",
     imgPlacement: "",
-    heading: "2nd header",
+    heading: "Web App Development",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "23",
+    color: `${Variables.color10}`,
     imgSrc: "/service_about/design.jpg",
     altText: "text",
     imgPlacement: "right",
-    heading: "3rd header",
+    heading: "SEO",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "23",
+    color: `${Variables.white}`,
     imgSrc: "/service_about/design.jpg",
     altText: "text",
     imgPlacement: "",
-    heading: "3rd header",
+    heading: "web design/user interface",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "3",
+    color: `${Variables.color10}`,
     imgSrc: "/service_about/design.jpg",
     altText: "text",
     imgPlacement: "right",
-    heading: "3rd header",
+    heading: "web maintenance",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "4",
+    color: `${Variables.white}`,
     imgSrc: "/service_about/design.jpg",
     altText: "text",
     imgPlacement: "",
-    heading: "3rd header",
+    heading: "cms development",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
 ];
 
-const ServicesPage = () => {
+const ServicesPage = ({ scrollPosition }) => {
+  useEffect(() => {
+    console.log(scrollPosition);
+  }, [scrollPosition]);
+
   return (
     <ServicesContainer>
-      <FullScreenModule data={data[0]} bgColor={Variables.white} />
-      <FullScreenModule data={data[1]} bgColor={Variables.color1} />
-      <FullScreenModule data={data[2]} bgColor={Variables.color2} />
-      <FullScreenModule data={data[3]} bgColor={Variables.color9} />
-      <FullScreenModule data={data[4]} bgColor={Variables.color4} />
-      <FullScreenModule />
+      <ServiceHero data={serviceHeroData} />
+      {data.map((information, i) => {
+        return (
+          <FullScreenModule
+            id={`service-${i + 1}`}
+            data={information}
+            bgColor={information.color}
+          />
+        );
+      })}
     </ServicesContainer>
   );
 };
