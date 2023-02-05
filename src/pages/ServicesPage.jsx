@@ -4,7 +4,6 @@ import SecondaryHero from '../components/SecondaryHero';
 import Spacer from '../sub_components/Spacer';
 import { Variables } from '../styles/Variables';
 import FullScreenModule from '../components/FullScreenModule';
-import { useEffect } from 'react';
 
 const ServicesContainer = styled.div`
     scroll-snap-type: y mandatory;
@@ -70,9 +69,6 @@ const data = [
 ];
 
 const ServicesPage = ({ scrollPosition }) => {
-    useEffect(() => {
-        console.log(scrollPosition);
-    }, [scrollPosition]);
     return (
         <ServicesContainer>
             <FullScreenModule data={data[0]} bgColor={Variables.white} />
