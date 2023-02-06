@@ -128,8 +128,8 @@ const FloatingButton = styled.div`
         border: unset;
         transition: all ease 0.4s;
         opacity: ${(props) => (props.showText ? 1 : 0)};
-        z-index: 100;
-
+        transition: ${(props) =>
+            props.showText ? 'all ease .4s' : 'opacity ease 0s'};
         span {
             position: relative;
             z-index: 1;
@@ -367,7 +367,7 @@ export default function FloatingContact({ ...props }) {
             <button
                 aria-label={props.ariaLabel}
                 className='toggle-form'
-                onClick={() => setExpand(!expand)}
+                onClick={() => setExpand(true)}
             >
                 <span>{props.text ? props.text : null}</span>
             </button>
