@@ -50,12 +50,11 @@ const FloatingButton = styled.div`
         border: solid 4px ${Variables.color2};
 
         @media ${MediaQueries.mobile} {
+            max-width: 97%;
             margin: auto;
             left: 0;
             right: 0;
         }
-
-        //transform: rotateY(360deg);
 
         form {
             display: flex;
