@@ -6,6 +6,7 @@ import Button from '../sub_components/Button';
 import Close from '../sub_components/svg/Close';
 import { H3Styles, PSmallStyles } from '../styles/Type';
 import { motion } from 'framer-motion';
+import { MediaQueries } from '../styles/Utilities';
 
 const FloatingButton = styled.div`
     display: flex;
@@ -47,6 +48,13 @@ const FloatingButton = styled.div`
         justify-content: flex-start;
         background-color: ${Variables.color16};
         border: solid 4px ${Variables.color2};
+
+        @media ${MediaQueries.mobile} {
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+
         //transform: rotateY(360deg);
 
         form {
