@@ -9,7 +9,7 @@ import { Container } from "../styles/Utilities";
 
 const ServicesContainer = styled.div`
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   height: 100vh;
   /* ${Container} */
 `;
