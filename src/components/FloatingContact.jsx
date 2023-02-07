@@ -6,6 +6,7 @@ import Button from '../sub_components/Button';
 import Close from '../sub_components/svg/Close';
 import { H3Styles, PSmallStyles } from '../styles/Type';
 import { motion } from 'framer-motion';
+import { MediaQueries } from '../styles/Utilities';
 
 const FloatingButton = styled.div`
     display: flex;
@@ -47,7 +48,14 @@ const FloatingButton = styled.div`
         justify-content: flex-start;
         background-color: ${Variables.color16};
         border: solid 4px ${Variables.color2};
-        //transform: rotateY(360deg);
+
+        @media ${MediaQueries.mobile} {
+            max-width: 97%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
 
         form {
             display: flex;
@@ -128,8 +136,8 @@ const FloatingButton = styled.div`
         border: unset;
         transition: all ease 0.4s;
         opacity: ${(props) => (props.showText ? 1 : 0)};
-        z-index: 100;
-
+        transition: ${(props) =>
+            props.showText ? 'all ease .4s' : 'opacity ease 0s'};
         span {
             position: relative;
             z-index: 1;
@@ -367,7 +375,7 @@ export default function FloatingContact({ ...props }) {
             <button
                 aria-label={props.ariaLabel}
                 className='toggle-form'
-                onClick={() => setExpand(!expand)}
+                onClick={() => setExpand(true)}
             >
                 <span>{props.text ? props.text : null}</span>
             </button>
