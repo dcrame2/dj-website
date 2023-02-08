@@ -20,43 +20,39 @@ const serviceHeroData = {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. VerLorem ipsum dolor sit amet consectetur adipisicing elit. Ver",
   serviceLinks: [
     {
-      serviceName: "Web Development 1",
-      serviceHref: "#service-1",
+      serviceName: "Website Development",
+      serviceHref: "/service-1",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web Development 2",
-      serviceHref: "#service-2",
+      serviceName: "Web App Development",
+      serviceHref: "/service-2",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web Development 3 ",
-      serviceHref: "#service-3",
+      serviceName: "SEO",
+      serviceHref: "/service-3",
+      serviceIcon: "/service_about/webdeveloper_icon.svg",
+    },
+
+    {
+      serviceName: "Web Design/User Interface",
+      serviceHref: "/service-4",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web Development 4",
-      serviceHref: "#service-4",
+      serviceName: "Web Maintenance",
+      serviceHref: "/service-5",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web Development 5",
-      serviceHref: "#service-5",
+      serviceName: "CMS Development",
+      serviceHref: "/service-6",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web Development 6",
-      serviceHref: "#service-6",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
-    },
-    {
-      serviceName: "Web Development 7",
-      serviceHref: "#service-7",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
-    },
-    {
-      serviceName: "Web Development 8",
-      serviceHref: "#service-8",
+      serviceName: "Web Hosting",
+      serviceHref: "/service-7",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
   ],
