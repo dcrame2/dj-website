@@ -14,25 +14,46 @@ export const Variables = {
   // colors
   // When swapping leave note of what the color looks like
   // used in button link styling
-  color1: "#E5B8F4", // light purple
-  color2: "#C147E9", // purple
-  color3: "#FCF9BE", // light yellow-white
-  color4: "#46C2CB", // teal aqua
+  // color1: "#E5B8F4", // light purple
+  // color2: "#C147E9", // purple
+  // color3: "#FCF9BE", // light yellow-white
+  // color4: "#46C2CB", // teal aqua
+  // color5: "#4D4C7D", // pale purple
+  // color6: "#E9D5DA", // light pale pink
+  // color7: "#FFFBE7", // white with hint of pink
+  // color8: "#DDDDDD", // slate white
+  // color9: "#FF6D28", // orange
+  // color10: "#472183", // dark purple
+  // color11: "#434242", // medium gray
+  // color12: "#222222", // dark gray
+  // color13: "#EB1D36", // emergency red
+  // color14: "#060011", // dark violet
+  // color15: "#4B56D2", // aqua
+  // color16: "#434242", // dark gray
+  // color17: "#000000",
+  // color18: "#0dd9bb",
+  // color19: "#000F2A",
+  // color20: "transparent",
+
+  color1: "#ECB365", // light purple
+  color2: "#041C32", // purple
+  color3: "#04293A", // light yellow-white
+  color4: "#064663", // teal aqua
   color5: "#4D4C7D", // pale purple
   color6: "#E9D5DA", // light pale pink
   color7: "#FFFBE7", // white with hint of pink
   color8: "#DDDDDD", // slate white
-  color9: "#FF6D28", // orange
-  color10: "#472183", // dark purple
-  color11: "#434242", // medium gray
-  color12: "#222222", // dark gray
-  color13: "#EB1D36", // emergency red
-  color14: "#060011", // dark violet
-  color15: "#4B56D2", // aqua
-  color16: "#434242", // dark gray
+  color9: "#ECB365", // orange
+  color10: "#064663", // dark purple
+  color11: "#064663", // medium gray
+  color12: "#041C32", // dark gray
+  color13: "#064663", // emergency red
+  color14: "#064663", // dark violet
+  color15: "#064663", // aqua
+  color16: "#064663", // dark gray
   color17: "#000000",
-  color18: "#0dd9bb",
-  color19: "#000F2A",
+  color18: "#064663",
+  color19: "#064663",
   color20: "transparent",
 
   black: "black",
