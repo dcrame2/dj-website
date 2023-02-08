@@ -5,6 +5,22 @@ import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import { H1Styles, PBaseStyles } from '../styles/Type';
 import { GlassEffect } from '../styles/Utilities';
+import { motion, useAnimationControls } from 'framer-motion';
+
+const glow = keyframes`
+  
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+                0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+                0 0 70px #e60073;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+                0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+                0 0 80px #ff4da6;
+        }
+    
+`;
 
 const Section = styled.section`
     width: 100vw;
@@ -119,6 +135,9 @@ const ContentContainer = styled.div`
         ${H1Styles}
         text-transform: uppercase;
         font-weight: 600;
+        -webkit-animation: ${glow} 1s ease-in-out infinite alternate;
+        -moz-animation: ${glow} 1s ease-in-out infinite alternate;
+        animation: ${glow} 1s ease-in-out infinite alternate;
     }
     h2 {
         ${PBaseStyles}
@@ -127,10 +146,14 @@ const ContentContainer = styled.div`
 
 const Hero = () => {
     const [loaded, setLoaded] = useState(false);
+    const controls = useAnimationControls();
 
     useEffect(() => {
+        if (loaded === false) {
+            controls.start({ translateX: 0, opacity: 1 });
+        }
         setLoaded(true);
-    }, []);
+    }, [loaded]);
 
     return (
         <Section>
@@ -145,7 +168,34 @@ const Hero = () => {
             <OpaqueFilter />
             <InnerSection>
                 <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
-                    <h1>{`Experience ${Variables.companyName}`}</h1>
+                    <h1>
+                        <motion.span
+                            loaded={loaded}
+                            initial={{ translateX: '-100px', opacity: 0 }}
+                            animate={controls}
+                            transition={{ delay: 1 }}
+                        >
+                            Experience
+                        </motion.span>
+                        <br />
+                        <motion.span
+                            loaded={loaded}
+                            initial={{ translateX: '-100px', opacity: 0 }}
+                            animate={controls}
+                            transition={{ delay: 2 }}
+                        >
+                            Digital
+                        </motion.span>
+                        <motion.span
+                            loaded={loaded}
+                            initial={{ translateX: '200px', opacity: 0 }}
+                            animate={controls}
+                            transition={{ delay: 3 }}
+                        >
+                            <br />
+                            Delight
+                        </motion.span>
+                    </h1>
                     <h2>
                         Bringing you websites
                         <br />
