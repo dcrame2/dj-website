@@ -8,7 +8,7 @@ import ServiceHero from "../components/ServiceHero";
 import { Container } from "../styles/Utilities";
 
 const ServicesContainer = styled.div`
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   /* overflow-y: scroll; */
   /* height: 100vh; */
   /* ${Container} */
