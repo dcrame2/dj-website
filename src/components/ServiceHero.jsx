@@ -8,7 +8,7 @@ import { motion, useInView, useAnimationControls } from "framer-motion";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   scroll-snap-align: start;
   background-color: ${(props) => props.bgColor};
   padding-top: 200px;
