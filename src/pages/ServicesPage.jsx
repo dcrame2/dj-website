@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import styled from "styled-components";
 import SecondaryHero from "../components/SecondaryHero";
 import Spacer from "../sub_components/Spacer";
@@ -10,7 +10,7 @@ import { Container } from "../styles/Utilities";
 const ServicesContainer = styled.div`
   scroll-snap-type: y mandatory;
   /* overflow-y: scroll; */
-  height: 100vh;
+  /* height: 100vh; */
   /* ${Container} */
 `;
 
@@ -128,13 +128,27 @@ const data = [
 ];
 
 const ServicesPage = ({ scrollPosition }) => {
+  const [active, setActive] = useState(false);
+  const [triggerDistance, setTriggerDistance] = useState();
+
+  const [reRender, setReRender] = useState(false);
   useEffect(() => {
-    console.log(scrollPosition);
+    if (scrollPosition > 800) {
+      setActive(true);
+      setReRender(true);
+    } else {
+      setActive(false);
+    }
   }, [scrollPosition]);
 
   return (
     <ServicesContainer>
-      <ServiceHero data={serviceHeroData} />
+      <ServiceHero
+        reRender={reRender}
+        active={active}
+        data={serviceHeroData}
+        scrollPosition={scrollPosition}
+      />
       {data.map((information, i) => {
         return (
           <FullScreenModule

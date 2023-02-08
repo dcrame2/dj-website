@@ -43,6 +43,7 @@ const Section = styled.section`
 const InnerSection = styled.div`
     ${Container}
     height: 100%;
+    background-color: ${Variables.color2};
 `;
 
 const HeroBg = styled.video`
@@ -118,8 +119,19 @@ const ContentContainer = styled.div`
         }
 
         @media ${MediaQueries.mobile} {
-            animation: ${SlideInMobile} 0.8s ease;
-            animation-fill-mode: forwards;
+            width: 90%;
+        }
+
+        h1 {
+            ${H1Styles}
+            text-transform: uppercase;
+            font-weight: 600;
+            -webkit-animation: ${glow} 1s ease-in-out infinite alternate;
+            -moz-animation: ${glow} 1s ease-in-out infinite alternate;
+            animation: ${glow} 1s ease-in-out infinite alternate;
+        }
+        h2 {
+            ${PBaseStyles}
         }
     }
 
@@ -135,9 +147,6 @@ const ContentContainer = styled.div`
         ${H1Styles}
         text-transform: uppercase;
         font-weight: 600;
-        -webkit-animation: ${glow} 1s ease-in-out infinite alternate;
-        -moz-animation: ${glow} 1s ease-in-out infinite alternate;
-        animation: ${glow} 1s ease-in-out infinite alternate;
     }
     h2 {
         ${PBaseStyles}
