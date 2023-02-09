@@ -3,14 +3,15 @@ import styled from "styled-components";
 import { PSecondary, H2Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
-import ImageContentModule from "./ImageContentModule";
+import ImageContentModuleV2 from "./ImageContentModuleV2";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
   background-color: ${(props) => props.bgColor};
-  padding-top: 200px;
+  padding-top: 150px;
+  color: ${(props) => props.color};
   /* scroll-snap-stop: always; */
   @media ${MediaQueries.mobile} {
     padding-top: 125px;
@@ -21,22 +22,13 @@ const FullScreenContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    h2 {
-      ${H2Styles}
-    }
-    p {
-      ${PSecondary}
-    }
   }
 `;
 
 const FullScreenModule = ({ ...props }) => {
-  //   const { id, heading, imgSrc, altText, imgPlacement, content } = props.data;
-  //   console.log(id);
   return (
     <FullScreenContainer id={props.id} bgColor={props.bgColor}>
-      <ImageContentModule {...props.data} />
-      {/* </div> */}
+      <ImageContentModuleV2 color={props.color} {...props.data} />
     </FullScreenContainer>
   );
 };

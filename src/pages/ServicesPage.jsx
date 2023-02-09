@@ -25,7 +25,7 @@ const serviceHeroData = {
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
     {
-      serviceName: "Web App Development",
+      serviceName: "App Development",
       serviceHref: "/service-2",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
@@ -36,7 +36,7 @@ const serviceHeroData = {
     },
 
     {
-      serviceName: "Web Design/User Interface",
+      serviceName: "Web Design",
       serviceHref: "/service-4",
       serviceIcon: "/service_about/webdeveloper_icon.svg",
     },
@@ -62,9 +62,10 @@ const data = [
   {
     id: "1",
 
-    color: `${Variables.color10}`,
+    color: `${Variables.white}`,
+    bgColor: `${Variables.color10}`,
     imgIcon: "/service_about/webdeveloper_icon.svg",
-    imgSrc: "/service_about/design.jpg",
+    imgSrc: "/service_about/website-development.jpg",
     altText: "Web",
     imgPlacement: "right",
     heading: "Website Development",
@@ -73,38 +74,46 @@ const data = [
   },
   {
     id: "2",
-    color: `${Variables.white}`,
-    imgSrc: "/service_about/design.jpg",
-    altText: "text",
-    imgPlacement: "",
-    heading: "Web App Development",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
-  },
-  {
-    id: "23",
+    imgIcon: "/service_about/webdeveloper_icon.svg",
     color: `${Variables.color10}`,
-    imgSrc: "/service_about/design.jpg",
-    altText: "text",
-    imgPlacement: "right",
-    heading: "SEO",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
-  },
-  {
-    id: "23",
-    color: `${Variables.white}`,
-    imgSrc: "/service_about/design.jpg",
+    bgColor: `${Variables.white}`,
+    imgSrc: "/service_about/app-development.jpg",
     altText: "text",
     imgPlacement: "",
-    heading: "web design/user interface",
+    heading: "App Development",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
     id: "3",
+    imgIcon: "/service_about/webdeveloper_icon.svg",
+    color: `${Variables.white}`,
+    bgColor: `${Variables.color10}`,
+    imgSrc: "/service_about/seo.jpg",
+    altText: "text",
+    imgPlacement: "right",
+    heading: "Search Engine Optimization",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+  },
+  {
+    id: "4",
     color: `${Variables.color10}`,
-    imgSrc: "/service_about/design.jpg",
+    bgColor: `${Variables.white}`,
+    imgIcon: "/service_about/webdeveloper_icon.svg",
+    imgSrc: "/service_about/web-design.jpg",
+    altText: "text",
+    imgPlacement: "",
+    heading: "Web Design",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+  },
+  {
+    id: "5",
+    color: `${Variables.white}`,
+    bgColor: `${Variables.color10}`,
+    imgIcon: "/service_about/webdeveloper_icon.svg",
+    imgSrc: "/service_about/web-main.jpg",
     altText: "text",
     imgPlacement: "right",
     heading: "web maintenance",
@@ -112,12 +121,14 @@ const data = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
   {
-    id: "4",
-    color: `${Variables.white}`,
-    imgSrc: "/service_about/design.jpg",
+    id: "6",
+    color: `${Variables.color10}`,
+    bgColor: `${Variables.white}`,
+    imgSrc: "/service_about/cms.jpg",
+    imgIcon: "/service_about/webdeveloper_icon.svg",
     altText: "text",
     imgPlacement: "",
-    heading: "cms development",
+    heading: "Cms development",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
   },
@@ -166,7 +177,8 @@ const ServicesPage = ({ scrollPosition }) => {
             <FullScreenModule
               id={`service-${i + 1}`}
               data={information}
-              bgColor={information.color}
+              bgColor={information.bgColor}
+              // color={information}
             />
           );
         })}
