@@ -134,20 +134,20 @@ const data = [
   },
 ];
 
-const ParaContainer = styled.div`
-  /* background-image: url(${Variables.background1}); */
-  z-index: 1;
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-image: url("/images/party.jpg"); */
-  @media ${MediaQueries.tablet} {
-    background-color: ${Variables.color7};
-    background-image: unset;
-  }
-`;
+// const ParaContainer = styled.div`
+//   /* background-image: url(${Variables.background1}); */
+//   z-index: 1;
+//   height: 100%;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   /* background-image: url("/images/party.jpg"); */
+//   @media ${MediaQueries.tablet} {
+//     background-color: ${Variables.color7};
+//     background-image: unset;
+//   }
+// `;
 
 const ServicesPage = ({ scrollPosition }) => {
   const [active, setActive] = useState(false);
@@ -165,24 +165,22 @@ const ServicesPage = ({ scrollPosition }) => {
 
   return (
     <ServicesContainer>
-      <ParaContainer>
-        <ServiceHero
-          reRender={reRender}
-          active={active}
-          data={serviceHeroData}
-          scrollPosition={scrollPosition}
-        />
-        {data.map((information, i) => {
-          return (
-            <FullScreenModule
-              id={`service-${i + 1}`}
-              data={information}
-              bgColor={information.bgColor}
-              // color={information}
-            />
-          );
-        })}
-      </ParaContainer>
+      <ServiceHero
+        reRender={reRender}
+        active={active}
+        data={serviceHeroData}
+        scrollPosition={scrollPosition}
+      />
+      {data.map((information, i) => {
+        return (
+          <FullScreenModule
+            id={`service-${i + 1}`}
+            data={information}
+            bgColor={information.bgColor}
+            // color={information}
+          />
+        );
+      })}
     </ServicesContainer>
   );
 };

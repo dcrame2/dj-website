@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { PSecondary, H2Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
@@ -11,10 +11,10 @@ const FullScreenContainer = styled.div`
   scroll-snap-align: start;
   background-color: ${(props) => props.bgColor};
   padding-top: 150px;
-  color: ${(props) => props.color};
+  /* color: ${(props) => props.color}; */
   /* scroll-snap-stop: always; */
   @media ${MediaQueries.mobile} {
-    padding-top: 125px;
+    padding-top: 75px;
   }
   .inner-container {
     ${Container}

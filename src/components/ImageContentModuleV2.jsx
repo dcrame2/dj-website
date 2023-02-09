@@ -64,6 +64,9 @@ const ICMContainer = styled.section`
         background-color: unset;
         box-shadow: unset;
         border-radius: unset;
+        @media ${MediaQueries.mobile} {
+          display: none;
+        }
       }
       ul {
         ${PSecondary}
