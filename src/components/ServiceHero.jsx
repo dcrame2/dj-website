@@ -50,12 +50,12 @@ const FullScreenContainer = styled.div`
 
         li {
           max-width: 260px;
-          background-color: ${Variables.color2};
-          padding-left: 50px;
+          background-color: ${Variables.color10};
+          /* padding-left: 15px; */
           border-bottom: 1px solid #fff;
           border-top: 1px solid #fff;
           border-right: 1px solid #fff;
-          /* border: 1px solid ${Variables.white}; */
+          padding: 5px;
           a {
             flex-direction: row;
 
@@ -76,7 +76,6 @@ const FullScreenContainer = styled.div`
         list-style-type: none;
         background-color: ${Variables.black};
         transition: background-color 0.3s ease-in;
-        /* border-radius: 8px; */
         &:hover {
           background-color: ${Variables.color9};
           transition: background-color 0.3s ease-in;

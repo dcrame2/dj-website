@@ -5,7 +5,7 @@ import Spacer from "../sub_components/Spacer";
 import { Variables } from "../styles/Variables";
 import FullScreenModule from "../components/FullScreenModule";
 import ServiceHero from "../components/ServiceHero";
-import { Container } from "../styles/Utilities";
+import { Container, MediaQueries } from "../styles/Utilities";
 
 const ServicesContainer = styled.div`
   /* scroll-snap-type: y mandatory; */
@@ -123,6 +123,21 @@ const data = [
   },
 ];
 
+const ParaContainer = styled.div`
+  /* background-image: url(${Variables.background1}); */
+  z-index: 1;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: url("/images/party.jpg"); */
+  @media ${MediaQueries.tablet} {
+    background-color: ${Variables.color7};
+    background-image: unset;
+  }
+`;
+
 const ServicesPage = ({ scrollPosition }) => {
   const [active, setActive] = useState(false);
   const [triggerDistance, setTriggerDistance] = useState();
@@ -139,21 +154,23 @@ const ServicesPage = ({ scrollPosition }) => {
 
   return (
     <ServicesContainer>
-      <ServiceHero
-        reRender={reRender}
-        active={active}
-        data={serviceHeroData}
-        scrollPosition={scrollPosition}
-      />
-      {data.map((information, i) => {
-        return (
-          <FullScreenModule
-            id={`service-${i + 1}`}
-            data={information}
-            bgColor={information.color}
-          />
-        );
-      })}
+      <ParaContainer>
+        <ServiceHero
+          reRender={reRender}
+          active={active}
+          data={serviceHeroData}
+          scrollPosition={scrollPosition}
+        />
+        {data.map((information, i) => {
+          return (
+            <FullScreenModule
+              id={`service-${i + 1}`}
+              data={information}
+              bgColor={information.color}
+            />
+          );
+        })}
+      </ParaContainer>
     </ServicesContainer>
   );
 };
