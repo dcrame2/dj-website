@@ -8,7 +8,7 @@ import React, { useRef } from "react";
 
 const ICMContainer = styled.section`
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   background-color: ${Variables.color20};
   h2 {
     ${H1Styles};
@@ -21,9 +21,9 @@ const ICMContainer = styled.section`
     ${Container}
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    max-width: 1200px;
+    align-items: flex-start;
+    /* gap: 30px; */
+    max-width: 1050px;
     padding-top: 50px;
     @media ${MediaQueries.tablet} {
       flex-direction: column;
@@ -33,19 +33,43 @@ const ICMContainer = styled.section`
     @media ${MediaQueries.mobile} {
       gap: 42px;
     }
-
-    img {
-      background-color: ${Variables.color1};
-      max-width: 600px;
-      /* width: 40%; */
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      /* box-shadow: 1px 1px 10px 2px ${Variables.color8};
+    .ICMImgContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      img {
+        background-color: ${Variables.color1};
+        max-width: 400px;
+        /* width: 40%; */
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        float: left;
+        /* box-shadow: 1px 1px 10px 2px ${Variables.color8};
       -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color8};
       -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8}; */
-    }
+      }
+      .highlight-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
 
+        ${PSecondary}
+        .highlight-items {
+          background-color: ${(props) => props.color};
+          color: ${(props) => props.bgColor};
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid ${Variables.white};
+          text-align: center;
+          border-radius: 20%;
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
     .content {
       max-width: 460px;
       display: flex;
@@ -55,7 +79,7 @@ const ICMContainer = styled.section`
       p {
         ${PSecondary}
         line-height: 30px;
-        font-size: 2.2rem;
+        /* font-size: 2.rem; */
         color: ${(props) => props.color};
         white-space: pre-wrap;
       }
@@ -74,7 +98,7 @@ const ICMContainer = styled.section`
         white-space: pre-wrap;
         li {
           line-height: 30px;
-          font-size: 2.2rem;
+          /* font-size: 2.2rem; */
           margin-left: 20px;
         }
       }
@@ -91,7 +115,7 @@ const ICMContainer = styled.section`
 export default function ImageContentModule({ ...props }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  console.log(props.color);
+  //   console.log(props.color);
   let translation; // set translation based on image placement prop
   {
     props.imgPlacement === "right"
@@ -102,30 +126,39 @@ export default function ImageContentModule({ ...props }) {
   return (
     <ICMContainer
       color={props.color}
+      bgColor={props.bgColor}
       id={props.id}
       imgPlacement={props.imgPlacement}
     >
       <h2>{props.heading}</h2>
       <div className="ICMInnerContainer" ref={ref}>
-        <img
-          src={props.imgSrc}
-          alt={props.altTxt}
-          style={{
-            transform: isInView ? "none" : translation,
-            opacity: isInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          }}
-        />
+        <div className="ICMImgContainer">
+          <img
+            src={props.imgSrc}
+            alt={props.altTxt}
+            style={{
+              transform: isInView ? "none" : translation,
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          />
+          <div className="highlight-container">
+            {props.highlights.map((list, index) => {
+              return (
+                <div className="highlight-items" key={`${index}`}>
+                  {list}
+                </div>
+              );
+            })}
+          </div>
+        </div>
         <div className="content">
-          <img src={props.imgIcon} alt="" srcset="" />
           <p>{props.content}</p>
 
           <ul>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
+            {props.factList.map((list, index) => {
+              return <li key={`${index}`}>{list}</li>;
+            })}
           </ul>
         </div>
       </div>

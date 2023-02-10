@@ -70,7 +70,13 @@ const data = [
     imgPlacement: "right",
     heading: "Website Development",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
   {
     id: "2",
@@ -82,7 +88,13 @@ const data = [
     imgPlacement: "",
     heading: "App Development",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
   {
     id: "3",
@@ -94,7 +106,13 @@ const data = [
     imgPlacement: "right",
     heading: "Search Engine Optimization",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
   {
     id: "4",
@@ -106,7 +124,13 @@ const data = [
     imgPlacement: "",
     heading: "Web Design",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
   {
     id: "5",
@@ -118,7 +142,13 @@ const data = [
     imgPlacement: "right",
     heading: "web maintenance",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
   {
     id: "6",
@@ -130,7 +160,13 @@ const data = [
     imgPlacement: "",
     heading: "Cms development",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero maxime eiiure cupiditate voluptas et sit, voluptatibus modi eligendi. Fugiat, debitis sed magni maxime fugit officia. Rem provident atque laboriosam?",
+      "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
+    factList: [
+      "Custom Website Design: We will work with you to create a custom website design that reflects your brand and meets your specific needs. ",
+      "Content Management Systems (CMS): Our team is experienced in using various CMS platforms such as WordPress, Joomla, and Shopify, allowing us to create a website that is easy for you to manage.",
+      "Mobile Responsiveness: We ensure that all of our website designs are mobile responsive, providing a seamless experience for users on all devices.",
+    ],
+    highlights: ["AGILE", "FAST", "RELIABLE"],
   },
 ];
 
