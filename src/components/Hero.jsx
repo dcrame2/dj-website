@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
@@ -10,14 +10,14 @@ import { motion, useAnimationControls } from 'framer-motion';
 const glow = keyframes`
   
         from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
-                0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
-                0 0 70px #e60073;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0008e6,
+                0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 60px #0008e6,
+                0 0 70px #0008e6;
         }
         to {
-            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
-                0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
-                0 0 80px #ff4da6;
+            text-shadow: 0 0 20px #fff, 0 0 30px #00d9ff, 0 0 40px #00d9ff,
+                0 0 50px #00d9ff, 0 0 60px #00d9ff, 0 0 70px #00d9ff,
+                0 0 80px #00d9ff;
         }
     
 `;
@@ -44,20 +44,8 @@ const InnerSection = styled.div`
     ${Container}
     height: 100%;
     background-color: ${Variables.color2};
-`;
-
-const HeroBg = styled.video`
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    @media ${MediaQueries.mobile} {
-        background: black;
-    }
+    display: flex;
+    justify-content: center;
 `;
 
 const OpaqueFilter = styled.div`
@@ -81,57 +69,59 @@ const OpaqueFilter = styled.div`
     }
 `;
 
-const SlideIn = keyframes`
-    to { left: 64px;}
-`;
-
-const SlideInTablet = keyframes`
-    to { left: 64px;}
-`;
-
-const SlideInMobile = keyframes`
-    to { left: 24px;}
-`;
-
-const SlideOut = keyframes`
-    to {left: -100%}
-`;
-
 const ContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
     z-index: 1;
     position: absolute;
     top: 35%;
-    left: -100%;
-    gap: 25px;
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
-    transition: left ease 3s;
+    margin: 0 auto;
+    align-items: center;
+    width: 900px;
 
-    &.loaded {
-        animation: ${SlideIn} 0.8s ease;
-        animation-fill-mode: forwards;
+    @media ${MediaQueries.mobile} {
+        width: 90%;
+    }
 
-        @media ${MediaQueries.tablet} {
-            animation: ${SlideInTablet} 0.8s ease;
-            animation-fill-mode: forwards;
-        }
+    h1 {
+        text-align: center;
+        display: block;
 
-        @media ${MediaQueries.mobile} {
-            width: 90%;
-        }
-
-        h1 {
-            ${H1Styles}
+        span.large-txt {
+            font-family: ${Variables.joseph};
+            font-size: 10rem;
             text-transform: uppercase;
-            font-weight: 600;
-            -webkit-animation: ${glow} 1s ease-in-out infinite alternate;
-            -moz-animation: ${glow} 1s ease-in-out infinite alternate;
-            animation: ${glow} 1s ease-in-out infinite alternate;
+            display: inline-block;
         }
-        h2 {
-            ${PBaseStyles}
+
+        span.cursive {
+            font-family: ${Variables.Pacifico};
+            -webkit-animation: ${glow} 1s ease-in-out alternate;
+            -moz-animation: ${glow} 1s ease-in-out alternate;
+            animation: ${glow} 1s ease-in-out alternate;
+            animation-fill-mode: forwards;
+            font-size: 5rem;
+            line-height: 93px;
+            display: inline-block;
+
+            @media (max-width: 667px) {
+                line-height: 73px;
+            }
+
+            @media (max-width: 400px) {
+                font-size: 3rem;
+            }
+        }
+    }
+    h2 {
+        ${PBaseStyles}
+        text-align: center;
+        margin-top: 15px;
+
+        @media (max-width: 667px) {
+            margin-top: 0px;
+        }
+        @media (max-width: 400px) {
         }
     }
 
@@ -143,14 +133,18 @@ const ContentContainer = styled.div`
         width: 90%;
     }
 
-    h1 {
+    /* h1 {
         ${H1Styles}
         text-transform: uppercase;
         font-weight: 600;
+        font-size: 11rem;
+        text-align: center;
+        position: relative;
+        overflow: visible;
     }
     h2 {
         ${PBaseStyles}
-    }
+    } */
 `;
 
 const Hero = () => {
@@ -159,57 +153,52 @@ const Hero = () => {
 
     useEffect(() => {
         if (loaded === false) {
-            controls.start({ translateX: 0, opacity: 1 });
+            controls.start({ x: 0, opacity: 1, scale: 1 });
+            console.log(controls);
         }
         setLoaded(true);
     }, [loaded]);
 
     return (
         <Section>
-            <HeroBg
-                src='https://res.cloudinary.com/dovelpjnm/video/upload/v1672281128/space_mh1v86.mp4'
-                type='video/mp4'
-                muted
-                loop
-                autoPlay
-                playsInline
-            ></HeroBg>
             <OpaqueFilter />
             <InnerSection>
                 <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
-                    <h1>
+                    <motion.h1>
                         <motion.span
-                            loaded={loaded}
-                            initial={{ translateX: '-100px', opacity: 0 }}
+                            className='cursive'
+                            initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={controls}
-                            transition={{ delay: 1 }}
+                            transition={{ delay: 1, duration: 0.5 }}
                         >
                             Experience
                         </motion.span>
                         <br />
                         <motion.span
-                            loaded={loaded}
-                            initial={{ translateX: '-100px', opacity: 0 }}
+                            className='large-txt'
+                            initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={controls}
-                            transition={{ delay: 2 }}
+                            transition={{ delay: 2, duration: 0.5 }}
                         >
                             Digital
                         </motion.span>
                         <motion.span
-                            loaded={loaded}
-                            initial={{ translateX: '200px', opacity: 0 }}
-                            animate={controls}
-                            transition={{ delay: 3 }}
+                            className='large-txt'
+                            initial={{ x: '200%', opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 3, duration: 0.5 }}
                         >
-                            <br />
                             Delight
                         </motion.span>
-                    </h1>
-                    <h2>
-                        Bringing you websites
-                        <br />
-                        and web applications
-                    </h2>
+                    </motion.h1>
+                    <motion.h2
+                        initial={{ y: '400%', scale: 0, opacity: 0 }}
+                        animate={{ y: 0, scale: 1, opacity: 1 }}
+                        transition={{ duration: 2.5, delay: 2.5 }}
+                    >
+                        Bringing you websites and <br />
+                        web applications
+                    </motion.h2>
                 </ContentContainer>
             </InnerSection>
         </Section>
