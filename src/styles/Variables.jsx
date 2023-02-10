@@ -62,6 +62,9 @@ export const Variables = {
     // Type
     joseph: 'Josefin Sans, sans-serif',
     openSans: 'Open Sans, sans-serif',
+
+    Pacifico: 'Pacifico',
+
     // Company name
     companyName: 'Digital Delight',
 

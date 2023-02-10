@@ -81,3 +81,9 @@ ol {
 body {
   font-family: "Josefin Sans", sans-serif;
 }
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/public/fonts/Pacifico-Regular.ttf') format('truetype');
+  }
+  
