@@ -15,6 +15,8 @@ const FullScreenContainer = styled.div`
   /* scroll-snap-stop: always; */
   @media ${MediaQueries.mobile} {
     padding-top: 75px;
+    height: auto;
+    padding-bottom: 75px;
   }
   .inner-container {
     ${Container}

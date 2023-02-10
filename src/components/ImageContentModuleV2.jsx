@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Variables } from "../styles/Variables";
 import { Container } from "../styles/Utilities";
-import { H1Styles, PBaseStyles, PSecondary } from "../styles/Type";
+import { H1Styles, PBaseStyles, PSecondary, H2Styles } from "../styles/Type";
 import { MediaQueries } from "../styles/Utilities";
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
@@ -11,7 +11,7 @@ const ICMContainer = styled.section`
   /* width: 100%; */
   background-color: ${Variables.color20};
   h2 {
-    ${H1Styles};
+    ${H2Styles};
     text-transform: uppercase;
     color: ${(props) => props.color};
     margin-bottom: 12px;
@@ -37,6 +37,10 @@ const ICMContainer = styled.section`
       display: flex;
       flex-direction: column;
       gap: 100px;
+      @media ${MediaQueries.mobile} {
+        gap: 20px;
+        flex-direction: row;
+      }
       img {
         background-color: ${Variables.color1};
         max-width: 400px;
@@ -48,6 +52,9 @@ const ICMContainer = styled.section`
         box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+        @media ${MediaQueries.mobile} {
+          max-width: 260px;
+        }
       }
       .highlight-container {
         display: flex;
@@ -56,6 +63,11 @@ const ICMContainer = styled.section`
         gap: 40px;
 
         ${PSecondary}
+        @media ${MediaQueries.mobile} {
+          gap: 12px;
+          font-size: 14px;
+          flex-direction: column;
+        }
         .highlight-items {
           background-color: ${(props) => props.color};
           color: ${(props) => props.bgColor};
@@ -70,6 +82,10 @@ const ICMContainer = styled.section`
           box-shadow: 1px 1px 10px 2px ${(props) => props.color};
           -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
           -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+          @media ${MediaQueries.mobile} {
+            width: 100%;
+            height: 60px;
+          }
         }
       }
     }
