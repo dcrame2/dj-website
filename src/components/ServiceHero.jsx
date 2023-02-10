@@ -12,10 +12,12 @@ const FullScreenContainer = styled.div`
   height: 100vh;
   scroll-snap-align: start;
   /* background-color: ${(props) => props.bgColor}; */
-  padding-top: 200px;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  ${Container}
   @media ${MediaQueries.mobile} {
     padding-top: 125px;
   }
@@ -25,8 +27,10 @@ const FullScreenContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 15px;
+
     h1 {
       ${H1Styles}
+      text-transform: uppercase;
     }
     p {
       ${PSecondary}
@@ -40,8 +44,10 @@ const FullScreenContainer = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: center;
-      gap: 15px;
-
+      /* gap: 15px; */
+      @media ${MediaQueries.mobile} {
+        flex-direction: column;
+      }
       &.active {
         flex-direction: column;
         z-index: 1;
@@ -49,6 +55,7 @@ const FullScreenContainer = styled.div`
         justify-content: normal;
 
         li {
+          text-transform: uppercase;
           max-width: 260px;
           background-color: ${Variables.color10};
           /* padding-left: 15px; */
@@ -56,11 +63,36 @@ const FullScreenContainer = styled.div`
           border-top: 1px solid #fff;
           border-right: 1px solid #fff;
           padding: 5px;
+          &:nth-child(1) {
+            margin-bottom: unset;
+          }
+          &:nth-child(2) {
+            margin-top: unset;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: unset;
+          }
+          &:nth-child(4) {
+            margin-top: unset;
+          }
+
+          &:nth-child(5) {
+            margin-bottom: unset;
+          }
+          &:nth-child(6) {
+            margin-top: unset;
+          }
+
+          &:nth-child(7) {
+            margin-bottom: unset;
+          }
           a {
             flex-direction: row;
-
-            img {
-              width: 30px;
+            .icon-container {
+              img {
+                width: 30px;
+              }
             }
             p {
               text-align: left;
@@ -69,13 +101,70 @@ const FullScreenContainer = styled.div`
         }
       }
       li {
-        border: 1px solid ${Variables.color10};
-        padding: 10px;
+        text-transform: uppercase;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid ${Variables.white};
+        text-align: center;
+        background-color: ${Variables.color2};
         width: 100%;
-        max-width: 150px;
-        list-style-type: none;
-        background-color: ${Variables.black};
-        transition: background-color 0.3s ease-in;
+        padding: 15px 25px;
+        max-width: 200px;
+
+        &:nth-child(1) {
+          margin-bottom: 80px;
+        }
+        &:nth-child(2) {
+          margin-top: 80px;
+        }
+
+        &:nth-child(3) {
+          margin-bottom: 80px;
+        }
+        &:nth-child(4) {
+          margin-top: 80px;
+        }
+
+        &:nth-child(5) {
+          margin-bottom: 80px;
+        }
+        &:nth-child(6) {
+          margin-top: 80px;
+        }
+
+        &:nth-child(7) {
+          margin-bottom: 80px;
+        }
+        @media ${MediaQueries.mobile} {
+          max-width: unset;
+          &:nth-child(1) {
+            margin-bottom: unset;
+          }
+          &:nth-child(2) {
+            margin-top: unset;
+          }
+
+          &:nth-child(3) {
+            margin-bottom: unset;
+          }
+          &:nth-child(4) {
+            margin-top: unset;
+          }
+
+          &:nth-child(5) {
+            margin-bottom: unset;
+          }
+          &:nth-child(6) {
+            margin-top: unset;
+          }
+
+          &:nth-child(7) {
+            margin-bottom: unset;
+          }
+        }
         &:hover {
           background-color: ${Variables.color9};
           transition: background-color 0.3s ease-in;
@@ -84,14 +173,30 @@ const FullScreenContainer = styled.div`
           display: flex;
           flex-direction: column;
           align-items: center;
+
           gap: 15px;
-          img {
-            width: 45px;
+          @media ${MediaQueries.mobile} {
+            flex-direction: row;
+          }
+          .icon-container {
+            max-width: 100px;
+            img {
+              width: 100%;
+              /* @media (max-width: 1450px) {
+              width: 100px;
+            } */
+              @media ${MediaQueries.mobile} {
+                max-width: 30px;
+              }
+            }
           }
           p {
             text-align: center;
             ${PSecondary}
-            font-size: 14px;
+            background-color: ${Variables.color2};
+            @media ${MediaQueries.mobile} {
+              font-size: 1.25rem;
+            }
           }
         }
       }
@@ -118,7 +223,7 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
 
   useEffect(() => {
     if (isInView) {
-      controls.start({ opacity: 1, translateX: "0px" });
+      controls.start({ opacity: 1, translateY: "0px" });
       console.log("top");
     }
   }, [isInView, active]);
@@ -139,17 +244,19 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
                   <motion.li
                     initial={{
                       opacity: 0,
-                      translateX: "-200px",
+                      translateY: "300px",
                     }}
                     animate={{
                       opacity: 1,
-                      translateX: "0px",
+                      translateY: "0px",
                     }}
                     transition={{ delay: `.${index}00` }}
                     key={index}
                   >
                     <Link to={links.serviceHref}>
-                      <img src={links.serviceIcon} alt="" />
+                      <div className="icon-container">
+                        <img src={links.serviceIcon} alt="" />
+                      </div>
                       <p>{links.serviceName}</p>
                     </Link>
                   </motion.li>
@@ -164,14 +271,16 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
                 <motion.li
                   initial={{
                     opacity: 0,
-                    translateX: "-200px",
+                    translateY: "200px",
                   }}
                   animate={controls}
                   transition={{ delay: `.${index}00` }}
                   key={index}
                 >
                   <a href={links.serviceHref}>
-                    <img src={links.serviceIcon} alt="" />
+                    <div className="icon-container">
+                      <img src={links.serviceIcon} alt="" />
+                    </div>
                     <p>{links.serviceName}</p>
                   </a>
                 </motion.li>

@@ -89,9 +89,24 @@ const ContentContainer = styled.div`
 
         span.large-txt {
             font-family: ${Variables.joseph};
-            font-size: 10rem;
+            font-size: 9rem;
             text-transform: uppercase;
             display: inline-block;
+            transition: all ease 0.3s;
+
+            @media (max-width: 1104px) {
+                font-size: 7rem;
+            }
+            @media (max-width: 788px) {
+                font-size: 5rem;
+            }
+            @media (max-width: 539px) {
+                font-size: 3.5rem;
+            }
+
+            @media (max-width: 400px) {
+                font-size: 2.8rem;
+            }
         }
 
         span.cursive {
@@ -104,33 +119,28 @@ const ContentContainer = styled.div`
             line-height: 93px;
             display: inline-block;
 
-            @media (max-width: 667px) {
+            @media (max-width: 1104px) {
+                font-size: 4rem;
                 line-height: 73px;
             }
 
-            @media (max-width: 400px) {
+            @media (max-width: 788px) {
                 font-size: 3rem;
+            }
+
+            @media (max-width: 539px) {
+                line-height: 55px;
             }
         }
     }
     h2 {
         ${PBaseStyles}
         text-align: center;
-        margin-top: 15px;
+        margin-top: 8px;
 
-        @media (max-width: 667px) {
-            margin-top: 0px;
+        @media (max-width: 1104px) {
+            margin-top: 4px;
         }
-        @media (max-width: 400px) {
-        }
-    }
-
-    @media ${MediaQueries.tablet} {
-        max-width: 400px;
-    }
-
-    @media ${MediaQueries.mobile} {
-        width: 90%;
     }
 `;
 
