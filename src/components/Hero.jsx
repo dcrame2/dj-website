@@ -184,7 +184,7 @@ const Hero = () => {
                         <motion.span
                             className='large-txt right'
                             initial={{ x: '200%', opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 2.4, duration: 0.5 }}
                         >
                             Delight
