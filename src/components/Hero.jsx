@@ -70,13 +70,10 @@ const OpaqueFilter = styled.div`
 `;
 
 const ContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
     z-index: 1;
     position: absolute;
     top: 35%;
-    gap: 25px;
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
     margin: 0 auto;
     align-items: center;
@@ -87,20 +84,15 @@ const ContentContainer = styled.div`
     }
 
     h1 {
-        /* ${H1Styles}
-        text-transform: capitalize;
-        font-weight: 400;
-        font-size: 12rem;
+        text-align: center;
+        display: block;
 
-        @media (max-width: 667px) {
-            font-size: 4.2rem;
-            line-height: 4.4rem;
+        span.large-txt {
+            font-family: ${Variables.joseph};
+            font-size: 10rem;
+            text-transform: uppercase;
+            display: inline-block;
         }
-
-        @media (max-width: 400px) {
-            font-size: 2rem;
-        } */
-        font-family: ${Variables.joseph};
 
         span.cursive {
             font-family: ${Variables.Pacifico};
@@ -108,8 +100,9 @@ const ContentContainer = styled.div`
             -moz-animation: ${glow} 1s ease-in-out alternate;
             animation: ${glow} 1s ease-in-out alternate;
             animation-fill-mode: forwards;
-            font-size: 4rem;
+            font-size: 5rem;
             line-height: 93px;
+            display: inline-block;
 
             @media (max-width: 667px) {
                 line-height: 73px;
@@ -121,9 +114,9 @@ const ContentContainer = styled.div`
         }
     }
     h2 {
-        /* ${PBaseStyles}
+        ${PBaseStyles}
         text-align: center;
-        margin-top: 15px; */
+        margin-top: 15px;
 
         @media (max-width: 667px) {
             margin-top: 0px;
@@ -171,35 +164,41 @@ const Hero = () => {
             <OpaqueFilter />
             <InnerSection>
                 <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
-                    <h1>
+                    <motion.h1>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={controls}
-                            transition={{ delay: 1, duration: 5 }}
+                            transition={{ delay: 1, duration: 0.5 }}
                         >
                             Experience
                         </motion.span>
                         <br />
                         <motion.span
-                            initial={{ x: '-100px', opacity: 0 }}
+                            className='large-txt'
+                            initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={controls}
-                            transition={{ delay: 2 }}
+                            transition={{ delay: 2, duration: 0.5 }}
                         >
                             Digital
                         </motion.span>
                         <motion.span
-                            initial={{ x: '200px', opacity: 0 }}
-                            animate={controls}
-                            transition={{ delay: 3 }}
+                            className='large-txt'
+                            initial={{ x: '200%', opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 3, duration: 0.5 }}
                         >
                             Delight
                         </motion.span>
-                    </h1>
-                    <h2>
+                    </motion.h1>
+                    <motion.h2
+                        initial={{ y: '400%', scale: 0, opacity: 0 }}
+                        animate={{ y: 0, scale: 1, opacity: 1 }}
+                        transition={{ duration: 2.5, delay: 2.5 }}
+                    >
                         Bringing you websites and <br />
                         web applications
-                    </h2>
+                    </motion.h2>
                 </ContentContainer>
             </InnerSection>
         </Section>
