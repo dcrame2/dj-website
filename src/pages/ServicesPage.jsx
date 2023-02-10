@@ -22,23 +22,23 @@ const serviceHeroData = {
     {
       serviceName: "Website Development",
       serviceHref: "/service-1",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/web-dev-icon.svg",
     },
     {
       serviceName: "App Development",
       serviceHref: "/service-2",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/mobile-dev-icon.svg",
     },
     {
       serviceName: "SEO",
       serviceHref: "/service-3",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/seo-icon.svg",
     },
 
     {
       serviceName: "Web Design",
       serviceHref: "/service-4",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/web-design.svg",
     },
     {
       serviceName: "Web Maintenance",
