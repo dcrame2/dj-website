@@ -45,9 +45,9 @@ const ICMContainer = styled.section`
         height: auto;
         border-radius: 15px;
         float: left;
-        /* box-shadow: 1px 1px 10px 2px ${Variables.color8};
-      -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color8};
-      -moz-box-shadow: 1px 1px 10px 2px ${Variables.color8}; */
+        box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+        -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+        -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
       }
       .highlight-container {
         display: flex;
@@ -62,11 +62,14 @@ const ICMContainer = styled.section`
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 1px solid ${Variables.white};
+          /* border: 1px solid ${Variables.white}; */
           text-align: center;
           border-radius: 20%;
           height: 100px;
           width: 100px;
+          box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+          -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+          -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         }
       }
     }
