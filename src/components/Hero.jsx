@@ -5,7 +5,7 @@ import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import { H1Styles, PBaseStyles } from '../styles/Type';
 import { GlassEffect } from '../styles/Utilities';
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion, useAnimationControls, useScroll } from 'framer-motion';
 
 const glow = keyframes`
   
@@ -156,6 +156,8 @@ const Hero = () => {
     //     setLoaded(true);
     // }, [loaded]);
 
+    const { scrollYProgress } = useScroll();
+
     return (
         <Section>
             <OpaqueFilter />
@@ -191,7 +193,7 @@ const Hero = () => {
                     <motion.h2
                         initial={{ y: '400%', scale: 0, opacity: 0 }}
                         animate={{ y: 0, scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 2.6 }}
+                        transition={{ duration: 0.5, delay: 3 }}
                     >
                         Bringing you websites and <br />
                         web applications
