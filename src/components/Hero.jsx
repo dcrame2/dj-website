@@ -10,14 +10,14 @@ import { motion, useAnimationControls } from 'framer-motion';
 const glow = keyframes`
   
         from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0008e6,
-                0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 60px #0008e6,
+            text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 150px #0008e6,
+                0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 30px #0008e6,
                 0 0 70px #0008e6;
         }
         to {
-            text-shadow: 0 0 20px #fff, 0 0 30px #00d9ff, 0 0 40px #00d9ff,
-                0 0 50px #00d9ff, 0 0 60px #00d9ff, 0 0 70px #00d9ff,
-                0 0 80px #00d9ff;
+            text-shadow: 0 0 20px #fff, 0 0 10px #00d9ff, 0 0 20px #00d9ff,
+                0 0 50px #00d9ff, 0 0 30px #00d9ff, 0 0 350px #00d9ff,
+                0 0 40px #00d9ff;
         }
     
 `;
@@ -132,61 +132,48 @@ const ContentContainer = styled.div`
     @media ${MediaQueries.mobile} {
         width: 90%;
     }
-
-    /* h1 {
-        ${H1Styles}
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 11rem;
-        text-align: center;
-        position: relative;
-        overflow: visible;
-    }
-    h2 {
-        ${PBaseStyles}
-    } */
 `;
 
 const Hero = () => {
-    const [loaded, setLoaded] = useState(false);
-    const controls = useAnimationControls();
+    // const [loaded, setLoaded] = useState(false);
+    // const controls = useAnimationControls();
 
-    useEffect(() => {
-        if (loaded === false) {
-            controls.start({ x: 0, opacity: 1, scale: 1 });
-            console.log(controls);
-        }
-        setLoaded(true);
-    }, [loaded]);
+    // useEffect(() => {
+    //     if (loaded === false) {
+    //         controls.start({ x: 0, opacity: 1, scale: 1 });
+    //         console.log(controls);
+    //     }
+    //     setLoaded(true);
+    // }, [loaded]);
 
     return (
         <Section>
             <OpaqueFilter />
             <InnerSection>
-                <ContentContainer className={`${loaded ? 'loaded' : 'null'}`}>
+                <ContentContainer>
                     <motion.h1>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
-                            animate={controls}
-                            transition={{ delay: 1, duration: 0.5 }}
+                            animate={{ x: 0, opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.8, duration: 0.5 }}
                         >
                             Experience
                         </motion.span>
                         <br />
                         <motion.span
                             className='large-txt'
-                            initial={{ x: -100, opacity: 0, scale: 0 }}
-                            animate={controls}
-                            transition={{ delay: 2, duration: 0.5 }}
+                            initial={{ x: '-200%', opacity: 0, scale: 0 }}
+                            animate={{ x: 0, opacity: 1, scale: 1 }}
+                            transition={{ delay: 1.6, duration: 0.5 }}
                         >
-                            Digital
+                            Digital&nbsp;
                         </motion.span>
                         <motion.span
-                            className='large-txt'
+                            className='large-txt right'
                             initial={{ x: '200%', opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
-                            transition={{ delay: 3, duration: 0.5 }}
+                            transition={{ delay: 2.4, duration: 0.5 }}
                         >
                             Delight
                         </motion.span>
@@ -194,7 +181,7 @@ const Hero = () => {
                     <motion.h2
                         initial={{ y: '400%', scale: 0, opacity: 0 }}
                         animate={{ y: 0, scale: 1, opacity: 1 }}
-                        transition={{ duration: 2.5, delay: 2.5 }}
+                        transition={{ duration: 0.5, delay: 2.6 }}
                     >
                         Bringing you websites and <br />
                         web applications
