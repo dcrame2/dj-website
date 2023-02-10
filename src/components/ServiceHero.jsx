@@ -20,6 +20,8 @@ const FullScreenContainer = styled.div`
   ${Container}
   @media ${MediaQueries.mobile} {
     padding-top: 125px;
+    padding-bottom: 125px;
+    height: auto;
   }
   .inner-container {
     display: flex;
