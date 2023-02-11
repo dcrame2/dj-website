@@ -25,7 +25,7 @@ const FullScreenContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-
+    text-align: center;
     h1 {
       ${H1Styles}
       text-transform: uppercase;
