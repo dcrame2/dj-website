@@ -58,7 +58,7 @@ const ICMContainer = styled.section`
         -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         @media ${MediaQueries.mobile} {
-          max-width: 260px;
+          max-width: 300px;
         }
       }
       .highlight-container {
@@ -88,8 +88,9 @@ const ICMContainer = styled.section`
           -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
           -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
           @media ${MediaQueries.mobile} {
-            width: 100%;
+            width: 70px;
             height: 60px;
+            font-size: 12px;
           }
         }
       }

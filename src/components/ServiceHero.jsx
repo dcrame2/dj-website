@@ -104,6 +104,7 @@ const FullScreenContainer = styled.div`
           transition: background-color 0.3s ease-in;
         }
         @media ${MediaQueries.mobile} {
+          height: unset;
           background-color: ${Variables.white};
           color: ${Variables.color2};
           border-bottom: 1px solid ${Variables.color2};
@@ -145,15 +146,12 @@ const FullScreenContainer = styled.div`
       left: 0;
       top: 225px;
       z-index: 1;
+      display: flex;
+      flex-direction: row-reverse;
 
       @media ${MediaQueries.tablet} {
         top: 125px;
-        display: flex;
-        flex-direction: row-reverse;
       }
-      /* @media ${MediaQueries.mobile} {
-        flex-direction: unset;
-      } */
 
       button {
         padding: 2px;
@@ -251,7 +249,7 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
             {/* <button onClick={showHideHandler}>{">"}</button> */}
             <div
               className={`${
-                showSideItems ? "hide tab-container" : "show hide tab-container"
+                showSideItems ? "show tab-container" : "show hide tab-container"
               }`}
             >
               <div className="side-wrapper">
