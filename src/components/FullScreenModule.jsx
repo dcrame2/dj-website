@@ -27,13 +27,13 @@ const FullScreenContainer = styled.div`
 const FullScreenModule = ({ ...props }) => {
   return (
     <FullScreenContainer id={props.id} bgColor={props.bgColor}>
-      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={100} />
+      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={150} />
       <ImageContentModuleV2
         color={props.color}
         bgColor={props.bgColor}
         {...props.data}
       />
-      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={100} />
+      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={150} />
     </FullScreenContainer>
   );
 };
