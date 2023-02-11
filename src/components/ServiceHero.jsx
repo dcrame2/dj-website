@@ -19,8 +19,8 @@ const FullScreenContainer = styled.div`
   gap: 30px;
   ${Container}
   @media ${MediaQueries.mobile} {
-    padding-top: 125px;
-    padding-bottom: 125px;
+    /* padding-top: 125px;
+    padding-bottom: 125px; */
     height: auto;
   }
   .inner-container {
