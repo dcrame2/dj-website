@@ -4,19 +4,16 @@ import { PSecondary, H2Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
 import ImageContentModuleV2 from "./ImageContentModuleV2";
+import Spacer from "../sub_components/Spacer";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: auto;
   scroll-snap-align: start;
   background-color: ${(props) => props.bgColor};
-  padding-top: 150px;
-  /* color: ${(props) => props.color}; */
-  /* scroll-snap-stop: always; */
+
   @media ${MediaQueries.mobile} {
-    padding-top: 75px;
     height: auto;
-    padding-bottom: 75px;
   }
   .inner-container {
     ${Container}
@@ -30,11 +27,13 @@ const FullScreenContainer = styled.div`
 const FullScreenModule = ({ ...props }) => {
   return (
     <FullScreenContainer id={props.id} bgColor={props.bgColor}>
+      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={100} />
       <ImageContentModuleV2
         color={props.color}
         bgColor={props.bgColor}
         {...props.data}
       />
+      <Spacer color={props.bgColor} desktop={258} tablet={120} mobile={100} />
     </FullScreenContainer>
   );
 };

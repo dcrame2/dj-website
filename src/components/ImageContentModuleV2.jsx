@@ -4,7 +4,7 @@ import { Container } from "../styles/Utilities";
 import { H1Styles, PBaseStyles, PSecondary, H2Styles } from "../styles/Type";
 import { MediaQueries } from "../styles/Utilities";
 import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 const ICMContainer = styled.section`
   position: relative;
@@ -40,6 +40,11 @@ const ICMContainer = styled.section`
       @media ${MediaQueries.mobile} {
         gap: 20px;
         flex-direction: row;
+        ${(props) =>
+          props.imgPlacement === "right" &&
+          css`
+            flex-direction: row-reverse;
+          `}
       }
       img {
         background-color: ${Variables.color1};
@@ -136,6 +141,7 @@ export default function ImageContentModule({ ...props }) {
   const isInView = useInView(ref, { once: true });
   //   console.log(props.color);
   let translation; // set translation based on image placement prop
+  console.log(props.imgPlacement);
   {
     props.imgPlacement === "right"
       ? (translation = "translateX(200px)")

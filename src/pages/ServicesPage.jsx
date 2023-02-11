@@ -85,7 +85,7 @@ const data = [
     bgColor: `${Variables.white}`,
     imgSrc: "/service_about/app-development.jpg",
     altText: "text",
-    imgPlacement: "",
+    imgPlacement: "left",
     heading: "App Development",
     content:
       "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
@@ -121,7 +121,7 @@ const data = [
     imgIcon: "/service_about/webdeveloper_icon.svg",
     imgSrc: "/service_about/web-design.jpg",
     altText: "text",
-    imgPlacement: "",
+    imgPlacement: "left",
     heading: "Web Design",
     content:
       "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
@@ -157,7 +157,7 @@ const data = [
     imgSrc: "/service_about/cms.jpg",
     imgIcon: "/service_about/webdeveloper_icon.svg",
     altText: "text",
-    imgPlacement: "",
+    imgPlacement: "left",
     heading: "Cms development",
     content:
       "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
