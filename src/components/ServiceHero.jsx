@@ -210,6 +210,14 @@ const FullScreenContainer = styled.div`
       left: 0;
       bottom: 225px;
       z-index: 1;
+      button {
+        padding: 10px;
+        background-color: ${Variables.color1};
+        color: ${Variables.white}l;
+        border-radius: 8px;
+        width: 60px;
+        border: 1px solid ${Variables.white};
+      }
     }
     .tab-container {
       width: 50px;
@@ -257,14 +265,7 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
       <div className="inner-link-container">
         {active ? (
           <div className="side-wrapper">
-            <button
-              // className={`${
-              //   showSideItems ? "show tab-container" : "hide tab-container"
-              // }`}
-              onClick={showHideHandler}
-            >
-              +
-            </button>
+            <button onClick={showHideHandler}>{">"}</button>
             <div
               className={`${
                 showSideItems ? "show tab-container" : "hide tab-container"
