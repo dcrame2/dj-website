@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+
   /* scroll-snap-align: start; */
   /* background-color: ${(props) => props.bgColor}; */
   align-items: center;
@@ -61,7 +61,7 @@ const FullScreenContainer = styled.div`
         li {
           text-transform: uppercase;
           max-width: 260px;
-          background-color: ${Variables.color10};
+          background-color: ${Variables.color2};
           /* padding-left: 15px; */
           border-bottom: 1px solid #fff;
           border-top: 1px solid #fff;

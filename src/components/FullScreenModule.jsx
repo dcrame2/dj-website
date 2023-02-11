@@ -8,7 +8,7 @@ import Spacer from "../sub_components/Spacer";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
-  height: auto;
+  /* height: auto; */
   scroll-snap-align: start;
   background-color: ${(props) => props.bgColor};
 

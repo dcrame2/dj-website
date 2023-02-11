@@ -141,7 +141,7 @@ export default function ImageContentModule({ ...props }) {
   const isInView = useInView(ref, { once: true });
   //   console.log(props.color);
   let translation; // set translation based on image placement prop
-  console.log(props.imgPlacement);
+
   {
     props.imgPlacement === "right"
       ? (translation = "translateX(200px)")
