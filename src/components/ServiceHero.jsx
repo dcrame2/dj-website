@@ -29,6 +29,9 @@ const FullScreenContainer = styled.div`
     h1 {
       ${H1Styles}
       text-transform: uppercase;
+      @media ${MediaQueries.mobile} {
+        font-size: 3.5rem;
+      }
     }
     p {
       ${PSecondary}
