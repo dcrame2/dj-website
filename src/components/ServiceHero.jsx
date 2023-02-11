@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const FullScreenContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   /* background-color: ${(props) => props.bgColor}; */
   align-items: center;
   justify-content: center;
@@ -55,7 +55,9 @@ const FullScreenContainer = styled.div`
         z-index: 1;
         gap: 8px;
         justify-content: normal;
-
+        @media ${MediaQueries.mobile} {
+          margin-right: -200px;
+        }
         li {
           text-transform: uppercase;
           max-width: 260px;
@@ -209,6 +211,15 @@ const FullScreenContainer = styled.div`
       bottom: 225px;
       z-index: 1;
     }
+    .tab-container {
+      width: 50px;
+      &.show {
+        display: flex;
+      }
+      &.hide {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -222,6 +233,12 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
   const sideRef = useRef(null);
   const isInViewSide = useInView(sideRef, { once: true, amount: 0 });
   const sideControls = useAnimationControls();
+
+  const [showSideItems, setShowSideItems] = useState(false);
+
+  const showHideHandler = () => {
+    setShowSideItems(!showSideItems);
+  };
 
   useEffect(() => {
     if (isInView) {
@@ -240,31 +257,45 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
       <div className="inner-link-container">
         {active ? (
           <div className="side-wrapper">
-            <ul className={`${active ? "active" : ""}`}>
-              {data.serviceLinks.map((links, index) => {
-                return (
-                  <motion.li
-                    initial={{
-                      opacity: 0,
-                      translateY: "300px",
-                    }}
-                    animate={{
-                      opacity: 1,
-                      translateY: "0px",
-                    }}
-                    transition={{ delay: `.${index}00` }}
-                    key={index}
-                  >
-                    <Link to={links.serviceHref}>
-                      <div className="icon-container">
-                        <img src={links.serviceIcon} alt="" />
-                      </div>
-                      <p>{links.serviceName}</p>
-                    </Link>
-                  </motion.li>
-                );
-              })}
-            </ul>
+            <button
+              // className={`${
+              //   showSideItems ? "show tab-container" : "hide tab-container"
+              // }`}
+              onClick={showHideHandler}
+            >
+              +
+            </button>
+            <div
+              className={`${
+                showSideItems ? "show tab-container" : "hide tab-container"
+              }`}
+            >
+              <ul className={`${active ? "active" : ""}`}>
+                {data.serviceLinks.map((links, index) => {
+                  return (
+                    <motion.li
+                      initial={{
+                        opacity: 0,
+                        translateY: "300px",
+                      }}
+                      animate={{
+                        opacity: 1,
+                        translateY: "0px",
+                      }}
+                      transition={{ delay: `.${index}00` }}
+                      key={index}
+                    >
+                      <Link to={links.serviceHref}>
+                        <div className="icon-container">
+                          <img src={links.serviceIcon} alt="" />
+                        </div>
+                        <p>{links.serviceName}</p>
+                      </Link>
+                    </motion.li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         ) : (
           <ul ref={ref}>
