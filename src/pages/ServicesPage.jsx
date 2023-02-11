@@ -21,33 +21,33 @@ const serviceHeroData = {
   serviceLinks: [
     {
       serviceName: "Website Development",
-      serviceHref: "/service-1",
+      serviceHref: "service-1",
       serviceIcon: "/icons/web-dev-icon.svg",
     },
     {
       serviceName: "App Development",
-      serviceHref: "/service-2",
+      serviceHref: "service-2",
       serviceIcon: "/icons/mobile-dev-icon.svg",
     },
     {
       serviceName: "SEO",
-      serviceHref: "/service-3",
+      serviceHref: "service-3",
       serviceIcon: "/icons/seo-icon.svg",
     },
 
     {
       serviceName: "Web Design",
-      serviceHref: "/service-4",
+      serviceHref: "service-4",
       serviceIcon: "/icons/web-design.svg",
     },
     {
       serviceName: "Web Maintenance",
-      serviceHref: "/service-5",
+      serviceHref: "service-5",
       serviceIcon: "/icons/web-main-icon.svg",
     },
     {
       serviceName: "Web Hosting",
-      serviceHref: "/service-6",
+      serviceHref: "service-6",
       serviceIcon: "/icons/hosting-icon.svg",
     },
   ],

@@ -5,7 +5,7 @@ import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
 import ImageContentModule from "./ImageContentModule";
 import { motion, useInView, useAnimationControls } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
@@ -178,7 +178,7 @@ const FullScreenContainer = styled.div`
   }
 `;
 
-const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
+const ServiceHero = ({ data, active }) => {
   // main nav
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0 });
@@ -198,11 +198,25 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
   useEffect(() => {
     if (isInView) {
       controls.start({ opacity: 1, translateY: "0px" });
-      console.log("Fire");
     }
   }, [isInView]);
 
-  console.log(scrollPosition);
+  // console.log(scrollPosition);
+  const [targetId, setTargetId] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    const targetElement = document.getElementById(targetId);
+    console.log(targetElement);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [location, targetId]);
+
+  // const closeSideTab = () =>
 
   return (
     <FullScreenContainer>
@@ -222,8 +236,14 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
             >
               <ul className={`${active ? "active" : ""}`}>
                 {data.serviceLinks.map((links, index) => {
+                  const closeSideTab = () => {
+                    setTargetId(links.serviceHref);
+                    setShowSideItems(false);
+                  };
                   return (
                     <motion.li
+                      onClick={closeSideTab}
+                      id={`#${links.serviceHref}`}
                       initial={{
                         opacity: 0,
                         translateY: "300px",
@@ -235,7 +255,7 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
                       transition={{ delay: `.${index}00` }}
                       key={index}
                     >
-                      <Link to={links.serviceHref}>
+                      <Link to={`#${targetId}`}>
                         <div className="icon-container">
                           <img src={links.serviceIcon} alt="" />
                         </div>
@@ -260,6 +280,8 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
                   {data.serviceLinks.map((links, index) => {
                     return (
                       <motion.li
+                        id={`#${links.serviceHref}`}
+                        onClick={() => setTargetId(links.serviceHref)}
                         initial={{
                           opacity: 0,
                           translateY: "200px",
@@ -268,12 +290,12 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
                         transition={{ delay: `.${index}00` }}
                         key={index}
                       >
-                        <a href={links.serviceHref}>
+                        <Link to={`#${targetId}`}>
                           <div className="icon-container">
                             <img src={links.serviceIcon} alt="" />
                           </div>
                           <p>{links.serviceName}</p>
-                        </a>
+                        </Link>
                       </motion.li>
                     );
                   })}
