@@ -174,7 +174,7 @@ export default function ImageContentModule({ ...props }) {
             style={{
               transform: isInView ? "none" : translation,
               opacity: isInView ? 1 : 0,
-              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           />
           <div className="highlight-container">
