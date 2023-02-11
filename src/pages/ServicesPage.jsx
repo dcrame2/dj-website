@@ -43,17 +43,17 @@ const serviceHeroData = {
     {
       serviceName: "Web Maintenance",
       serviceHref: "/service-5",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/web-main-icon.svg",
     },
     {
       serviceName: "CMS Development",
       serviceHref: "/service-6",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/cms-icon.svg",
     },
     {
       serviceName: "Web Hosting",
       serviceHref: "/service-7",
-      serviceIcon: "/service_about/webdeveloper_icon.svg",
+      serviceIcon: "/icons/hosting-icon.svg",
     },
   ],
 };
@@ -191,7 +191,7 @@ const ServicesPage = ({ scrollPosition }) => {
 
   const [reRender, setReRender] = useState(false);
   useEffect(() => {
-    if (scrollPosition > 800) {
+    if (scrollPosition >= 800) {
       setActive(true);
       setReRender(true);
     } else {
@@ -201,12 +201,14 @@ const ServicesPage = ({ scrollPosition }) => {
 
   return (
     <ServicesContainer>
+      <Spacer desktop={258} tablet={120} mobile={100} />
       <ServiceHero
         reRender={reRender}
         active={active}
         data={serviceHeroData}
         scrollPosition={scrollPosition}
       />
+      <Spacer desktop={258} tablet={120} mobile={100} />
       {data.map((information, i) => {
         return (
           <FullScreenModule

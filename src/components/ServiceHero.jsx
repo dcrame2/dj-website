@@ -10,8 +10,6 @@ import { Link } from "react-router-dom";
 const FullScreenContainer = styled.div`
   width: 100vw;
 
-  /* scroll-snap-align: start; */
-  /* background-color: ${(props) => props.bgColor}; */
   align-items: center;
   justify-content: center;
   display: flex;
@@ -19,8 +17,6 @@ const FullScreenContainer = styled.div`
   gap: 30px;
   ${Container}
   @media ${MediaQueries.mobile} {
-    /* padding-top: 125px;
-    padding-bottom: 125px; */
     height: auto;
   }
   .inner-container {
@@ -47,6 +43,7 @@ const FullScreenContainer = styled.div`
       flex-direction: row;
       justify-content: center;
       /* gap: 15px; */
+      flex-wrap: wrap;
       @media ${MediaQueries.mobile} {
         flex-direction: column;
       }
@@ -56,41 +53,26 @@ const FullScreenContainer = styled.div`
         gap: 8px;
         justify-content: normal;
         @media ${MediaQueries.mobile} {
-          margin-right: -200px;
+          /* margin-right: -200px; */
+          gap: 0;
         }
         li {
           text-transform: uppercase;
-          max-width: 260px;
+          height: unset;
+          min-width: unset;
           background-color: ${Variables.color2};
-          /* padding-left: 15px; */
-          border-bottom: 1px solid #fff;
-          border-top: 1px solid #fff;
-          border-right: 1px solid #fff;
+          border-bottom: 1px solid ${Variables.white};
+          border-top: 1px solid ${Variables.white};
+          border-right: 1px solid ${Variables.white};
           padding: 5px;
-          &:nth-child(1) {
-            margin-bottom: unset;
-          }
-          &:nth-child(2) {
-            margin-top: unset;
-          }
-
-          &:nth-child(3) {
-            margin-bottom: unset;
-          }
-          &:nth-child(4) {
-            margin-top: unset;
+          @media ${MediaQueries.mobile} {
+            background-color: ${Variables.white};
+            color: ${Variables.color2};
+            border-bottom: 1px solid ${Variables.color2};
+            border-top: 1px solid ${Variables.color2};
+            border-right: 1px solid ${Variables.color2};
           }
 
-          &:nth-child(5) {
-            margin-bottom: unset;
-          }
-          &:nth-child(6) {
-            margin-top: unset;
-          }
-
-          &:nth-child(7) {
-            margin-bottom: unset;
-          }
           a {
             flex-direction: row;
             .icon-container {
@@ -106,9 +88,7 @@ const FullScreenContainer = styled.div`
       }
       li {
         text-transform: uppercase;
-
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         border: 1px solid ${Variables.white};
@@ -116,62 +96,19 @@ const FullScreenContainer = styled.div`
         background-color: ${Variables.color2};
         width: 100%;
         padding: 15px 25px;
-        max-width: 200px;
-
-        &:nth-child(1) {
-          margin-bottom: 80px;
-        }
-        &:nth-child(2) {
-          margin-top: 80px;
-        }
-
-        &:nth-child(3) {
-          margin-bottom: 80px;
-        }
-        &:nth-child(4) {
-          margin-top: 80px;
-        }
-
-        &:nth-child(5) {
-          margin-bottom: 80px;
-        }
-        &:nth-child(6) {
-          margin-top: 80px;
-        }
-
-        &:nth-child(7) {
-          margin-bottom: 80px;
-        }
-        @media ${MediaQueries.mobile} {
-          max-width: unset;
-          &:nth-child(1) {
-            margin-bottom: unset;
-          }
-          &:nth-child(2) {
-            margin-top: unset;
-          }
-
-          &:nth-child(3) {
-            margin-bottom: unset;
-          }
-          &:nth-child(4) {
-            margin-top: unset;
-          }
-
-          &:nth-child(5) {
-            margin-bottom: unset;
-          }
-          &:nth-child(6) {
-            margin-top: unset;
-          }
-
-          &:nth-child(7) {
-            margin-bottom: unset;
-          }
-        }
+        max-width: 250px;
+        min-width: 150px;
+        height: 250px;
         &:hover {
           background-color: ${Variables.color9};
           transition: background-color 0.3s ease-in;
+        }
+        @media ${MediaQueries.mobile} {
+          background-color: ${Variables.white};
+          color: ${Variables.color2};
+          border-bottom: 1px solid ${Variables.color2};
+          border-top: 1px solid ${Variables.color2};
+          border-right: 1px solid ${Variables.color2};
         }
         a {
           display: flex;
@@ -184,22 +121,20 @@ const FullScreenContainer = styled.div`
           }
           .icon-container {
             max-width: 100px;
+            @media ${MediaQueries.tablet} {
+              max-width: 30px;
+              display: none;
+            }
             img {
               width: 100%;
-              /* @media (max-width: 1450px) {
-              width: 100px;
-            } */
-              @media ${MediaQueries.mobile} {
-                max-width: 30px;
-              }
             }
           }
           p {
             text-align: center;
             ${PSecondary}
-            background-color: ${Variables.color2};
-            @media ${MediaQueries.mobile} {
+            @media ${MediaQueries.tablet} {
               font-size: 1.25rem;
+              text-align: left;
             }
           }
         }
@@ -208,19 +143,30 @@ const FullScreenContainer = styled.div`
     .side-wrapper {
       position: fixed;
       left: 0;
-      bottom: 225px;
+      top: 225px;
       z-index: 1;
+
+      @media ${MediaQueries.tablet} {
+        top: 125px;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      /* @media ${MediaQueries.mobile} {
+        flex-direction: unset;
+      } */
+
       button {
-        padding: 10px;
+        padding: 2px;
+        height: 75px;
         background-color: ${Variables.color1};
         color: ${Variables.white}l;
-        border-radius: 8px;
-        width: 60px;
-        border: 1px solid ${Variables.white};
+        width: 20px;
+        border-right: 1px solid ${Variables.white};
+        border-top: 1px solid ${Variables.white};
+        border-bottom: 1px solid ${Variables.white};
       }
     }
     .tab-container {
-      width: 50px;
       &.show {
         display: flex;
       }
@@ -251,9 +197,11 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
   useEffect(() => {
     if (isInView) {
       controls.start({ opacity: 1, translateY: "0px" });
-      console.log("top");
+      console.log("Fire");
     }
-  }, [isInView, active]);
+  }, [isInView]);
+
+  console.log(scrollPosition);
 
   return (
     <FullScreenContainer>
@@ -299,28 +247,39 @@ const ServiceHero = ({ data, scrollPosition, active, reRender }) => {
             </div>
           </div>
         ) : (
-          <ul ref={ref}>
-            {data.serviceLinks.map((links, index) => {
-              return (
-                <motion.li
-                  initial={{
-                    opacity: 0,
-                    translateY: "200px",
-                  }}
-                  animate={controls}
-                  transition={{ delay: `.${index}00` }}
-                  key={index}
-                >
-                  <a href={links.serviceHref}>
-                    <div className="icon-container">
-                      <img src={links.serviceIcon} alt="" />
-                    </div>
-                    <p>{links.serviceName}</p>
-                  </a>
-                </motion.li>
-              );
-            })}
-          </ul>
+          <div>
+            {/* <button onClick={showHideHandler}>{">"}</button> */}
+            <div
+              className={`${
+                showSideItems ? "hide tab-container" : "show hide tab-container"
+              }`}
+            >
+              <div className="side-wrapper">
+                <ul ref={ref}>
+                  {data.serviceLinks.map((links, index) => {
+                    return (
+                      <motion.li
+                        initial={{
+                          opacity: 0,
+                          translateY: "200px",
+                        }}
+                        animate={controls}
+                        transition={{ delay: `.${index}00` }}
+                        key={index}
+                      >
+                        <a href={links.serviceHref}>
+                          <div className="icon-container">
+                            <img src={links.serviceIcon} alt="" />
+                          </div>
+                          <p>{links.serviceName}</p>
+                        </a>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>{" "}
+          </div>
         )}
       </div>
     </FullScreenContainer>
