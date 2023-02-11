@@ -38,6 +38,7 @@ const ICMContainer = styled.section`
       flex-direction: column;
       gap: 100px;
       @media ${MediaQueries.mobile} {
+        align-items: center;
         gap: 20px;
         flex-direction: row;
         ${(props) =>
@@ -58,7 +59,8 @@ const ICMContainer = styled.section`
         -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
         @media ${MediaQueries.mobile} {
-          max-width: 300px;
+          max-width: 260px;
+          height: 100%;
         }
       }
       .highlight-container {
