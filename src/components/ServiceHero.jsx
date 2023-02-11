@@ -9,16 +9,16 @@ import { Link } from "react-router-dom";
 
 const FullScreenContainer = styled.div`
   width: 100vw;
-
+  height: 100vh;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
   ${Container}
-  @media ${MediaQueries.mobile} {
+  /* @media ${MediaQueries.mobile} {
     height: auto;
-  }
+  } */
   .inner-container {
     display: flex;
     align-items: center;

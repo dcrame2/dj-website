@@ -176,14 +176,14 @@ const ServicesPage = ({ scrollPosition }) => {
 
   return (
     <ServicesContainer>
-      <Spacer desktop={258} tablet={120} mobile={100} />
+      {/* <Spacer desktop={258} tablet={120} mobile={100} /> */}
       <ServiceHero
         reRender={reRender}
         active={active}
         data={serviceHeroData}
         scrollPosition={scrollPosition}
       />
-      <Spacer desktop={258} tablet={120} mobile={100} />
+      {/* <Spacer desktop={258} tablet={120} mobile={100} /> */}
       {data.map((information, i) => {
         return (
           <FullScreenModule
