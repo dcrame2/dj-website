@@ -16,6 +16,9 @@ const ICMContainer = styled.section`
     color: ${(props) => props.color};
     margin-bottom: 12px;
     text-align: center;
+    @media ${MediaQueries.mobile} {
+      font-size: 3rem;
+    }
   }
   .ICMInnerContainer {
     ${Container}
