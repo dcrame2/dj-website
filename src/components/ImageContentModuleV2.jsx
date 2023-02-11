@@ -39,7 +39,7 @@ const ICMContainer = styled.section`
     .ICMImgContainer {
       display: flex;
       flex-direction: column;
-      gap: 100px;
+      gap: 50px;
       @media ${MediaQueries.mobile} {
         align-items: center;
         gap: 20px;
@@ -71,7 +71,7 @@ const ICMContainer = styled.section`
         align-items: center;
         justify-content: center;
         gap: 40px;
-
+        font-size: 1.25rem;
         ${PSecondary}
         @media ${MediaQueries.mobile} {
           gap: 12px;
@@ -84,7 +84,10 @@ const ICMContainer = styled.section`
           display: flex;
           justify-content: center;
           align-items: center;
+          font-weight: bold;
           /* border: 1px solid ${Variables.white}; */
+
+          font-size: 1.25rem;
           text-align: center;
           text-transform: uppercase;
           border-radius: 20%;
