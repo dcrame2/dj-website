@@ -1,15 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled, { keyframes } from 'styled-components/macro';
 import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables';
 import { Container } from '../styles/Utilities';
 import { H1Styles, PBaseStyles } from '../styles/Type';
 import { GlassEffect } from '../styles/Utilities';
-import { motion, useAnimationControls, useScroll } from 'framer-motion';
+import {
+    motion,
+    useAnimationControls,
+    useScroll,
+    useTransform,
+} from 'framer-motion';
 
 const glow = keyframes`
   
-        from {
+        /* from {
             text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 150px #0008e6,
                 0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 30px #0008e6,
                 0 0 70px #0008e6;
@@ -18,15 +23,23 @@ const glow = keyframes`
             text-shadow: 0 0 20px #fff, 0 0 10px #00d9ff, 0 0 20px #00d9ff,
                 0 0 50px #00d9ff, 0 0 30px #00d9ff, 0 0 350px #00d9ff,
                 0 0 40px #00d9ff;
-        }
-    
+        } */
+        
+        from {
+    text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
+  }
+  
+  to {
+    text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
+  }
 `;
 
 const Section = styled.section`
     width: 100vw;
     height: 100vh;
     position: relative;
-
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
     &::after {
         content: '';
         width: 100%;
@@ -46,6 +59,7 @@ const InnerSection = styled.div`
     background-color: ${Variables.color2};
     display: flex;
     justify-content: center;
+    align-items: center;
 `;
 
 const OpaqueFilter = styled.div`
@@ -71,8 +85,6 @@ const OpaqueFilter = styled.div`
 
 const ContentContainer = styled.div`
     z-index: 1;
-    position: absolute;
-    top: 35%;
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
@@ -92,7 +104,6 @@ const ContentContainer = styled.div`
             font-size: 9rem;
             text-transform: uppercase;
             display: inline-block;
-            transition: all ease 0.3s;
 
             @media (max-width: 1104px) {
                 font-size: 7rem;
@@ -156,44 +167,78 @@ const Hero = () => {
     //     setLoaded(true);
     // }, [loaded]);
 
-    const { scrollYProgress } = useScroll();
+    const ref = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        // offset: ['start center', 'end start'],
+        offset: ['end end', 'start start'],
+    });
+
+    useEffect(() => {
+        const unsubscribe = scrollYProgress.onChange((value) => {
+            console.log(`scrollYProgress: ${value} pixels`);
+        });
+
+        return () => {
+            unsubscribe();
+        };
+    }, [scrollYProgress]);
+
+    const scrollPercentage = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const opacity = useTransform(scrollYProgress, [0.49, 1], [1, 0]);
+    const styleControls = useAnimationControls();
+
+    useEffect(() => {
+        setTimeout(() => {
+            styleControls.start({ y: scrollPercentage });
+        }, 300);
+    }, []);
+
+    useEffect(() => {
+        console.log(scrollPercentage.get() + '%');
+    }, [scrollPercentage]);
 
     return (
         <Section>
             <OpaqueFilter />
             <InnerSection>
-                <ContentContainer>
+                <ContentContainer ref={ref}>
                     <motion.h1>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.8, duration: 0.5 }}
+                            transition={{ delay: 1, duration: 0.5 }}
+                            //style={{ y: scrollPercentage }}
                         >
                             Experience
                         </motion.span>
                         <br />
                         <motion.span
                             className='large-txt'
-                            initial={{ x: '-200%', opacity: 0, scale: 0 }}
+                            initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.6, duration: 0.5 }}
+                            transition={{ delay: 1.4, duration: 0.5 }}
+                            //style={{ y: scrollPercentage }}
                         >
                             Digital&nbsp;
                         </motion.span>
                         <motion.span
                             className='large-txt right'
-                            initial={{ x: '200%', opacity: 0 }}
+                            initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 2.4, duration: 0.5 }}
+                            transition={{ delay: 1.8, duration: 0.5 }}
+                            //style={{ y: scrollPercentage }}
                         >
                             Delight
                         </motion.span>
                     </motion.h1>
                     <motion.h2
-                        initial={{ y: '400%', scale: 0, opacity: 0 }}
+                        initial={{ y: 400, scale: 0, opacity: 0 }}
                         animate={{ y: 0, scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 3 }}
+                        transition={{ delay: 2.2, duration: 0.5 }}
+                        //style={{ y: scrollPercentage, opacity: opacity }}
                     >
                         Bringing you websites and <br />
                         web applications

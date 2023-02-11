@@ -78,29 +78,6 @@ const Section = styled.section`
 `;
 
 const data = {
-    services: [
-        {
-            num: '01',
-            alt: 'Design icon',
-            img: '/orange_icons/content-creator.png',
-            name: 'Design',
-            desc: 'Quality designs made to catch users attention and show your business model',
-        },
-        {
-            num: '02',
-            alt: 'Develop icon',
-            img: '/orange_icons/coding.png',
-            name: 'Develop',
-            desc: 'Professional developers executing modern websites your user will remember visiting',
-        },
-        {
-            num: '03',
-            alt: 'Support icon',
-            img: '/orange_icons/browser.png',
-            name: 'Support',
-            desc: 'Internal developers to help maintain and support your website for any update needs',
-        },
-    ],
     heading: 'Services We Offer',
     subheading: `Managing a business demands a lot. Save resources and work with ${Variables.companyName} to help build and expand your businesses online presence. Our focal services are designing, developing and providing support but we can provide managed services for any web or mobile related projects.`, //We offer a wide range of web related services that are a must-have for any business.
 };
@@ -170,18 +147,7 @@ export default function Services() {
                         <h3>{data.subheading}</h3>
                     </motion.div>
                 </div>
-                <div className='ServiceContainer'>
-                    {data.services.map((service, i) => {
-                        return (
-                            <Card
-                                data={service}
-                                active={active}
-                                onClick={activeToggle}
-                                index={i}
-                            />
-                        );
-                    })}
-                </div>
+                <div className='ServiceContainer'></div>
             </div>
         </Section>
     );
