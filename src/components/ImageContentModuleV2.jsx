@@ -86,6 +86,7 @@ const ICMContainer = styled.section`
           align-items: center;
           /* border: 1px solid ${Variables.white}; */
           text-align: center;
+          text-transform: uppercase;
           border-radius: 20%;
           height: 100px;
           width: 100px;
@@ -95,7 +96,7 @@ const ICMContainer = styled.section`
           @media ${MediaQueries.mobile} {
             width: 70px;
             height: 60px;
-            font-size: 12px;
+            font-size: 9px;
           }
         }
       }
