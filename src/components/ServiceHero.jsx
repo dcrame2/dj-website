@@ -248,7 +248,7 @@ const ServiceHero = ({ data, active }) => {
                       id={`#${links.serviceHref}`}
                       initial={{
                         opacity: 0,
-                        translateY: "300px",
+                        translateY: "200px",
                       }}
                       animate={{
                         opacity: 1,
@@ -283,7 +283,7 @@ const ServiceHero = ({ data, active }) => {
                     id={`#${links.serviceHref}`}
                     initial={{
                       opacity: 0,
-                      translateY: "300px",
+                      translateY: "200px",
                     }}
                     animate={{
                       opacity: 1,
