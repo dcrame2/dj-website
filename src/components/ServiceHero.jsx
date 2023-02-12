@@ -145,6 +145,7 @@ const FullScreenContainer = styled.div`
       }
     }
     .side-wrapper {
+      transition: all ease 0.5s;
       position: fixed;
       left: 0;
       top: 225px;
@@ -157,6 +158,7 @@ const FullScreenContainer = styled.div`
       }
 
       button {
+        transition: all ease 0.5s;
         padding: 2px;
         height: 75px;
         background-color: ${Variables.color1};
@@ -169,9 +171,11 @@ const FullScreenContainer = styled.div`
     }
     .tab-container {
       &.show {
+        transition: all ease 0.5s;
         display: flex;
       }
       &.hide {
+        transition: all ease 0.5s;
         display: none;
       }
     }
@@ -190,9 +194,11 @@ const ServiceHero = ({ data, active }) => {
   const sideControls = useAnimationControls();
 
   const [showSideItems, setShowSideItems] = useState(false);
+  const [activeTransition, setActiveTransition] = useState(false);
 
   const showHideHandler = () => {
     setShowSideItems(!showSideItems);
+    setActiveTransition(!activeTransition);
   };
 
   useEffect(() => {
@@ -200,8 +206,6 @@ const ServiceHero = ({ data, active }) => {
       controls.start({ opacity: 1, translateY: "0px" });
     }
   }, [isInView]);
-
-  // console.log(scrollPosition);
   const [targetId, setTargetId] = useState("");
   const location = useLocation();
 
@@ -215,8 +219,6 @@ const ServiceHero = ({ data, active }) => {
       });
     }
   }, [location, targetId]);
-
-  // const closeSideTab = () =>
 
   return (
     <FullScreenContainer>
@@ -234,7 +236,7 @@ const ServiceHero = ({ data, active }) => {
                 showSideItems ? "show tab-container" : "hide tab-container"
               }`}
             >
-              <ul className={`${active ? "active" : ""}`}>
+              <ul className={`${active && showSideItems ? "active" : ""}`}>
                 {data.serviceLinks.map((links, index) => {
                   const closeSideTab = () => {
                     setTargetId(links.serviceHref);
@@ -269,10 +271,40 @@ const ServiceHero = ({ data, active }) => {
           </div>
         ) : (
           <div>
-            {/* <button onClick={showHideHandler}>{">"}</button> */}
+            <ul className={`${active && showSideItems ? "active" : ""}`}>
+              {data.serviceLinks.map((links, index) => {
+                const closeSideTab = () => {
+                  setTargetId(links.serviceHref);
+                  setShowSideItems(false);
+                };
+                return (
+                  <motion.li
+                    onClick={closeSideTab}
+                    id={`#${links.serviceHref}`}
+                    initial={{
+                      opacity: 0,
+                      translateY: "300px",
+                    }}
+                    animate={{
+                      opacity: 1,
+                      translateY: "0px",
+                    }}
+                    transition={{ delay: `.${index}00` }}
+                    key={index}
+                  >
+                    <Link to={`#${targetId}`}>
+                      <div className="icon-container">
+                        <img src={links.serviceIcon} alt="" />
+                      </div>
+                      <p>{links.serviceName}</p>
+                    </Link>
+                  </motion.li>
+                );
+              })}
+            </ul>
             <div
               className={`${
-                showSideItems ? "show tab-container" : "show hide tab-container"
+                showSideItems ? "show tab-container" : "hide  tab-container"
               }`}
             >
               <div className="side-wrapper">
@@ -301,7 +333,7 @@ const ServiceHero = ({ data, active }) => {
                   })}
                 </ul>
               </div>
-            </div>{" "}
+            </div>
           </div>
         )}
       </div>
