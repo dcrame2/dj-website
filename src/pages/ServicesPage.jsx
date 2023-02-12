@@ -166,7 +166,7 @@ const ServicesPage = ({ scrollPosition }) => {
 
   const [reRender, setReRender] = useState(false);
   useEffect(() => {
-    if (scrollPosition >= 800) {
+    if (scrollPosition >= 700) {
       setActive(true);
       setReRender(true);
     } else {
