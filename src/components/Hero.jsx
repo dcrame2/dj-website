@@ -10,6 +10,7 @@ import {
     useAnimationControls,
     useScroll,
     useTransform,
+    useSpring,
 } from 'framer-motion';
 
 const glow = keyframes`
@@ -190,6 +191,7 @@ const Hero = () => {
         [0.5, 0.6],
         [0, -200]
     );
+    const springPercentage = useSpring(scrollPercentage);
     const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
 
@@ -214,7 +216,7 @@ const Hero = () => {
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
-                            style={{ y: scrollPercentage, opacity: opacity }}
+                            style={{ y: springPercentage, opacity: opacity }}
                         >
                             Experience
                         </motion.span>
@@ -224,7 +226,7 @@ const Hero = () => {
                             initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.7 }}
-                            style={{ y: scrollPercentage, opacity: opacity }}
+                            style={{ y: springPercentage, opacity: opacity }}
                         >
                             Digital&nbsp;
                         </motion.span>
@@ -233,7 +235,7 @@ const Hero = () => {
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
-                            style={{ y: scrollPercentage, opacity: opacity }}
+                            style={{ y: springPercentage, opacity: opacity }}
                         >
                             Delight
                         </motion.span>
@@ -242,7 +244,7 @@ const Hero = () => {
                         initial={{ x: 400, scale: 0, opacity: 0 }}
                         animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, duration: 0.7 }}
-                        style={{ y: scrollPercentage, opacity: opacity }}
+                        style={{ y: springPercentage, opacity: opacity }}
                     >
                         Bringing you websites and <br />
                         web applications
