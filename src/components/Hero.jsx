@@ -188,7 +188,7 @@ const Hero = () => {
     const scrollPercentage = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -500]
+        [0, -200]
     );
     const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
