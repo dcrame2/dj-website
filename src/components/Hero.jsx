@@ -213,8 +213,8 @@ const Hero = () => {
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1, duration: 0.5 }}
-                            style={{ y: scrollPercentage }}
+                            transition={{ delay: 0.7, duration: 0.7 }}
+                            style={{ y: scrollPercentage, opacity: opacity }}
                         >
                             Experience
                         </motion.span>
@@ -223,8 +223,8 @@ const Hero = () => {
                             className='large-txt'
                             initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.4, duration: 0.5 }}
-                            style={{ y: scrollPercentage }}
+                            transition={{ delay: 0.8, duration: 0.7 }}
+                            style={{ y: scrollPercentage, opacity: opacity }}
                         >
                             Digital&nbsp;
                         </motion.span>
@@ -232,8 +232,8 @@ const Hero = () => {
                             className='large-txt right'
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.8, duration: 0.5 }}
-                            style={{ y: scrollPercentage }}
+                            transition={{ delay: 1.2, duration: 0.7 }}
+                            style={{ y: scrollPercentage, opacity: opacity }}
                         >
                             Delight
                         </motion.span>
@@ -241,7 +241,7 @@ const Hero = () => {
                     <motion.h2
                         initial={{ x: 400, scale: 0, opacity: 0 }}
                         animate={{ x: 0, scale: 1, opacity: 1 }}
-                        transition={{ delay: 2.2, duration: 0.5 }}
+                        transition={{ delay: 1.5, duration: 0.7 }}
                         style={{ y: scrollPercentage, opacity: opacity }}
                     >
                         Bringing you websites and <br />
