@@ -185,7 +185,11 @@ const Hero = () => {
         };
     }, [scrollYProgress]);
 
-    const scrollPercentage = useTransform(scrollYProgress, [0.5, 1], [0, -700]);
+    const scrollPercentage = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -500]
+    );
     const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
 
