@@ -189,7 +189,7 @@ const Hero = () => {
     const scrollPercentage1 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -210]
+        [0, -290]
     );
     const springPercentage1 = useSpring(scrollPercentage1);
 
@@ -210,7 +210,7 @@ const Hero = () => {
     const scrollPercentage4 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -220]
+        [0, -230]
     );
     const springPercentage4 = useSpring(scrollPercentage4);
 
@@ -218,10 +218,10 @@ const Hero = () => {
     const styleControls = useAnimationControls();
 
     const translateX1 = useTransform(scrollYProgress, [0.5, 0.6], [0, -20]);
-    const translateX2 = useTransform(scrollYProgress, [0.5, 0.6], [0, -70]);
+    const translateX2 = useTransform(scrollYProgress, [0.5, 0.6], [0, -30]);
 
-    const translateX3 = useTransform(scrollYProgress, [0.5, 0.6], [0, 80]);
-    const translateX4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 110]);
+    const translateX3 = useTransform(scrollYProgress, [0.5, 0.6], [0, 40]);
+    const translateX4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 35]);
 
     useEffect(() => {
         setTimeout(() => {
