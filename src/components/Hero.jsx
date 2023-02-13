@@ -245,7 +245,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
                             style={{
-                                y: springPercentage2,
+                                y: scrollPercentage2,
                                 opacity: opacity,
                                 x: translateX1,
                             }}
@@ -259,7 +259,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.7 }}
                             style={{
-                                y: springPercentage1,
+                                y: scrollPercentage1,
                                 opacity: opacity,
                                 x: translateX2,
                             }}
@@ -272,7 +272,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
                             style={{
-                                y: springPercentage3,
+                                y: scrollPercentage3,
                                 opacity: opacity,
                                 x: translateX3,
                             }}
@@ -285,7 +285,7 @@ const Hero = () => {
                         animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, duration: 0.7 }}
                         style={{
-                            y: springPercentage4,
+                            y: scrollPercentage4,
                             opacity: opacity,
                             x: translateX4,
                         }}
