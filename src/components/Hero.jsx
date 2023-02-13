@@ -208,7 +208,7 @@ const Hero = () => {
             <OpaqueFilter />
             <InnerSection ref={ref}>
                 <ContentContainer>
-                    <motion.h1 style={{ opacity: opacity }}>
+                    <motion.h1>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
