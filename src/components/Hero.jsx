@@ -186,24 +186,52 @@ const Hero = () => {
         };
     }, [scrollYProgress]);
 
-    const scrollPercentage = useTransform(
+    const scrollPercentage1 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -200]
+        [0, -210]
     );
-    const springPercentage = useSpring(scrollPercentage);
+    const springPercentage1 = useSpring(scrollPercentage1);
+
+    const scrollPercentage2 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -340]
+    );
+    const springPercentage2 = useSpring(scrollPercentage2);
+
+    const scrollPercentage3 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -300]
+    );
+    const springPercentage3 = useSpring(scrollPercentage3);
+
+    const scrollPercentage4 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -220]
+    );
+    const springPercentage4 = useSpring(scrollPercentage4);
+
     const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
 
+    const translateX1 = useTransform(scrollYProgress, [0.5, 0.6], [0, -20]);
+    const translateX2 = useTransform(scrollYProgress, [0.5, 0.6], [0, -70]);
+
+    const translateX3 = useTransform(scrollYProgress, [0.5, 0.6], [0, 80]);
+    const translateX4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 110]);
+
     useEffect(() => {
         setTimeout(() => {
-            styleControls.start({ y: scrollPercentage });
+            styleControls.start({ y: scrollPercentage1 });
         }, 300);
     }, []);
 
     useEffect(() => {
         console.log(opacity.get() + '%');
-    }, [scrollPercentage]);
+    }, [scrollPercentage1]);
 
     return (
         <Section>
@@ -216,7 +244,11 @@ const Hero = () => {
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
-                            style={{ y: springPercentage, opacity: opacity }}
+                            style={{
+                                y: springPercentage2,
+                                opacity: opacity,
+                                x: translateX1,
+                            }}
                         >
                             Experience
                         </motion.span>
@@ -226,7 +258,11 @@ const Hero = () => {
                             initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.7 }}
-                            style={{ y: springPercentage, opacity: opacity }}
+                            style={{
+                                y: springPercentage1,
+                                opacity: opacity,
+                                x: translateX2,
+                            }}
                         >
                             Digital&nbsp;
                         </motion.span>
@@ -235,7 +271,11 @@ const Hero = () => {
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
-                            style={{ y: springPercentage, opacity: opacity }}
+                            style={{
+                                y: springPercentage3,
+                                opacity: opacity,
+                                x: translateX3,
+                            }}
                         >
                             Delight
                         </motion.span>
@@ -244,7 +284,11 @@ const Hero = () => {
                         initial={{ x: 400, scale: 0, opacity: 0 }}
                         animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, duration: 0.7 }}
-                        style={{ y: springPercentage, opacity: opacity }}
+                        style={{
+                            y: springPercentage4,
+                            opacity: opacity,
+                            x: translateX4,
+                        }}
                     >
                         Bringing you websites and <br />
                         web applications
