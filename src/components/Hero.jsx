@@ -26,12 +26,12 @@ const glow = keyframes`
         } */
         
         from {
-    text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
-  }
+            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
+        }
   
-  to {
-    text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
-  }
+         to {
+             text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
+        }
 `;
 
 const Section = styled.section`
@@ -172,7 +172,7 @@ const Hero = () => {
     const { scrollYProgress } = useScroll({
         target: ref,
         // offset: ['start center', 'end start'],
-        offset: ['end end', 'start start'],
+        offset: ['start end', 'end start'],
     });
 
     useEffect(() => {
@@ -185,8 +185,8 @@ const Hero = () => {
         };
     }, [scrollYProgress]);
 
-    const scrollPercentage = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const opacity = useTransform(scrollYProgress, [0.49, 1], [1, 0]);
+    const scrollPercentage = useTransform(scrollYProgress, [0.5, 1], [0, -700]);
+    const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
 
     useEffect(() => {
@@ -196,21 +196,21 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-        console.log(scrollPercentage.get() + '%');
+        console.log(opacity.get() + '%');
     }, [scrollPercentage]);
 
     return (
         <Section>
             <OpaqueFilter />
-            <InnerSection>
-                <ContentContainer ref={ref}>
-                    <motion.h1>
+            <InnerSection ref={ref}>
+                <ContentContainer>
+                    <motion.h1 style={{ opacity: opacity }}>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            style={{ y: scrollPercentage }}
                         >
                             Experience
                         </motion.span>
@@ -220,7 +220,7 @@ const Hero = () => {
                             initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.4, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            style={{ y: scrollPercentage }}
                         >
                             Digital&nbsp;
                         </motion.span>
@@ -229,16 +229,16 @@ const Hero = () => {
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.8, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            style={{ y: scrollPercentage }}
                         >
                             Delight
                         </motion.span>
                     </motion.h1>
                     <motion.h2
-                        initial={{ y: 400, scale: 0, opacity: 0 }}
-                        animate={{ y: 0, scale: 1, opacity: 1 }}
+                        initial={{ x: 400, scale: 0, opacity: 0 }}
+                        animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 2.2, duration: 0.5 }}
-                        //style={{ y: scrollPercentage, opacity: opacity }}
+                        style={{ y: scrollPercentage, opacity: opacity }}
                     >
                         Bringing you websites and <br />
                         web applications
