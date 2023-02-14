@@ -126,7 +126,9 @@ const FullScreenContainer = styled.div`
           .icon-container {
             max-width: 100px;
             @media ${MediaQueries.tablet} {
-              max-width: 30px;
+              max-width: 40px;
+            }
+            @media ${MediaQueries.mobile} {
               display: none;
             }
             img {
