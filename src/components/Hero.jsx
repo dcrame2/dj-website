@@ -10,6 +10,7 @@ import {
     useAnimationControls,
     useScroll,
     useTransform,
+    useSpring,
 } from 'framer-motion';
 
 const glow = keyframes`
@@ -26,12 +27,12 @@ const glow = keyframes`
         } */
         
         from {
-    text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
-  }
+            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #0008e6, 0 0 18px #0008e6, 0 0 200px #0008e6, 0 0 23px #0008e6, 0 0 26px #0008e6;
+        }
   
-  to {
-    text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
-  }
+         to {
+             text-shadow: 0 0 12px #fff, 0 0 14px #00d9ff, 0 0 20px #00d9ff, 0 0 18px #00d9ff, 0 0 20px #00d9ff, 0 0 22px #00d9ff, 0 0 24px #00d9ff;
+        }
 `;
 
 const Section = styled.section`
@@ -172,7 +173,7 @@ const Hero = () => {
     const { scrollYProgress } = useScroll({
         target: ref,
         // offset: ['start center', 'end start'],
-        offset: ['end end', 'start start'],
+        offset: ['start end', 'end start'],
     });
 
     useEffect(() => {
@@ -185,32 +186,69 @@ const Hero = () => {
         };
     }, [scrollYProgress]);
 
-    const scrollPercentage = useTransform(scrollYProgress, [0, 1], [0, -100]);
-    const opacity = useTransform(scrollYProgress, [0.49, 1], [1, 0]);
+    const scrollPercentage1 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -290]
+    );
+    const springPercentage1 = useSpring(scrollPercentage1);
+
+    const scrollPercentage2 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -340]
+    );
+    const springPercentage2 = useSpring(scrollPercentage2);
+
+    const scrollPercentage3 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -300]
+    );
+    const springPercentage3 = useSpring(scrollPercentage3);
+
+    const scrollPercentage4 = useTransform(
+        scrollYProgress,
+        [0.5, 0.6],
+        [0, -230]
+    );
+    const springPercentage4 = useSpring(scrollPercentage4);
+
+    const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
+
+    const translateX1 = useTransform(scrollYProgress, [0.5, 0.6], [0, -20]);
+    const translateX2 = useTransform(scrollYProgress, [0.5, 0.6], [0, -30]);
+
+    const translateX3 = useTransform(scrollYProgress, [0.5, 0.6], [0, 40]);
+    const translateX4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 35]);
 
     useEffect(() => {
         setTimeout(() => {
-            styleControls.start({ y: scrollPercentage });
+            styleControls.start({ y: scrollPercentage1 });
         }, 300);
     }, []);
 
     useEffect(() => {
-        console.log(scrollPercentage.get() + '%');
-    }, [scrollPercentage]);
+        console.log(opacity.get() + '%');
+    }, [scrollPercentage1]);
 
     return (
         <Section>
             <OpaqueFilter />
-            <InnerSection>
-                <ContentContainer ref={ref}>
+            <InnerSection ref={ref}>
+                <ContentContainer>
                     <motion.h1>
                         <motion.span
                             className='cursive'
                             initial={{ x: -100, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            transition={{ delay: 0.7, duration: 0.7 }}
+                            style={{
+                                y: scrollPercentage2,
+                                opacity: opacity,
+                                x: translateX1,
+                            }}
                         >
                             Experience
                         </motion.span>
@@ -219,8 +257,12 @@ const Hero = () => {
                             className='large-txt'
                             initial={{ x: -200, opacity: 0, scale: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.4, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            transition={{ delay: 0.8, duration: 0.7 }}
+                            style={{
+                                y: scrollPercentage1,
+                                opacity: opacity,
+                                x: translateX2,
+                            }}
                         >
                             Digital&nbsp;
                         </motion.span>
@@ -228,17 +270,25 @@ const Hero = () => {
                             className='large-txt right'
                             initial={{ x: 200, opacity: 0 }}
                             animate={{ x: 0, opacity: 1, scale: 1 }}
-                            transition={{ delay: 1.8, duration: 0.5 }}
-                            //style={{ y: scrollPercentage }}
+                            transition={{ delay: 1.2, duration: 0.7 }}
+                            style={{
+                                y: scrollPercentage3,
+                                opacity: opacity,
+                                x: translateX3,
+                            }}
                         >
                             Delight
                         </motion.span>
                     </motion.h1>
                     <motion.h2
-                        initial={{ y: 400, scale: 0, opacity: 0 }}
-                        animate={{ y: 0, scale: 1, opacity: 1 }}
-                        transition={{ delay: 2.2, duration: 0.5 }}
-                        //style={{ y: scrollPercentage, opacity: opacity }}
+                        initial={{ x: 400, scale: 0, opacity: 0 }}
+                        animate={{ x: 0, scale: 1, opacity: 1 }}
+                        transition={{ delay: 1.5, duration: 0.7 }}
+                        style={{
+                            y: scrollPercentage4,
+                            opacity: opacity,
+                            x: translateX4,
+                        }}
                     >
                         Bringing you websites and <br />
                         web applications

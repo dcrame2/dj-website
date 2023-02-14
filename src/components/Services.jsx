@@ -25,61 +25,61 @@ const Section = styled.section`
     @media ${Variables.mobile} {
         padding-bottom: 100px;
     }
+`;
 
-    .inner-section {
-        ${Container}
+const InnerSection = styled.div`
+    ${Container}
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    @media ${MediaQueries.tablet} {
+        align-items: center;
+    }
+
+    .heading-container {
+        margin: 44px 0 62px;
+        max-width: 540px;
+
+        @media ${Variables.tablet} {
+            margin: 24px 0 40px;
+        }
+        h2 {
+            ${H2Styles}
+
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        h3 {
+            ${PSecondary}
+
+            max-width: 650px;
+        }
+    }
+
+    .ServiceContainer {
         display: flex;
-        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 42px;
+        justify-content: center;
         align-items: start;
 
         @media ${MediaQueries.tablet} {
+            gap: 42px;
+            flex-direction: column;
             align-items: center;
         }
-
-        .heading-container {
-            margin: 44px 0 62px;
-            max-width: 540px;
-
-            @media ${Variables.tablet} {
-                margin: 24px 0 40px;
-            }
-            h2 {
-                ${H2Styles}
-
-                text-transform: uppercase;
-                margin-bottom: 14px;
-            }
-            h3 {
-                ${PSecondary}
-
-                max-width: 650px;
-            }
-        }
-
-        .ServiceContainer {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 42px;
-            justify-content: center;
-            align-items: start;
-
-            @media ${MediaQueries.tablet} {
-                gap: 42px;
-                flex-direction: column;
-                align-items: center;
-            }
-            @media ${MediaQueries.mobile} {
-                padding-right: unset;
-                padding-left: unset;
-            }
+        @media ${MediaQueries.mobile} {
+            padding-right: unset;
+            padding-left: unset;
         }
     }
 `;
 
 const data = {
-    heading: 'Services We Offer',
-    subheading: `Managing a business demands a lot. Save resources and work with ${Variables.companyName} to help build and expand your businesses online presence. Our focal services are designing, developing and providing support but we can provide managed services for any web or mobile related projects.`, //We offer a wide range of web related services that are a must-have for any business.
+    heading: 'Grow your business',
+    subheading: `your trusted partner in web development and online success. We specialize in delivering high-quality web applications and websites to businesses of all sizes. With years of experience and a team of talented developers, we have built a reputation for delivering outstanding results and exceptional customer service.`, //We offer a wide range of web related services that are a must-have for any business.
 };
 
 export default function Services() {
@@ -136,7 +136,7 @@ export default function Services() {
 
     return (
         <Section id='services' className={active ? 'active' : ''}>
-            <div className='inner-section'>
+            <InnerSection>
                 <div className='heading-wrapper' ref={ref}>
                     <motion.div
                         className='heading-container'
@@ -148,7 +148,7 @@ export default function Services() {
                     </motion.div>
                 </div>
                 <div className='ServiceContainer'></div>
-            </div>
+            </InnerSection>
         </Section>
     );
 }
