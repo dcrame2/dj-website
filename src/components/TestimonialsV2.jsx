@@ -138,7 +138,7 @@ const InnerContainer = styled.div`
         height: 20px;
         border-radius: 50%;
         border: unset;
-        background-color: ${Variables.color5};
+        background-color: ${Variables.color4};
         transition: transform ease 0.2s, color ease 0.2s;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -151,7 +151,7 @@ const InnerContainer = styled.div`
 
         &:after {
           content: "";
-          background-color: ${Variables.color9};
+          background-color: ${Variables.color1};
           position: absolute;
           z-index: 0;
           top: 0;
