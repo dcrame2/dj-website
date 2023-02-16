@@ -8,5 +8,9 @@ const InnerContainer = styled.div`
 `;
 
 export default function SecondaryHeroV2() {
-    return <HeroContainer></HeroContainer>;
+    return (
+        <HeroContainer>
+            <InnerContainer>test</InnerContainer>
+        </HeroContainer>
+    );
 }
