@@ -5,79 +5,79 @@ export const mobileWidthInt = 499;
 export const tabletWidthInt2 = 1330;
 
 export const Variables = {
-    maxWidth: `${maxWidthInt}px`,
-    desktopW: `${desktopWidthInt}px`,
-    tabletWidth: `${tabletWidthInt}px`,
-    tabletWidth2: `${tabletWidthInt2}px`,
-    mobileWidth: `${mobileWidthInt}px`,
+  maxWidth: `${maxWidthInt}px`,
+  desktopW: `${desktopWidthInt}px`,
+  tabletWidth: `${tabletWidthInt}px`,
+  tabletWidth2: `${tabletWidthInt2}px`,
+  mobileWidth: `${mobileWidthInt}px`,
 
-    // colors
-    // When swapping leave note of what the color looks like
-    // used in button link styling
-    // color1: "#E5B8F4", // light purple
-    // color2: "#C147E9", // purple
-    // color3: "#FCF9BE", // light yellow-white
-    // color4: "#46C2CB", // teal aqua
-    // color5: "#4D4C7D", // pale purple
-    // color6: "#E9D5DA", // light pale pink
-    // color7: "#FFFBE7", // white with hint of pink
-    // color8: "#DDDDDD", // slate white
-    // color9: "#FF6D28", // orange
-    // color10: "#472183", // dark purple
-    // color11: "#434242", // medium gray
-    // color12: "#222222", // dark gray
-    // color13: "#EB1D36", // emergency red
-    // color14: "#060011", // dark violet
-    // color15: "#4B56D2", // aqua
-    // color16: "#434242", // dark gray
-    // color17: "#000000",
-    // color18: "#0dd9bb",
-    // color19: "#000F2A",
-    // color20: "transparent",
+  // colors
+  // When swapping leave note of what the color looks like
+  // used in button link styling
+  // color1: "#E5B8F4", // light purple
+  // color2: "#C147E9", // purple
+  // color3: "#FCF9BE", // light yellow-white
+  // color4: "#46C2CB", // teal aqua
+  // color5: "#4D4C7D", // pale purple
+  // color6: "#E9D5DA", // light pale pink
+  // color7: "#FFFBE7", // white with hint of pink
+  // color8: "#DDDDDD", // slate white
+  // color9: "#FF6D28", // orange
+  // color10: "#472183", // dark purple
+  // color11: "#434242", // medium gray
+  // color12: "#222222", // dark gray
+  // color13: "#EB1D36", // emergency red
+  // color14: "#060011", // dark violet
+  // color15: "#4B56D2", // aqua
+  // color16: "#434242", // dark gray
+  // color17: "#000000",
+  // color18: "#0dd9bb",
+  // color19: "#000F2A",
+  // color20: "transparent",
 
-    color1: '#ECB365', // light purple
-    color2: '#041C32', // purple
-    color3: '#04293A', // light yellow-white
-    color4: '#064663', // teal aqua
-    color5: '#4D4C7D', // pale purple
-    color6: '#E9D5DA', // light pale pink
-    color7: '#FFFBE7', // white with hint of pink
-    color8: '#DDDDDD', // slate white
-    color9: '#ECB365', // orange
-    color10: '#064663', // dark purple
-    color11: '#064663', // medium gray
-    color12: '#041C32', // dark gray
-    color13: '#064663', // emergency red
-    color14: '#064663', // dark violet
-    color15: '#064663', // aqua
-    color16: '#064663', // dark gray
-    color17: '#000000',
-    color18: '#064663',
-    color19: '#064663',
-    color20: 'transparent',
+  color1: "#DD0400", // light purple
+  color2: "#003F91", // purple
+  color3: "#003F91", // light yellow-white
+  color4: "#2176AE", // teal aqua
+  color5: "#4D4C7D", // pale purple
+  color6: "#E9D5DA", // light pale pink
+  color7: "#FFFBE7", // white with hint of pink
+  color8: "#DDDDDD", // slate white
+  color9: "#DD0400", // orange
+  color10: "#2176AE", // dark purple
+  color11: "#2176AE", // medium gray
+  color12: "#2176AE", // dark gray
+  color13: "#2176AE", // emergency red
+  color14: "#2176AE", // dark violet
+  color15: "#2176AE", // aqua
+  color16: "#2176AE", // dark gray
+  color17: "#000000",
+  color18: "#064663",
+  color19: "#064663",
+  color20: "transparent",
 
-    black: 'black',
-    white: '#ffff',
+  black: "black",
+  white: "#ffff",
 
-    // Type
-    joseph: 'Josefin Sans, sans-serif',
-    openSans: 'Open Sans, sans-serif',
+  // Type
+  joseph: "Lato, sans-serif",
+  openSans: "Montserrat, sans-serif",
 
-    Pacifico: 'Pacifico',
+  Pacifico: "Pacifico",
 
-    // Company name
-    companyName: 'Digital Delight',
+  // Company name
+  companyName: "Digital Delight",
 
-    // Logos
-    logo1Url: 'digitaldelight.png',
-    logo2Url: 'logo-no-background.svg',
-    logo3Url: 'white-logo.png',
-    logo4Url: 'white-logo-left.png',
-    logo5Url: 'logos/favicon.png',
-    logo6Url: 'logos/logo.png',
-    logo7Url: 'logo-black.svg',
-    logo8Url: 'logo.svg',
+  // Logos
+  logo1Url: "digitaldelight.png",
+  logo2Url: "logo-no-background.svg",
+  logo3Url: "white-logo.png",
+  logo4Url: "white-logo-left.png",
+  logo5Url: "logos/favicon.png",
+  logo6Url: "logos/logo.png",
+  logo7Url: "logo-black.svg",
+  logo8Url: "logo.svg",
 
-    background: '/Images/texture_background.jpg',
-    background1: '/Images/background.jpg',
+  background: "/Images/texture_background.jpg",
+  background1: "/Images/background.jpg",
 };
