@@ -97,7 +97,7 @@ const data = [
     imgSrc: "/service_about/seo.jpg",
     altText: "text",
     imgPlacement: "right",
-    heading: "Search Engine Optimization",
+    heading: "SEO",
     content:
       "Search Engine Optimization (SEO) is a crucial component of any digital marketing strategy. Our development agency recognizes the importance of SEO and incorporates best practices into every website we build. This helps our clients reach more potential customers, increase their online visibility, and achieve their business goals.",
     factList: [
