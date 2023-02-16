@@ -20,6 +20,12 @@ const ICMContainer = styled.section`
       font-size: 3rem;
     }
   }
+  hr {
+    color: ${Variables.color1};
+    height: 6px;
+    width: 100px;
+    background-color: ${Variables.color1};
+  }
   .ICMInnerContainer {
     ${Container}
     display: flex;
@@ -166,6 +172,7 @@ export default function ImageContentModule({ ...props }) {
       imgPlacement={props.imgPlacement}
     >
       <h2>{props.heading}</h2>
+      <hr />
       <div className="ICMInnerContainer" ref={ref}>
         <div className="ICMImgContainer">
           <img
