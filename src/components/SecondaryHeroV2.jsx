@@ -1,13 +1,15 @@
-import styled from 'styled-components';
-import { Container } from 'react-bootstrap';
+import styled from 'styled-components/macro';
+import { Container } from '../styles/Utilities';
 
-const HeroContainer = styled.div``;
+const HeroContainer = styled.div`
+    position: relative;
+`;
 
 const InnerContainer = styled.div`
     ${Container}
 `;
 
-export default function SecondaryHeroV2() {
+export default function SecondaryHeroV2({ data }) {
     return (
         <HeroContainer>
             <InnerContainer>test</InnerContainer>
