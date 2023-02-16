@@ -45,7 +45,6 @@ const FullScreenContainer = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: center;
-      /* gap: 15px; */
       flex-wrap: wrap;
       @media ${MediaQueries.mobile} {
         flex-direction: column;
@@ -55,18 +54,16 @@ const FullScreenContainer = styled.div`
         z-index: 1;
         gap: 8px;
         justify-content: normal;
-        @media ${MediaQueries.mobile} {
-          /* margin-right: -200px; */
-          gap: 0;
-        }
+        gap: 0;
         li {
           text-transform: uppercase;
           height: unset;
           min-width: unset;
-          background-color: ${Variables.color2};
-          border-bottom: 1px solid ${Variables.white};
-          border-top: 1px solid ${Variables.white};
-          border-right: 1px solid ${Variables.white};
+          color: ${Variables.color2};
+          background-color: ${Variables.white};
+          border-bottom: 2px solid ${Variables.color2};
+          border-top: 2px solid ${Variables.color2};
+          border-right: 2px solid ${Variables.color2};
           padding: 5px;
           @media ${MediaQueries.mobile} {
             background-color: ${Variables.white};
@@ -77,7 +74,12 @@ const FullScreenContainer = styled.div`
           }
 
           a {
+            display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            max-width: 300px;
+            width: 100%;
             .icon-container {
               img {
                 width: 30px;

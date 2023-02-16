@@ -20,7 +20,7 @@ const serviceHeroData = {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. VerLorem ipsum dolor sit amet consectetur adipisicing elit. Ver",
   serviceLinks: [
     {
-      serviceName: "Website Development",
+      serviceName: "Web Development",
       serviceHref: "service-1",
       serviceIcon: "/icons/web-dev-icon.svg",
     },
@@ -63,7 +63,7 @@ const data = [
     imgSrc: "/service_about/website-development.jpg",
     altText: "Web",
     imgPlacement: "right",
-    heading: "Website Development",
+    heading: "Web Development",
     content:
       "At XYZ Web Development Agency, we understand the importance of having a strong online presence in today's digital world. Our team of experts has the skills and experience necessary to create a website that not only looks great but also functions smoothly and efficiently. Our goal is to help your business grow and succeed through the power of the internet.",
     factList: [
