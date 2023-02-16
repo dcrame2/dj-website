@@ -36,6 +36,7 @@ const glow = keyframes`
 `;
 
 const Section = styled.section`
+    background-color: ${Variables.color2};
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -57,7 +58,6 @@ const Section = styled.section`
 const InnerSection = styled.div`
     ${Container}
     height: 100%;
-    background-color: ${Variables.color2};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,28 +189,28 @@ const Hero = () => {
     const scrollPercentage1 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -290]
+        [0, -240]
     );
     const springPercentage1 = useSpring(scrollPercentage1);
 
     const scrollPercentage2 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -340]
+        [0, -300]
     );
     const springPercentage2 = useSpring(scrollPercentage2);
 
     const scrollPercentage3 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -300]
+        [0, -280]
     );
     const springPercentage3 = useSpring(scrollPercentage3);
 
     const scrollPercentage4 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
-        [0, -230]
+        [0, -180]
     );
     const springPercentage4 = useSpring(scrollPercentage4);
 
