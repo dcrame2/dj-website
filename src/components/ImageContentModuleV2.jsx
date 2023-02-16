@@ -172,7 +172,15 @@ export default function ImageContentModule({ ...props }) {
       id={props.id}
       imgPlacement={props.imgPlacement}
     >
-      <h2>{props.heading}</h2>
+      <motion.h2
+        style={{
+          transform: isInView ? "none" : "translateY(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      >
+        {props.heading}
+      </motion.h2>
       <hr />
       <div className="ICMInnerContainer" ref={ref}>
         <div className="ICMImgContainer">
