@@ -46,7 +46,7 @@ const FloatingButton = styled.div`
     padding: 38px 24px;
     border-radius: 38px;
     justify-content: flex-start;
-    background-color: ${Variables.color4};
+    background-color: ${Variables.color3};
     border: solid 4px ${Variables.color2};
 
     @media ${MediaQueries.mobile} {

@@ -32,7 +32,7 @@ const Section = styled.section`
         flex-direction: column;
         gap: 20px;
         /* background-color: ${Variables.color2}; */
-        border: solid 1px ${Variables.color4};
+        border: solid 1px ${Variables.color3};
         background-color: unset;
         background: transparent;
         border-radius: 15px;
@@ -193,10 +193,10 @@ const Section = styled.section`
             background-color: transparent;
             border-radius: 8px;
             width: 500px;
-            border: 2px solid ${Variables.color4};
+            border: 2px solid ${Variables.color3};
             &:hover,
             &:focus {
-              box-shadow: 1px 1px 4px 1px ${Variables.color4};
+              box-shadow: 1px 1px 4px 1px ${Variables.color3};
             }
             @media ${MediaQueries.tablet} {
               width: 100%;

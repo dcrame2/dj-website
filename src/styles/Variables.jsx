@@ -12,11 +12,11 @@ export const Variables = {
   mobileWidth: `${mobileWidthInt}px`,
 
   // colors
-  color1: "#DD0400", // light purple
-  color2: "#003F91", // purple
-  color4: "#2176AE", // teal aqua
-  color7: "#FEFFFE", // white with hint of pink
-  color20: "transparent",
+  color1: "#DD0400",
+  color2: "#003F91",
+  color3: "#2176AE",
+  color4: "#FEFFFE",
+  transparent: "transparent",
 
   black: "black",
   white: "#ffff",

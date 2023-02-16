@@ -72,7 +72,7 @@ const InnerContainer = styled.div`
         flex-direction: column;
 
         max-width: 660px;
-        border: 1px solid ${Variables.color4};
+        border: 1px solid ${Variables.color3};
         padding: 26px 32px 28px;
         border-radius: 24px;
 
@@ -138,7 +138,7 @@ const InnerContainer = styled.div`
         height: 20px;
         border-radius: 50%;
         border: unset;
-        background-color: ${Variables.color4};
+        background-color: ${Variables.color3};
         transition: transform ease 0.2s, color ease 0.2s;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
           rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,

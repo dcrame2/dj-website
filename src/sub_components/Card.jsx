@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    background-color: ${Variables.color4};
+    background-color: ${Variables.color3};
     border: 1px solid ${Variables.color2};
     color: ${Variables.white};
     flex-direction: column;
@@ -43,7 +43,7 @@ const CardWrapper = styled.div`
 
     &:hover {
       @media ${MediaQueries.desktop} {
-        background-color: ${Variables.color4};
+        background-color: ${Variables.color3};
         transition: background-color ease 0.45s;
       }
     }
@@ -67,7 +67,7 @@ const CardWrapper = styled.div`
     &:nth-child(1) {
       span.num {
         ${H2Styles}
-        color: ${Variables.color4};
+        color: ${Variables.color3};
       }
     }
     &:nth-child(2) {
@@ -105,7 +105,7 @@ const CardWrapper = styled.div`
     }
     &.active {
       transition: background-color ease 0.45s;
-      background-color: ${Variables.color4};
+      background-color: ${Variables.color3};
       .dropdown {
         max-height: 245px; // TODO: find solution to using auto height :)
         transition: max-height 0.25s ease, opacity ease 0.26s;
