@@ -58,7 +58,7 @@ const data = [
     id: "1",
 
     color: `${Variables.white}`,
-    bgColor: `${Variables.color10}`,
+    bgColor: `${Variables.color2}`,
     imgIcon: "/service_about/webdeveloper_icon.svg",
     imgSrc: "/service_about/website-development.jpg",
     altText: "Web",
@@ -76,7 +76,7 @@ const data = [
   {
     id: "2",
     imgIcon: "/service_about/webdeveloper_icon.svg",
-    color: `${Variables.color10}`,
+    color: `${Variables.color2}`,
     bgColor: `${Variables.white}`,
     imgSrc: "/service_about/app-development.jpg",
     altText: "text",
@@ -94,7 +94,7 @@ const data = [
     id: "3",
     imgIcon: "/service_about/webdeveloper_icon.svg",
     color: `${Variables.white}`,
-    bgColor: `${Variables.color10}`,
+    bgColor: `${Variables.color2}`,
     imgSrc: "/service_about/seo.jpg",
     altText: "text",
     imgPlacement: "right",
@@ -109,7 +109,7 @@ const data = [
   },
   {
     id: "4",
-    color: `${Variables.color10}`,
+    color: `${Variables.color2}`,
     bgColor: `${Variables.white}`,
     imgIcon: "/service_about/webdeveloper_icon.svg",
     imgSrc: "/service_about/web-design.jpg",
@@ -127,7 +127,7 @@ const data = [
   {
     id: "5",
     color: `${Variables.white}`,
-    bgColor: `${Variables.color10}`,
+    bgColor: `${Variables.color2}`,
     imgIcon: "/service_about/webdeveloper_icon.svg",
     imgSrc: "/service_about/web-main.jpg",
     altText: "text",
@@ -144,7 +144,7 @@ const data = [
   },
   {
     id: "6",
-    color: `${Variables.color10}`,
+    color: `${Variables.color2}`,
     bgColor: `${Variables.white}`,
     imgSrc: "/service_about/cms.jpg",
     imgIcon: "/service_about/webdeveloper_icon.svg",
