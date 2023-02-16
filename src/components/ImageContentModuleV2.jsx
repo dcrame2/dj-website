@@ -25,6 +25,7 @@ const ICMContainer = styled.section`
     height: 6px;
     width: 100px;
     background-color: ${Variables.color1};
+    border: none;
   }
   .ICMInnerContainer {
     ${Container}
