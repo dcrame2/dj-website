@@ -91,6 +91,7 @@ const FullScreenContainer = styled.div`
       height: 6px;
       width: 100px;
       background-color: ${Variables.color1};
+      border: none;
     }
   }
   .inner-link-container {
