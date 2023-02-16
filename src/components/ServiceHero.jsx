@@ -221,11 +221,11 @@ const FullScreenContainer = styled.div`
         padding: 2px;
         height: 75px;
         background-color: ${Variables.color1};
-        color: ${Variables.white}l;
+        color: ${Variables.white};
         width: 20px;
-        border-right: 1px solid ${Variables.white};
-        border-top: 1px solid ${Variables.white};
-        border-bottom: 1px solid ${Variables.white};
+        border-right: 1px solid ${Variables.color2};
+        border-top: 1px solid ${Variables.color2};
+        border-bottom: 1px solid ${Variables.color2};
       }
     }
     .tab-container {
