@@ -6,7 +6,7 @@ import { PSmallStyles, H4Styles } from "../styles/Type";
 
 const FooterElm = styled.footer`
   position: relative;
-  background-color: ${Variables.color4};
+  background-color: ${Variables.color3};
   .bottom-color-strip {
     background-color: ${Variables.black};
     padding: 15px 0;

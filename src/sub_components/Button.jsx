@@ -16,7 +16,7 @@ const CustomButton = styled.button`
   padding: 12px 24px;
   background-color: ${Variables.color1};
   border-radius: 20px;
-  color: ${Variables.color4};
+  color: ${Variables.color3};
   border: 2px solid ${Variables.white};
   text-decoration: unset;
   overflow: hidden;

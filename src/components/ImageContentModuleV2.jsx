@@ -9,7 +9,7 @@ import React, { useRef, useEffect } from "react";
 const ICMContainer = styled.section`
   position: relative;
   /* width: 100%; */
-  background-color: ${Variables.color20};
+  background-color: ${Variables.transparent};
   h2 {
     ${H2Styles};
     text-transform: uppercase;

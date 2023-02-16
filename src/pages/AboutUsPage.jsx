@@ -8,7 +8,7 @@ const AboutUsPage = () => {
   return (
     <>
       <Spacer
-        color={Variables.color4}
+        color={Variables.color3}
         desktop={258}
         tablet={120}
         mobile={100}
@@ -17,7 +17,7 @@ const AboutUsPage = () => {
       <SecondaryHero>About Us</SecondaryHero>
 
       <Spacer
-        color={Variables.color4}
+        color={Variables.color3}
         desktop={258}
         tablet={120}
         mobile={100}

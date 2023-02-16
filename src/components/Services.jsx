@@ -15,7 +15,7 @@ const Section = styled.section`
   width: 100%;
   padding-top: 85px;
   padding-bottom: 185px;
-  background-color: ${Variables.color4};
+  background-color: ${Variables.color3};
   //background-color: ${Variables.black};
 
   @media ${Variables.tablet} {

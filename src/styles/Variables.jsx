@@ -14,9 +14,9 @@ export const Variables = {
   // colors
   color1: "#DD0400",
   color2: "#003F91",
-  color4: "#2176AE",
-  color7: "#FEFFFE",
-  color20: "transparent",
+  color3: "#2176AE",
+  color4: "#FEFFFE",
+  transparent: "transparent",
 
   black: "black",
   white: "#ffff",

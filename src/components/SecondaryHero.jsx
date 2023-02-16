@@ -7,7 +7,7 @@ import { H1Styles, PSecondary } from "../styles/Type";
 
 const OuterContainer = styled.div`
   height: auto;
-  background-color: ${Variables.color4};
+  background-color: ${Variables.color3};
 
   .inner-container {
     ${Container};

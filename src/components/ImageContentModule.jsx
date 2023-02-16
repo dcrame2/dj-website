@@ -9,7 +9,7 @@ import React, { useRef } from "react";
 const ICMContainer = styled.section`
   position: relative;
   width: 100%;
-  background-color: ${Variables.color20};
+  background-color: ${Variables.transparent};
 
   .ICMInnerContainer {
     ${Container}
@@ -35,9 +35,9 @@ const ICMContainer = styled.section`
       width: 100%;
       height: auto;
       border-radius: 15px;
-      box-shadow: 1px 1px 10px 2px ${Variables.color7};
-      -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color7};
-      -moz-box-shadow: 1px 1px 10px 2px ${Variables.color7};
+      box-shadow: 1px 1px 10px 2px ${Variables.color4};
+      -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color4};
+      -moz-box-shadow: 1px 1px 10px 2px ${Variables.color4};
 
       /* @media ${MediaQueries.mobile} {
         width: 100%;
