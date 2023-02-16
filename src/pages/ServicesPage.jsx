@@ -16,8 +16,7 @@ const ServicesContainer = styled.div`
 
 const serviceHeroData = {
   heading: "Services We Offer",
-  subheading:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. VerLorem ipsum dolor sit amet consectetur adipisicing elit. Ver",
+  subheading: "Expert Web Development Services to Enhance Your Online Presence",
   serviceLinks: [
     {
       serviceName: "Web Development",

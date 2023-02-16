@@ -1,11 +1,33 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { PSecondary, H2Styles, H1Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
 import { Container, MediaQueries } from "../styles/Utilities";
 import ImageContentModule from "./ImageContentModule";
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+
+const glow = keyframes`
+  
+        /* from {
+            text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 150px #0008e6,
+                0 0 40px #0008e6, 0 0 50px #0008e6, 0 0 30px #0008e6,
+                0 0 70px #0008e6;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 10px #00d9ff, 0 0 20px #00d9ff,
+                0 0 50px #00d9ff, 0 0 30px #00d9ff, 0 0 350px #00d9ff,
+                0 0 40px #00d9ff;
+        } */
+        
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #fff, 0 0 18px #fff, 0 0 200px #fff, 0 0 23px #003F91, 0 0 26px #003F91;
+        }
+  
+         to {
+             text-shadow: 0 0 12px #fff, 0 0 14px #fff, 0 0 20px #fff, 0 0 18px #fff, 0 0 20px #fff, 0 0 22px #fff, 0 0 24px #003F91;
+        }
+`;
 
 const FullScreenContainer = styled.div`
   width: 100vw;
@@ -27,17 +49,48 @@ const FullScreenContainer = styled.div`
     gap: 15px;
     text-align: center;
     h1 {
+      text-align: center;
+      display: block;
+      color: ${Variables.color2};
+      &.cursive {
+        font-family: ${Variables.Pacifico};
+        -webkit-animation: ${glow} 1s ease-in-out alternate;
+        -moz-animation: ${glow} 1s ease-in-out alternate;
+        animation: ${glow} 1s ease-in-out alternate;
+        animation-fill-mode: forwards;
+        font-size: 8rem;
+        line-height: 93px;
+        display: inline-block;
+
+        @media (max-width: 1104px) {
+          font-size: 4rem;
+          line-height: 73px;
+        }
+
+        @media (max-width: 788px) {
+          font-size: 3rem;
+        }
+
+        @media (max-width: 539px) {
+          line-height: 55px;
+        }
+      }
+    }
+    /* h1 {
       ${H1Styles}
       text-transform: uppercase;
       @media ${MediaQueries.mobile} {
         font-size: 3.5rem;
       }
-    }
+    } */
     p {
       ${PSecondary}
     }
     hr {
-      width: 75%;
+      color: ${Variables.color1};
+      height: 6px;
+      width: 100px;
+      background-color: ${Variables.color1};
     }
   }
   .inner-link-container {
@@ -106,6 +159,7 @@ const FullScreenContainer = styled.div`
         height: 250px;
         &:hover {
           background-color: ${Variables.color1};
+          color: ${Variables.color4};
           transition: background-color 0.3s ease-in;
         }
         @media ${MediaQueries.mobile} {
@@ -227,7 +281,7 @@ const ServiceHero = ({ data, active }) => {
   return (
     <FullScreenContainer>
       <div className="inner-container">
-        <h1>{data.heading}</h1>
+        <h1 className="cursive">{data.heading}</h1>
         <p>{data.subheading}</p>
         <hr />
       </div>
