@@ -8,7 +8,7 @@ const PortfolioPage = () => {
   return (
     <>
       <Spacer
-        color={Variables.color10}
+        color={Variables.color4}
         desktop={258}
         tablet={120}
         mobile={100}
@@ -17,7 +17,7 @@ const PortfolioPage = () => {
       <SecondaryHero>Portfolio</SecondaryHero>
 
       <Spacer
-        color={Variables.color10}
+        color={Variables.color4}
         desktop={258}
         tablet={120}
         mobile={100}

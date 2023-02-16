@@ -44,7 +44,7 @@ const Nav = styled.nav`
       background: inherit;
       top: 0;
       transition: all ease-out 0.2s;
-      background-color: ${Variables.color16};
+      background-color: ${Variables.color4};
       opacity: 0.35;
     }
     &.panel-active::before {
@@ -122,7 +122,7 @@ const Nav = styled.nav`
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background-color: ${Variables.color16};
+                background-color: ${Variables.color4};
                 opacity: 0.35;
               }
             }

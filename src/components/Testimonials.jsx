@@ -80,7 +80,7 @@ const TestimonialsSection = styled.section`
   .button-container {
     .prev-btn,
     .next-btn {
-      color: ${Variables.color10};
+      color: ${Variables.color4};
       font-size: 3rem;
       background: transparent;
       border-color: transparent;
@@ -96,7 +96,7 @@ const TestimonialsSection = styled.section`
   .random-btn {
     margin-top: 0.5rem;
     background: ${Variables.color1};
-    color: ${Variables.color10};
+    color: ${Variables.color4};
     padding: 0.25rem 0.5rem;
     text-transform: capitalize;
     border-radius: 0.25rem;
@@ -106,7 +106,7 @@ const TestimonialsSection = styled.section`
   }
   .random-btn:hover {
     background: ${Variables.color1};
-    color: ${Variables.color10};
+    color: ${Variables.color4};
   }
 
   .img-container {
@@ -120,7 +120,7 @@ const TestimonialsSection = styled.section`
       content: "";
       width: 100%;
       height: 100%;
-      background: ${Variables.color10};
+      background: ${Variables.color4};
       position: absolute;
       top: -0.25rem;
       right: -0.5rem;
@@ -144,7 +144,7 @@ const TestimonialsSection = styled.section`
       place-items: center;
       border-radius: 50%;
       transform: translateY(25%);
-      background: ${Variables.color10};
+      background: ${Variables.color4};
       color: ${Variables.white};
     }
   }

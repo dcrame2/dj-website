@@ -103,7 +103,7 @@ const FullScreenContainer = styled.div`
         min-width: 150px;
         height: 250px;
         &:hover {
-          background-color: ${Variables.color9};
+          background-color: ${Variables.color1};
           transition: background-color 0.3s ease-in;
         }
         @media ${MediaQueries.mobile} {
