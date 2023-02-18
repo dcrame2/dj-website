@@ -15,7 +15,7 @@ const Section = styled.section`
   width: 100%;
   padding-top: 85px;
   padding-bottom: 185px;
-  background-color: ${Variables.color14};
+  background-color: ${Variables.color4};
   //background-color: ${Variables.black};
   @media ${Variables.tablet} {
     padding-bottom: 140px;
@@ -54,6 +54,7 @@ const Section = styled.section`
       gap: 42px;
       justify-content: center;
       align-items: start;
+
       @media ${MediaQueries.tablet} {
         gap: 42px;
         flex-direction: column;

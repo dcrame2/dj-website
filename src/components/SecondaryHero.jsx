@@ -6,7 +6,7 @@ import { Variables } from "../styles/Variables";
 import { H1Styles, PSecondary } from "../styles/Type";
 
 const OuterContainer = styled.div`
-  background-color: ${Variables.color3};
+  background-color: ${Variables.color2};
 
   .inner-container {
     height: 100vh;
@@ -32,8 +32,8 @@ const SecondaryHero = ({ children }) => {
       <div className="inner-container">
         <h1>{children}</h1>
         <p>
-          We deliver outcomes. Our entire company is designed to help you plan,
-          build and execute solutions that drive your business forward.
+          Explore our impressive collection of custom-built websites and web
+          applications
         </p>
       </div>
     </OuterContainer>

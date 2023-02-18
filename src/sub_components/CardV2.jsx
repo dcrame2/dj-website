@@ -12,8 +12,8 @@ const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    background-color: ${Variables.color3};
-    border: 1px solid ${Variables.color2};
+    background-color: ${Variables.color2};
+    border: 1px solid ${Variables.color1};
     color: ${Variables.white};
     flex-direction: column;
     justify-content: center;
@@ -25,9 +25,9 @@ const CardWrapper = styled.div`
     max-width: 540px;
     transition: background-color ease 0.7s;
 
-    box-shadow: 1px 1px 10px 2px ${Variables.color2};
-    -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color2};
-    -moz-box-shadow: 1px 1px 10px 2px ${Variables.color2};
+    box-shadow: 1px 1px 10px 2px ${Variables.color1};
+    -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color1};
+    -moz-box-shadow: 1px 1px 10px 2px ${Variables.color1};
 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -106,7 +106,7 @@ const CardWrapper = styled.div`
     }
     &.active {
       transition: background-color ease 0.45s;
-      background-color: ${Variables.color3};
+      background-color: ${Variables.color2};
       .dropdown {
         max-height: 245px; // TODO: find solution to using auto height :)
         transition: max-height 0.25s ease, opacity ease 0.26s;
@@ -140,7 +140,7 @@ export default function CardV2({ index, active, data, onClick }) {
   return (
     <CardWrapper ref={ref}>
       <motion.button
-        className={active === index ? "active" : ""}
+        className="active"
         onClick={() => onClick(index)}
         initial={initial}
         animate={controls}

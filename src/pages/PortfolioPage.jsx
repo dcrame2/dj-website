@@ -6,6 +6,10 @@ import { Variables } from "../styles/Variables";
 import Card from "../sub_components/Card";
 import PortfolioModule from "../components/PortfolioModule";
 
+// const data = [
+
+// ]
+
 const PortfolioPage = () => {
   return (
     <>
