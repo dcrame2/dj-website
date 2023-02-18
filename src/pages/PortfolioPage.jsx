@@ -9,21 +9,21 @@ import PortfolioModule from "../components/PortfolioModule";
 const PortfolioPage = () => {
   return (
     <>
-      <Spacer
+      {/* <Spacer
         color={Variables.color3}
         desktop={258}
         tablet={120}
         mobile={100}
-      />
+      /> */}
 
       <SecondaryHero>Portfolio</SecondaryHero>
 
-      <Spacer
+      {/* <Spacer
         color={Variables.color3}
         desktop={258}
         tablet={120}
         mobile={100}
-      />
+      /> */}
       <PortfolioModule />
     </>
   );

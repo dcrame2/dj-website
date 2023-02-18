@@ -6,13 +6,13 @@ import { Variables } from "../styles/Variables";
 import { H1Styles, PSecondary } from "../styles/Type";
 
 const OuterContainer = styled.div`
-  height: auto;
   background-color: ${Variables.color3};
 
   .inner-container {
+    height: 100vh;
     ${Container};
-
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
