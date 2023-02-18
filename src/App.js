@@ -12,6 +12,7 @@ import PortfolioPage from "./pages/PortfolioPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ServicesPage from "./pages/ServicesPage.jsx";
 import FloatingContact from "./components/FloatingContact.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 const ParaContainer = styled.div`
   background-image: url(${Variables.background1});
@@ -57,6 +58,7 @@ function App() {
   return (
     <>
       <HashRouter>
+        <ScrollToTop />
         <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
         <Routes>
           <Route
