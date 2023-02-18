@@ -9,6 +9,7 @@ import { Route, Routes, HashRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
 import PortfolioPage from "./pages/PortfolioPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
 import ServicesPage from "./pages/ServicesPage.jsx";
 import FloatingContact from "./components/FloatingContact.jsx";
 
@@ -70,6 +71,7 @@ function App() {
 
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <FloatingContact
           ariaLabel="Jump to services overview"

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LinkButton from "../sub_components/LinkButton";
+import LinkButtonV2 from "../sub_components/LinkButton";
 import { Variables } from "../styles/Variables";
 import { useState } from "react";
 import { FontStyles1, GlassEffect, BlurEffect } from "../styles/Utilities";
@@ -273,11 +273,11 @@ export default function Navigation({ backdrop }) {
                 </ul>
               </li>
               <li onClick={() => setHamburgerPressed(false)} className="cta">
-                <LinkButton
+                <LinkButtonV2
                   ariaLabel="Contact us"
                   text="Contact Us"
-                  href="#contact"
-                ></LinkButton>
+                  href="/contact"
+                ></LinkButtonV2>
               </li>
             </ul>
           </li>
