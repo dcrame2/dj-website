@@ -32,7 +32,7 @@ const Section = styled.section`
         flex-direction: column;
         gap: 20px;
         /* background-color: ${Variables.color2}; */
-        border: solid 1px ${Variables.color3};
+        border: solid 1px ${Variables.color2};
         background-color: unset;
         background: transparent;
         border-radius: 15px;
