@@ -162,7 +162,7 @@ export default function CardV2({ index, active, data, onClick }) {
         whileTap={{ scale: 0.9 }}
       >
         <img src={`${data.img}`} alt={data.alt} />
-        <span className="num">{data.num}</span>
+        {/* <span className="num">{data.num}</span> */}
         <h2>{data.name}</h2>
         <span className="dropdown">
           <p>{data.desc}</p>
