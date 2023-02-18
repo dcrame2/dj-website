@@ -7,7 +7,7 @@ import { H3Styles, H2Styles, PSecondary } from "../styles/Type";
 import { useState, useEffect } from "react";
 import LinkButton from "../sub_components/LinkButton";
 import { motion, useInView, useAnimationControls } from "framer-motion";
-import Card from "../sub_components/Card";
+import CardV2 from "../sub_components/CardV2";
 
 // Google analytics
 const Section = styled.section`
@@ -15,74 +15,80 @@ const Section = styled.section`
   width: 100%;
   padding-top: 85px;
   padding-bottom: 185px;
-  background-color: ${Variables.color3};
+  background-color: ${Variables.color14};
   //background-color: ${Variables.black};
-
   @media ${Variables.tablet} {
     padding-bottom: 140px;
   }
-
   @media ${Variables.mobile} {
     padding-bottom: 100px;
   }
-`;
-
-const InnerSection = styled.div`
-  ${Container}
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-
-  @media ${MediaQueries.tablet} {
-    align-items: center;
-  }
-
-  .heading-container {
-    margin: 44px 0 62px;
-    max-width: 540px;
-
-    @media ${Variables.tablet} {
-      margin: 24px 0 40px;
-    }
-    h2 {
-      ${H2Styles}
-
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    h3 {
-      ${PSecondary}
-
-      max-width: 650px;
-    }
-  }
-
-  .ServiceContainer {
+  .inner-section {
+    ${Container}
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 42px;
-    justify-content: center;
+    flex-direction: column;
     align-items: start;
-
     @media ${MediaQueries.tablet} {
-      gap: 42px;
-      flex-direction: column;
       align-items: center;
     }
-    @media ${MediaQueries.mobile} {
-      padding-right: unset;
-      padding-left: unset;
+    .heading-container {
+      margin: 44px 0 62px;
+      max-width: 540px;
+      @media ${Variables.tablet} {
+        margin: 24px 0 40px;
+      }
+      h2 {
+        ${H2Styles}
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      h3 {
+        ${PSecondary}
+        max-width: 650px;
+      }
+    }
+    .ServiceContainer {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 42px;
+      justify-content: center;
+      align-items: start;
+      @media ${MediaQueries.tablet} {
+        gap: 42px;
+        flex-direction: column;
+        align-items: center;
+      }
+      @media ${MediaQueries.mobile} {
+        padding-right: unset;
+        padding-left: unset;
+      }
     }
   }
 `;
 
 const data = {
-  heading: "Grow your business",
-  subheading: `your trusted partner in web development and online success. We specialize in delivering high-quality web applications and websites to businesses of all sizes. With years of experience and a team of talented developers, we have built a reputation for delivering outstanding results and exceptional customer service.`, //We offer a wide range of web related services that are a must-have for any business.
+  services: [
+    {
+      num: "01",
+      alt: "Design icon",
+      img: "/images/moulisfinancial-logo.png",
+      name: "Moulis Financial",
+      desc: "Quality designs made to catch users attention and show your business model",
+    },
+    {
+      num: "02",
+      alt: "Develop icon",
+      img: "/images/dc-logo.png",
+      name: "DC Productions",
+      desc: "Professional developers executing modern websites your user will remember visiting",
+    },
+  ],
+  // heading: "Services We Offer",
+  // subheading: `Managing a business demands a lot. Save resources and work with ${Variables.companyName} to help build and expand your businesses online presence. Our focal services are designing, developing and providing support but we can provide managed services for any web or mobile related projects.`, //We offer a wide range of web related services that are a must-have for any business.
 };
 
-export default function Services() {
+export default function PortfolioModule() {
   const [active, setActive] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [windowSize, setWindowSize] = useState(0);
@@ -136,7 +142,7 @@ export default function Services() {
 
   return (
     <Section id="services" className={active ? "active" : ""}>
-      <InnerSection>
+      <div className="inner-section">
         <div className="heading-wrapper" ref={ref}>
           <motion.div
             className="heading-container"
@@ -147,9 +153,19 @@ export default function Services() {
             <h3>{data.subheading}</h3>
           </motion.div>
         </div>
-
-        <div className="ServiceContainer"></div>
-      </InnerSection>
+        <div className="ServiceContainer">
+          {data.services.map((service, i) => {
+            return (
+              <CardV2
+                data={service}
+                active={active}
+                onClick={activeToggle}
+                index={i}
+              />
+            );
+          })}
+        </div>
+      </div>
     </Section>
   );
 }

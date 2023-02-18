@@ -3,8 +3,14 @@ import { Variables } from "../styles/Variables";
 import { Container } from "../styles/Utilities";
 import { H1Styles, PBaseStyles, PSecondary, H2Styles } from "../styles/Type";
 import { MediaQueries } from "../styles/Utilities";
-import { motion, useInView } from "framer-motion";
-import React, { useRef, useEffect } from "react";
+import {
+  motion,
+  useInView,
+  useTime,
+  useTransform,
+  useAnimationControls,
+} from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
 
 const ICMContainer = styled.section`
   position: relative;
@@ -159,6 +165,31 @@ export default function ImageContentModule({ ...props }) {
   //   console.log(props.color);
   let translation; // set translation based on image placement prop
 
+  const [isInViewHighlights, setIsInViewHighlights] = useState(false);
+
+  const highlightsRef = useRef(null);
+  const inView = useInView(highlightsRef, { once: true });
+  // const animationRef = useRef(null);
+
+  useEffect(() => {
+    if (inView && !isInViewHighlights) {
+      setIsInViewHighlights(true);
+    }
+  }, [inView, isInViewHighlights]);
+
+  const time = useTime({ pause: !isInViewHighlights });
+  const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
+
+  // console.log(hightlightsRef);
+
+  // useEffect(() => {
+  //   if (isInViewHighlights) {
+  //     animationRef.current.resume();
+  //   } else {
+  //     animationRef.current.pause();
+  //   }
+  // }, [isInViewHighlights]);
+
   {
     props.imgPlacement === "right"
       ? (translation = "translateX(200px)")
@@ -193,12 +224,18 @@ export default function ImageContentModule({ ...props }) {
               transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           />
-          <div className="highlight-container">
+          <div className="highlight-container" ref={highlightsRef}>
             {props.highlights.map((list, index) => {
               return (
-                <div className="highlight-items" key={`${index}`}>
+                <motion.div
+                  // ref={animationRef}
+                  // animate={controls}
+                  style={{ rotate }}
+                  className="highlight-items"
+                  key={`${index}`}
+                >
                   {list}
-                </div>
+                </motion.div>
               );
             })}
           </div>
