@@ -41,8 +41,6 @@ export default function ServicesV2() {
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        // offset: ['start center', 'end start'],
-        // offset: ['start end', 'end start'],
         offset: ['start end', 'end center'],
     });
 
@@ -64,25 +62,16 @@ export default function ServicesV2() {
         [180, 0]
     );
 
-    // const scrollPercentage4 = useTransform(
-    //     scrollYProgress,
-    //     [0.5, 0.6],
-    //     [180, 0]
-    // );
-
     const opacity1 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
     const opacity2 = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
 
     const opacity3 = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
 
-    //const opacity4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-
-    const opacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
-    const paraOpacity = useTransform(scrollYProgress, [0.9, 0.1], [0, 1]);
+    const paraOpacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
 
     useEffect(() => {
-        console.log(opacity.get() + '%');
+        console.log(paraOpacity.get() + '%');
     }, [scrollPercentage1]);
 
     useEffect(() => {
@@ -142,10 +131,6 @@ export default function ServicesV2() {
                                         opacity: pickOpacity(index),
                                         x: pickPercentage(index),
                                     }}
-                                    // transition={{
-                                    //     duration: index,
-                                    //     delay: index,
-                                    // }}
                                 >
                                     {`${item}\u00A0`}
                                 </motion.span>
@@ -155,7 +140,7 @@ export default function ServicesV2() {
                     <motion.p
                         initial={{ opacity: 0 }}
                         style={{
-                            opacity: opacity,
+                            opacity: paraOpacity,
                         }}
                     >
                         {data.subheading}
