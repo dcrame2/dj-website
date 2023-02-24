@@ -13,6 +13,16 @@ const InnerContainer = styled.div`
     ${Container}
     padding-top: 150px;
     padding-bottom: 150px;
+
+    @media ${Variables.tablet} {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    @media ${Variables.tablet} {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 `;
 
 const TextContainer = styled.div`
