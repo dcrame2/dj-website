@@ -50,17 +50,35 @@ export default function ServicesV2() {
         [180, 0]
     );
 
+    const scrollPercentageSpring1 = useSpring(scrollPercentage1, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+
     const scrollPercentage2 = useTransform(
         scrollYProgress,
         [0.3, 0.4],
         [180, 0]
     );
 
+    const scrollPercentageSpring2 = useSpring(scrollPercentage2, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+
     const scrollPercentage3 = useTransform(
         scrollYProgress,
         [0.4, 0.5],
         [180, 0]
     );
+
+    const scrollPercentageSpring3 = useSpring(scrollPercentage3, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const opacity1 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
@@ -90,13 +108,13 @@ export default function ServicesV2() {
     const pickPercentage = (index) => {
         switch (index) {
             case 0:
-                return scrollPercentage1;
+                return scrollPercentageSpring1;
                 break;
             case 1:
-                return scrollPercentage2;
+                return scrollPercentageSpring2;
                 break;
             case 2:
-                return scrollPercentage3;
+                return scrollPercentageSpring3;
                 break;
         }
     };
