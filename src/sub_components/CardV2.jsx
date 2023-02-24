@@ -24,7 +24,9 @@ const CardWrapper = styled.div`
     border-radius: 40px;
     max-width: 540px;
     transition: background-color ease 0.7s;
-
+    /* transition: background-color ease 0.45s; */
+    background-color: ${Variables.color2};
+    height: 400px;
     box-shadow: 1px 1px 10px 2px ${Variables.color1};
     -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color1};
     -moz-box-shadow: 1px 1px 10px 2px ${Variables.color1};
@@ -43,7 +45,7 @@ const CardWrapper = styled.div`
 
     &:hover {
       @media ${MediaQueries.desktop} {
-        background-color: ${Variables.color3};
+        background-color: ${Variables.black};
         transition: background-color ease 0.45s;
       }
     }
@@ -96,6 +98,9 @@ const CardWrapper = styled.div`
       max-height: 0;
       opacity: 0;
       transition: max-height 0.26s ease, opacity ease 0.25s;
+      max-height: 245px; // TODO: find solution to using auto height :)
+      transition: max-height 0.25s ease, opacity ease 0.26s;
+      opacity: 1;
       p {
         /* color: ${Variables.color1}; */
         font-family: ${Variables.joseph};
@@ -107,6 +112,8 @@ const CardWrapper = styled.div`
     &.active {
       transition: background-color ease 0.45s;
       background-color: ${Variables.color2};
+      height: 400px;
+      /* height: 100%; */
       .dropdown {
         max-height: 245px; // TODO: find solution to using auto height :)
         transition: max-height 0.25s ease, opacity ease 0.26s;
@@ -140,7 +147,7 @@ export default function CardV2({ index, active, data, onClick }) {
   return (
     <CardWrapper ref={ref}>
       <motion.button
-        className="active"
+        // className="active"
         onClick={() => onClick(index)}
         initial={initial}
         animate={controls}
