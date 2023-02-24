@@ -176,15 +176,15 @@ const Hero = () => {
         offset: ['start end', 'end start'],
     });
 
-    useEffect(() => {
-        const unsubscribe = scrollYProgress.onChange((value) => {
-            console.log(`scrollYProgress: ${value} pixels`);
-        });
+    // useEffect(() => {
+    //     const unsubscribe = scrollYProgress.onChange((value) => {
+    //         console.log(`scrollYProgress: ${value} pixels`);
+    //     });
 
-        return () => {
-            unsubscribe();
-        };
-    }, [scrollYProgress]);
+    //     return () => {
+    //         unsubscribe();
+    //     };
+    // }, [scrollYProgress]);
 
     const scrollPercentage1 = useTransform(
         scrollYProgress,
@@ -229,9 +229,9 @@ const Hero = () => {
         }, 300);
     }, []);
 
-    useEffect(() => {
-        console.log(opacity.get() + '%');
-    }, [scrollPercentage1]);
+    // useEffect(() => {
+    //     console.log(opacity.get() + '%');
+    // }, [scrollPercentage1]);
 
     return (
         <Section>
