@@ -10,7 +10,7 @@ import { useRef } from "react";
 const Container = styled.div`
   display: relative;
   /* border-bottom: 2px solid ${Variables.black}; */
-  border: 2px solid ${Variables.color3};
+  border: 2px solid ${Variables.color2};
   border-radius: 12px;
   height: auto;
   padding: 0 10px;
@@ -69,7 +69,7 @@ const Container = styled.div`
 
   &.active {
     button.toggle {
-      color: ${Variables.color3};
+      color: ${Variables.color2};
       transition: color ease 0.3s;
     }
     svg {
