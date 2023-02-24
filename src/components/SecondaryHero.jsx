@@ -26,7 +26,7 @@ const OuterContainer = styled.div`
     align-items: center;
     flex-direction: column;
     @media ${MediaQueries.mobile} {
-      height: 50vh;
+      height: 70vh;
     }
     h1 {
       ${H1Styles};
