@@ -8,24 +8,21 @@ import Card from "../sub_components/Card";
 import PortfolioModule from "../components/PortfolioModule";
 import ModuleBlender from "../sub_components/ModuleBlender";
 
+const NameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const PortfolioPage = () => {
   return (
     <>
-      {/* <Spacer
-        color={Variables.color3}
-        desktop={258}
-        tablet={120}
-        mobile={100}
-      /> */}
-
-      <ThirdHero>Digital Delight</ThirdHero>
+      <ThirdHero>
+        <NameContainer>
+          <span>Port</span>
+          <span>folio</span>
+        </NameContainer>
+      </ThirdHero>
       <ModuleBlender />
-      {/* <Spacer
-        color={Variables.color3}
-        desktop={258}
-        tablet={120}
-        mobile={100}
-      /> */}
       <PortfolioModule />
     </>
   );

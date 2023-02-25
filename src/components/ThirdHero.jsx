@@ -6,13 +6,13 @@ import { Variables } from "../styles/Variables";
 import { H1Styles, PSecondary } from "../styles/Type";
 
 const OuterContainer = styled.div`
-  background-color: ${Variables.black};
-  background-image: url("service_about/cms.jpg");
+  background-color: ${Variables.color2};
+  background-image: url("images/space.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: cover;
+  /* background-repeat: no-repeat; */
+  /* object-fit: cover;s */
   color: transparent;
-  background-position: center;
+  /* background-position: center; */
   background-clip: text;
   -webkit-background-clip: text;
   @media (max-width: 1200px) {
@@ -28,17 +28,22 @@ const OuterContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* background-color: ${Variables.color2}; */
     @media ${MediaQueries.mobile} {
       height: 70vh;
     }
     h1 {
+      font-weight: 700;
       color: transparent !important;
-
-      font-size: 34rem;
+      text-align: left;
+      font-size: 32rem;
 
       text-transform: uppercase;
       @media ${MediaQueries.tablet} {
-        ${H1Styles}
+        font-size: 20rem;
+      }
+      @media ${MediaQueries.mobile} {
+        font-size: 10rem;
       }
     }
     p {
