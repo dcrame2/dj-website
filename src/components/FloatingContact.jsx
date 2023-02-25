@@ -78,6 +78,7 @@ const FloatingButton = styled.div`
     background-color: unset;
     border: unset;
     cursor: pointer;
+    z-index: 1;
     @media ${MediaQueries.mobile} {
       width: 45px;
       height: 45px;
