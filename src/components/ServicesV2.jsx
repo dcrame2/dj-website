@@ -13,6 +13,16 @@ const InnerContainer = styled.div`
     ${Container}
     padding-top: 150px;
     padding-bottom: 150px;
+
+    @media ${Variables.tablet} {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    @media ${Variables.tablet} {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 `;
 
 const TextContainer = styled.div`
@@ -41,8 +51,6 @@ export default function ServicesV2() {
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        // offset: ['start center', 'end start'],
-        // offset: ['start end', 'end start'],
         offset: ['start end', 'end center'],
     });
 
@@ -52,11 +60,23 @@ export default function ServicesV2() {
         [180, 0]
     );
 
+    const scrollPercentageSpring1 = useSpring(scrollPercentage1, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
+
     const scrollPercentage2 = useTransform(
         scrollYProgress,
         [0.3, 0.4],
         [180, 0]
     );
+
+    const scrollPercentageSpring2 = useSpring(scrollPercentage2, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const scrollPercentage3 = useTransform(
         scrollYProgress,
@@ -64,11 +84,11 @@ export default function ServicesV2() {
         [180, 0]
     );
 
-    // const scrollPercentage4 = useTransform(
-    //     scrollYProgress,
-    //     [0.5, 0.6],
-    //     [180, 0]
-    // );
+    const scrollPercentageSpring3 = useSpring(scrollPercentage3, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const opacity1 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
@@ -76,13 +96,10 @@ export default function ServicesV2() {
 
     const opacity3 = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
 
-    //const opacity4 = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-
-    const opacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
-    const paraOpacity = useTransform(scrollYProgress, [0.9, 0.1], [0, 1]);
+    const paraOpacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
 
     useEffect(() => {
-        console.log(opacity.get() + '%');
+        console.log(paraOpacity.get() + '%');
     }, [scrollPercentage1]);
 
     useEffect(() => {
@@ -101,13 +118,13 @@ export default function ServicesV2() {
     const pickPercentage = (index) => {
         switch (index) {
             case 0:
-                return scrollPercentage1;
+                return scrollPercentageSpring1;
                 break;
             case 1:
-                return scrollPercentage2;
+                return scrollPercentageSpring2;
                 break;
             case 2:
-                return scrollPercentage3;
+                return scrollPercentageSpring3;
                 break;
         }
     };
@@ -142,10 +159,6 @@ export default function ServicesV2() {
                                         opacity: pickOpacity(index),
                                         x: pickPercentage(index),
                                     }}
-                                    // transition={{
-                                    //     duration: index,
-                                    //     delay: index,
-                                    // }}
                                 >
                                     {`${item}\u00A0`}
                                 </motion.span>
@@ -155,7 +168,7 @@ export default function ServicesV2() {
                     <motion.p
                         initial={{ opacity: 0 }}
                         style={{
-                            opacity: opacity,
+                            opacity: paraOpacity,
                         }}
                     >
                         {data.subheading}
