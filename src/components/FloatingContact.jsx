@@ -78,6 +78,10 @@ const FloatingButton = styled.div`
     background-color: unset;
     border: unset;
     cursor: pointer;
+    @media ${MediaQueries.mobile} {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   form {
