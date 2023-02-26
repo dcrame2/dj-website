@@ -18,7 +18,9 @@ const SideBarContainer = styled.div`
     left: 0;
     margin-left: -215px;
     transition: margin-left 0.5s ease-in-out;
-
+    @media ${MediaQueries.mobile} {
+      margin-left: -185px;
+    }
     .tab-container {
       max-width: 75px;
       button {
@@ -29,8 +31,6 @@ const SideBarContainer = styled.div`
         cursor: pointer;
         padding: 12px 8px;
         border-radius: 8px 8px;
-        /* height: 75px; */
-
         border-right: 3px solid ${Variables.white};
         border-left: 3px solid ${Variables.white};
         border-bottom: 3px solid ${Variables.white};
@@ -39,9 +39,13 @@ const SideBarContainer = styled.div`
     }
     ul {
       transition: margin-left 0.5s ease-in-out;
+
       &.show-side {
         margin-left: 215px;
         transition: margin-left 0.5s ease-in-out;
+        @media ${MediaQueries.mobile} {
+          margin-left: 185px;
+        }
       }
       li {
         width: 100%;
@@ -59,6 +63,9 @@ const SideBarContainer = styled.div`
         border-bottom: 1px solid ${Variables.color2};
         border-top: 1px solid ${Variables.color2};
         border-right: 1px solid ${Variables.color2};
+        @media ${MediaQueries.mobile} {
+          max-width: 185px;
+        }
         &:hover {
           background-color: ${Variables.color1};
           color: ${Variables.color4};
@@ -77,8 +84,12 @@ const SideBarContainer = styled.div`
             @media ${MediaQueries.tablet} {
               max-width: 40px;
             }
+
             img {
               width: 30px;
+              @media ${MediaQueries.mobile} {
+                display: none;
+              }
             }
           }
           p {
