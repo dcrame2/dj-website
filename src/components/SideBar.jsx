@@ -97,6 +97,7 @@ const SideBarContainer = styled.div`
             }
           }
           p {
+            white-space: nowrap;
             text-align: center;
             ${PSecondary}
             font-size: 1.25rem;
