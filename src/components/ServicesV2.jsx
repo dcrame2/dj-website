@@ -46,6 +46,7 @@ const Img = styled.img`
     max-width: 680px;
     width: 100%;
     height: auto;
+    border-radius: 24px;
 `;
 
 const data = {
@@ -113,7 +114,7 @@ export default function ServicesV2() {
 
     const opacity3 = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
 
-    const paraOpacity = useTransform(scrollYProgress, [0.55, 0.7], [0, 1]);
+    const paraOpacity = useTransform(scrollYProgress, [0.55, 0.67], [0, 1]);
 
     // split heading into spans
     const sentenceArray = data.heading.split(' ');
