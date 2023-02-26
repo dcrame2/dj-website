@@ -37,7 +37,7 @@ const ICMContainer = styled.section`
     ${Container}
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     /* gap: 30px; */
     max-width: 1050px;
     padding-top: 50px;
