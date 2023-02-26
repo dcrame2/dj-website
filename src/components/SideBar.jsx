@@ -11,7 +11,7 @@ const SideBarContainer = styled.div`
 
   &.active {
     flex-direction: row-reverse;
-    z-index: 1;
+    z-index: 2;
     gap: 0;
     position: fixed;
     top: 200px;
@@ -118,8 +118,8 @@ const SideBarContainer = styled.div`
 const SideBar = ({
   active,
   data,
-  targetId,
-  setTargetId,
+  // targetId,
+  // setTargetId,
   ref,
   isInView,
   controls,
@@ -131,6 +131,19 @@ const SideBar = ({
       controls.start({ opacity: 1, translateY: "0px" });
     }
   }, [isInView]);
+  const [targetId, setTargetId] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    const targetElement = document.getElementById(targetId);
+    console.log(targetElement);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [location, targetId]);
   return (
     <SideBarContainer className="active">
       <div className="tab-container">

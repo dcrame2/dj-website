@@ -102,6 +102,9 @@ const FullScreenContainer = styled.div`
         width: 100%;
         padding: 15px 25px;
         max-width: 200px;
+        /* box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+        -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
+        -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color}; */
 
         &:hover {
           background-color: ${Variables.color1};
