@@ -13,6 +13,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables.jsx';
 import styled from 'styled-components';
 import ServicesV2 from '../components/ServicesV2';
+import BarGraphModule from '../components/BarGraphModule';
 
 const ParaContainer = styled.div`
     background-image: url(${Variables.background1});
@@ -39,14 +40,8 @@ function HomePage({ scrollPosition }) {
             {/* <Services /> */}
             <ServicesV2 data={'data'} />
             <ModuleBlender />
-            <ParaContainer>
-                <Spacer
-                    color={Variables.transparent}
-                    desktop={258}
-                    tablet={120}
-                    mobile={100}
-                />
-            </ParaContainer>
+            <ParaContainer></ParaContainer>
+            {/* <BarGraphModule /> */}
             <ModuleBlender />
             <TestimonialsV2 id='testimonials' />
             <ModuleBlender />

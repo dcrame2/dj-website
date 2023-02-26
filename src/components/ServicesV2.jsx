@@ -22,6 +22,13 @@ const InnerContainer = styled.div`
         padding-top: 120px;
         padding-bottom: 120px;
         flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    @media ${MediaQueries.mobile} {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        gap: 34px;
     }
 `;
 
@@ -47,6 +54,10 @@ const Img = styled.img`
     width: 100%;
     height: auto;
     border-radius: 24px;
+
+    @media ${MediaQueries.tablet} {
+        max-width: 520px;
+    }
 `;
 
 const data = {
@@ -106,7 +117,7 @@ export default function ServicesV2() {
         restDelta: 0.001,
     });
 
-    const imgOpacity = useTransform(scrollYProgress, [0.35, 0.4], [0, 1]);
+    const imgOpacity = useTransform(scrollYProgress, [0.2, 0.65], [0, 1]);
 
     const opacity1 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
