@@ -181,7 +181,6 @@ export default function ServicesV2() {
                     initial={{
                         opacity: 0,
                         rotateX: 90,
-                        x: 400,
                     }}
                     style={{
                         transformPerspective: '800px',
