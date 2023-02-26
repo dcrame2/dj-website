@@ -37,8 +37,8 @@ const SideBarContainer = styled.div`
         border-bottom: 3px solid ${Variables.white};
         background-color: ${Variables.color1};
         @media ${MediaQueries.mobile} {
-          padding: 4px 6px;
-          margin-left: -28px;
+          padding: 4px 8px;
+          margin-left: -30px;
         }
       }
     }
