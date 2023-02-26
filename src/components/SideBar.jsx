@@ -17,7 +17,7 @@ const SideBarContainer = styled.div`
     top: 200px;
     left: 0;
     margin-left: -215px;
-    transition: margin-left 0.5s ease-in-out;
+    transition: margin-left 0.4s ease-in-out;
     @media ${MediaQueries.mobile} {
       margin-left: -185px;
     }
@@ -43,10 +43,10 @@ const SideBarContainer = styled.div`
       }
     }
     ul {
-      transition: margin-left 0.5s ease-in-out;
+      transition: margin-left 0.4s ease-in-out;
       &.show-side {
         margin-left: 215px;
-        transition: margin-left 0.5s ease-in-out;
+        transition: margin-left 0.4s ease-in-out;
         @media ${MediaQueries.mobile} {
           margin-left: 185px;
         }
