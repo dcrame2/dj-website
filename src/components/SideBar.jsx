@@ -36,11 +36,14 @@ const SideBarContainer = styled.div`
         border-left: 3px solid ${Variables.white};
         border-bottom: 3px solid ${Variables.white};
         background-color: ${Variables.color1};
+        @media ${MediaQueries.mobile} {
+          padding: 4px 6px;
+          margin-left: -28px;
+        }
       }
     }
     ul {
       transition: margin-left 0.5s ease-in-out;
-
       &.show-side {
         margin-left: 215px;
         transition: margin-left 0.5s ease-in-out;
