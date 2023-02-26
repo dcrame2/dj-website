@@ -6,7 +6,7 @@ import { Container, MediaQueries } from "../styles/Utilities";
 import ImageContentModule from "./ImageContentModule";
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-
+import SideBar from "./SideBar";
 const glow = keyframes`
   
         /* from {

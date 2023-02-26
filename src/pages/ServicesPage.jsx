@@ -5,6 +5,7 @@ import Spacer from "../sub_components/Spacer";
 import { Variables } from "../styles/Variables";
 import FullScreenModule from "../components/FullScreenModule";
 import ServiceHero from "../components/ServiceHero";
+import ServiceHeroV2 from "../components/ServiceHeroV2";
 import { Container, MediaQueries } from "../styles/Utilities";
 
 const ServicesContainer = styled.div`
@@ -176,7 +177,7 @@ const ServicesPage = ({ scrollPosition }) => {
   return (
     <ServicesContainer>
       {/* <Spacer desktop={258} tablet={120} mobile={100} /> */}
-      <ServiceHero
+      <ServiceHeroV2
         reRender={reRender}
         active={active}
         data={serviceHeroData}
