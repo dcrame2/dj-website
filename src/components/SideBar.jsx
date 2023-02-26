@@ -11,7 +11,7 @@ const SideBarContainer = styled.div`
 
   &.active {
     flex-direction: row-reverse;
-    z-index: 1;
+    z-index: 2;
     gap: 0;
     position: fixed;
     top: 200px;
