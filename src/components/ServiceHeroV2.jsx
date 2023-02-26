@@ -37,8 +37,10 @@ const FullScreenContainer = styled.div`
     h1 {
       text-align: center;
       display: block;
-      color: ${Variables.color2};
-      &.cursive {
+      ${H1Styles}
+      text-transform: uppercase;
+      color: ${Variables.color4};
+      /* &.cursive {
         font-family: ${Variables.Pacifico};
         -webkit-animation: ${glow} 1s ease-in-out alternate;
         -moz-animation: ${glow} 1s ease-in-out alternate;
@@ -60,7 +62,7 @@ const FullScreenContainer = styled.div`
         @media (max-width: 539px) {
           line-height: 55px;
         }
-      }
+      } */
     }
     p {
       ${PSecondary}
