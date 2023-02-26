@@ -86,6 +86,7 @@ const FullScreenContainer = styled.div`
       gap: 6px;
       @media ${MediaQueries.mobile} {
         flex-direction: column;
+        gap: 3px;
       }
       li {
         text-transform: uppercase;
