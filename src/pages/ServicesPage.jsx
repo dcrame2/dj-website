@@ -7,7 +7,7 @@ import FullScreenModule from "../components/FullScreenModule";
 import ServiceHero from "../components/ServiceHero";
 import ServiceHeroV2 from "../components/ServiceHeroV2";
 import { Container, MediaQueries } from "../styles/Utilities";
-
+import ModuleBlender from "../sub_components/ModuleBlender";
 const ServicesContainer = styled.div`
   /* scroll-snap-type: y mandatory; */
   /* overflow-y: scroll; */
@@ -183,15 +183,20 @@ const ServicesPage = ({ scrollPosition }) => {
         data={serviceHeroData}
         scrollPosition={scrollPosition}
       />
+      <ModuleBlender />
       {/* <Spacer desktop={258} tablet={120} mobile={100} /> */}
       {data.map((information, i) => {
         return (
-          <FullScreenModule
-            id={`service-${i + 1}`}
-            data={information}
-            bgColor={information.bgColor}
-            // color={information}
-          />
+          <>
+            {" "}
+            <FullScreenModule
+              id={`service-${i + 1}`}
+              data={information}
+              bgColor={information.bgColor}
+              // color={information}
+            />
+            <ModuleBlender />
+          </>
         );
       })}
     </ServicesContainer>
