@@ -98,20 +98,6 @@ export default function ServicesV2() {
 
     const paraOpacity = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
 
-    useEffect(() => {
-        console.log(paraOpacity.get() + '%');
-    }, [scrollPercentage1]);
-
-    useEffect(() => {
-        const unsubscribe = scrollYProgress.onChange((value) => {
-            console.log(`scrollYProgress: ${value} pixels`);
-        });
-
-        return () => {
-            unsubscribe();
-        };
-    }, [scrollYProgress]);
-
     // split heading into spans
     const sentenceArray = data.heading.split(' ');
 
