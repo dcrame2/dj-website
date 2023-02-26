@@ -8,8 +8,6 @@ import { MediaQueries } from '../styles/Utilities';
 
 const Section = styled.section`
     background-color: ${Variables.color3};
-    position: relative;
-    min-height: 300vh;
 `;
 
 const InnerContainer = styled.div`
@@ -19,19 +17,18 @@ const InnerContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 75px;
-    height: 100vh;
-    position: sticky;
-    top: 0;
 
     @media ${MediaQueries.tablet} {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 120px;
+        padding-bottom: 120px;
         flex-direction: column-reverse;
-        gap: 28px;
+        gap: 40px;
     }
 
     @media ${MediaQueries.mobile} {
-        grid-auto-flow: 24px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        gap: 34px;
     }
 `;
 
@@ -59,7 +56,7 @@ const Img = styled.img`
     border-radius: 24px;
 
     @media ${MediaQueries.tablet} {
-        max-width: 580px;
+        max-width: 520px;
     }
 `;
 
