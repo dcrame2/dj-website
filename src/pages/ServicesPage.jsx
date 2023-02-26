@@ -16,7 +16,7 @@ const ServicesContainer = styled.div`
 `;
 
 const serviceHeroData = {
-  heading: "Services We Offer",
+  heading: "Services",
   subheading: "Expert Web Development Services to Enhance Your Online Presence",
   serviceLinks: [
     {

@@ -25,7 +25,7 @@ const FullScreenContainer = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
   ${Container}
   .inner-container {
     display: flex;
@@ -38,36 +38,15 @@ const FullScreenContainer = styled.div`
       text-align: center;
       display: block;
       ${H1Styles}
+      font-size: 15rem;
       text-transform: uppercase;
       color: ${Variables.color4};
-      /* &.cursive {
-        font-family: ${Variables.Pacifico};
-        -webkit-animation: ${glow} 1s ease-in-out alternate;
-        -moz-animation: ${glow} 1s ease-in-out alternate;
-        animation: ${glow} 1s ease-in-out alternate;
-        animation-fill-mode: forwards;
-        font-size: 8rem;
-        line-height: 93px;
-        display: inline-block;
-
-        @media (max-width: 1104px) {
-          font-size: 4rem;
-          line-height: 73px;
-        }
-
-        @media (max-width: 788px) {
-          font-size: 3rem;
-        }
-
-        @media (max-width: 539px) {
-          line-height: 55px;
-        }
-      } */
     }
     p {
       ${PSecondary}
     }
     hr {
+      margin-top: 50px;
       color: ${Variables.color1};
       height: 6px;
       width: 100px;
@@ -77,39 +56,162 @@ const FullScreenContainer = styled.div`
   }
   .inner-link-container {
     width: 100%;
+    max-height: 250px;
+    height: 100%;
+    @media ${MediaQueries.tablet} {
+      max-height: 150px;
+      /* width: unset; */
+    }
+    @media (max-width: 875px) {
+      max-height: unset;
+      height: unset;
+    }
     @media ${MediaQueries.mobile} {
       width: unset;
+      /* max-height: unset; */
     }
     ul {
+      height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px;
+      /* flex-wrap: wrap; */
+      gap: 5px;
+      @media (max-width: 875px) {
+        flex-direction: column;
+      }
       @media ${MediaQueries.mobile} {
         flex-direction: column;
         gap: 3px;
       }
       li {
+        box-shadow: 0px 5px 15px -5px ${Variables.color4};
         text-transform: uppercase;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid ${Variables.white};
+        border: 2px solid ${Variables.white};
         text-align: center;
-        border-radius: 6px;
+        /* border-radius: 6px; */
         background-color: ${Variables.color2};
         width: 100%;
-        padding: 15px 25px;
+        /* padding: 15px 25px; */
         max-width: 200px;
-        /* box-shadow: 1px 1px 10px 2px ${(props) => props.color};
-        -webkit-box-shadow: 1px 1px 10px 2px ${(props) => props.color};
-        -moz-box-shadow: 1px 1px 10px 2px ${(props) => props.color}; */
+        transform: perspective(150px) rotateY(-10deg);
+        transform-style: preserve-3d;
+        transition: all 0.3s ease-in;
 
+        height: 100%;
+        @media (max-width: 875px) {
+          transform: unset;
+          max-width: unset;
+        }
+
+        &:nth-child(1) {
+          z-index: 9;
+          &:hover {
+            z-index: 10;
+          }
+        }
+        &:nth-child(2) {
+          z-index: 8;
+          &:hover {
+            z-index: 10;
+          }
+        }
+        &:nth-child(3) {
+          z-index: 7;
+          &:hover {
+            z-index: 10;
+          }
+        }
+        &:nth-child(4) {
+          z-index: 6;
+          &:hover {
+            z-index: 10;
+          }
+        }
+        &:nth-child(5) {
+          z-index: 5;
+          &:hover {
+            z-index: 10;
+          }
+        }
+        &:nth-child(6) {
+          z-index: 4;
+          &:hover {
+            z-index: 10;
+          }
+        }
+
+        &:hover,
+        :focus {
+          &:after {
+            height: 100%;
+            transition: height ease-out 0.1s;
+          }
+        }
+
+        &:focus {
+          &:after {
+            transition: height ease 1s;
+          }
+        }
+
+        /* position: relative; */
         &:hover {
+          border: 3px solid ${Variables.white};
+          z-index: 2;
           background-color: ${Variables.color1};
           color: ${Variables.color4};
-          transition: background-color 0.3s ease-in;
+          transition: all 0.8s ease;
+          transform: scale(1.3);
+          &:before {
+            display: none;
+          }
+        }
+        &::before {
+          width: 20%;
+          /* transform-origin: left center; */
+          transform: perspective(150px) rotateY(45deg) translateX(100%);
+          position: absolute;
+          content: "";
+          right: -15px;
+          height: 120%;
+          border-top: 5px solid ${Variables.color4};
+          border-right: 5px solid ${Variables.color4};
+          border-bottom: 5px solid ${Variables.color4};
+          border-left: 5px solid ${Variables.color4};
+          transform-style: preserve-3d;
+          transition: all 0.8s ease-in;
+          background-color: ${Variables.color2};
+          @media ${MediaQueries.tablet} {
+            right: -10px;
+            height: 118%;
+          }
+          @media (max-width: 875px) {
+            display: none;
+            width: 100%;
+            height: 100%;
+            /* transform: rotateX(80deg) translateY(100%) perspective(150px); */
+            /* translateX(45deg); */
+            right: 0;
+            top: -60px;
+          }
+        }
+        &::after {
+          content: "";
+          background-color: ${Variables.color1};
+          position: absolute;
+          width: 100%;
+          height: 0;
+          left: 0;
+          bottom: 0;
+          transition: all 0.8s ease-in;
+          z-index: 0;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
         @media ${MediaQueries.mobile} {
           height: unset;
@@ -119,12 +221,21 @@ const FullScreenContainer = styled.div`
           border-top: 1px solid ${Variables.color2};
           border-right: 1px solid ${Variables.color2};
         }
+
         a {
+          z-index: 10;
           display: flex;
           flex-direction: column;
           align-items: center;
-
+          width: 90%;
           gap: 15px;
+          @media ${MediaQueries.tablet} {
+            width: 75%;
+          }
+          @media (max-width: 875px) {
+            flex-direction: row;
+          }
+
           @media ${MediaQueries.mobile} {
             flex-direction: row;
           }
@@ -133,9 +244,7 @@ const FullScreenContainer = styled.div`
             @media ${MediaQueries.tablet} {
               max-width: 40px;
             }
-            @media ${MediaQueries.mobile} {
-              display: none;
-            }
+
             img {
               width: 100%;
             }
@@ -151,40 +260,40 @@ const FullScreenContainer = styled.div`
         }
       }
     }
-    .side-wrapper {
-      transition: all ease 0.5s;
-      position: fixed;
-      left: 0;
-      top: 225px;
-      z-index: 1;
-      display: flex;
-      flex-direction: row-reverse;
+  }
+  .side-wrapper {
+    transition: all ease 0.5s;
+    position: fixed;
+    left: 0;
+    top: 225px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row-reverse;
 
-      @media ${MediaQueries.tablet} {
-        top: 125px;
-      }
-
-      button {
-        transition: all ease 0.5s;
-        padding: 2px;
-        height: 75px;
-        background-color: ${Variables.color1};
-        color: ${Variables.white};
-        width: 20px;
-        border-right: 1px solid ${Variables.color2};
-        border-top: 1px solid ${Variables.color2};
-        border-bottom: 1px solid ${Variables.color2};
-      }
+    @media ${MediaQueries.tablet} {
+      top: 125px;
     }
-    .tab-container {
-      &.show {
-        transition: all ease 0.5s;
-        display: flex;
-      }
-      &.hide {
-        transition: all ease 0.5s;
-        display: none;
-      }
+
+    button {
+      transition: all ease 0.5s;
+      padding: 2px;
+      height: 75px;
+      background-color: ${Variables.color1};
+      color: ${Variables.white};
+      width: 20px;
+      border-right: 1px solid ${Variables.color2};
+      border-top: 1px solid ${Variables.color2};
+      border-bottom: 1px solid ${Variables.color2};
+    }
+  }
+  .tab-container {
+    &.show {
+      transition: all ease 0.5s;
+      display: flex;
+    }
+    &.hide {
+      transition: all ease 0.5s;
+      display: none;
     }
   }
 `;
@@ -232,7 +341,7 @@ const ServiceHeroV2 = ({ data, active }) => {
       <FullScreenContainer>
         <div className="inner-container">
           <h1 className="cursive">{data.heading}</h1>
-          <p>{data.subheading}</p>
+          {/* <p>{data.subheading}</p> */}
           <hr />
         </div>
         <div className="inner-link-container">
@@ -246,15 +355,15 @@ const ServiceHeroV2 = ({ data, active }) => {
                 <motion.li
                   onClick={closeSideTab}
                   id={`#${links.serviceHref}`}
-                  initial={{
-                    opacity: 0,
-                    translateY: "200px",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    translateY: "0px",
-                  }}
-                  transition={{ delay: `.${index}00` }}
+                  // initial={{
+                  //   opacity: 0,
+                  //   translateY: "200px",
+                  // }}
+                  // animate={{
+                  //   opacity: 1,
+                  //   translateY: "0px",
+                  // }}
+                  // transition={{ delay: `.${index}00` }}
                   key={index}
                 >
                   <Link to={`#${targetId}`}>

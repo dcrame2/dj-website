@@ -70,6 +70,7 @@ const SideBarContainer = styled.div`
         border-bottom: 1px solid ${Variables.color2};
         border-top: 1px solid ${Variables.color2};
         border-right: 1px solid ${Variables.color2};
+
         @media ${MediaQueries.mobile} {
           max-width: 185px;
         }
