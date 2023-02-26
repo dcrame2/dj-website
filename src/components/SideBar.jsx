@@ -24,6 +24,7 @@ const SideBarContainer = styled.div`
     .tab-container {
       max-width: 75px;
       button {
+        color: ${Variables.white};
         text-transform: uppercase;
         margin-top: 23px;
         margin-left: -23px;
