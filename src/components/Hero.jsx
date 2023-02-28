@@ -191,28 +191,44 @@ const Hero = () => {
         [0.5, 0.6],
         [0, -240]
     );
-    const springPercentage1 = useSpring(scrollPercentage1);
+    const springPercentage1 = useSpring(scrollPercentage1, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const scrollPercentage2 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
         [0, -300]
     );
-    const springPercentage2 = useSpring(scrollPercentage2);
+    const springPercentage2 = useSpring(scrollPercentage2, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const scrollPercentage3 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
         [0, -280]
     );
-    const springPercentage3 = useSpring(scrollPercentage3);
+    const springPercentage3 = useSpring(scrollPercentage3, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const scrollPercentage4 = useTransform(
         scrollYProgress,
         [0.5, 0.6],
         [0, -180]
     );
-    const springPercentage4 = useSpring(scrollPercentage4);
+    const springPercentage4 = useSpring(scrollPercentage4, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+    });
 
     const opacity = useTransform(scrollYProgress, [0.5, 0.6], [1, 0]);
     const styleControls = useAnimationControls();
@@ -245,7 +261,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.7, duration: 0.7 }}
                             style={{
-                                y: scrollPercentage2,
+                                y: springPercentage2,
                                 opacity: opacity,
                                 x: translateX1,
                             }}
@@ -259,7 +275,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 0.8, duration: 0.7 }}
                             style={{
-                                y: scrollPercentage1,
+                                y: springPercentage1,
                                 opacity: opacity,
                                 x: translateX2,
                             }}
@@ -272,7 +288,7 @@ const Hero = () => {
                             animate={{ x: 0, opacity: 1, scale: 1 }}
                             transition={{ delay: 1.2, duration: 0.7 }}
                             style={{
-                                y: scrollPercentage3,
+                                y: springPercentage3,
                                 opacity: opacity,
                                 x: translateX3,
                             }}
@@ -285,7 +301,7 @@ const Hero = () => {
                         animate={{ x: 0, scale: 1, opacity: 1 }}
                         transition={{ delay: 1.5, duration: 0.7 }}
                         style={{
-                            y: scrollPercentage4,
+                            y: springPercentage4,
                             opacity: opacity,
                             x: translateX4,
                         }}
