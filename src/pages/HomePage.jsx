@@ -13,7 +13,7 @@ import { MediaQueries } from '../styles/Utilities';
 import { Variables } from '../styles/Variables.jsx';
 import styled from 'styled-components';
 import ServicesV2 from '../components/ServicesV2';
-import BarGraphModule from '../components/BarGraphModule';
+import ScrollLockServices from '../components/ScrollLockServices';
 
 const ParaContainer = styled.div`
     background-image: url(${Variables.background1});
@@ -41,7 +41,7 @@ function HomePage({ scrollPosition }) {
             <ServicesV2 data={'data'} />
             <ModuleBlender />
             <ParaContainer></ParaContainer>
-            {/* <BarGraphModule /> */}
+            <ScrollLockServices />
             <ModuleBlender />
             <TestimonialsV2 id='testimonials' />
             <ModuleBlender />
