@@ -367,7 +367,7 @@ const ServiceHeroV2 = ({ data, active }) => {
     if (isInView) {
       controls.start({
         opacity: 1,
-        translateY: "0px",
+        translateX: "0px",
       });
     }
   }, [isInView]);
@@ -405,11 +405,11 @@ const ServiceHeroV2 = ({ data, active }) => {
                   className="li-container"
                   initial={{
                     opacity: 0,
-                    translateY: "200px",
+                    translateX: "200px",
                   }}
                   animate={{
                     opacity: 1,
-                    translateY: "0px",
+                    translateX: "0px",
                   }}
                   transition={{ delay: `.${index}33` }}
                 >
