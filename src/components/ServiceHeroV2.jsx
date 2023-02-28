@@ -60,29 +60,27 @@ const FullScreenContainer = styled.div`
     height: 100%;
     @media ${MediaQueries.tablet} {
       max-height: 150px;
-      /* width: unset; */
     }
     @media (max-width: 875px) {
       max-height: unset;
       height: unset;
     }
     @media ${MediaQueries.mobile} {
-      width: unset;
-      /* max-height: unset; */
+      /* width: unset; */
     }
     ul {
       height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
-      /* flex-wrap: wrap; */
       gap: 5px;
       @media (max-width: 875px) {
         flex-direction: column;
+        gap: 15px;
       }
       @media ${MediaQueries.mobile} {
         flex-direction: column;
-        gap: 3px;
+        gap: 12px;
       }
       li {
         box-shadow: 0px 5px 15px -5px ${Variables.color4};
@@ -92,11 +90,10 @@ const FullScreenContainer = styled.div`
         align-items: center;
         border: 2px solid ${Variables.white};
         text-align: center;
-        /* border-radius: 6px; */
         background-color: ${Variables.color2};
         width: 100%;
-        /* padding: 15px 25px; */
         max-width: 200px;
+        height: auto;
         transform: perspective(150px) rotateY(-10deg);
         transform-style: preserve-3d;
         transition: all 0.3s ease-in;
@@ -105,6 +102,13 @@ const FullScreenContainer = styled.div`
         @media (max-width: 875px) {
           transform: unset;
           max-width: unset;
+        }
+        @media ${MediaQueries.tablet} {
+          min-height: 50px;
+          height: 100%;
+          width: 100%;
+          box-shadow: -10px 0px 20px -5px ${Variables.color4};
+          /* max-width: 400px; */
         }
 
         &:nth-child(1) {
@@ -158,7 +162,6 @@ const FullScreenContainer = styled.div`
           }
         }
 
-        /* position: relative; */
         &:hover {
           border: 3px solid ${Variables.white};
           z-index: 2;
@@ -168,6 +171,9 @@ const FullScreenContainer = styled.div`
           transform: scale(1.3);
           &:before {
             display: none;
+          }
+          @media ${MediaQueries.mobile} {
+            transform: scale(1.08);
           }
         }
         &::before {
@@ -190,13 +196,17 @@ const FullScreenContainer = styled.div`
             height: 118%;
           }
           @media (max-width: 875px) {
-            display: none;
-            width: 100%;
-            height: 100%;
-            /* transform: rotateX(80deg) translateY(100%) perspective(150px); */
+            /* display: none; */
+            width: 100.8%;
+            height: 168%;
+            transform: rotateX(80deg) translateY(100%) perspective(150px)
+              skewX(8deg);
             /* translateX(45deg); */
-            right: 0;
+            right: 4px;
             top: -60px;
+          }
+          @media ${MediaQueries.tablet} {
+            /* box-shadow: 3px 0px 12px 2px ${Variables.color4}; */
           }
         }
         &::after {
@@ -212,14 +222,6 @@ const FullScreenContainer = styled.div`
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
             rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
             rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-        }
-        @media ${MediaQueries.mobile} {
-          height: unset;
-          background-color: ${Variables.white};
-          color: ${Variables.color2};
-          border-bottom: 1px solid ${Variables.color2};
-          border-top: 1px solid ${Variables.color2};
-          border-right: 1px solid ${Variables.color2};
         }
 
         a {
@@ -255,6 +257,11 @@ const FullScreenContainer = styled.div`
             @media ${MediaQueries.tablet} {
               font-size: 1.25rem;
               text-align: left;
+            }
+            @media ${MediaQueries.mobile} {
+              font-size: 1.5rem;
+              text-align: left;
+              letter-spacing: 1.1px;
             }
           }
         }
@@ -319,7 +326,11 @@ const ServiceHeroV2 = ({ data, active }) => {
 
   useEffect(() => {
     if (isInView) {
-      controls.start({ opacity: 1, translateY: "0px" });
+      controls.start({
+        opacity: 1,
+        translateY: "0px",
+        transform: "perspective(150px) rotateY(-10deg)",
+      });
     }
   }, [isInView]);
   const [targetId, setTargetId] = useState("");
@@ -358,12 +369,14 @@ const ServiceHeroV2 = ({ data, active }) => {
                   // initial={{
                   //   opacity: 0,
                   //   translateY: "200px",
+                  //   transform: "perspective(150px) rotateY(-10deg)",
                   // }}
                   // animate={{
+                  //   transform: "perspective(150px) rotateY(-10deg)",
                   //   opacity: 1,
                   //   translateY: "0px",
                   // }}
-                  // transition={{ delay: `.${index}00` }}
+                  transition={{ delay: `.${index}00` }}
                   key={index}
                 >
                   <Link to={`#${targetId}`}>
