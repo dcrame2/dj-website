@@ -107,7 +107,7 @@ const FullScreenContainer = styled.div`
           min-height: 50px;
           height: 100%;
           width: 100%;
-          box-shadow: 10px 0px 15px -5px ${Variables.color4};
+          box-shadow: -10px 0px 20px -5px ${Variables.color4};
           /* max-width: 400px; */
         }
 
@@ -200,9 +200,9 @@ const FullScreenContainer = styled.div`
             width: 100.8%;
             height: 168%;
             transform: rotateX(80deg) translateY(100%) perspective(150px)
-              skewX(-10deg);
+              skewX(8deg);
             /* translateX(45deg); */
-            right: -8px;
+            right: 4px;
             top: -60px;
           }
           @media ${MediaQueries.tablet} {
@@ -257,6 +257,11 @@ const FullScreenContainer = styled.div`
             @media ${MediaQueries.tablet} {
               font-size: 1.25rem;
               text-align: left;
+            }
+            @media ${MediaQueries.mobile} {
+              font-size: 1.5rem;
+              text-align: left;
+              letter-spacing: 1.1px;
             }
           }
         }
