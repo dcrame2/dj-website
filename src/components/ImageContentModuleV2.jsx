@@ -233,6 +233,7 @@ export default function ImageContentModule({ ...props }) {
           id={props.id}
           imgPlacement={props.imgPlacement}
           style={{ scaleX }}
+          ref={ref}
         >
           <motion.h2
             style={{
@@ -244,7 +245,7 @@ export default function ImageContentModule({ ...props }) {
             {props.heading}
           </motion.h2>
           <hr />
-          <div className="ICMInnerContainer" ref={ref}>
+          <div className="ICMInnerContainer">
             <div className="ICMImgContainer">
               <img
                 src={props.imgSrc}
