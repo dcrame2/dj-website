@@ -8,9 +8,13 @@ import {
   useInView,
   useTime,
   useTransform,
+  useScroll,
+  useSpring,
   useAnimationControls,
 } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
+
+const Wrapper = styled.div``;
 
 const ICMContainer = styled.section`
   position: relative;
@@ -38,7 +42,6 @@ const ICMContainer = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 30px; */
     max-width: 1050px;
     padding-top: 50px;
     @media ${MediaQueries.tablet} {
@@ -126,7 +129,6 @@ const ICMContainer = styled.section`
       p {
         ${PSecondary}
         line-height: 30px;
-        /* font-size: 2.rem; */
         color: ${(props) => props.color};
         white-space: pre-wrap;
       }
@@ -145,7 +147,6 @@ const ICMContainer = styled.section`
         white-space: pre-wrap;
         li {
           line-height: 30px;
-          /* font-size: 2.2rem; */
           margin-left: 20px;
         }
       }
@@ -180,6 +181,18 @@ export default function ImageContentModule({ ...props }) {
   const time = useTime({ pause: !isInViewHighlights });
   const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
 
+  const headerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: headerRef,
+    offset: ["start start", "center center"],
+  });
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  // console.log(y);
   // console.log(hightlightsRef);
 
   // useEffect(() => {
@@ -197,59 +210,98 @@ export default function ImageContentModule({ ...props }) {
   }
 
   return (
-    <ICMContainer
-      color={props.color}
-      bgColor={props.bgColor}
-      id={props.id}
-      imgPlacement={props.imgPlacement}
+    <Wrapper
+      style={
+        {
+          // height: "80vh",
+        }
+      }
+      ref={headerRef}
     >
-      <motion.h2
+      <motion.div
         style={{
-          transform: isInView ? "none" : "translateY(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          // height: "80vh",
+          backgroundSize: "cover",
+          backgroundImage: "/images/background.jpg",
         }}
+        className="test"
       >
-        {props.heading}
-      </motion.h2>
-      <hr />
-      <div className="ICMInnerContainer" ref={ref}>
-        <div className="ICMImgContainer">
-          <img
-            src={props.imgSrc}
-            alt={props.altTxt}
+        <ICMContainer
+          as={motion.section}
+          color={props.color}
+          bgColor={props.bgColor}
+          id={props.id}
+          imgPlacement={props.imgPlacement}
+          style={{ scaleX }}
+        >
+          <motion.h2
             style={{
-              transform: isInView ? "none" : translation,
+              transform: isInView ? "none" : "translateY(-200px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
-          />
-          <div className="highlight-container" ref={highlightsRef}>
-            {props.highlights.map((list, index) => {
-              return (
-                <motion.div
-                  // ref={animationRef}
-                  // animate={controls}
-                  style={{ rotate }}
-                  className="highlight-items"
-                  key={`${index}`}
-                >
-                  {list}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="content">
-          <p>{props.content}</p>
+          >
+            {props.heading}
+          </motion.h2>
+          <hr />
+          <div className="ICMInnerContainer" ref={ref}>
+            <div className="ICMImgContainer">
+              <img
+                src={props.imgSrc}
+                alt={props.altTxt}
+                style={{
+                  transform: isInView ? "none" : translation,
+                  opacity: isInView ? 1 : 0,
+                  transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }}
+              />
+              <div className="highlight-container" ref={highlightsRef}>
+                {props.highlights.map((list, index) => {
+                  return (
+                    <motion.div
+                      // ref={animationRef}
+                      // animate={controls}
+                      style={{
+                        transform: isInView ? "none" : translation,
+                        opacity: isInView ? 1 : 0,
+                        transition: `all 0.${
+                          index + 3
+                        }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index + 3}s`,
+                      }}
+                      className="highlight-items"
+                      key={`${index}`}
+                    >
+                      {list}
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="content">
+              <p>{props.content}</p>
 
-          <ul>
-            {props.factList.map((list, index) => {
-              return <li key={`${index}`}>{list}</li>;
-            })}
-          </ul>
-        </div>
-      </div>
-    </ICMContainer>
+              <ul>
+                {props.factList.map((list, index) => {
+                  return (
+                    <li
+                      style={{
+                        transform: isInView ? "none" : translation,
+                        opacity: isInView ? 1 : 0,
+                        transition: `all 0.${
+                          index + 3
+                        }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index + 3}s`,
+                      }}
+                      key={`${index}`}
+                    >
+                      {list}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </ICMContainer>
+      </motion.div>
+    </Wrapper>
   );
 }
