@@ -16,6 +16,7 @@ const InnerContainer = styled.div`
     padding-bottom: 150px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 75px;
 
     @media ${MediaQueries.tablet} {

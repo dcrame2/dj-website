@@ -45,7 +45,7 @@ const InnerContainer = styled.div`
     position: sticky;
     top: 0;
     height: 100vh;
-    padding: 158.5px 50px 50px;
+    padding: 158.5px 50px 150px;
     max-width: 1770px;
     margin: 0 auto;
     display: grid;
@@ -58,7 +58,7 @@ const InnerContainer = styled.div`
     }
 `;
 
-const Tile = styled.div`
+const Tile = styled(motion.div)`
     width: 100%;
     height: 100%;
     text-align: center;
@@ -174,6 +174,13 @@ export default function ScrollLockServices({ ...props }) {
         restDelta: 0.003,
     });
 
+    /*
+        framer values
+        yToggle: y
+        oToggle: opacity
+        rxToggle: rotateX
+    */
+
     const selectStyle = (index, yToggle, oToggle, rxToggle) => {
         switch (index) {
             case 0:
@@ -250,7 +257,7 @@ export default function ScrollLockServices({ ...props }) {
             <InnerContainer>
                 {data.tiles.map((item, index) => {
                     return (
-                        <motion.div
+                        <Tile
                             style={{
                                 y: selectStyle(index, true, false),
                                 opacity: selectStyle(index, false, true),
@@ -258,10 +265,8 @@ export default function ScrollLockServices({ ...props }) {
                                 scale: selectStyle(index, false, true, false),
                             }}
                         >
-                            <Tile>
-                                <h2>{item.heading}</h2>
-                            </Tile>
-                        </motion.div>
+                            <h2>{item.heading}</h2>
+                        </Tile>
                     );
                 })}
             </InnerContainer>
