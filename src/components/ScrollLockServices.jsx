@@ -85,93 +85,93 @@ export default function ScrollLockServices({ ...props }) {
 
     const y1 = useTransform(scrollYProgress, [0.1, 0.2], [200, 0]);
     const y1s = useSpring(y1, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o1 = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
     const rx1 = useTransform(scrollYProgress, [0.1, 0.2], [90, 0]);
     const rx1s = useSpring(rx1, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const y2 = useTransform(scrollYProgress, [0.2, 0.3], [200, 0]);
     const y2s = useSpring(y2, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o2 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
     const rx2 = useTransform(scrollYProgress, [0.2, 0.3], [90, 0]);
     const rx2s = useSpring(rx2, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const y3 = useTransform(scrollYProgress, [0.3, 0.4], [200, 0]);
     const y3s = useSpring(y3, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o3 = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
     const rx3 = useTransform(scrollYProgress, [0.3, 0.4], [90, 0]);
     const rx3s = useSpring(rx3, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const y4 = useTransform(scrollYProgress, [0.4, 0.5], [200, 0]);
     const y4s = useSpring(y4, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o4 = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
     const rx4 = useTransform(scrollYProgress, [0.4, 0.5], [90, 0]);
     const rx4s = useSpring(rx4, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const y5 = useTransform(scrollYProgress, [0.5, 0.6], [200, 0]);
     const y5s = useSpring(y5, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o5 = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
     const rx5 = useTransform(scrollYProgress, [0.5, 0.6], [90, 0]);
     const rx5s = useSpring(rx5, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const y6 = useTransform(scrollYProgress, [0.6, 0.7], [200, 0]);
     const y6s = useSpring(y6, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
     const o6 = useTransform(scrollYProgress, [0.6, 0.7], [0, 1]);
     const rx6 = useTransform(scrollYProgress, [0.6, 0.7], [90, 0]);
     const rx6s = useSpring(rx6, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const containerTransform = useTransform(scrollYProgress, [0, 1], [0, 20]);
     const containerSpring = useSpring(containerTransform, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
+        stiffness: 90,
+        damping: 40,
+        restDelta: 0.003,
     });
 
     const selectStyle = (index, yToggle, oToggle, rxToggle) => {
