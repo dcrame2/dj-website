@@ -216,7 +216,7 @@ export default function ImageContentModule({ ...props }) {
           // height: "80vh",
         }
       }
-      ref={headerRef}
+      // ref={headerRef}
     >
       <motion.div
         style={{
@@ -232,7 +232,7 @@ export default function ImageContentModule({ ...props }) {
           bgColor={props.bgColor}
           id={props.id}
           imgPlacement={props.imgPlacement}
-          style={{ scaleX }}
+          // style={{ scaleX }}
           ref={ref}
         >
           <motion.h2
