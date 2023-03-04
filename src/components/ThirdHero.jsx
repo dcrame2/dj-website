@@ -6,7 +6,7 @@ import { MediaQueries } from "../styles/Utilities";
 
 const HeroWrapper = styled.div`
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 `;
 
@@ -33,10 +33,10 @@ const TextBox = styled.div`
 
 const HeroText = styled.h1`
   font-weight: 800;
-  font-size: 30rem;
+  font-size: 25rem;
 
   @media ${MediaQueries.tablet} {
-    font-size: 25rem;
+    font-size: 22rem;
   }
   @media ${MediaQueries.mobile} {
     font-size: 11rem;
