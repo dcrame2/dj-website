@@ -8,9 +8,13 @@ import {
   useInView,
   useTime,
   useTransform,
+  useScroll,
+  useSpring,
   useAnimationControls,
 } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
+
+const Wrapper = styled.div``;
 
 const ICMContainer = styled.section`
   position: relative;
@@ -38,7 +42,6 @@ const ICMContainer = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 30px; */
     max-width: 1050px;
     padding-top: 50px;
     @media ${MediaQueries.tablet} {
@@ -126,7 +129,6 @@ const ICMContainer = styled.section`
       p {
         ${PSecondary}
         line-height: 30px;
-        /* font-size: 2.rem; */
         color: ${(props) => props.color};
         white-space: pre-wrap;
       }
@@ -145,7 +147,6 @@ const ICMContainer = styled.section`
         white-space: pre-wrap;
         li {
           line-height: 30px;
-          /* font-size: 2.2rem; */
           margin-left: 20px;
         }
       }
@@ -177,9 +178,21 @@ export default function ImageContentModule({ ...props }) {
     }
   }, [inView, isInViewHighlights]);
 
-  const time = useTime({ pause: !isInViewHighlights });
-  const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
+  // const time = useTime({ pause: !isInViewHighlights });
+  // const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
 
+  const headerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: headerRef,
+    offset: ["start start", "center center"],
+  });
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  // let y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  // console.log(y);
   // console.log(hightlightsRef);
 
   // useEffect(() => {
@@ -198,10 +211,12 @@ export default function ImageContentModule({ ...props }) {
 
   return (
     <ICMContainer
+      // as={motion.section}
       color={props.color}
       bgColor={props.bgColor}
       id={props.id}
       imgPlacement={props.imgPlacement}
+      ref={ref}
     >
       <motion.h2
         style={{
@@ -213,7 +228,7 @@ export default function ImageContentModule({ ...props }) {
         {props.heading}
       </motion.h2>
       <hr />
-      <div className="ICMInnerContainer" ref={ref}>
+      <div className="ICMInnerContainer">
         <div className="ICMImgContainer">
           <img
             src={props.imgSrc}
@@ -228,9 +243,13 @@ export default function ImageContentModule({ ...props }) {
             {props.highlights.map((list, index) => {
               return (
                 <motion.div
-                  // ref={animationRef}
-                  // animate={controls}
-                  style={{ rotate }}
+                  style={{
+                    transform: isInView ? "none" : translation,
+                    opacity: isInView ? 1 : 0,
+                    transition: `all 0.${
+                      index + 3
+                    }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index}s`,
+                  }}
                   className="highlight-items"
                   key={`${index}`}
                 >
@@ -245,7 +264,20 @@ export default function ImageContentModule({ ...props }) {
 
           <ul>
             {props.factList.map((list, index) => {
-              return <li key={`${index}`}>{list}</li>;
+              return (
+                <li
+                  style={{
+                    transform: isInView ? "none" : translation,
+                    opacity: isInView ? 1 : 0,
+                    transition: `all 0.${index}s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${
+                      index + 3
+                    }s`,
+                  }}
+                  key={`${index}`}
+                >
+                  {list}
+                </li>
+              );
             })}
           </ul>
         </div>

@@ -52,6 +52,12 @@ const FullScreenContainer = styled.div`
       width: 100px;
       background-color: ${Variables.color1};
       border: none;
+      @media ${MediaQueries.tablet} {
+        margin-top: 30px;
+      }
+      @media ${MediaQueries.tablet} {
+        margin-top: 15px;
+      }
     }
   }
   .inner-link-container {
@@ -82,35 +88,9 @@ const FullScreenContainer = styled.div`
         flex-direction: column;
         gap: 12px;
       }
-      li {
-        box-shadow: 0px 5px 15px -5px ${Variables.color4};
-        text-transform: uppercase;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid ${Variables.white};
-        text-align: center;
-        background-color: ${Variables.color2};
+      .li-container {
         width: 100%;
         max-width: 200px;
-        height: auto;
-        transform: perspective(150px) rotateY(-10deg);
-        transform-style: preserve-3d;
-        transition: all 0.3s ease-in;
-
-        height: 100%;
-        @media (max-width: 875px) {
-          transform: unset;
-          max-width: unset;
-        }
-        @media ${MediaQueries.tablet} {
-          min-height: 50px;
-          height: 100%;
-          width: 100%;
-          box-shadow: -10px 0px 20px -5px ${Variables.color4};
-          /* max-width: 400px; */
-        }
-
         &:nth-child(1) {
           z-index: 9;
           &:hover {
@@ -147,140 +127,180 @@ const FullScreenContainer = styled.div`
             z-index: 10;
           }
         }
-
-        &:hover,
-        :focus {
-          &:after {
-            height: 100%;
-            transition: height ease-out 0.1s;
-          }
+        @media (max-width: 875px) {
+          transform: unset;
+          max-width: unset;
         }
-
-        &:focus {
-          &:after {
-            transition: height ease 1s;
-          }
-        }
-
-        &:hover {
-          border: 3px solid ${Variables.white};
-          z-index: 2;
-          background-color: ${Variables.color1};
-          color: ${Variables.color4};
-          transition: all 0.8s ease;
-          transform: scale(1.3);
-          &:before {
-            display: none;
-          }
-          &:after {
-            display: none;
-          }
-          @media ${MediaQueries.mobile} {
-            transform: scale(1.08);
-          }
-        }
-        &::before {
-          width: 20%;
-          /* transform-origin: left center; */
-          transform: perspective(150px) rotateY(45deg) translateX(100%);
-          position: absolute;
-          content: "";
-          right: -15px;
-          height: 120%;
-          border-top: 5px solid ${Variables.color4};
-          border-right: 5px solid ${Variables.color4};
-          border-bottom: 5px solid ${Variables.color4};
-          border-left: 5px solid ${Variables.color4};
-          transform-style: preserve-3d;
-          transition: all 0.8s ease-in;
-          background-color: ${Variables.color2};
-          @media ${MediaQueries.tablet} {
-            right: -10px;
-            height: 118%;
-          }
-          @media (max-width: 875px) {
-            /* display: none; */
-            width: 100.8%;
-            height: 168%;
-            transform: rotateX(80deg) translateY(100%) perspective(150px)
-              skewX(10deg);
-            /* translateX(45deg); */
-            right: 5px;
-            top: -60px;
-          }
-          @media ${MediaQueries.tablet} {
-            /* box-shadow: 3px 0px 12px 2px ${Variables.color4}; */
-          }
-        }
-        &::after {
-          content: "";
-          background-color: ${Variables.color2};
-          position: absolute;
+        @media ${MediaQueries.tablet} {
+          min-height: 50px;
+          height: 100%;
           width: 100%;
-          height: 0;
-          left: 0;
-          bottom: 0;
-          border-top: 2px solid ${Variables.color4};
-          border-right: 2px solid ${Variables.color4};
-          border-bottom: 2px solid ${Variables.color4};
-          border-left: 2px solid ${Variables.color4};
-          transition: all 0.8s ease-in;
-          z-index: 0;
-          /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          /* box-shadow: -10px 0px 20px -5px ${Variables.color4}; */
+          /* max-width: 400px; */
+        }
+        li {
+          box-shadow: 0px 5px 15px -5px ${Variables.color4};
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid ${Variables.white};
+          text-align: center;
+          background-color: ${Variables.color2};
+          width: 100%;
+          max-width: 200px;
+          height: auto;
+          transform: perspective(150px) rotateY(-10deg);
+          transform-style: preserve-3d;
+          transition: all 0.3s ease-in;
+
+          height: 100%;
+          @media (max-width: 875px) {
+            transform: unset;
+            max-width: unset;
+          }
+          @media ${MediaQueries.tablet} {
+            min-height: 50px;
+            height: 100%;
+            width: 100%;
+            box-shadow: -10px 0px 20px -5px ${Variables.color4};
+            /* max-width: 400px; */
+          }
+
+          &:hover,
+          :focus {
+            &:after {
+              height: 100%;
+              transition: height ease-out 0.1s;
+            }
+          }
+
+          &:focus {
+            &:after {
+              transition: height ease 1s;
+            }
+          }
+
+          &:hover {
+            border: 3px solid ${Variables.white};
+            z-index: 2;
+            background-color: ${Variables.color1};
+            color: ${Variables.color4};
+            transition: all 0.8s ease;
+            transform: scale(1.3);
+            &:before {
+              display: none;
+            }
+            &:after {
+              display: none;
+            }
+            @media ${MediaQueries.mobile} {
+              transform: scale(1.08);
+            }
+          }
+          &::before {
+            width: 20%;
+            /* transform-origin: left center; */
+            transform: perspective(150px) rotateY(45deg) translateX(100%);
+            position: absolute;
+            content: "";
+            right: -15px;
+            height: 120%;
+            border-top: 5px solid ${Variables.color4};
+            border-right: 5px solid ${Variables.color4};
+            border-bottom: 5px solid ${Variables.color4};
+            border-left: 5px solid ${Variables.color4};
+            transform-style: preserve-3d;
+            transition: all 0.8s ease-in;
+            background-color: ${Variables.color2};
+            @media ${MediaQueries.tablet} {
+              right: -10px;
+              height: 118%;
+            }
+            @media (max-width: 875px) {
+              /* display: none; */
+              width: 100.8%;
+              height: 168%;
+              transform: rotateX(80deg) translateY(100%) perspective(150px)
+                skewX(10deg);
+              /* translateX(45deg); */
+              right: 5px;
+              top: -60px;
+            }
+            @media ${MediaQueries.tablet} {
+              /* box-shadow: 3px 0px 12px 2px ${Variables.color4}; */
+            }
+          }
+          &::after {
+            content: "";
+            background-color: ${Variables.color2};
+            position: absolute;
+            width: 100%;
+            height: 0;
+            left: 0;
+            bottom: 0;
+            border-top: 2px solid ${Variables.color4};
+            border-right: 2px solid ${Variables.color4};
+            border-bottom: 2px solid ${Variables.color4};
+            border-left: 2px solid ${Variables.color4};
+            transition: all 0.8s ease-in;
+            z-index: 0;
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
             rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
             rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
 
-          @media ${MediaQueries.tablet} {
-            transform: perspective(1000px) rotateY(125deg) skewY(-25deg)
-              skewX(0deg);
-            /* transform: perspective(120px) rotateY(9deg) translateY(100%); */
-            /* right: -15px; */
-            height: 51px;
-            width: 24px;
-            z-index: 15;
-            left: -20px;
-            bottom: 4px;
-          }
-        }
-
-        a {
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 90%;
-          gap: 15px;
-          @media ${MediaQueries.tablet} {
-            width: 75%;
-          }
-          @media (max-width: 875px) {
-            flex-direction: row;
-          }
-
-          @media ${MediaQueries.mobile} {
-            flex-direction: row;
-          }
-          .icon-container {
-            max-width: 60px;
             @media ${MediaQueries.tablet} {
-              max-width: 40px;
-            }
-
-            img {
-              width: 100%;
+              transform: perspective(1000px) rotateY(125deg) skewY(-25deg)
+                skewX(0deg);
+              /* transform: perspective(120px) rotateY(9deg) translateY(100%); */
+              /* right: -15px; */
+              height: 51px;
+              width: 24px;
+              z-index: 15;
+              left: -20px;
+              bottom: 4px;
             }
           }
-          p {
-            text-align: center;
-            ${PSecondary}
+
+          a {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            gap: 15px;
             @media ${MediaQueries.tablet} {
-              font-size: 1.25rem;
-              text-align: left;
+              width: 75%;
             }
+            @media (max-width: 875px) {
+              flex-direction: row;
+            }
+
             @media ${MediaQueries.mobile} {
-              font-size: 1.5rem;
-              text-align: left;
-              letter-spacing: 1.1px;
+              flex-direction: row;
+            }
+            .icon-container {
+              max-width: 60px;
+              @media ${MediaQueries.tablet} {
+                max-width: 40px;
+              }
+
+              img {
+                width: 100%;
+              }
+            }
+            p {
+              text-align: center;
+              ${PSecondary}
+              @media ${MediaQueries.tablet} {
+                font-size: 1.25rem;
+                text-align: left;
+              }
+              @media ${MediaQueries.mobile} {
+                font-size: 1.5rem;
+                text-align: left;
+                letter-spacing: 1.1px;
+              }
             }
           }
         }
@@ -348,7 +368,6 @@ const ServiceHeroV2 = ({ data, active }) => {
       controls.start({
         opacity: 1,
         translateY: "0px",
-        transform: "perspective(150px) rotateY(-10deg)",
       });
     }
   }, [isInView]);
@@ -382,29 +401,31 @@ const ServiceHeroV2 = ({ data, active }) => {
                 setShowSideItems(false);
               };
               return (
-                <motion.li
-                  onClick={closeSideTab}
-                  id={`#${links.serviceHref}`}
-                  // initial={{
-                  //   opacity: 0,
-                  //   translateY: "200px",
-                  //   transform: "perspective(150px) rotateY(-10deg)",
-                  // }}
-                  // animate={{
-                  //   transform: "perspective(150px) rotateY(-10deg)",
-                  //   opacity: 1,
-                  //   translateY: "0px",
-                  // }}
-                  transition={{ delay: `.${index}00` }}
-                  key={index}
+                <motion.div
+                  className="li-container"
+                  initial={{
+                    opacity: 0,
+                    translateY: "200px",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    translateY: "0px",
+                  }}
+                  transition={{ delay: `.${index}33` }}
                 >
-                  <Link to={`#${targetId}`}>
-                    <div className="icon-container">
-                      <img src={links.serviceIcon} alt="" />
-                    </div>
-                    <p>{links.serviceName}</p>
-                  </Link>
-                </motion.li>
+                  <li
+                    onClick={closeSideTab}
+                    id={`#${links.serviceHref}`}
+                    key={index}
+                  >
+                    <Link to={`#${targetId}`}>
+                      <div className="icon-container">
+                        <img src={links.serviceIcon} alt="" />
+                      </div>
+                      <p>{links.serviceName}</p>
+                    </Link>
+                  </li>
+                </motion.div>
               );
             })}
           </ul>
