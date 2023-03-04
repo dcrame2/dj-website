@@ -1,64 +1,67 @@
 import React from "react";
-
 import styled from "styled-components";
-import { Container, MediaQueries } from "../styles/Utilities";
+import { H1Styles } from "../styles/Type";
 import { Variables } from "../styles/Variables";
-import { H1Styles, PSecondary } from "../styles/Type";
+import { MediaQueries } from "../styles/Utilities";
 
-const OuterContainer = styled.div`
-  background-color: ${Variables.color2};
-  background-image: url("images/space.jpg");
-  background-size: cover;
-  /* background-repeat: no-repeat; */
-  /* object-fit: cover;s */
-  color: transparent;
-  /* background-position: center; */
-  background-clip: text;
-  -webkit-background-clip: text;
-  @media (max-width: 1200px) {
-    background-position: center;
+const HeroWrapper = styled.div`
+  position: relative;
+  height: 100vh;
+  width: 100%;
+`;
+
+const VideoBackground = styled.video`
+  width: 100%;
+  height: 100%;
+`;
+
+const TextBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mix-blend-mode: multiply;
+  text-transform: uppercase;
+`;
+
+const HeroText = styled.h1`
+  font-weight: 800;
+  font-size: 30rem;
+
+  @media ${MediaQueries.tablet} {
+    font-size: 25rem;
   }
-
-  /* opacity: 0.7; */
-  .inner-container {
-    height: 100vh;
-    ${Container};
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: ${Variables.color2}; */
-    @media ${MediaQueries.mobile} {
-      height: 70vh;
-    }
-    h1 {
-      font-weight: 700;
-      color: transparent !important;
-      text-align: left;
-      font-size: 32rem;
-
-      text-transform: uppercase;
-      @media ${MediaQueries.tablet} {
-        font-size: 20rem;
-      }
-      @media ${MediaQueries.mobile} {
-        font-size: 10rem;
-      }
-    }
-    p {
-      ${PSecondary};
-    }
+  @media ${MediaQueries.mobile} {
+    font-size: 11rem;
   }
 `;
 
-const ThirdHero = ({ children }) => {
+const ThirdHero = () => {
   return (
-    <OuterContainer>
-      <div className="inner-container">
-        <h1>{children}</h1>
-      </div>
-    </OuterContainer>
+    <HeroWrapper>
+      <VideoBackground
+        src="video.mp4"
+        type="video/mp4"
+        autoPlay
+        playsInline
+        muted
+        loop
+      ></VideoBackground>
+      <TextBox>
+        <HeroText>
+          Our
+          <br />
+          Work
+        </HeroText>
+      </TextBox>
+    </HeroWrapper>
   );
 };
 

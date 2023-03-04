@@ -178,8 +178,8 @@ export default function ImageContentModule({ ...props }) {
     }
   }, [inView, isInViewHighlights]);
 
-  const time = useTime({ pause: !isInViewHighlights });
-  const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
+  // const time = useTime({ pause: !isInViewHighlights });
+  // const rotate = useTransform(time, [0, 1000], [0, 360], { clamp: true });
 
   const headerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -210,99 +210,78 @@ export default function ImageContentModule({ ...props }) {
   }
 
   return (
-    <Wrapper
-      style={
-        {
-          // height: "80vh",
-        }
-      }
-      // ref={headerRef}
+    <ICMContainer
+      // as={motion.section}
+      color={props.color}
+      bgColor={props.bgColor}
+      id={props.id}
+      imgPlacement={props.imgPlacement}
+      ref={ref}
     >
-      <motion.div
+      <motion.h2
         style={{
-          // height: "80vh",
-          backgroundSize: "cover",
-          backgroundImage: "/images/background.jpg",
+          transform: isInView ? "none" : "translateY(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        className="test"
       >
-        <ICMContainer
-          as={motion.section}
-          color={props.color}
-          bgColor={props.bgColor}
-          id={props.id}
-          imgPlacement={props.imgPlacement}
-          // style={{ scaleX }}
-          ref={ref}
-        >
-          <motion.h2
+        {props.heading}
+      </motion.h2>
+      <hr />
+      <div className="ICMInnerContainer">
+        <div className="ICMImgContainer">
+          <img
+            src={props.imgSrc}
+            alt={props.altTxt}
             style={{
-              transform: isInView ? "none" : "translateY(-200px)",
+              transform: isInView ? "none" : translation,
               opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
-          >
-            {props.heading}
-          </motion.h2>
-          <hr />
-          <div className="ICMInnerContainer">
-            <div className="ICMImgContainer">
-              <img
-                src={props.imgSrc}
-                alt={props.altTxt}
-                style={{
-                  transform: isInView ? "none" : translation,
-                  opacity: isInView ? 1 : 0,
-                  transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-                }}
-              />
-              <div className="highlight-container" ref={highlightsRef}>
-                {props.highlights.map((list, index) => {
-                  return (
-                    <motion.div
-                      // ref={animationRef}
-                      // animate={controls}
-                      style={{
-                        transform: isInView ? "none" : translation,
-                        opacity: isInView ? 1 : 0,
-                        transition: `all 0.${
-                          index + 3
-                        }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index + 3}s`,
-                      }}
-                      className="highlight-items"
-                      key={`${index}`}
-                    >
-                      {list}
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="content">
-              <p>{props.content}</p>
-
-              <ul>
-                {props.factList.map((list, index) => {
-                  return (
-                    <li
-                      style={{
-                        transform: isInView ? "none" : translation,
-                        opacity: isInView ? 1 : 0,
-                        transition: `all 0.${
-                          index + 3
-                        }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index + 3}s`,
-                      }}
-                      key={`${index}`}
-                    >
-                      {list}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+          />
+          <div className="highlight-container" ref={highlightsRef}>
+            {props.highlights.map((list, index) => {
+              return (
+                <motion.div
+                  style={{
+                    transform: isInView ? "none" : translation,
+                    opacity: isInView ? 1 : 0,
+                    transition: `all 0.${
+                      index + 3
+                    }s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${index}s`,
+                  }}
+                  className="highlight-items"
+                  key={`${index}`}
+                >
+                  {list}
+                </motion.div>
+              );
+            })}
           </div>
-        </ICMContainer>
-      </motion.div>
-    </Wrapper>
+        </div>
+        <div className="content">
+          <p>{props.content}</p>
+
+          <ul>
+            {props.factList.map((list, index) => {
+              return (
+                <li
+                  style={{
+                    transform: isInView ? "none" : translation,
+                    opacity: isInView ? 1 : 0,
+                    transition: `all 0.${index}s cubic-bezier(0.17, 0.55, 0.55, 1) 0.${
+                      index + 3
+                    }s`,
+                  }}
+                  key={`${index}`}
+                >
+                  {list}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    </ICMContainer>
   );
 }
