@@ -14,6 +14,8 @@ import { useState } from "react";
 import { MediaQueries } from "./styles/Utilities";
 import { Variables } from "./styles/Variables.jsx";
 import styled from "styled-components";
+import { useEffect } from "react";
+import FloatingContact from "./components/FloatingContact.jsx";
 
 const ParaContainer = styled.div`
   background-image: url(${Variables.background1});
@@ -51,15 +53,37 @@ function App() {
 
   scrollListener();
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+      if (window.pageYOffset > 83) {
+        setNavBackdrop(true);
+      } else {
+        setNavBackdrop(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navigation backdrop={navBackdrop} setBackdrop={setNavBackdrop} />
-      <SlideOutLink
+      {/* <SlideOutLink
         ariaLabel="Jump to services overview"
         animateStartId="services"
         scrollY={scrollY}
         href="#services"
         text="services"
+      /> */}
+      <FloatingContact
+        ariaLabel="Jump to services overview"
+        scrollY={scrollPosition}
+        text="Contact Us"
       />
       <Hero src="hero1.mp4" />
       {/* <ModuleBlender size='large' /> */}
