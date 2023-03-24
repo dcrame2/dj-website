@@ -24,7 +24,7 @@ const FloatingButton = styled.div`
   z-index: 100;
   transform: rotate(-180deg);
   transition: all ease 0.4s;
-  background-color: ${Variables.color1};
+  background-color: ${Variables.color9};
   color: ${Variables.white};
   border-radius: 50%;
   border: 4px solid ${Variables.white};
@@ -46,7 +46,7 @@ const FloatingButton = styled.div`
     padding: 38px 24px;
     border-radius: 38px;
     justify-content: flex-start;
-    background-color: ${Variables.color5};
+    background-color: ${Variables.black};
     border: solid 4px ${Variables.color2};
 
     @media ${MediaQueries.mobile} {
