@@ -186,20 +186,16 @@ const data = {
   subheading: `Testimonials from ${Variables.companyName} customers`,
   testimonials: [
     {
-      name: "Cynthia L.",
-      content: `I would highly recommend ${Variables.companyName} for your website needs. I've never received better communication with a business before!`,
+      name: "Chicago Living Group",
+      content: `I would highly recommend ${Variables.companyName} for your website needs. The did my branding of my business and developed my website!`,
     },
     {
-      name: "Tim C.",
-      content: `${Variables.companyName} transformed my business to a new level which increased my site viewers over 100%.`,
+      name: "Moulis Financial",
+      content: `${Variables.companyName} transformed my business to a new level which increased my business by more than 20%.`,
     },
     {
-      name: "Anna J.",
+      name: "DC Productions",
       content: `I can't thank ${Variables.companyName} enough for building our website. The design and support they provided is unmatched.`,
-    },
-    {
-      name: "Bill A.",
-      content: `${Variables.companyName} makes the best websites I have ever seen. They tripled my website viewers in 2 months.`,
     },
   ],
 };
