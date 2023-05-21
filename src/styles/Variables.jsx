@@ -23,7 +23,8 @@ export const Variables = {
   color7: "#FFFBE7", // white with hint of pink
   color8: "#DDDDDD", // slate white
   color9: "#FF6D28", // orange
-  color10: "#472183", // dark purple
+  // color10: "#472183", // dark purple
+  color10: "#8c52ff",
   color11: "#434242", // medium gray
   color12: "#222222", // dark gray
   color13: "#EB1D36", // emergency red

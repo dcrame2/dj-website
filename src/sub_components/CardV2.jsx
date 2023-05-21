@@ -45,7 +45,7 @@ const CardWrapper = styled.div`
 
     &:hover {
       @media ${MediaQueries.desktop} {
-        background-color: ${Variables.black};
+        /* background-color: ${Variables.color10}; */
         transition: background-color ease 0.45s;
       }
     }
