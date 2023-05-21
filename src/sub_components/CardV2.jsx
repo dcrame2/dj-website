@@ -62,10 +62,10 @@ const CardWrapper = styled.div`
       /* min-height: 100px; */
 
       @media ${MediaQueries.tablet} {
-        max-width: 150px;
+        max-width: 200px;
       }
       @media ${MediaQueries.mobile} {
-        max-width: 100px;
+        max-width: 150px;
       }
     }
     &:nth-child(1) {
