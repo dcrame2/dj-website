@@ -155,7 +155,7 @@ export default function PortfolioModule() {
   }, [isInView, isInViewFired]);
 
   return (
-    <Section id="services" className={active ? "active" : ""}>
+    <Section id="portfolio" className={active ? "active" : ""}>
       <div className="inner-section">
         <div className="heading-wrapper" ref={ref}>
           <motion.div
