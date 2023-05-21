@@ -15,7 +15,7 @@ const Section = styled.section`
   width: 100%;
   padding-top: 85px;
   padding-bottom: 185px;
-  background-color: ${Variables.color10};
+  /* background-color: ${Variables.color10}; */
   //background-color: ${Variables.black};
   @media ${Variables.tablet} {
     padding-bottom: 140px;
@@ -79,7 +79,7 @@ const data = {
       num: "03",
       alt: "Develop icon",
       img: "/images/chicago-living.png",
-      name: "Chicago Living",
+      // name: "Chicago Living",
       urlLink: "https://chicagolivinggroup.com/",
       desc: "Real estate group that sells rental properties throughout the Chicagoland area",
     },
@@ -87,14 +87,14 @@ const data = {
       num: "01",
       alt: "Design icon",
       img: "/images/moulisfinancial-logo.png",
-      name: "Moulis Financial",
+      // name: "Moulis Financial",
       urlLink: "https://moulisfinancial.com/",
       desc: "Insurance agent selling in the Illinois and Arizona state areas",
     },
     {
       num: "02",
-      alt: "Develop icon",
-      img: "/images/dc-logo.png",
+      // alt: "Develop icon",
+      // img: "/images/dc-logo.png",
       name: "DC Productions",
       urlLink: "https://dylancramer.dev/",
       desc: "Front end developer portfolio to showcase his work and projects",

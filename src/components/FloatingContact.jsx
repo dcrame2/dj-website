@@ -47,7 +47,7 @@ const FloatingButton = styled.div`
     border-radius: 38px;
     justify-content: flex-start;
     background-color: ${Variables.black};
-    border: solid 4px ${Variables.color2};
+    border: solid 4px ${Variables.color10};
 
     @media ${MediaQueries.mobile} {
       max-width: 97%;
@@ -112,7 +112,7 @@ const FloatingButton = styled.div`
       }
       input,
       textarea {
-        border: 2px solid ${Variables.color2};
+        border: 2px solid ${Variables.color10};
         border-radius: 8px;
         background-color: unset;
       }
@@ -159,7 +159,7 @@ const FloatingButton = styled.div`
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
         rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      background-color: ${Variables.color2};
+      background-color: ${Variables.color10};
       position: absolute;
       width: 100%;
       height: 0;

@@ -36,7 +36,7 @@ const CustomLink = styled.a`
 
   &:after {
     content: "";
-    background-color: ${Variables.color2};
+    background-color: ${Variables.color10};
     position: absolute;
     width: 100%;
     height: 0;

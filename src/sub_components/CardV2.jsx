@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Variables, tabletWidthInt } from "../styles/Variables";
-import LinkButton from "./LinkButton";
+import LinkButtonV2 from "./LinkButtonV2";
 import { motion, useInView, useAnimationControls } from "framer-motion";
 import { MediaQueries } from "../styles/Utilities";
 import { H2Styles, PSecondary, H3Styles } from "../styles/Type";
@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    background-color: ${Variables.color12};
+    background-color: ${Variables.color10};
     border: 1px solid ${Variables.color1};
     color: ${Variables.white};
     flex-direction: column;
@@ -25,7 +25,7 @@ const CardWrapper = styled.div`
     max-width: 540px;
     transition: background-color ease 0.7s;
     /* transition: background-color ease 0.45s; */
-    /* background-color: ${Variables.color2}; */
+    /* background-color: ${Variables.color10}; */
     height: 400px;
     box-shadow: 1px 1px 10px 2px ${Variables.color1};
     -webkit-box-shadow: 1px 1px 10px 2px ${Variables.color1};
@@ -55,10 +55,11 @@ const CardWrapper = styled.div`
     }
     img {
       position: relative;
-      max-width: 120px;
+      max-width: 300px;
       height: auto;
       opacity: 0.8;
       width: 100%;
+      /* min-height: 100px; */
 
       @media ${MediaQueries.tablet} {
         max-width: 150px;
@@ -111,7 +112,7 @@ const CardWrapper = styled.div`
     }
     &.active {
       transition: background-color ease 0.45s;
-      background-color: ${Variables.color2};
+      background-color: ${Variables.color10};
       height: 400px;
       /* height: 100%; */
       .dropdown {
@@ -168,17 +169,17 @@ export default function CardV2({ index, active, data, onClick }) {
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.9 }}
       >
-        <img src={`${data.img}`} alt={data.alt} />
+        {data.img ? <img src={`${data.img}`} alt={data.alt} /> : ""}
         {/* <span className="num">{data.num}</span> */}
         <h2>{data.name}</h2>
         <span className="dropdown">
           <p>{data.desc}</p>
-          <LinkButton
+          <LinkButtonV2
             text="Visit"
             ariaLabel={`Visiting project ${data.name}`}
-            href={`#${data.urlLink}`}
+            href={`${data.urlLink}`}
             target="_blank"
-          ></LinkButton>
+          ></LinkButtonV2>
         </span>
       </motion.button>
     </CardWrapper>

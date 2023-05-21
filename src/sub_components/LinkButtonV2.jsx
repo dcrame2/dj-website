@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Variables } from "../styles/Variables";
 import { motion } from "framer-motion";
 
-const CustomButtonWrapper = styled.div`
+const CustomLinkStylingWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,13 +10,13 @@ const CustomButtonWrapper = styled.div`
   z-index: 2;
 `;
 
-const CustomButton = styled.button`
+const CustomLink = styled.a`
   cursor: pointer;
   position: relative;
   padding: 12px 24px;
   background-color: ${Variables.color9};
   border-radius: 20px;
-  color: ${Variables.color10};
+  color: ${Variables.black};
   border: 2px solid ${Variables.white};
   text-decoration: unset;
   overflow: hidden;
@@ -59,29 +59,27 @@ const CustomButton = styled.button`
 
   &:focus {
     &:after {
-      transition: height ease 0.4s;
-      animation: focusAnimation 1s infinite;
-      animation-fill-mode: forwards;
+      transition: height ease 1s;
     }
   }
 `;
 
-export default function Button({ ...props }) {
+export default function LinkButtonV2({ ...props }) {
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
-      <CustomButtonWrapper>
-        <CustomButton
-          onClick={props.onClicked}
-          type={props.type}
+      <CustomLinkStylingWrapper>
+        <CustomLink
           aria-label={props.ariaLabel}
+          href={props.href}
+          target={props.target}
         >
           <span>{props.text}</span>
-        </CustomButton>
-      </CustomButtonWrapper>
+        </CustomLink>
+      </CustomLinkStylingWrapper>
     </motion.div>
   );
 }
