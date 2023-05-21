@@ -12,8 +12,8 @@ const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    background-color: ${Variables.color10};
-    border: 1px solid ${Variables.color1};
+    background-color: ${Variables.color12};
+    border: 1px solid ${Variables.color10};
     color: ${Variables.white};
     flex-direction: column;
     justify-content: center;
