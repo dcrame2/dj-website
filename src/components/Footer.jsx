@@ -115,6 +115,7 @@ export default function Footer() {
       heading: "Resources",
       links: [
         { href: "#services", text: "Services" },
+        { href: "#portfolio", text: "Portfolio" },
         { href: "#testimonials", text: "Testimonials" },
         { href: "#faqSection", text: "FAQ" },
       ],
