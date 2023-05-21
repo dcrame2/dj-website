@@ -176,7 +176,8 @@ export default function CardV2({ index, active, data, onClick }) {
           <LinkButton
             text="Visit"
             ariaLabel={`Visiting project ${data.name}`}
-            href={`#${data.name.toLowerCase()}Section`}
+            href={`#${data.urlLink}`}
+            target="_blank"
           ></LinkButton>
         </span>
       </motion.button>

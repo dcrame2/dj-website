@@ -76,22 +76,30 @@ const data = {
 
   services: [
     {
+      num: "03",
+      alt: "Develop icon",
+      img: "/images/chicago-living.png",
+      name: "Chicago Living",
+      urlLink: "https://chicagolivinggroup.com/",
+      desc: "Real estate group that sells rental properties throughout the Chicagoland area",
+    },
+    {
       num: "01",
       alt: "Design icon",
       img: "/images/moulisfinancial-logo.png",
       name: "Moulis Financial",
-      desc: "Quality designs made to catch users attention and show your business model",
+      urlLink: "https://moulisfinancial.com/",
+      desc: "Insurance agent selling in the Illinois and Arizona state areas",
     },
     {
       num: "02",
       alt: "Develop icon",
       img: "/images/dc-logo.png",
       name: "DC Productions",
-      desc: "Professional developers executing modern websites your user will remember visiting",
+      urlLink: "https://dylancramer.dev/",
+      desc: "Front end developer portfolio to showcase his work and projects",
     },
   ],
-  // heading: "Services We Offer",
-  // subheading: `Managing a business demands a lot. Save resources and work with ${Variables.companyName} to help build and expand your businesses online presence. Our focal services are designing, developing and providing support but we can provide managed services for any web or mobile related projects.`, //We offer a wide range of web related services that are a must-have for any business.
 };
 
 export default function PortfolioModule() {
