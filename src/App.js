@@ -16,6 +16,7 @@ import { Variables } from "./styles/Variables.jsx";
 import styled from "styled-components";
 import { useEffect } from "react";
 import FloatingContact from "./components/FloatingContact.jsx";
+import PortfolioModule from "./components/PortfolioModule.jsx";
 
 const ParaContainer = styled.div`
   background-image: url(${Variables.background1});
@@ -141,8 +142,11 @@ function App() {
         />
       </ParaContainer>
       <ModuleBlender />
+      <PortfolioModule />
+      <ModuleBlender />
       <TestimonialsV2 id="testimonials" />
       <ModuleBlender />
+
       <FaqModule id="faqSection" />
       <ModuleBlender />
       <Contact />
