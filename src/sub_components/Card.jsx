@@ -67,7 +67,7 @@ const CardWrapper = styled.div`
     &:nth-child(1) {
       span.num {
         ${H2Styles}
-        color: ${Variables.color4};
+        color: ${Variables.color10};
       }
     }
     &:nth-child(2) {

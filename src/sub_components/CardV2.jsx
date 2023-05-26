@@ -43,12 +43,12 @@ const CardWrapper = styled.div`
       border-radius: 30px;
     }
 
-    &:hover {
+    /* &:hover {
       @media ${MediaQueries.desktop} {
-        /* background-color: ${Variables.color10}; */
+        background-color: ${Variables.color10};
         transition: background-color ease 0.45s;
       }
-    }
+    } */
     @media (max-width: 767px) {
       width: unset;
       padding: 34px;
@@ -59,7 +59,6 @@ const CardWrapper = styled.div`
       height: auto;
       opacity: 0.8;
       width: 100%;
-      /* min-height: 100px; */
 
       @media ${MediaQueries.tablet} {
         max-width: 250px;
@@ -166,8 +165,8 @@ export default function CardV2({ index, active, data, onClick }) {
           },
           delay: `.${index}`,
         }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.9 }}
+        // whileHover={{ scale: 1.08 }}
+        // whileTap={{ scale: 0.9 }}
       >
         {data.img ? <img src={`${data.img}`} alt={data.alt} /> : ""}
         {/* <span className="num">{data.num}</span> */}
