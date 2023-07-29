@@ -27,7 +27,7 @@ const Section = styled.section`
     ${Container}
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     @media ${MediaQueries.tablet} {
       align-items: center;
     }
@@ -37,9 +37,6 @@ const Section = styled.section`
       @media ${Variables.tablet} {
         margin: 24px 0 40px;
       }
-      /* h1 {
-        ${H2Styles}
-      } */
       h2 {
         ${H2Styles}
         text-transform: uppercase;
@@ -91,14 +88,14 @@ const data = {
       urlLink: "https://moulisfinancial.com/",
       desc: "Insurance agent selling in the Illinois and Arizona state areas",
     },
-    {
-      num: "02",
-      // alt: "Develop icon",
-      // img: "/images/dc-logo.png",
-      name: "DC Productions",
-      urlLink: "https://dylancramer.dev/",
-      desc: "Front end developer portfolio to showcase his work and projects",
-    },
+    // {
+    //   num: "02",
+    //   // alt: "Develop icon",
+    //   // img: "/images/dc-logo.png",
+    //   name: "DC Productions",
+    //   urlLink: "https://dylancramer.dev/",
+    //   desc: "Front end developer portfolio to showcase his work and projects",
+    // },
   ],
 };
 
