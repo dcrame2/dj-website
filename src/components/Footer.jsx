@@ -3,6 +3,11 @@ import { Variables } from "../styles/Variables";
 import { MediaQueries, Container } from "../styles/Utilities";
 import { useEffect, useState } from "react";
 import { PSmallStyles, H4Styles } from "../styles/Type";
+import {
+  FaFacebookSquare,
+  FaLinkedin,
+  FaInstagramSquare,
+} from "react-icons/fa";
 
 const FooterElm = styled.footer`
   position: relative;
@@ -65,6 +70,28 @@ const FooterInner = styled.div`
     }
   }
 
+  .social-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    @media ${MediaQueries.tablet} {
+      justify-content: center;
+      margin-top: 45px;
+    }
+    li {
+      height: 25px;
+      width: 25px;
+
+      a {
+        svg {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   ul {
     list-style: none;
     width: 100%;
@@ -93,8 +120,10 @@ const FooterInner = styled.div`
       }
       a {
         ${PSmallStyles}
+        transition: color 0.3s ease-in;
         &:hover {
           color: ${Variables.color10};
+          transition: color 0.3s ease-in;
         }
       }
     }
@@ -111,21 +140,41 @@ export default function Footer() {
   }, []);
 
   const data = {
-    resources: {
-      heading: "Resources",
-      links: [
-        { href: "#services", text: "Services" },
-        { href: "#portfolio", text: "Portfolio" },
-        { href: "#testimonials", text: "Testimonials" },
-        { href: "#faqSection", text: "FAQ" },
-      ],
+    dataArr: {
+      resources: {
+        heading: "Resources",
+        links: [
+          { href: "#services", text: "Services" },
+          { href: "#portfolio", text: "Portfolio" },
+          { href: "#testimonials", text: "Testimonials" },
+          { href: "#faqSection", text: "FAQ" },
+        ],
+      },
+      socials: {
+        // heading: "Social",
+        links: [
+          {
+            href: "https://www.facebook.com/profile.php?id=100095473361478",
+            text: <FaFacebookSquare />,
+          },
+          {
+            href: "https://www.linkedin.com/company/the-digital-delight",
+            text: <FaLinkedin />,
+          },
+          {
+            href: "https://www.instagram.com/thedigitaldelightllc/",
+            text: <FaInstagramSquare />,
+          },
+        ],
+      },
     },
+
     information: {
-      heading: "Email",
+      heading: "Contact",
       links: [
         {
-          href: "mailto:info@thedigitaldelight.com",
-          text: "info@thedigitaldelight.com",
+          href: "mailto:contact@thedigitaldelight.com",
+          text: "contact@thedigitaldelight.com",
         },
       ],
     },
@@ -137,9 +186,9 @@ export default function Footer() {
         <img src={Variables.logo6Url} alt=""></img>
         <ul>
           <li>
-            <h2>{data.resources.heading}</h2>
+            <h2>{data.dataArr.resources.heading}</h2>
           </li>
-          {data.resources.links.map((link, index) => {
+          {data.dataArr.resources.links.map((link, index) => {
             return (
               <li key={`resource-link-${index}`}>
                 <a href={`${link.href}`}>{link.text}</a>
@@ -147,6 +196,7 @@ export default function Footer() {
             );
           })}
         </ul>
+
         <ul>
           <li>
             <h2>{data.information.heading}</h2>
@@ -158,6 +208,17 @@ export default function Footer() {
               </li>
             );
           })}
+          <ul class="social-links">
+            {data.dataArr.socials.links.map((link, index) => {
+              return (
+                <li key={`resource-link-${index}`}>
+                  <a target="_blank" href={`${link.href}`}>
+                    {link.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </ul>
       </FooterInner>
       <div className="bottom-color-strip">
