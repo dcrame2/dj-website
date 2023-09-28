@@ -81,6 +81,14 @@ const data = {
       desc: "Real estate group that sells rental properties throughout the Chicagoland area",
     },
     {
+      num: "02",
+      // alt: "Develop icon",
+      img: "/images/tulayna.png",
+      // name: "Tulayna Limo Service",
+      urlLink: "https://www.tulaynalimoservice.com/",
+      desc: "Luxury Limo and Black Car service, pick up and drop off anywhere in the United States",
+    },
+    {
       num: "01",
       alt: "Design icon",
       img: "/images/moulisfinancial-logo.png",
@@ -88,14 +96,6 @@ const data = {
       urlLink: "https://moulisfinancial.com/",
       desc: "Insurance agent selling in the Illinois and Arizona state areas",
     },
-    // {
-    //   num: "02",
-    //   // alt: "Develop icon",
-    //   // img: "/images/dc-logo.png",
-    //   name: "DC Productions",
-    //   urlLink: "https://dylancramer.dev/",
-    //   desc: "Front end developer portfolio to showcase his work and projects",
-    // },
   ],
 };
 

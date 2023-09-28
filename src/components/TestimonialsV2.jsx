@@ -190,12 +190,12 @@ const data = {
       content: `I would highly recommend ${Variables.companyName} for your website needs. The did my branding of my business and developed my website!`,
     },
     {
-      name: "Moulis Financial",
-      content: `${Variables.companyName} transformed my business to a new level which increased my business by more than 20%.`,
+      name: "Tulayna Limo Service",
+      content: `I can't thank ${Variables.companyName} enough for building our website. The design and support they provided is unmatched.`,
     },
     {
-      name: "DC Productions",
-      content: `I can't thank ${Variables.companyName} enough for building our website. The design and support they provided is unmatched.`,
+      name: "Moulis Financial",
+      content: `${Variables.companyName} transformed my business to a new level which increased my business by more than 20%.`,
     },
   ],
 };
